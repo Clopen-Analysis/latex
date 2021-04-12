@@ -24,8 +24,10 @@ A \dfn{normed space} is a seminormed space $V$ such that the only $v \in V$ such
 A seminorm with this property is called a \dfn{norm}.
 \end{definition}
 
+\begin{example}
 Every vector space can be turned into a seminormed space in a trivial way, namely by setting $||v|| = 0$ for every $v$.
-However, we willl have no use for this.
+However, we will have no use for this.
+\end{example}
 
 \begin{example}
 The most important example of a normed space has as its base space $\RR^d$.
@@ -43,19 +45,23 @@ $$||(x_1, \dots, x_d)||_p^p = \sum_{i=1}^d |x_i|^p.$$
 Thus when $p = 2$ we recover the Euclidean norm, when $p = 1$ we recover the ``sum norm" $||(x_1, \dots, x_d)||_1 = \sum_i |x_i|$, and in the limit $p \to \infty$ we obtain the $||\cdot||_\infty$ norm.
 \end{example}
 
+\begin{subsec}
 A normed space is a metric space in a natural way, namely the distance between two vectors $v,w$ is defined to be $||v - w||$.
 Thus we have access to the usual notion of sequences, convergence, etc. for normed spaces; so the equation
 $$\lim_{n \to \infty} v_n = w$$
 means that for every $\varepsilon > 0$ there is an $N$ such that for every $n \geq N$, $||v_n - w|| < \varepsilon$.
 Similarly a sequence of $v_n$ is Cauchy if for every $\varepsilon > 0$ there is an $N$ such that for every $n, n' \geq N$, $||v_n, v_{n'}|| < \varepsilon$.
+\end{subsec}
 
+\begin{subsec}
 The notion of convergence makes sense in seminormed spaces, but it is no longer true that the limit of a sequence need be unique.
 In fact, consider the seminorm on $\RR^2$ defined by
 $$||(x, y)|| = |x|.$$
 Let $(x_n, y_n)_n$ be a sequence in $\RR^2$ and $x \in \RR$. Then for every $\lim_n x_n = x$, then for every $y \in \RR$, $\lim_n (x_n, y_n) = (x, y)$.
 In the language of point-set topology, seminormed spaces are not Hausdorff (nor do they even satisfy Axiom $T_0$).
+We fix the lack of Hausdorffness by observing that it is always possible to turn a seminormed space into a normed space.
+\end{subsec}
 
-We fix the problem with seminormed spaces by observing that it is always possible to turn a seminormed space into a normed space.
 \begin{theorem}
 \label{existence of normalization}
 For every seminormed space $V$ there is a normed space $V'$, called the \dfn{normalization} of $V$, such that:
@@ -72,12 +78,14 @@ V \arrow[rr,"T"] \arrow[dr,"\pi"] && W\\
 commutes.
 \end{enumerate}
 \end{theorem}
+
+\begin{subsec}
 In the language of category theory, the diagram (\ref{normification universal}) is called the \dfn{universal property of the normalization}.
 In category theory one proves that whenever an algebraic object satisfies a universal property, the object is unique up to a unique choice of isomorphism.
 Thus the normalization (and the closely related completion that we discuss in Theorem \ref{completion exists}) is unique.
+\end{subsec}
 
-The reader should omit the proof of Theorem \ref{existence of normalization} on first reading.
-\begin{proof}[Proof of Theorem \ref{existence of normalization}]
+\begin{proof}[Proof of Theorem \ref{existence of normalization} (omit on first reading)]
 In fact, we define the \dfn{kernel} of a seminormed space $V$ by $\ker V = \{v \in V: ||v|| = 0\}$.
 The kernel is a subspace of $V$, so we can take the quotient space $V/\ker V$ and form a short exact sequence
 \begin{equation}
@@ -96,7 +104,6 @@ In particular, if $v \in \ker V$, $||Tv|| = 0$ so $Tv = 0$ and hence $v \in \ker
 Thus we may define $T'(\pi(v)) = Tv$; this is well-defined because if $\pi(v) = \pi(v')$, then $v - v' \in \ker V$ and hence in $\ker T$.
 \end{proof}
 
-We conclude this section with a useful consequence of the triangle inequality.
 \begin{lemma}[reverse triangle inequality]
 For every $v, w$ in a normed space,
 $$|||v|| - ||w||| \leq ||v - w||.$$
@@ -113,10 +120,9 @@ But $\max(||v|| - ||w||, ||w|| - ||v||) = |||v|| - ||w|||$.
 
 \section{Banach spaces}
 \label{Banach space appendix}
-The reader should be familiar with this material before reading Chapter \ref{measureChapter}.
-
 The defining property of $\RR$ is that every Cauchy sequence in $\RR$ converges.
 However, this property is not true for normed spaces, as the following example will show.
+
 \begin{example}
 Let $C[0, 1]$ denote the vector space of continuous functions $[0, 1] \to \CC$.
 We turn $C[0, 1]$ into a normed space by introducing a Euclidean-type norm,
@@ -160,6 +166,7 @@ The $p$-norms $||\cdot||_p$ that we defined on $\RR^d$ turn $\RR^d$ into a Banac
 This is an exercise in the fact that every Cauchy sequence on $\RR$ converges.
 \end{example}
 
+\begin{subsec}
 The advantage of working in Banach spaces rather than general normed spaces is that it is meaningful to talk about infinite sums in Banach spaces. Indeed, if $(x_n)_n$ is a sequence of elements in a Banach space $X$, we define
 \begin{equation}
 \label{banach space series}
@@ -175,11 +182,16 @@ By the triangle inequality, it in fact suffices to show that for every $\varepsi
 \sum_{n=N}^\infty ||x_n|| < \varepsilon
 \end{equation}
 to show that the $(x_n)_n$ are summable.
+\end{subsec}
+
 \begin{definition}
 Let $(x_n)_n$ be a sequence in a Banach space. If for every $\varepsilon > 0$ there is an $N$ such that (\ref{absolute convergence}) holds, we say that $(x_n)_n$ is \dfn{absolutely convergent} or \dfn{absolutely summable}.
 \end{definition}
 
+\begin{subsec}
 Just as we had a universal way to turn any seminormed space into a normed space, its normalization, we have a universal way to turn any normed space (hence any seminormed space) into a Banach space by adding limits to each of its Cauchy sequences.
+\end{subsec}
+
 \begin{theorem}
 \label{completion exists}
 For every normed space $V$ there is a Banach space $W$, called the \dfn{completion} of $V$, such that:
@@ -194,8 +206,7 @@ V \arrow[rr,"T"] \arrow[dr,"\iota"] && X\\
 commutes.
 \end{enumerate}
 \end{theorem}
-As with the normalization, the completion is unique for category-theoretic reasons, and the reader should omit the proof of this theorem on first reading.
-\begin{proof}
+\begin{proof}[Proof (omit on first reading)]
 To do this, let $V$ be a normed space and let $\Cau (V)$ be the vector space of all Cauchy sequences in $V$.
 (We let $x$ denote a Cauchy sequence $(x_n)_n$.)
 Then $\Cau (V)$ is a seminormed space, where
@@ -252,10 +263,10 @@ then $y \in \Cau (W)$, and the reader can check that $\lim_n y_n = x$.
 To check the universal property, let $T: V \to X$ be a linear map of $V$ into a Banach space $X$ such that $||Tv|| = ||v||$.
 Thus $T$ is a bounded linear map (c.f. Definition \ref{bounded linear map}). First define $T'(\iota(v)) = v$ for every $v$, thus $T'$ is defined on the dense subspace $V'$ of $W$.
 But then $T'$ is continuous, so it extends uniquely to a linear map by Lemma \ref{linear extension}. We leave it to the reader to check $||T'w|| = ||w||$.
+Since the completion is defined by a universal property, it is unique.
 \end{proof}
 
 \section{Linear maps}
-Though we will use this material before then, the reader need not familiarize themself with this material until Chapter TODO.
 \begin{definition}
 \label{bounded linear map}
 Let $T: V\to W$ be a linear map between normed spaces. We say that $T$ is a \dfn{bounded linear map} if there is a $C>0$ such that for every $v \in V$,
@@ -268,7 +279,9 @@ We denote by $B(V \to W)$ the space of bounded linear maps.
 Let $V,W$ be normed spaces.
 Then the operator norm is a norm on $B(V \to W)$.
 \end{lemma}
-We leave the routine proof to the reader.
+\begin{proof}
+Routine and omitted.
+\end{proof}
 
 \begin{lemma}
 \label{linear extension}
@@ -294,12 +307,14 @@ where $(x_n)_n$ and $(y_n)_n$ are appropriately chosen Cauchy sequences.
 The proof that $T(cx) = cTx$ is similar.
 \end{proof}
 
-\section{Properties of Banach spaces}
+\section{Separability}
 \begin{definition}
 Let $B$ be a Banach space and let $X \subseteq B$. We say that $X$ is \dfn{separable} if there is a countable dense subset of $X$.
 \end{definition}
 
+\begin{subsec}
 If $X$ is separable and $Y \subseteq X$, then $Y$ is separable; in fact, if $C$ is countable and dense in $X$, then $C \cap Y$ is countable and dense in $Y$.
+\end{subsec}
 
 \begin{example}
 $\CC^n$ is separable, since $\{(\alpha_1 + i\beta_1, \dots, \alpha_n + i \beta_n): \alpha_i, \beta_i \in \QQ\}$ is countable and dense in $\CC^n$.
@@ -316,7 +331,81 @@ So $Y$ is discrete and uncountable, and hence cannot be separable.
 \end{example}
 
 \section{Convexity}
+\begin{subsec}
+If $x, y$ are elements of a Banach space, we denote by $[x, y]$ the \emph{closed} line segment between $x, y$ -- that is, the set of all $z$ which can be written
+\begin{equation}
+\label{line segment}
+z = tx + (1 - t)y
+\end{equation}
+with $t \in [0, 1]$.
+We let $(x, y)$ denote the \emph{open} line segment between $x, y$ -- that is, the set of all $z$ satisfying (\ref{line segment}) wiht $t \in (0, 1)$.
+\end{subsec}
 
+\begin{definition}
+Let $B$ be a Banach space and $K \subseteq B$. We say that $K$ is a \dfn{convex set} if for every $x, y \in K$, $[x, y] \subseteq K$.
+\end{definition}
+
+\begin{subsec}
+It is straightforward to check that balls are convex, as are subspaces.
+\end{subsec}
+
+TODO: Hanh-Banach theorem
+
+\begin{definition}
+Let $K$ be a convex set. A \dfn{face} of $K$ is a nonempty closed convex set $F$ such that for every $x,y \in K$ such that $(x, y) \subseteq F$, $x, y \in F$.
+A \dfn{vertex} or \dfn{extreme point} of $K$ is a face which consists of a single point.
+\end{definition}
+
+\begin{example}
+\label{cube is convex}
+Let $K$ be a cube. Then $K$ is convex, and so is a face. The boundary of $K$ is made up of squares, which are also faces of $K$ (as well as faces in the sense of euclidean geometry!), and are also convex. The boundary of each square is a line segment, which is a face of the square and hence of $K$. The boundary of each line segment is a vertex (of the line segment, the square, and $K$ itself), and are also vertices in the sense of euclidean geometry.
+\end{example}
+
+\begin{subsec}
+We are going to show that every compact convex set is generated by its vertices.
+To do this, we first need to show that every compact convex set has a vertex.
+(This is not quite obvious, since an open ball is a convex set with no vertex.)
+The proof of this fact is motivated by Example \ref{cube is convex}, since we expect that vertices should be minimal faces.
+\end{subsec}
+
+\begin{lemma}
+\label{vertices exist}
+Let $K$ be a compact convex set. Then $K$ has a vertex.
+\end{lemma}
+\begin{proof}
+Let $\PP$ be the set of faces of $K$, ordered by inclusion.
+Then $K \in \PP$, and if $\mathcal F \subseteq \PP$ is a chain, then $\bigcap \mathcal F$ is a nonempty compact convex subset of $K$, which is clearly a face.
+Thus $\PP$ satisfies the hypotheses of Zorn's lemma with order reversed, and so has a \emph{minimal} element $V$.
+
+We claim that $V$ is a vertex. If not, then $V$ has at least two points, so by the Hanh-Banach theorem there is a bounded real linear functional $\lambda$ which is not constant on $V$.
+Since $\lambda$ is real and continuous and $V$ is convex (thus connected) and compact, there are real numbers $\alpha \leq \beta$ with $\lambda(V) = [\alpha, \beta]$.
+Then $\lambda^{-1}(\beta) \cap V$ is nonempty, compact, and convex, and can be easily seen to be a face.
+But $\lambda^{-1}(\beta) \cap V$ is a proper subset of $V$ if $\alpha < \beta$, contradicting minimality.
+\end{proof}
+
+\begin{definition}
+Let $X$ be a set of points in $B$. The \dfn{convex hull} $\ch X$ of $X$ is the intersection of all closed convex sets containing $X$.
+\end{definition}
+
+\begin{subsec}
+Since the intersection of closed convex sets is closed and convex, the convex hull of any set is closed and convex.
+That is, $\ch X$ is the smallest closed convex set containing $X$.
+\end{subsec}
+
+\begin{theorem}[Krein-Milman]
+Let $K$ be compact convex set. Then $K$ is the convex hull of the vertices of $K$.
+\end{theorem}
+\begin{proof}
+Let $S$ be the set of vertices of $K$.
+Then $\ch S \subseteq K$ is a compact convex set.
+Suppose that $x \in K \setminus \ch S$.
+By the Hanh-Banach theorem, there is a bounded real linear functional $\lambda$ such that $\lambda(x) \notin \lambda(\ch S)$; we may assume $\lambda(x) > \lambda(\ch S)$.
+Let $\beta = \max \lambda(K)$, so $\beta \geq \lambda(x) > \lambda(\ch S)$.
+Then $\lambda^{-1}(\beta)$ is a hyperplane, and the intersection of a hyperplane with a compact convex set is either empty or compact and convex.
+Since $\lambda^{-1}(\beta) \cap K$ is nonempty, $\lambda^{-1}(\beta) \cap K$ is a compact convex set.
+By Lemma \ref{vertices exist}, there is a vertex $v$ of $\lambda^{-1}(\beta) \cap K$; it is easy to see that $v$ is also a vertex of $K$.
+But $\lambda(v) = \beta > \lambda(\ch S)$ so $v \notin S$, a contradiction.
+\end{proof}
 
 
 \chapter{Foundations}
@@ -325,15 +414,16 @@ We omit the proofs, not because they are uninteresting or unworthy of being lear
 
 \section{Axiomatic set theory}
 We assume familiarity with naive set theory; this will suffice for everything in this text except for a few examples, which require more sophisticated set-theoretic techniques that we record here.
-We refer the reader to CITE:Kunen for more details.
+We refer the reader to Kunen \cite{kunen2011set} for more details.
 
+\begin{subsec}
 Let us record the first few axioms of set theory.
 It will be convenient to assume that \emph{every} mathematical object is a set.
 This is no loss of generality, because one can define the natural numbers by declaring that $0 = \emptyset$ and for every natural number $n$, $n = \{0, \dots, n - 1\}$.
 The definition of real numbers in terms of Dedekind cuts, where each real number $x$ is by definition the set $\{y \in \QQ: y < x\}$, is similar.
 More generally, any mathematical object can be encoded as a set in some appropriate way.
-
 The first three axioms are presumably uncontroversial to anyone who has studied naive set theory.
+\end{subsec}
 
 \begin{axiom}[extensionality]
 For all sets $x, y, z$, if $z \in x$ implies $z \in y$, and $z \in y$ implies $z \in x$, then $x = y$.
@@ -345,81 +435,143 @@ For all sets $x, y$, there exists a set $z$, usually denoted $\{x, y\}$, such th
 For all sets $x, y$, there exists a set $z$, usually denoted $x \cup y$, such that for every set $w$, $w \in z$ iff $w \in x$ or $w \in y$.
 \end{axiom}
 
-Now to avoid Russell's paradox, and avoid other logic technicalities we want to forbid that a set include itself.
+\begin{subsec}
+Now to avoid Russell's paradox and other technicalities we want to forbid that a set include itself.
+\end{subsec}
+
 \begin{axiom}[foundation]
 For all sets $x$ such that there is a set $w \in x$, there is a set $y \in x$ such that for all sets $z \in y$, $z \notin x$.
 \end{axiom}
-If $x \in x$, then by pairing, $\{x\}$ is a set, and this contradicts foundation.
 
+\begin{subsec}
+If $x \in x$, then by pairing, $\{x\}$ is a set, and this contradicts foundation.
+\end{subsec}
+
+\begin{subsec}
 A \dfn{first-order formula} with $N$ free variables in the language of set theory is a string consisting only of the symbols $\exists,\forall,\to,\neg,\in,(,)$, and variables $x_1,x_2,\cdots, y_1,\dots,y_N$ that refer to sets, which is meaningful (so the formula $)\forall \implies()$ is not a first-order formula), such that the $x_i$ always appear after a quantifier $\forall$ or $\exists$, and the $y_i$ never do.
 Plugging in sets for the $y_i$ gives a statement which is either true or false.
 For example, $\forall x_1((x_1 \in y_1) \to (x_1 \in y_2))$ is a formula which asserts that $y_1 \subseteq y_2$.
+\end{subsec}
 
+\begin{subsec}
 First-order formulae allow us to assert the existence of subsets.
+\end{subsec}
+
 \begin{axiom}[restricted comprehension schema]
 For all sets $x$, first order-formulae $\varphi$ with $N+1$ free variables, and sets $w_1, \dots, w_N$, there is a set $y$ such that $z \in y$ iff $z \in x$ and $\varphi(z, w_1, \dots, w_N)$ is true.
 \end{axiom}
+
+\begin{subsec}
 Henceforth we adopt the usual notation $\subseteq$, $\subset$, $\{y \in x: \varphi(y)\}$, etc.
 We can also now define the empty set $\emptyset$ and various other interesting sets.
+\end{subsec}
 
+\begin{subsec}
 Already we have developed enough to study finite sets.
 For example, we can define intersection $\cap$ and ordered pairs $(x, y)$ in terms of the notions we introduced in the above axioms.
 We can also define functions; a function $f: X \to Y$ is just a set $f$ of ordered pairs $(x, y)$ such that for every $x \in X$ there is exactly one $y \in Y$ such that $(x, y) \in f$ (though we usually write $f(x) = y$ to mean $(x, y) \in f$).
 So we can talk about injections and bijections, and ask if two sets have the same cardinality.
+\end{subsec}
+
 \begin{definition}
 Let $x, y$ be sets. We say that $x, y$ have the same \dfn{cardinality}, and write $x \cong y$, if there is a bijection $x \to y$.
 \end{definition}
+
 \begin{theorem}[Cantor-Bernstein]
 Let $x, y$ be sets. Then $x \cong y$ iff there are injections $x \to y$ and $y \to x$.
 \end{theorem}
+
+\begin{subsec}
 In particular, we can ask if a set is finite, countable, etc.
+\end{subsec}
+
 \begin{definition}
 A \dfn{finite set} is a set $x$ such that for every $y \subseteq x$, if $x \cong y$, then $x = y$.
 Otherwise, the set $x$ is an \dfn{infinite set}.
 \end{definition}
+
+\begin{subsec}
 However, it is not obvious (and in fact, may even be false) that there is an infinite set at this stage.
+\end{subsec}
+
 \begin{axiom}[infinity]
 There exists a set $x$, usually denoted $\NN$, such that $\emptyset \in x$ and for all sets $y \in x$, $\{y \cup \{y\}\} \in \NN$.
 \end{axiom}
+
+\begin{subsec}
 From $\NN$ we may construct $\ZZ$, $\QQ$, and other familiar countable objects.
+\end{subsec}
+
 \begin{definition}
 A set $x$ is a \dfn{countable set} if there is an injection $x \to \NN$.
 Otherwise, the set $x$ is an \dfn{uncountable set}.
 \end{definition}
-Again we get stuck; it is not obvious (and may be false) that there can be uncountable sets.
 
+\begin{subsec}
+Again we get stuck; it is not obvious (and may be false) that there can be uncountable sets.
+\end{subsec}
+
+\begin{subsec}
 The axioms that follow are highly dangerous. They assert the existence of deeply infinitary sets, whose elements cannot be easily described.
 This is the essence of the paradoxical examples that we will use axiomatic set theory to prove the existence of.
 Famously, Lebesgue rejected the axiom of choice (while implicitly using weak forms of it); modern constructivists, finitists, and intuitionists reject some or all of the following axioms (or even the axiom of infinity).
+\end{subsec}
+
 \begin{axiom}[power set]
 For every set $x$, there exists a set $y$, usually denoted $2^x$, such that for all sets $z$, $z \in y$ iff $z \subseteq x$.
 \end{axiom}
-The axioms that we have developed up to this point define what is known as \dfn{Zermelo set theory}.
 
+\begin{subsec}
+The axioms that we have developed up to this point define what is known as \dfn{Zermelo set theory}.
+\end{subsec}
+
+\begin{subsec}
 There is clearly an injection $x \to 2^x$, given by $y \mapsto \{y\}$.
+\end{subsec}
+
 \begin{theorem}[Cantor's diagonal argument]
 For every set $x$, there is no injection $2^x \to x$.
 \end{theorem}
+
+\begin{subsec}
 In particular, $2^\NN$ is uncountable.
 We may now prove the existence of $\RR$, $2^\RR$, the topology of $\RR$, and so on. For example, we have:
+\end{subsec}
+
 \begin{theorem}[Dedekind]
 There exists a set $\RR$, whose elements are nonempty proper subsets $x$ of $\QQ$ such that for each $q \in x$, if $r \in \QQ$ and $r < q$ then $r \in x$, and there is an $s \in x$ such that $s > x$.
 There exists a ring structure on $\RR$ which turns $\RR$ into an ordered field of characteristic $0$ such that for every set $X \in 2^\RR$, $\sup X$ is well-defined.
 Moreover, $\RR$ is unique up to unique isomorphism of ordered fields.
 \end{theorem}
+
+\begin{definition}
+A \dfn{real number} is an element of $\RR$.
+\end{definition}
+
+\begin{subsec}
 We now pause to introduce the notion of \dfn{transfinite induction}, which we will use a few times.
+\end{subsec}
+
 \begin{definition}
 A \dfn{transitive set} is a set $x$ such that $x \subset 2^x$.
 \end{definition}
+
+\begin{subsec}
 Thus every element of a transitive set is also a subset of $x$.
+\end{subsec}
+
 \begin{definition}
 \label{ordinal dfn}
 An \dfn{ordinal} is a transitive set $x$ such that for every $y \in x$, $y$ is an ordinal.
 \end{definition}
+
+\begin{subsec}
 This definition may seem circular -- but it is not. $\emptyset$ is an ordinal, usually denoted $0$ when we think of it as an ordinal, and every natural number is an ordinal (why?), but so is $\NN$, which we usually denote $\omega$ when we think of it as an ordinal.
 From there we keep going: given an ordinal $\alpha$ we define its \dfn{successor} $\alpha + 1 = \alpha \cup \{\alpha\}$.
 Not every ordinal is a successor or $0$; for example $\omega$ was not. Such ordinals are known as \dfn{limits}.
 They are limit points in the order topology.
+\end{subsec}
+
 \begin{theorem}[transfinite induction]
 \label{transfinite induction}
 Fix a limit ordinal $\kappa$. Let $X$ be a set of ordinals such that:
@@ -430,8 +582,13 @@ Fix a limit ordinal $\kappa$. Let $X$ be a set of ordinals such that:
 \end{enumerate}
 Then $X = \kappa$.
 \end{theorem}
+
+\begin{subsec}
 The trivial example of transfinite induction is when $\kappa = \omega$; then there are no limit ordinals to consider and the theorem collapses down to induction on $\NN$.
-From this we can introduce \dfn{transfinite recursion}.
+\end{subsec}
+
+\begin{subsec}
+From transfinite induction we can introduce \dfn{transfinite recursion}.
 Suppose that $\kappa$ is a limit ordinal, and we want to define sets $x_\alpha$ for every $\alpha < \kappa$. Then we just have to:
 \begin{enumerate}
 \item Define $x_0$.
@@ -439,39 +596,62 @@ Suppose that $\kappa$ is a limit ordinal, and we want to define sets $x_\alpha$ 
 \item Show that for every limit ordinal $\delta < \kappa$, if we can for every $\alpha < \delta$ define $x_\alpha$, then we can define $x_\delta$.
 \end{enumerate}
 Then the theorem of transfinite induction will imply that, for every $\alpha < \kappa$, $x_\alpha$ is defined.
+\end{subsec}
 
+\begin{subsec}
 The set of all countable ordinals is an uncountable ordinal (in fact, the smallest uncountable ordinal), which we denote $\omega_1$.
+\end{subsec}
 
+\begin{subsec}
 If $X$ is a set of ordinals, then $X$ has a least element; this is similar to the fact that every set of natural numbers has a least element.
+\end{subsec}
+
 \begin{definition}
 An ordinal $\kappa$ is a \dfn{cardinal} if $\kappa$ is the least element of $\{\alpha: \alpha \cong \kappa\}$.
 \end{definition}
-The idea is that cardinals should be canonical representatives of the equivalence class of all sets with a given cardinality.
 
+\begin{subsec}
+The idea is that cardinals should be canonical representatives of the equivalence class of all sets with a given cardinality.
+\end{subsec}
+
+\begin{subsec}
 We let $\aleph_0$ be the least infinite cardinal (thus $\aleph_0 = \omega$), and for every cardinal $\aleph_n$, we define $\aleph_{n+1}$ to be the least cardinal greater than $\aleph_n$.
 We would like to continue this recursion and let $\aleph_\omega$ be the least cardinal greater than $\aleph_n$ for every $n \in \NN$.
 It is not possible to define $\aleph_\omega$ yet, but we can do so with the help of a new axiom schema.
+\end{subsec}
 
 \begin{axiom}[replacement schema]
 For every set $X$, every first-order formula with $N+2$ free variables $\varphi$, and all sets $w_1, \dots, w_N$, if for every $x \in X$ there is exactly one set $y$ such that $\varphi(x, y, w_1, \dots, w_N)$ is true, then there is a set $z$ such that $y \in z$ iff there is an $x \in X$ such that $\varphi(x, y, w_1, \dots, w_N)$ is true.
 \end{axiom}
+
+\begin{subsec}
 In other words, if $F$ is a function which can be explicitly defined by a first-order formula in terms of $N$ parameters $w_1, \dots, w_N$, then the image of $F$ is a set.
 It follows from the replacement schema that $\aleph_\alpha$ is defined for every ordinal $\alpha$.
+\end{subsec}
 
+\begin{subsec}
 Zermelo set theory along with the replacement schema is known as \dfn{Zermelo-Fraenkel set theory}.
+\end{subsec}
 
+\begin{subsec}
 Zermelo-Fraenkel set theory cannot prove that every set is in bijection with a cardinal, or that every vector space has a basis.
 To prove that every set is in bijection with a cardinal, Zermelo introduced the so-called axiom of choice.
+\end{subsec}
 
 \begin{axiom}[choice]
 \label{axiom of choice}
 For every surjection $f: X \to Y$ there is an injection $g: Y \to X$ such that for every $y \in Y$, $f(g(y)) = y$.
 \end{axiom}
+
+\begin{subsec}
 In other words if $f: X \to Y$ is a surjection then for every $y \in Y$ we may choose $x \in X$ so that $f(x) = y$.
 This follows from Zermelo-Fraenkel set theory if we only have to choose finitely many $x$, but in general, $X$ may be uncountable, so that we may have to make uncountably many choices when we define $g$.
+\end{subsec}
 
+\begin{subsec}
 The above axioms comprise \dfn{Zermelo-Fraenkel set theory with choice}.
 Throughout the text, we assume Zermelo-Fraenkel set theory with choice.
+\end{subsec}
 
 \begin{theorem}[Zermelo's well-ordering theorem]
 \label{well-ordering theorem}
@@ -502,7 +682,9 @@ If the process of passing from $\lambda$ to $\delta$ does not halt, then there a
 This breaks Russell's paradox.
 \end{proof}
 
+\begin{subsec}
 Note that while we technically don't need Zermelo's well-ordering theorem to prove the Cantor-Bernstein theorem, it is an immediate consequence.
+\end{subsec}
 
 \begin{definition}
 \label{beth dfn}
@@ -510,7 +692,9 @@ We define $\beth_0 = \aleph_0$, and for every $\alpha$, $\beth_{\alpha + 1}$ to 
 If $\delta$ is a limit ordinal we let $\beth_\delta$ be the cardinality of $\bigcup_{\alpha < \delta} \beth_\alpha$.
 \end{definition}
 
+\begin{subsec}
 By Cantor's diagonal argument, $\beth_\alpha < \beth_\beta$ whenever $\alpha < \beta$.
+\end{subsec}
 
 \begin{theorem}
 \label{cardinal arithmetic trivial}
@@ -519,16 +703,20 @@ Suppose that $X$ is a set of cardinality $\lambda$, whose elements are sets of c
 Moreover, if $\lambda < \kappa$ and $\kappa = \beth_\alpha$ for some $\alpha$, then the Cartesian product of $\lambda$ many copies of $\kappa$ has cardinality $\kappa$.
 \end{theorem}
 
+\begin{subsec}
 In particular, if $\lambda$ is countable or $\lambda = \beth_1$, then a union of $\lambda$ many sets of cardinality $\beth_1$ has cardinality $\beth_1$.
+\end{subsec}
 
 \begin{theorem}
 \label{cardinality of topology}
 Let $\mathcal T$ be the set of all open subsets of $\RR$; then $\mathcal T$ has cardinality $\beth_1$.
 \end{theorem}
 
+\begin{subsec}
 Another consequence of Zermelo's well-ordering theorem is Zorn's lemma, which is frequently useful.
 The point is to allow us to build up ``deeply infinitary" objects (that cannot be completed in $\omega$ many steps!) without explicitly using transfinite recursion.
 Of course the proof will be by transfinite recursion, but mathematicians who are not logicians tend to find the transfinite terrifying, and use Zorn's lemma as something of a black box.
+\end{subsec}
 
 \begin{definition}
 Let $\PP$ be a partially ordered set. A \dfn{chain} $\mathcal C$ in $\PP$ is a set such that for every $x, y \in \mathcal C$, $x \leq y$ or $y \leq x$.
@@ -552,23 +740,33 @@ In particular we could take $\delta = \card 2^\kappa$ and get an injection $2^\k
 \section{Universal properties}
 This section has nothing to do with measure theory.
 It solely exists to justify certain algebraic handwaves in the appendices.
-The reader who is interested in category theory should read TODO:Cite Aluffi and Riehl, and most other readers, except those who are completely ignorant of algebra, should ignore this section entirely.
+The reader who is interested in category theory should read Aluffi \cite{aluffi2009algebra} for an introduction, or Riehl \cite{riehl2017category} for more advanced content.
 
+\begin{subsec}
 To avoid technicalities we adjoin a new axiom to the Zermelo-Fraenkel set theory with the axiom of choice to obtain a weak form of \dfn{Tarski-Grothendieck set theory}.
+\end{subsec}
 
 \begin{definition}
 A transitive set $U$ is a \dfn{universe} if $\NN \in U$, $U$ is closed under pairing and power set, and for every subset $V \subset U$ of strictly less cardinality than $U$, $\bigcup_{x \in V} x \in U$.
 \end{definition}
+
 \begin{axiom}[universe]
 There exists a universe.
 \end{axiom}
+
+\begin{subsec}
 Henceforth we fix a universe $U$.
 One can show that universes are closed under every relevant operation that mathematicians might care about, so any object that will ever appear in this book is contained in $U$.
 For example $\RR \in U$, any measurable subset of $\RR$ is in $U$, and any Banach space we ever consider is in $U$.
+\end{subsec}
+
 \begin{definition}
 A \dfn{small set} is an element of $U$.
 \end{definition}
+
+\begin{subsec}
 So anything that we will ever have reason to care about, except in this section, is small.
+\end{subsec}
 
 \begin{definition}
 A \dfn{category} $C$ is a set, whose elements are called \dfn{objects}, along with small sets $\Hom(x, y)$ for all objects $x, y \in C$, whose elements are called \dfn{morphisms} from $x$ to $y$, equipped with \dfn{composition} operations
@@ -583,10 +781,13 @@ such that:
 \end{enumerate}
 \end{definition}
 
+\begin{subsec}
 For example $U$ forms a category, whose objects are small sets, and whose morphisms are defined by letting $\Hom(x, y)$ be the set of all functions $x \to y$.
 We dare not define a category whose objects consist of all sets, due to Russell's paradox; but we will abuse terminology and call $U$ the category of sets all the same. We denote it by $\Set$.
 Similarly we define $\Grp$, the category of (small) groups where the morphisms are group homomorphisms, and $\Vect(K)$, the category of (small) vector spaces over a (small) field $K$ where the morphisms are linear maps.
+\end{subsec}
 
+\begin{subsec}
 It can be convenient to draw diagrams of morphisms, which are graphs where the nodes are objects, an edge from $x$ to $y$ is a morphism in $\Hom(x, y)$, and the diagram \dfn{commutes} if for any two objects $x, y$ in the diagram and any two paths $\varphi_1\cdots\varphi_n$ and $\psi_1\cdots\psi_m$ from $x, y$, $\varphi_1\cdots\varphi_n = \psi_1\cdots\psi_m$.
 For example, the diagram
 $$\begin{tikzcd}
@@ -594,6 +795,7 @@ x_1 \arrow[r,"\varphi_1"] \arrow[d,"\psi_1"] & x_2 \arrow[d,"\psi_2"]\\
 y_1 \arrow[r,"\varphi_2"] & y_2
 \end{tikzcd}$$
 commutes iff $\psi_1\varphi_2 = \psi_1\varphi_2$.
+\end{subsec}
 
 \begin{definition}
 Let $C$ be a category, $x,y \in C$ objects, and $\varphi \in \Hom(x, y)$.
@@ -607,18 +809,23 @@ Similarly we say that $x$ is \dfn{final} if for every $y$ there is a unique morp
 Either way, we say that $x$ is \dfn{terminal}.
 \end{definition}
 
+\begin{subsec}
 If $x$ and $y$ are terminal, then there is a \emph{unique} isomorphism between $x$ and $y$.
 In category theory one cannot distinguish between two objects between which there is a unique isomorphism, so we abuse terminology and say that $x = y$, even if $x,y$ are not equal in the sense of the axiom of extensionality.
 Thus a terminal object, if it exists, is unique.
 For example, the trivial vector space is the unique terminal object in $\Vect$.
+\end{subsec}
 
 \begin{definition}
 Let $P$ be a property held by objects $x$ in a certain category $C$.
 We say that $P$ is a \dfn{universal property} if, for every $x$ that holds property $P$, $x$ is terminal in $C$.
 \end{definition}
 
+\begin{subsec}
 Therefore an object with a universal property is unique.
+\end{subsec}
 
+\begin{subsec}
 We can now make rigorous our handwaving about the universal property of the completion.
 Let $V$ be a normed space. We define a category $C(V)$, whose objects are norm-preserving linear maps $V \to X$ into a Banach space $X$, and whose morphisms $\varphi$ are commutative diagrams of linear maps
 $$\begin{tikzcd}&X \arrow[dd,"\varphi"]\\
@@ -627,13 +834,16 @@ V \arrow[ur] \arrow[dr]\\
 The initial object of $V$ is the inclusion map $V \to W$, where $W$ is the completion of $V$.
 Therefore the completion is well-defined if it exists (which it does, by Theorem \ref{completion exists}).
 Thus we can take the universal property as the definition of the completion, and take Theorem \ref{completion exists} as just an indication that this definition makes sense; we can then forget about such hideous objects as $\Cau(\Cau(V))$.
+\end{subsec}
 
+\begin{subsec}
 We paraphrase the above universal property by saying that the completion of $V$ is the initial Banach space which contains a copy of $V$.
 A similar argument shows that $\RR$ is uniquely defined as the initial complete metric space which contains a copy of $\QQ$.
+\end{subsec}
 
 \section{Point-set topology}
 We briefly sketch ideas from point-set topology that we will need.
-We refer the reader to TODO:Cite Munkres or Bradley for reference.
+We refer the reader to Munkres \cite{munkres2000topology} for reference.
 
 \begin{definition}
 A \dfn{topology} $\mathcal T$ in a set $X$ is a set of subsets of $X$ such that:
@@ -648,16 +858,22 @@ The complement of an open set is called a \dfn{closed set}.
 If $x \in X$, a \dfn{neighborhood} of $x$ is an open set containing $x$.
 \end{definition}
 
+\begin{subsec}
 It follows that the arbitrary union and finite intersection of open sets is open, and the arbitrary intersection and finite union of closed sets.
 The point of a topology is that if $K$ is a closed set, $K$ is closed under taking limits, as we will see.
+\end{subsec}
 
+\begin{subsec}
 The obvious examples of topologies on a set $X$ are the discrete topology (wherein every set is open) and the indiscrete topology (wherein the only open sets are $\emptyset, X$).
+\end{subsec}
 
 \begin{definition}
 A set $\mathcal B$ of subsets of a set $X$ is called a \dfn{basis} if for all $B_1, \dots, B_n \in \mathcal B$, $B_1 \cap \cdots \cap B_n \in \mathcal B$.
 \end{definition}
 
+\begin{subsec}
 Every basis generates a topology whose elements are arbitrary unions of sets in the basis.
+\end{subsec}
 
 \begin{definition}
 A \dfn{semimetric} $d$ on a set $X$ is a function $d: X \times X \to [0, \infty)$ such that:
@@ -670,20 +886,22 @@ If the only pairs $(x, y)$ such that $d(x, y) = 0$ are those with $x=y$, we say 
 We call sets of the form $B(x, \varepsilon) = \{y \in X: d(x, y) < \varepsilon\}$, where $\varepsilon > 0$ and $x \in X$, \dfn{open balls}.
 \end{definition}
 
+\begin{subsec}
 The open balls of a semimetric on $X$ form a basis of subsets of $X$, so every semimetric induces a topology, whose open sets are unions of open balls.
+\end{subsec}
 
 \begin{example}
 Every seminorm induces a semimetric by $d(x, y) = ||x - y||$.
 In particular, $\RR^d$ has a norm (namely its absolute value), so $\RR^d$ is a topological space.
 \end{example}
 
-We now describe two different constructions of spaces: product spaces and subspaces.
-
 \begin{definition}
 Let $\mathcal X$ be a set of topological spaces. The \dfn{product space} $\prod \mathcal X$ is the space $X$ which has $\prod \mathcal X$ as a set, and has the smallest topology $\mathcal T$ such that for every open set $U \subseteq Y$, $Y \in \mathcal X$, $\pi: X \to Y$ the canonical projection, $\pi^{-1}(U) \in \mathcal T$.
 \end{definition}
 
-For example $X \times Y$ is a product space. The open sets are generated by those of the form $U \times V$ where $U \subseteq X$ and $V \subseteq Y$ are open.
+\begin{example}
+$X \times Y$ is a product space. The open sets are generated by those of the form $U \times V$ where $U \subseteq X$ and $V \subseteq Y$ are open.
+\end{example}
 
 \begin{definition}
 Let $X$ be a topological space and $Y \subseteq X$ a subset.
@@ -691,9 +909,9 @@ We say that $U \subseteq Y$ is \dfn{open} in $Y$ (or \dfn{relatively open}) if t
 With respect to that topology, we call $Y$ a \dfn{subspace} of $X$.
 \end{definition}
 
-So a subspace is a topological space in its own right.
-
+\begin{subsec}
 Topological spaces allow us to define continuity in a high level of abstraction. This agrees with the usual definition of a continuous function $[0, 1] \to \RR$.
+\end{subsec}
 
 \begin{definition}
 Let $X,Y$ be topological spaces and $f: X \to Y$. We say that $f$ is \dfn{continuous} if for every $U \subseteq Y$ open, $f^{-1}(Y)$ is open.
@@ -707,13 +925,17 @@ Let $X,Y$ be metric spaces and $f: X \to Y$. Then $f$ is continuous iff for ever
 Let $\mathcal X$ be a set of topological spaces. Then $X = \prod \mathcal X$ satisfies the \dfn{universal property of products} in the category of topological spaces: for every $Y \in \mathcal X$, $\pi_Y: X \to Y$ the canonical projection, $\pi_Y$ is continuous, and for every topological space $Z$, if we are given maps $f_Y: Z \to Y$ for every $Y$, there is a unique map $f: Z \to X$ such that $\pi_Y \circ f = f_Y$.
 \end{lemma}
 
+\begin{subsec}
 We now want to talk about limits. Unfortunately at the level of abstraction we are working at, this proves quite tricky.
+\end{subsec}
 
 \begin{definition}
 A \dfn{directed set} is a partially ordered set $\PP$ such that for all $\alpha_1, \dots, \alpha_k \in \PP$, $\sup(\alpha_1, \dots, \alpha_k)$ exists.
 \end{definition}
 
+\begin{subsec}
 For example $\NN$ is directed, and in fact so is any ordinal. A topology, equipped with the relation $\subseteq$, is also directed.
+\end{subsec}
 
 \begin{definition}
 Let $\PP$ be a directed set and $X$ a topological space.
@@ -728,7 +950,9 @@ In this case we write $\lim_\gamma x_\gamma = x^*$ or $x_\gamma \to x^*$ if it i
 If $x$ has a limit we say that $X$ \dfn{converges}.
 \end{definition}
 
-For example, in a metric space, $x_n \to x$ iff for every $\varepsilon > 0$ there is a $N \in \NN$ such that for all $n > N$, $d(x_n, x) < \varepsilon$.
+\begin{lemma}
+In a metric space, $x_n \to x$ iff for every $\varepsilon > 0$ there is a $N \in \NN$ such that for all $n > N$, $d(x_n, x) < \varepsilon$.
+\end{lemma}
 
 \begin{lemma}
 Let $f: X \to Y$. Then $f$ is continuous iff for every net $x_\gamma \to x^*$ in $X$, $f(x_\gamma) \to f(x^*)$ in $Y$.
@@ -752,16 +976,19 @@ A set $K \subseteq X$ is closed iff for every net $x$ in $K$ which converges in 
 Moreover, given a set $A \subseteq X$, the smallest closed set $K$ containing $A$ is the set of all limits of nets in $A$.
 \end{lemma}
 
+\begin{subsec}
 Subsequences are significantly easier to work with than subnets, as one can eliminate the need to worry about cofinality; $y$ is a subsequence of $x$ iff there is an increasing sequence $n$ of natural numbers such that $x_{n_k} = y_k$ for all $k \in \NN$.
+\end{subsec}
 
+\begin{subsec}
 At this point our definition of limit has three problems:
 \begin{enumerate}
 \item We want to eliminate the need to choose $\PP$ whenever possible, and just work with $\PP = \NN$.
 \item We want to be able to guarantee that if a net has a limit $x^*$, then $x^*$ is unique.
 \item We want to be able to guarantee that every net has a subnet which converges.
 \end{enumerate}
-
 These are the essences of the definitions of a first-countable, Hausdorff, and compact space respectively.
+\end{subsec}
 
 \begin{definition}
 Let $X$ be a topological space and $x \in X$.
@@ -779,8 +1006,6 @@ Moreover, given a set $A \subseteq X$, the smallest closed set $K$ containing $A
 Every metric space is first-countable, and a product of countably many first-countable spaces is first-countable.
 \end{lemma}
 
-Now we discuss Hausdorffness.
-
 \begin{lemma}
 Let $X$ be a topological space. The following are equivalent:
 \begin{enumerate}
@@ -791,14 +1016,14 @@ Let $X$ be a topological space. The following are equivalent:
 Here $X \times X$ is viewed as a product space.
 \end{lemma}
 
-This lemma motivates a definition.
-
 \begin{definition}
 A \dfn{Hausdorff space} is a topological space such that for every two points $x_1, x_2 \in X$, either $x_1 = x_2$ or there are open sets $U_1 \ni x_1$, $U_2 \ni x_2$ such that $U_1 \cap U_2$ is empty.
 If $X$ is a Hausdorff space, we also say that $X$ satisfies \dfn{Axiom $T^2$}.
 \end{definition}
 
+\begin{subsec}
 There are other properties called Axiom $T^s$, where if $s' \leq s$ then $T^s$ implies $T^{s'}$. For example:
+\end{subsec}
 
 \begin{definition}
 Let $X$ be a topological space. We say that $X$ satisfies:
@@ -824,9 +1049,9 @@ Let $X$ be a semimetric space. The following are equivalent:
 Moreover, if $R$ is the equivalence relation defined by $x_1 R x_2$ iff $d(x_1, x_2) = 0$, then $X/R$ can be given the structure of a metric space.
 \end{lemma}
 
+\begin{subsec}
 In particular, every metric space is Hausdorff and every semimetric space can be turned into a metric space by identifying points that are indistinguishable by its topology.
-
-Finally let us discuss compactness.
+\end{subsec}
 
 \begin{definition}
 An \dfn{open cover} $\mathcal U$ of a topological space $X$ is a set of open sets such that $\bigcup \mathcal U = X$.
@@ -860,8 +1085,10 @@ $\RR^d$ is locally compact, and $K \subseteq \RR^d$ is compact iff $K$ is closed
 If $K$ is a compact space, then $K$ is Hausdorff iff $K$ satisfies Axiom $T^4$.
 \end{lemma}
 
+\begin{subsec}
 We now arrive at the two nontrivial theorems of point-set topology which will be used in the main text as black boxes.
-Since they are so important we sketch their proofs, but since these results rely on the above lemmata which we have not proved, these arguments are incomplete; see TODO:Cite for a complete exposition.
+Since they are so important we sketch their proofs, but since these results rely on the above lemmata which we have not proved, these arguments are incomplete; see Munkres \cite{munkres2000topology} for a complete exposition.
+\end{subsec}
 
 \begin{theorem}[Urysohn lemma and Tietze extension]
 \label{Urysohn and Tietze}
@@ -894,7 +1121,9 @@ We may assume that $L = [0, 1]$; we omit the details.
 We may then set $G|A = 0$, and use the function $f$ to interpolate between $A,K$. We omit the details.
 \end{proof}
 
+\begin{subsec}
 Note carefully that the above result does not imply that every locally compact Hausdorff space satisfies Axiom $T^4$ -- in fact this is false.
+\end{subsec}
 
 \begin{theorem}[Tychonoff]
 Let $\mathcal X$ be a nonempty set of nonempty compact spaces. Let $X = \prod \mathcal X$. Then $X$ is compact and nonempty.
@@ -929,4 +1158,6 @@ Then $x'$ converges since $z^\alpha$ does for every $\alpha$.
 So $x'$ has a limit. Therefore $X$ is compact.
 \end{proof}
 
-Note that the above use of the axiom of choice (as Zermelo's well-ordering theorem and Zorn's lemma) cannot be avoided. There is a theorem of Kelley which says that if we are in Zermelo-Fraenkel set theory possibly without the axiom of choice, but Tychonoff's theorem holds, then so does the axiom of choice.
+\begin{subsec}
+Note that the above use of the axiom of choice (as Zermelo's well-ordering theorem and Zorn's lemma) cannot be avoided. There is a theorem of Kelley \cite{Kelley1950} which says that if we are in Zermelo-Fraenkel set theory possibly without the axiom of choice, but Tychonoff's theorem holds, then so does the axiom of choice.
+\end{subsec}
