@@ -20,6 +20,8 @@ If you want to contribute TeX code for theorems, definitions, problems etc. plea
 
 If you want to contribute to any of the build system, automation, or other pieces (or if you just aren't sure if you should submit a PR) you can [start a discussion](https://github.com/Clopen-Analysis/latex/discussions/new) to figure out whats best. 
 
+There is a Gitter for organization members, but we also have [a public-facing Discord server](https://discord.gg/fUmVUhaPVy) for discussion.
+
 Lastly if you find an immediate issue, e.g. an error in any of the math, please [file an issue](https://github.com/Clopen-Analysis/latex/issues/new/choose)! 
 
 
