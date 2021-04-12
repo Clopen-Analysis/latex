@@ -16,7 +16,7 @@ In spite of the level of abstraction, we have strived to include many examples, 
 
 ### Contributing
 
-If you want to contribute TeX code for theorems, definitions, problems etc. please feel free to send over a PR!
+If you want to contribute TeX code for theorems, definitions, problems etc. please feel free to send over a PR! Please note that we do have a [style guide](./docs/style.md).
 
 If you want to contribute to any of the build system, automation, or other pieces (or if you just aren't sure if you should submit a PR) you can [start a discussion](https://github.com/Clopen-Analysis/latex/discussions/new) to figure out whats best. 
 
