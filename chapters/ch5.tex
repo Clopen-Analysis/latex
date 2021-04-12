@@ -1,0 +1,118 @@
+\chapter{Differentiation and regularity}
+
+\section{Decomposition of signed measures}
+
+\section{Differentiation of measures}
+
+As an application, we define the conditional expectation of a random variable.
+Recall from elementary probability theory that if $A$ is an event (which is not almost surely false) and $X$ is a random variable, then the conditional expectation of $X$ given $A$ is
+\begin{equation}
+\label{conditional expectation event}
+E(X|A) = \frac{E(1_AX)}{P(A)},
+\end{equation}
+the expected value of $X$ if we rescale $A$ to be the entire probability space.
+However, in probability theory, one often needs to discuss the conditional expectation of $X$ with respect to not just an event, but an entire $\sigma$-algebra of events.
+More precisely, let $\mathcal F$ be a $\sigma$-algebra.
+If $A \in \mathcal F$ and we define $E(X|A)$ by (\ref{conditional expectation event}), then we forget everything $X$ except its mean on $A$.
+The conditional expectation of $X$ on $\mathcal F$, by definition, will be a random variable that only remembers the conditional expectations of $X$ with respect to every event in $\mathcal F$.
+
+\begin{definition}
+Let $(\Omega, \Sigma, P)$ be a probability space, $\mathcal F \subseteq \Sigma$ a $\sigma$-algebra, and $X \in L^1(\Omega \to \RR)$ a random variable.
+The \dfn{conditional expectation} of $X$ given $\mathcal F$ is a measurable function
+$$E(X|\mathcal F): (\Omega, \mathcal F) \to \RR$$
+such that
+$$E(1_A E(X|\mathcal F)) = E(1_A X)$$
+whenever $A \in \mathcal F$.
+\end{definition}
+
+\begin{example}
+A \dfn{measurable partition} of $\Omega$ is a set of mutually exclusive events $A_i$ such that $\bigcup_i A_i = \Omega$.
+If $(A_i)$ is a measurable partition and $\mathcal F$ is the smallest $\sigma$-algebra containing every $A_i$, then $E(X|\mathcal F)$ is constant on each $A_i$, namely
+$$E(X|\mathcal F)|A_i = E(1_{A_i} X)$$
+is the mean of $X$ on $A_i$.
+\end{example}
+
+\begin{corollary}
+Let $(\Omega, \Sigma, P)$ be a probability space, $\mathcal F \subseteq \Sigma$ a $\sigma$-algebra, and $X \in L^1(\Omega \to \RR)$ a random variable.
+The conditional expectation $E(X|\mathcal F)$ is well-defined in the sense that it exists, and if $Y$ is also a conditional expectation, then $E(X|\mathcal F) = Y$ almost surely.
+\end{corollary}
+\begin{proof}
+Let $\mu$ be the measure
+$$\mu(A) = E(1_A X)$$
+defined for $A \in \mathcal F$.
+Then $\mu$ is absolutely continuous with respect to $P$, so it has a Radon-Nikodym derivative; we set
+$$E(X|\mathcal F) = \frac{d\mu}{dP}.$$
+Then
+$$E(1_A E(X|\mathcal F)) = \int_A \frac{d\mu}{dP} ~dP = \int_A ~d\mu = \mu(A) = E(1_A X)$$
+as desired.
+
+For the uniqueness, assume $Y$ is also a conditional expectation and let $A$ be the event that $Y \neq E(X|\mathcal F)$.
+Then $A \in \mathcal F$ so
+$$E(1_A|Y - E(X|\mathcal F)|) = E(1_A|X - X|) = 0.$$
+But $|Y - E(X|\mathcal F)| > 0$ on $A$ so this implies $E(1_A) = 0$, thus $A$ is almost surely false.
+\end{proof}
+
+\begin{exercise}
+Let $X \in L^1$ be a random variable and $\mathcal F$ a $\sigma$-algebra. Show that if the pullback $\sigma$-algebra induced by $X$ is independent of $\mathcal F$ then
+$$E(X|\mathcal F) = E(X).$$
+Show that
+$$E(E(X|\mathcal F)) = E(X).$$
+Show that if $X$ is $\mathcal F$-measurable then $E(X|\mathcal F) = X$.
+\end{exercise}
+
+\begin{exercise}
+Verify that the monotone and dominated convergence theorems, and Fatou lemma, are valid when $EX_n$ is replaced with $E(X_n|\mathcal F)$, $\mathcal F$ a $\sigma$-algebra.
+\end{exercise}
+
+\section{Existence of Radon measures}
+
+\section{Differentation of vector-valued functions}
+
+\section{Vitali's covering lemma}
+
+\begin{definition}
+If $B$ is a ball, say $B = B(x, r)$, we let $kB$ denote the \dfn{dilated ball} $kB = B(x, kr)$.
+\end{definition}
+\begin{lemma}
+Let $X$ be a metric space and let $\mathcal B$ be a finite set of balls in $X$. Then there is a subset $\mathcal B_0$ of $\mathcal B$ consisting of disjoint balls such that
+$$\bigcup_{B \in \mathcal B} B \subseteq \bigcup_{B_0 \in \mathcal B_0} 3B_0.$$
+\end{lemma}
+TODO prove me
+\begin{theorem}[Vitali's covering lemma]
+Let $X$ be a separable metric space and let $\mathcal B$ be a set of balls in $X$. Let
+$$R(\mathcal B) = \sup_{B(x, r) \in \mathcal B} r$$
+be the supremum of radii of the balls in $\mathcal B$. If $R(\mathcal B) < \infty$ then for every $\varepsilon > 0$ there is a countable subset $\mathcal B_0(\varepsilon)$ of $\mathcal B$ consisting of disjoint balls such that
+\begin{equation}
+\label{Vitali formula}
+\bigcup_{B \in \mathcal B} B \subseteq \bigcup_{B_0 \in \mathcal B_0(\varepsilon)} (3 + \varepsilon)B_0.
+\end{equation}
+\end{theorem}
+TODO Prove me
+
+\begin{exercise}
+Show that there is a counterexample to Vitali's covering lemma when $R(\mathcal B)$ is infinite.
+\end{exercise}
+
+\begin{exercise}
+Show that a version of Vitali's covering lemma holds for any metric space.
+That is, show that if $X$ is a metric space and $\mathcal B$ is a set of balls in $X$ such that $R(\mathcal B) < \infty$, then for every $\varepsilon > 0$ there is a subset (not necessarily countable) $\mathcal B_0(\varepsilon)$ of $\mathcal B$ consisting of disjoint balls such that (\ref{Vitali formula}) holds.
+You will need to use some kind of set-theoretic machinery to pull this off.
+\end{exercise}
+
+\section{The maximal inequality}
+
+\begin{theorem}[weaktype Hardy-Littlewood maximal inequality]
+Let $d \geq 1$ and $f \in L^1(\RR^d)$. Let $\mu$ denote Lebesgue measure. Then for every $\lambda > 0$,
+$$\mu(\{Mf > \lambda\}) \leq 3^d \frac{||f||_{L^1(\RR^d)}}{\lambda}.$$
+\end{theorem}
+TODO prove me
+
+\begin{exercise}
+Let $f \in L^1(\RR^d)$.
+Show that if $Mf \in L^1(\RR^d)$ then $f = 0$.
+It may help to first try this when $f$ has compact support.
+\end{exercise}
+
+\section{The Lebesgue differentation theorem}
+
+\section{The fundamental theorem of calculus}
