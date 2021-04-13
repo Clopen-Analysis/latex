@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on:  ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+
+    - uses: xu-cheng/texlive-action/full@v1
+      with:
+        run: |
+          apk add make git
+          make output-revision
+          make clopen_analysis.pdf
+          mv clopen_analysis.pdf website
+
+    - name: Deploy 🚀
+      if: success()
+      uses: JamesIves/github-pages-deploy-action@4.1.1
+      with:
+        branch: automated_website_build
+        folder: website

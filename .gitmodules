@@ -1,0 +1,3 @@
+[submodule "website/LatexJekyll"]
+	path = website/LatexJekyll
+	url = https://github.com/Hammie217/LatexJekyll
