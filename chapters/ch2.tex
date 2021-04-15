@@ -278,11 +278,11 @@ We think of two identically distributed random variables as being isomorphic, bu
 
 \begin{example}
 An especially important and familiar distribution is the \dfn{Gaussian measure} $N(0, 1)$ on $\RR$, which is the Stieltjes measure defined by the \dfn{Gaussian cumulative distribution function}
-$$f(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x \exp\left(-\frac{x^2}{2}\right).$$
+$$f(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x \exp\left(-\frac{y^2}{2}\right) ~dy.$$
 In other words, the measure of $[\alpha, \beta)$ is by definition $f(\beta) - f(\alpha)$.
 Here the factor of $1/\sqrt{2\pi}$ is to ensure that $N(0, 1)$ is actually a probability measure, c.f. Example \ref{Gaussian integral formula}.
 A random variable with distribution $N(0, 1)$ is said to be a \dfn{standard-normally distributed} random variable. More generally, one defines $N(\mu, \sigma^2)$ to be the Stieltjes measure defined by the cumulative distribution function
-$$x \mapsto \frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^x \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2\right),$$
+$$x \mapsto \frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^x \exp\left(-\frac{1}{2}\left(\frac{y - \mu}{\sigma}\right)^2\right) ~dy,$$
 and a random variable with distribution $N(\mu, \sigma^2)$ is said to be \dfn{normally distributed} with mean $\mu$ and standard deviation $\sigma$.
 \end{example}
 
