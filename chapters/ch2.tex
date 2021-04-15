@@ -71,21 +71,37 @@ Show that the length of an arc equals its Lebesgue measure.
 \end{exercise}
 
 \begin{exercise}
-\label{Lebesgue measure on sphere}
-Let $S^d$ denote the unit sphere in $\RR^{d+1}$, and let $N$ be its open northern hemisphere.
-Let $U$ be the open unit ball in $\RR^d$, so $U \times \{0\}$ is a subset of the unit ball of $\RR^{d+1}$.
-Show that the map $p: N \to \RR^{d+1}$, $p(x_1, \dots, x_{d+1}) = (x_1, \dots, x_d, 0)$, is a homeomorphism between $N$ and $U \times \{0\}$.
-So the pushforward of Lebesgue measure on $\RR^d$ by $p^{-1}$ gives a Borel measure on $N$, which we call \dfn{Lebesgue measure} on $N$.
-Use this fact to define Lebesgue measure of any Borel subset of $S^d$.
-Show that when $d = 2$, Lebesgue measure on $S^d$ agrees with the usual notion of surface area, up to a constant factor.
-\end{exercise}
-
-\begin{exercise}
 \label{pullback makes sense}
 Let $F: X \to Y$ be a map, $\Gamma$ a $\sigma$-algebra on $Y$.
 Show that $F^*\Gamma$ is a $\sigma$-algebra on $X$ and $F: (X, F^*\Gamma) \to (Y, \Gamma)$ is measurable.
 Conversely, show that $F^*\Gamma$ is the intersection of all $\sigma$-algebras $\Sigma$ on $X$ such that $F: (X, \Sigma) \to (Y, \Gamma)$ is measurable.
 \end{exercise}
+
+\section{Hausdorff measures}
+At this point we have defined Stieltjes measures.
+In particular, we defined the Lebesgue measure and the Dirac measure.
+Let us treat some more measures.
+
+TODO: Hausdorff measures
+
+
+\begin{example}
+\label{Lebesgue measure on sphere}
+An important example of Hausdorff measure is the $d-1$-dimensional Hausdorff measure in $\RR^d$.
+When restricted to the unit sphere
+$$S^{d - 1} = \{x \in \RR^d: |x| = 1\},$$
+and normalized so that the total measure of the sphere is $1$, the Hausdorff measure is called the \dfn{spherical Lebesgue measure}, denote $\sigma_{d - 1}$.
+The spherical Lebesgue measure is especially important because, once integration has been defined, we will have
+$$\int_{\RR^d} f(x) ~dx = \int_0^\infty \int_{S^{d - 1}} f(r\omega) r^{d - 1}~d\sigma_{d - 1}(\omega) ~dr,$$
+which is a generalization of the classical formula
+$$\int_{-\infty}^\infty \int_{-\infty}^\infty f(x, y) ~dx ~dy = \int_0^\infty \int_0^{2\pi} f(r \cos \theta, r \sin \theta) r~d\theta ~dr$$
+for integration in polar coordinates. Here $r^{d - 1} d\sigma_{d - 1}(\omega)$ plays the role of $r~d\theta$.
+\end{example}
+
+
+
+\section{Measures on compact matrix groups}
+
 
 \section{Vector-valued measures}
 Recall that by definition, a measure $\mu$ is a $\sigma$-additive function $\mu: \Sigma \to (-\infty, \infty]$, where $\Sigma$ is a $\sigma$-algebra.
@@ -259,6 +275,16 @@ $$\mu_X(A) = P(X \in A) = P(\{\omega \in \Omega: X(\omega) \in A\}).$$
 For example, if $E = \RR$ then $\mu_X([x, \infty))$ is the probability that $X \geq x$.
 We think of two identically distributed random variables as being isomorphic, but not the same.
 \end{subsec}
+
+\begin{example}
+An especially important and familiar distribution is the \dfn{Gaussian measure} $N(0, 1)$ on $\RR$, which is the Stieltjes measure defined by the \dfn{Gaussian cumulative distribution function}
+$$f(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x \exp\left(-\frac{x^2}{2}\right).$$
+In other words, the measure of $[\alpha, \beta)$ is by definition $f(\beta) - f(\alpha)$.
+Here the factor of $1/\sqrt{2\pi}$ is to ensure that $N(0, 1)$ is actually a probability measure, c.f. Example \ref{Gaussian integral formula}.
+A random variable with distribution $N(0, 1)$ is said to be a \dfn{standard-normally distributed}. More generally, one defines $N(\mu, \sigma^2)$ to be the Stieltjes measure defined by the cumulative distribution function
+$$x \mapsto \frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^x \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2\right),$$
+and a random variable with distribution is said to be \dfn{normally distributed} with mean $\mu$ and standard deviation $\sigma$.
+\end{example}
 
 \begin{subsec}
 Recall that in elementary probability theory two events $A,B$ are said to be independent if $P(A) = P(A|B)$, where $P(A|B)$ (``the probability of $A$ given $B$") is by definition $P(A \cap B)/P(B)$.
