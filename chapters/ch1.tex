@@ -270,9 +270,45 @@ In fact, it is not yet clear that there are any interesting measures other than 
 We'll have to do a lot of work before we'll be ready to introduce other examples of measures.
 \end{example}
 
-\begin{theorem}
-TODO: Continuity of measure
+\begin{subsec}
+Recall that if $f$ is a function (say, on a metric space), then $f$ is continuous iff for every sequence of points $(x_n)$,
+$$\lim_{n \to \infty} f(x_n) = f\left(\lim_{n \to \infty} x_n\right).$$
+We want to define something analogous for measures, so we need to define the ``limit" of a sequence of measurable sets.
+More precisely, if $E_1 \subseteq E_2 \subseteq E_3 \subseteq \cdots$, we can view $\bigcup_n E_n$ as the limit of the sequence $(E_n)$.
+Similarly we can define $\bigcap_n E_n$ to be the limit of the $(E_n)$ if $E_1 \supseteq E_2 \supseteq \cdots$.
+This allows us to show that measures are ``continuous".
+\end{subsec}
+
+\begin{theorem}[continuity of measure]
+Let $\mu$ be a measure, $(E_n)$ a sequence of measurable sets, and $E$ a measurable set.
+If one of the following is true:
+\begin{enumerate}
+\item Either $E_1 \subseteq E_2 \subseteq E_3 \subseteq \cdots$ and $E = \bigcup_n E_n$,
+\item or $E_1 \supseteq E_2 \supseteq E_3 \supseteq \cdots$, $E = \bigcap_n E_n$, and there is $n$ such that $\mu(E_n) < \infty$,
+\end{enumerate}
+then
+\begin{equation}
+\label{continuity of measure equation}
+\lim_{n \to \infty} \mu(E_n) = \mu(E).
+\end{equation}
 \end{theorem}
+\begin{proof}
+We first handle the increasing case.
+Set $F_1 = E_1$ and $F_n = E_n \setminus E_{n - 1}$. Then $E = \bigcup_n F_n$ and $E_n = \bigcup_{m \leq n} F_m$, and the $F_n$ are disjoint.
+So
+$$\mu(E) = \sum_{n=1}^\infty \mu(F_n) = \lim_{n \to \infty} \sum_{m=1}^n \mu(F_m) = \lim_{n \to \infty} \mu(E_n)$$
+which is (\ref{continuity of measure equation}).
+As for the decreasing case, set $F_n = E_1 \setminus E_n$; then the $F_n$ increase to $F = E_1 \setminus E$. So
+$$\lim_{n \to \infty} \mu(E_1) - \mu(E_n) = \lim_{n \to \infty} \mu(F_n) = \mu(F) = \mu(E_1) - \mu(E)$$
+which can be rearranged to give (\ref{continuity of measure equation}).
+\end{proof}
+
+\begin{example}
+The continuity of measure theorem is sharp in the sense that the hypothesis in the decreasing case that $\mu(E_n) < \infty$ cannot be omitted.
+Consider counting measure $\mu$, defined on all subsets of $\NN$.
+Let $E = \emptyset$, $E_1 = \NN$, and given the infinite set $E_n$, choose the least element of $E_n$ and discard it to get an infinite set $E_{n + 1}$.
+Thus $\mu(E_n) = \infty$, but $E_n$ does not contain any of $1, \dots, n - 1$, so $\bigcap_n E_n = E$ and $\mu(E) = 0$.
+\end{example}
 
 \begin{subsec}
 We now introduce an important class of $\sigma$-additive functions defined for certain subsets of $\RR$, known as Stieltjes premeasures\footnote{Named after Thomas Stieltjes (1856-1894), who introduced the Riemann-Stieltjes integral, a weighted version of the Riemann integral that inspired the notion of a Stieltjes premeasure.}.
