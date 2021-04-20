@@ -15,6 +15,12 @@ Here are some guides on code an TeX style:
 * Separate major topics into chapter, topics into sections. 
 * Follow the major notations. 
 
+The chktex github action has been integrated into the repository as well. If your
+TeX has stylistic issues (e.g. with spacing, exponents, improper use of ellipses
+etc.) your PR will not be able to be merged until you fix them. 
+
+If you would like to request a configuration change for chktex, please contact
+a moderator.
 
 #### Prose style
 
