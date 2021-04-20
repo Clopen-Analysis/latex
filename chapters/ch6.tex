@@ -37,7 +37,7 @@ This identification will be critical for our Banach spaces to be well-defined!
 
 \section{$L^p$-norms}
 Recall that we defined the $L^1$-norm
-\[||f||_1 = \int_X ||f||~d\mu.\]
+\[||f||_1 = \int_{X} ||f||~d\mu.\]
 Thus $||f||_1$ could be small even if $||f||$ was quite large or even infinite, as long as the set where $||f||$ was large had a small measure.
 We defined the $L^\infty$-norm $||f||_\infty$ to be the infimum of all $M$ such that $||f|| \leq M$ almost everywhere; thus $||f||_\infty$ could be small even if $||f||$ did not tend to $0$ anywhere, as long as $||f||$ did not ever go to infinity.
 TODO: Draw a picture.
@@ -48,9 +48,9 @@ Let $p \in (1, \infty)$.
 The \dfn{$L^p$-norm} of a measurable function $f$ is
 \begin{equation}
 \label{Lp definition}
-||f||_p = \left(\int_X ||f||^p ~d\mu\right)^{1/p}.
+||f||_{p}  = \left(\int_{X} ||f||^{p} ~d\mu\right)^{1/p}.
 \end{equation}
-We let $L^p(X \to B, \mu)$, often abbreviated to $L^p$ or similar, be the vector space of all measurable functions $f$ such that $||f||_p < \infty$.
+We let $L^p(X \to B, \mu)$, often abbreviated to $L^p$ or similar, be the vector space of all measurable functions $f$ such that $||f||_{p}  < \infty$.
 \end{definition}
 
 Here $L$ stands for ``Lebesgue"; thus $L^p$ is sometimes known as a \dfn{Lebesgue space}.
@@ -58,32 +58,32 @@ However, the term ``Lebesgue space" also refers in the literature to the measure
 Worse, while the key fact about $L^p$ spaces is H\"older duality, a ``H\"older space" is a space of continuous functions satisfying a certain inequality.
 So, to avoid confusion, we will simply call the spaces that we defined above \dfn{$L^p$ sspaces}.
 
-We will shortly prove that the above definition makes sense, but, assuming that $||\cdot||_p$ is a norm, what does it measure?
+We will shortly prove that the above definition makes sense, but, assuming that $||\cdot||_{p} $ is a norm, what does it measure?
 If $f$ is a function that we can think of as a ``wave" of amplitude $A$, supported on a set of measure $V$, then one approximately has
 \begin{equation}
 \label{Lp amplitude}
-||f||_p \approx AV^{1/p}.
+||f||_{p}  \approx AV^{1/p}.
 \end{equation}
 Here and throughout we take the very important convention that $1/\infty = 0$.
 (To see a precise version of (\ref{Lp amplitude}), if $f$ is the wave $f(x) = Ae^{ix}1_E$ where $E$ is a set of measure $V$, then, for Lebesgue measure,
-\[||f||_p = ||Ae^{ix}1_E||_p = A ||1_E||_p = A\mu(E)^{1/p} = AV^{1/p},\]
+\[||f||_{p}  = ||Ae^{ix}1_E||_{p}  = A ||1_E||_{p}  = A\mu(E)^{1/p} = AV^{1/p},\]
 which partially justifies the intuition (\ref{Lp amplitude}).)
 In more advanced courses one introduces the \dfn{Sobolev norms} $W^{s,p}$ which not only takes into account amplitude and support but also frequency; if $f$ has frequency $N$ then $||f||_{s,p} \approx AN^sV^{1/p}$.
 In fact, $W^{0,p} = L^p$.
 We will discuss the case $p = 2$ in the exercises.
 
-Since $f$ is measurable and $||f||$ is nonnegative, $||f||_p$ is well-defined; either $||f||^p \in L^1(X \to \CC)$, in which case $f \in L^p(X \to B)$, or $||f||_p = \infty$.
-We need to check that $||\cdot||_p$ satisfies the definition of a norm, and that $L^p$ is a vector space, in order for the above definition to make sense.
+Since $f$ is measurable and $||f||$ is nonnegative, $||f||_{p} $ is well-defined; either $||f||^{p} \in L^1(X \to \CC)$, in which case $f \in L^p(X \to B)$, or $||f||_{p}  = \infty$.
+We need to check that $||\cdot||_{p} $ satisfies the definition of a norm, and that $L^p$ is a vector space, in order for the above definition to make sense.
 
 We first check the first two properties of a norm.
 \begin{lemma}
-One has $||f||_p = 0$ iff $f = 0$, and $||cf||_p = |c|\cdot||f||_p$.
+One has $||f||_{p}  = 0$ iff $f = 0$, and $||cf||_{p}  = |c|\cdot||f||_{p} $.
 \end{lemma}
 \begin{proof}
-It is clear that $|c|\cdot||f||_p = ||cf||_p$.
-If $f = 0$, then $||f||_p = 0$.
+It is clear that $|c|\cdot||f||_{p}  = ||cf||_{p} $.
+If $f = 0$, then $||f||_{p}  = 0$.
 Conversely, if $f \neq 0$ on a positive measure set, say $E$, then
-\[||f||_p^p \geq \int_E ||f||^p ~d\mu > 0.\]
+\[||f||_{p} ^{p} \geq \int_{E} ||f||^{p} ~d\mu > 0.\]
 (Here we are using the fact that we identify functions which are equal almost everywhere!)
 \end{proof}
 
@@ -91,15 +91,15 @@ Thus we just need to check the triangle inequality. Before we do that, however, 
 We first assert that
 \begin{equation}
 \label{pull exponent of Lp}
-\left|\left|||f||^q\right|\right|_p = ||f||_{pq}^q
+\left|\left|||f||^q\right|\right|_{p}  = ||f||_{pq}^q
 \end{equation}
-whenever $p, q \in [1, \infty]$ and $f \in L^{pq}$ or $||f||^q \in L^p$; this follows straight from the definitions.
+whenever $p, q \in [1, \infty]$ and $f \in L^{pq}$ or $||f||^{q} \in L^p$; this follows straight from the definitions.
 
 \begin{lemma}
 One has
 \begin{equation}
 \label{exp is convex}
-\exp(\theta x + (1 - \theta)y) \leq \theta e^x + (1 - \theta)e^y
+\exp(\theta x + (1 - \theta)y) \leq \theta e^{x} + (1 - \theta)e^y
 \end{equation}
 whenever $\theta \in [0, 1]$ and $x, y \in \RR$.
 \end{lemma}
@@ -134,7 +134,7 @@ Let $f \in L^p(X \to \CC)$, $g \in L^q(X \to \CC)$, and $q = p^*$.
 Then $fg \in L^1(X \to \CC)$ and
 \begin{equation}
 \label{Holder inequality}
-||fg||_1 \leq ||f||_p \cdot ||g||_q.
+||fg||_1 \leq ||f||_{p}  \cdot ||g||_q.
 \end{equation}
 \end{theorem}
 \begin{proof}
@@ -142,13 +142,13 @@ Without loss of generality, we can assume that $p \leq q$.
 If $p = 1$ then $q = \infty$, and this is just the triangle inequality for $L^1$ and $L^\infty$.
 Otherwise, $1 < p < q < \infty$, so Young's inequality for products applies.
 
-Let $F = f/||f||_p$ and $G = g/||g||_q$. Then $||F||_p = ||G||_q = 1$.
+Let $F = f/||f||_{p} $ and $G = g/||g||_q$. Then $||F||_{p}  = ||G||_{q} = 1$.
 By Young's inequality for products,
-\begin{align*}||FG||_1 &= \int_X ||FG|| \leq \int_X \frac{||F||^p}{p} + \frac{||G||^q}{q}\\
-&= \frac{||F||_p^p}{p} + \frac{||G||_q^q}{q} = \frac{1}{p} + \frac{1}{q}  = 1.
+\begin{align*}||FG||_1 &= \int_{X} ||FG|| \leq \int_{X} \frac{||F||^p}{p} + \frac{||G||^q}{q}\\
+&= \frac{||F||_{p} ^p}{p} + \frac{||G||_q^q}{q} = \frac{1}{p} + \frac{1}{q}  = 1.
 \end{align*}
-Multiplying both sides by $||f||_p \cdot ||g||_q$ we see that
-\[||fg||_1 = ||F||f||_p \cdot G||g||_q||_1 \leq ||f||_p ||g||_q.\]
+Multiplying both sides by $||f||_{p}  \cdot ||g||_q$ we see that
+\[||fg||_1 = ||F||f||_{p}  \cdot G||g||_q||_1 \leq ||f||_{p}  ||g||_q.\]
 This is what we wanted to prove.
 \end{proof}
 
@@ -162,27 +162,27 @@ This is exactly what H\"older's inequality would predict.
 Let $p \in [1, \infty]$ and $f, g \in L^p$. Then $f + g \in L^p$ and
 \begin{equation}
 \label{Mink triangle inequality}
-||f + g||_p \leq ||f||_p + ||g||_p.
+||f + g||_{p}  \leq ||f||_{p}  + ||g||_{p} .
 \end{equation}
-Thus $L^p$ is a normed space with norm $||\cdot||_p$.
+Thus $L^p$ is a normed space with norm $||\cdot||_{p} $.
 \end{theorem}
 \begin{proof}
 If $f + g = 0$ then there is nothing to prove.
-Otherwise, $||f + g||_p > 0$ and
+Otherwise, $||f + g||_{p}  > 0$ and
 \begin{align*}
-||f + g||_p^p &= \int_X ||f + g||^p = \int_X ||f + g||\cdot ||f + g||^{p-1} \\
-&= \int_X ||f||\cdot ||f + g||^{p-1} + \int_X ||g||\cdot ||f + g||^{p-1}\\
+||f + g||_{p} ^{p} &= \int_{X} ||f + g||^{p} = \int_{X} ||f + g||\cdot ||f + g||^{p-1} \\
+&= \int_{X} ||f||\cdot ||f + g||^{p-1} + \int_{X} ||g||\cdot ||f + g||^{p-1}\\
 &\left|\left|||f||\cdot ||f + g||^{p-1}\right|\right|_1 + \left|\left|||g||\cdot ||f + g||^{p-1}\right|\right|_1.
 \end{align*}
 Now we apply H\"older's inequality. In fact,
-\[\left|\left|||f||\cdot ||f + g||^{p-1}\right|\right|_1 \leq ||f||_p \cdot \left|\left|||f + g||^{p-1}\right|\right|_{p^*}.\]
+\[\left|\left|||f||\cdot ||f + g||^{p-1}\right|\right|_1 \leq ||f||_{p}  \cdot \left|\left|||f + g||^{p-1}\right|\right|_{p^*}.\]
 But (\ref{pull exponent of Lp}) says that
 \[\left|\left|||f + g||^{p-1}\right|\right|_{p^*} = ||f + g||_q^{p - 1}\]
 where $q = p^*(p-1)$. Thus
-\[||f + g||_p^p \leq (||f||_p + ||g||_p) ||f + g||_q^{p - 1}.\]
-But $1/p^* = 1 - 1/p$, so $p = q$. Therefore, dividing both sides by $||f + g||_p^{p - 1}$, one concludes (\ref{Mink triangle inequality}).
+\[||f + g||_{p} ^{p} \leq (||f||_{p}  + ||g||_{p} ) ||f + g||_q^{p - 1}.\]
+But $1/p^* = 1 - 1/p$, so $p = q$. Therefore, dividing both sides by $||f + g||_{p} ^{p - 1}$, one concludes (\ref{Mink triangle inequality}).
 
-We have verified the triangle inequality, so $||\cdot||_p$ is a norm. If $f, g \in L^p$ and $c \in \CC$ then $f + g \in L^p$ by the triangle inequality, and $cf \in L^p$ as we have already shown.
+We have verified the triangle inequality, so $||\cdot||_{p} $ is a norm. If $f, g \in L^p$ and $c \in \CC$ then $f + g \in L^p$ by the triangle inequality, and $cf \in L^p$ as we have already shown.
 So $L^p$ is a normed vector space.
 \end{proof}
 Note that the proof of Minkowski's inequality makes sense even for functions which are not valued in $\CC$, since we never actually multiply the functions themselves, only their norms. So $L^p(X \to B)$ is a Banach space even if $B \neq \CC$.
@@ -191,12 +191,12 @@ We stop to consider the case that $\mu$ is counting measure.
 
 \begin{definition}
 Let $A$ be a set. Let $\nu$ be counting measure on $A$. We define $\ell^p(A) = L^p(A \to B, \nu)$.
-If $A = \NN$, we leave $A$ as understood and simply let $\ell^p = L^p(\NN \to B, \nu)$.
+If $A = \NN$, we leave $A$ as understood and simply let $\ell^{p} = L^p(\NN \to B, \nu)$.
 Here $\ell^p$ is pronounced ``little LP.""
 \end{definition}
 
 Thus $\ell^p$ is the space of sequences $x$ in $B$ with
-\[\sum_{n = 1}^\infty |x_n|^p < \infty.\]
+\[\sum_{n = 1}^{\infty} |x_{n}|^{p} < \infty.\]
 This space comes up in many useful examples, and has many nice properties.
 
 Let us state some useful corollaries of H\"older's inequality.
@@ -206,24 +206,24 @@ Let $1 \leq s \leq r \leq t \leq \infty$ and
 where $\theta \in [0, 1]$. Then, for every $f \in L^s(X \to \CC) \cap L^t(X \to \CC)$, $f \in L^r(X \to \CC)$ and
 \begin{equation}
 \label{holder interpolation}
-||f||_r \leq ||f||_s^\theta \cdot ||f||_t^{1-\theta}.
+||f||_{r} \leq ||f||_s^{\theta} \cdot ||f||_t^{1-\theta}.
 \end{equation}
 \end{corollary}
 \begin{proof}
 Since
 \[\frac{\theta r}{s} + \frac{(1 - \theta)r}{t} = 1,\]
 we can use H\"older's inequality to check
-\[||f||_r^r = \int_X ||f||^{\theta r} \cdot ||f||^{(1 - \theta)r} \leq \left|\left|||f||^{\theta r}\right|\right|_{\frac{s}{\theta r}} \cdot \left|\left|||f||^{(1 - \theta) r}\right|\right|_{\frac{t}{(1 - \theta)r}};\]
+\[||f||_r^{r} = \int_{X} ||f||^{\theta r} \cdot ||f||^{(1 - \theta)r} \leq \left|\left|||f||^{\theta r}\right|\right|_{\frac{s}{\theta r}} \cdot \left|\left|||f||^{(1 - \theta) r}\right|\right|_{\frac{t}{(1 - \theta)r}};\]
 taking $r$th roots of both sides and using (\ref{pull exponent of Lp}), we prove (\ref{holder interpolation}).
 \end{proof}
 
 \begin{corollary}[H\"older's inequality with induction]
 \label{Holder induction}
-Let $p_1, \dots, p_m, r \in [1, \infty]$ with
-\[\frac{1}{r} = \sum_{j=1}^m \frac{1}{p_j}.\]
+Let $p_1, \dots, p_{m}, r \in [1, \infty]$ with
+\[\frac{1}{r} = \sum_{j=1}^{m} \frac{1}{p_{j}}.\]
 Then
-\[\left|\left|\prod_{j=1}^m f_j\right|\right|_r \leq \prod_{j=1}^m ||f_j||_{p_j}\]
-for any $f_1, \dots, f_m$.
+\[\left|\left|\prod_{j=1}^{m} f_{j}\right|\right|_{r} \leq \prod_{j=1}^{m} ||f_{j}||_{p_{j}}\]
+for any $f_1, \dots, f_{m}$.
 \end{corollary}
 \begin{proof}
 See Exercise \ref{Holder induction exer}.
@@ -243,7 +243,7 @@ In particular, if $v, w$ are vectors in $\CC^d$, then
 \end{corollary}
 \begin{proof}
 The first claim (\ref{CS 1}) is just H\"older's inequality when $p = 2$.
-The second claim (\ref{CS 2}) is (\ref{CS 1}) specialized to $\CC^d = \ell^p(\{1, \dots, d\} \to \CC)$.
+The second claim (\ref{CS 2}) is (\ref{CS 1}) specialized to $\CC^{d} = \ell^p(\{1, \dots, d\} \to \CC)$.
 \end{proof}
 
 \begin{corollary}[H\"older comparison]
@@ -252,15 +252,15 @@ Suppose that $p \leq q$ and $f$ is measurable $X \to \CC$.
 If $\mu$ is a finite measure, then
 \begin{equation}
 \label{Holder comparison 1}
-||f||_p \leq \mu(X)^{1/p-1/q} ||f||_q
+||f||_{p}  \leq \mu(X)^{1/p-1/q} ||f||_q
 \end{equation}
-and so $L^q \subseteq L^p$.
-On the other hand, if $\mu$ is a granular measure, then $L^p \subseteq L^q$ and $||f||_q \lesssim_{p,q} ||f||_p$.
+and so $L^{q} \subseteq L^p$.
+On the other hand, if $\mu$ is a granular measure, then $L^{p} \subseteq L^q$ and $||f||_{q} \lesssim_{p,q} ||f||_{p} $.
 \end{corollary}
 \begin{proof}
 The inequality (\ref{Holder comparison 1}) is equivalent to
 \[\left|\left|1 ||f||^p\right|\right|_1 \leq ||1||_{q/(q-p)} \cdot \left|\left| ||f||^p\right|\right|_{q/p}\]
-by (\ref{pull exponent of Lp}) and the fact that $||1||_{q/(q-p)}^p = \mu(X)^{1/p-1/q}$.
+by (\ref{pull exponent of Lp}) and the fact that $||1||_{q/(q-p)}^{p} = \mu(X)^{1/p-1/q}$.
 Thus (\ref{Holder comparison 1}) is a consequence of H\"older's inequality.
 We leave the proof of the case when $\mu$ is granular as Exercise \ref{granular comparison}.
 \end{proof}
@@ -272,7 +272,7 @@ Let $T > 0$. An \dfn{evolution equation} (say, on an open set $U \subseteq \RR^d
 For instance, the Schr\"odinger equation
 \[-i\frac{\partial u}{\partial t} + \Delta u = f,\]
 where $f$ is given, $t$ is the time variable $\in [0, T]$, $\Delta$ is the Laplace operator on $U$, so
-\[\Delta v(t, x_1, \dots, x_d) = \sum_{i=1}^d \frac{\partial^2 v}{\partial x_i^2} (t, x_1, \dots, x_d), \]
+\[\Delta v(t, x_1, \dots, x_d) = \sum_{i=1}^{d} \frac{\partial^2 v}{\partial x_i^2} (t, x_1, \dots, x_d), \]
 and $i^2 = -1$, is an evolution equation.
 In the theory of evolution equations it is frequently useful to define a function $u(t): U \to \CC$ by $u(t)(x) = u(t, x)$, so we think of $u$ not as a function of two variables $[0, T] \times U \to \CC$ but a function on $[0, T]$ which returns functions on $U$.
 In this case we often assume that there is a $q \in [1, \infty]$ such that for every $t \in [0, T]$, $u(t) \in L^q(U)$.
@@ -281,7 +281,7 @@ This motivates the following definition.
 
 \begin{definition}
 A \dfn{mixed norm} is a norm of the form
-\[||u||_{L^p([0, T] \to L^q(U))} = \left(\int_0^T ||u(t)||_{L^q(U)}^p~dt\right)^{1/p}\]
+\[||u||_{L^p([0, T] \to L^q(U))} = \left(\int_0^{T} ||u(t)||_{L^q(U)}^p~dt\right)^{1/p}\]
 defined on functions $u: [0, T] \to L^q(U \to \CC)$.
 \end{definition}
 
@@ -304,7 +304,7 @@ Complete the proof of Corollary \ref{Holder comparison}.
 
 \begin{exercise}
 Suppose that $f \in \bigcap_{p \in [1, \infty]} L^p$. Show that
-\[||f||_\infty = \lim_{p \to \infty} ||f||_p.\]
+\[||f||_{\infty} = \lim_{p \to \infty} ||f||_{p} .\]
 To do this, try using Corollary \ref{Holder comparison}.
 \end{exercise}
 
@@ -315,15 +315,15 @@ A map $||\cdot||: V \to [0, \infty)$ is called a \dfn{quasinorm} if for every $f
 
 \begin{exercise}
 \label{Lp quasinorm}
-One can also define $||f||_p$ when $p \in (0, 1)$, but then $||\cdot||_p$ is not well-behaved.
+One can also define $||f||_{p} $ when $p \in (0, 1)$, but then $||\cdot||_{p} $ is not well-behaved.
 In fact, define the \dfn{$L^p$-quasinorm} by (\ref{Lp definition}) for $p \in (0, 1)$.
-Show that $||\cdot||_p$ is in fact a quasinorm, but the triangle inequality does not hold.
+Show that $||\cdot||_{p} $ is in fact a quasinorm, but the triangle inequality does not hold.
 \end{exercise}
 
 \begin{exercise}
 Let $f \in \bigcap_{p \in (0, \delta)} L^p$, where $L^p$ is meant in the sense of Exercise \ref{Lp quasinorm} and $\delta > 0$ is a small constant.
 Let $C$ be the carrier of $f$. Show that
-\[\mu(C) = \lim_{p \to 0} ||f||_p.\]
+\[\mu(C) = \lim_{p \to 0} ||f||_{p} .\]
 Thus we may define the \dfn{$L^0$-quasinorm} $||f||_0 = \mu(C)$.
 Show that the $L^0$-quasinorm is a quasinorm, but the triangle inequality does not hold.
 \end{exercise}
@@ -331,14 +331,14 @@ Show that the $L^0$-quasinorm is a quasinorm, but the triangle inequality does n
 \begin{exercise}
 This exercise is an example of a common phenomenon in PDE and physics: if $p$ is chosen correctly, then $||u(t)||_{L^p}$ can often be viewed as the ``energy" of the scalar field $u(t)$. Here $u: [0, T] \to L^p(U)$, and $U \subseteq \RR^d$ is an open set.
 Consider the heat equation
-\[\partial_t u - \Delta u = f,\]
+\[\partial_{t} u - \Delta u = f,\]
 where $f$ is given and $u$ is unknown. The \dfn{heat energy} of $u$ at time $t$ is $||u(t)||_{L^2(U)}$.
 
-Show that if $u$ is a smooth solution to the homogeneous heat equation $\partial_t u - \Delta u = 0$ such that $u = 0$ on the boundary $\partial U$, then whenever $t \leq t'$,
+Show that if $u$ is a smooth solution to the homogeneous heat equation $\partial_{t} u - \Delta u = 0$ such that $u = 0$ on the boundary $\partial U$, then whenever $t \leq t'$,
 \[||u(t')||_{L^2(U)} \leq ||u(t)||_{L^2(U)}.\]
 (Hint: What is the derivative of $t \mapsto ||u(t)||_{L^2(U)}$?)
 Conclude that if $\overline U$ is compact,
-\[\partial_t u - \Delta u = \partial_t v - \Delta v\]
+\[\partial_{t} u - \Delta u = \partial_{t} v - \Delta v\]
 on $U$, and $u = v = 0$ on $\partial U$, then $u = v$ almost everywhere (and hence everywhere, since $u,v$ are smooth).
 \end{exercise}
 
@@ -382,24 +382,24 @@ Let
 Then
 \begin{equation}
 \label{Markov pf}
-\varepsilon^p 1_E \leq ||f||^p.
+\varepsilon^{p} 1_{E} \leq ||f||^p.
 \end{equation}
-Indeed, if $x \in E$ then $\varepsilon^p 1_E(x) = 0$; otherwise $\varepsilon^p 1_E(x) = \varepsilon^p \leq ||f(x)||^p$.
+Indeed, if $x \in E$ then $\varepsilon^{p} 1_E(x) = 0$; otherwise $\varepsilon^{p} 1_E(x) = \varepsilon^{p} \leq ||f(x)||^p$.
 Integrating both sides of (\ref{Markov pf}) $d\mu$ we get (\ref{Markov}).
 \end{proof}
 
-We now remind the reader what convergence in a normed space means: one has $f_n \to f$ in a normed space $V$ provided that for every $\varepsilon > 0$ and every $n$ large enough, $||f_n - f||_V < \varepsilon$.
-Similarly, $(f_n)_n$ is Cauchy in $V$ provided that for every $\varepsilon > 0$ and every $n, m$ large enough, $||f_n - f_m||_V < \varepsilon$.
+We now remind the reader what convergence in a normed space means: one has $f_{n} \to f$ in a normed space $V$ provided that for every $\varepsilon > 0$ and every $n$ large enough, $||f_{n} - f||_{V} < \varepsilon$.
+Similarly, $(f_{n})_{n}$ is Cauchy in $V$ provided that for every $\varepsilon > 0$ and every $n, m$ large enough, $||f_{n} - f_{m}||_{V} < \varepsilon$.
 
 \begin{corollary}
-If $f_n \to f$ in $L^p$ then $f_n \to f$ in measure, and there is a subsequence which converges to $f$ pointwise.
-Moreover, if $(f_n)_n$ is Cauchy in $L^p$, then $(f_n)_n$ is Cauchy in measure, and there is a subsequence which is Cauchy almost everywhere.
+If $f_{n} \to f$ in $L^p$ then $f_{n} \to f$ in measure, and there is a subsequence which converges to $f$ pointwise.
+Moreover, if $(f_{n})_{n}$ is Cauchy in $L^p$, then $(f_{n})_{n}$ is Cauchy in measure, and there is a subsequence which is Cauchy almost everywhere.
 \end{corollary}
 \begin{proof}
 By hypothesis and Markov's inequality, one has
-\[\mu(\{||f_n - f||_p \geq \varepsilon\}) \leq \frac{||f_n - f||^p_p}{\varepsilon^p}\]
+\[\mu(\{||f_{n} - f||_{p}  \geq \varepsilon\}) \leq \frac{||f_{n} - f||^p_{p} }{\varepsilon^p}\]
 which implies convergence in measure.
-The proof of Cauchyness in measure is similar, replacing $f$ with $f_m$ in the above inequality.
+The proof of Cauchyness in measure is similar, replacing $f$ with $f_{m}$ in the above inequality.
 Convergence almost everywhere follows from the fundamental theorem of integration.
 \end{proof}
 
@@ -407,15 +407,15 @@ Convergence almost everywhere follows from the fundamental theorem of integratio
 $L^p$ is a Banach space.
 \end{theorem}
 \begin{proof}
-Suppose that $(f_n)_n$ is Cauchy in $L^p$; then there is a subsequence $(f_{n_k})_k$ and a $f$ such that
-\[\lim_{k \to \infty} f_{n_k} = f\]
+Suppose that $(f_{n})_{n}$ is Cauchy in $L^p$; then there is a subsequence $(f_{n_{k}})_{k}$ and a $f$ such that
+\[\lim_{k \to \infty} f_{n_{k}} = f\]
 almost everywhere. Therefore for every $n$ and $x$,
-\[||f(x) - f_m(x)||^p = \lim_{k \to \infty} ||f_{n_k}(x) - f_m(x)||^p.\]
+\[||f(x) - f_{m}(x)||^{p} = \lim_{k \to \infty} ||f_{n_{k}}(x) - f_{m}(x)||^p.\]
 Therefore by Fatou's lemma,
-\[||f(x) - f_m(x)||_p^p \leq \lim_{k \to \infty} \int_X ||f_{n_k}(x) - f_m(x)||^p~d\mu = \lim_{k \to \infty} ||f_{n_k} - f_m||_p^p.\]
-Taking the limit as $m \to \infty$ of both sides and using the fact that $(f_n)_n$ was Cauchy in $L^p$,
-\[\lim_{m \to \infty} ||f(x) - f_m(x)||_p^p \leq \lim_{k \to \infty} \lim_{m \to \infty} ||f_{n_k} - f_m||_p^p = 0.\]
-This implies that $f_m \to f$ in $L^p$; in particular, $f \in L^p$.
+\[||f(x) - f_{m}(x)||_{p} ^{p} \leq \lim_{k \to \infty} \int_{X} ||f_{n_{k}}(x) - f_{m}(x)||^p~d\mu = \lim_{k \to \infty} ||f_{n_{k}} - f_{m}||_{p} ^p.\]
+Taking the limit as $m \to \infty$ of both sides and using the fact that $(f_{n})_{n}$ was Cauchy in $L^p$,
+\[\lim_{m \to \infty} ||f(x) - f_{m}(x)||_{p} ^{p} \leq \lim_{k \to \infty} \lim_{m \to \infty} ||f_{n_{k}} - f_{m}||_{p} ^{p} = 0.\]
+This implies that $f_{m} \to f$ in $L^p$; in particular, $f \in L^p$.
 \end{proof}
 
 TODO: Monotone and dominated convergence
@@ -464,7 +464,7 @@ The \dfn{dual space} $X^*$ of $X$ is the Banach space of all linear maps $X \to 
 |Tf| \lesssim ||f||_X,
 \end{equation}
 with the norm
-\[||T||_{X^*} = \sup_{||f||_X \leq 1} ||Tf||.\]
+\[||T||_{X^*} = \sup_{||f||_{X} \leq 1} ||Tf||.\]
 An element of $X^*$ is known as a \dfn{linear functional} or a \dfn{covector} on $X$.
 \end{definition}
 
@@ -479,12 +479,12 @@ Let $p \in [1, \infty]$.
 One has an injective linear map $\lambda: L^{p^*} \to (L^p)^*$ defined by
 \begin{equation}
 \label{isomorphism of holder duals}
-\lambda(g)(f) = \int_X f\overline g ~d\mu.
+\lambda(g)(f) = \int_{X} f\overline g ~d\mu.
 \end{equation}
 \end{lemma}
 \begin{proof}
 By H\"older's inequality,
-\[|\lambda(g)(f)| = ||fg||_1 \leq ||f||_p \cdot ||g||_q,\]
+\[|\lambda(g)(f)| = ||fg||_1 \leq ||f||_{p}  \cdot ||g||_q,\]
 which implies (\ref{bounded covector}).
 \end{proof}
 
@@ -501,14 +501,14 @@ Moreover, if $p < \infty$, $\lambda$ is an isomorphism.
 TODO
 
 \begin{corollary}
-If $p \in [1, \infty]$, there is an injective linear map $\varphi: L^p \to (L^p)^{**}$ defined by
+If $p \in [1, \infty]$, there is an injective linear map $\varphi: L^{p} \to (L^p)^{**}$ defined by
 \[\langle \varphi(f), g\rangle = \langle g, f\rangle\]
 which preserves norms. Moreover, if $p \in (1, \infty)$ then $\varphi$ is an isomorphism.
 \end{corollary}
 TODO
 
-Henceforth, we simply write $L^p = (L^p)^{**}$ and $(L^p)^* = L^{p^*}$ (whenever these spaces are isomorphic!) to emphasize that these isomorphisms are in some sense ``natural"; they do not depend on a choice of basis.
-In particular, we will always identify a function $f \in L^{p^*}$ with the corresponding linear map $f: L^p \to \CC$; to avoid writing awkward things like $f(g)$, we will continue to use $\langle f, g\rangle$ to mean the evaluation of $f$ at $g \in L^p$ when thinking of $f$ as a linear map.
+Henceforth, we simply write $L^{p} = (L^p)^{**}$ and $(L^p)^* = L^{p^*}$ (whenever these spaces are isomorphic!) to emphasize that these isomorphisms are in some sense ``natural"; they do not depend on a choice of basis.
+In particular, we will always identify a function $f \in L^{p^*}$ with the corresponding linear map $f: L^{p} \to \CC$; to avoid writing awkward things like $f(g)$, we will continue to use $\langle f, g\rangle$ to mean the evaluation of $f$ at $g \in L^p$ when thinking of $f$ as a linear map.
 
 \begin{corollary}
 For every bounded linear map $\psi: L^2 \to \CC$ there is a unique $f \in L^2$ such that for every $g \in L^2$, $\langle f, g\rangle = \psi(g)$.
@@ -516,7 +516,7 @@ In particular, $\langle \cdot, \cdot \rangle$ is an inner product, making $L^2$ 
 \end{corollary}
 
 \begin{theorem}[H\"older duality, part II]
-Let $p, q \in (1, \infty)$. Then for every bounded linear map $T: L^p \to L^q$ there is a unique bounded linear map $T^*: L^{q^*} \to L^{p^*}$ satisfying
+Let $p, q \in (1, \infty)$. Then for every bounded linear map $T: L^{p} \to L^q$ there is a unique bounded linear map $T^*: L^{q^*} \to L^{p^*}$ satisfying
 \[\langle Tf, g\rangle = \langle f, T^*g\rangle.\]
 \end{theorem}
 \begin{definition}
@@ -540,7 +540,7 @@ To do this, first show that if $(L^p)^*$ is separable, then $L^p$ is separable.
 
 \begin{exercise}
 Show that $(\ell^1)^{**} \neq \ell^1$ directly, by filling in the following outline.
-Let $\mu: 2^\NN \to \{0, 1\}$ be an additive (but not $\sigma$-additive) function such that for every finite set $A \subset \NN$, $\mu(A) = 0$.
+Let $\mu: 2^{\NN} \to \{0, 1\}$ be an additive (but not $\sigma$-additive) function such that for every finite set $A \subset \NN$, $\mu(A) = 0$.
 Here $\mu$ can be built using Zorn's lemma\footnote{Any proof of that $(\ell^1)^{**} \neq \ell^1$ must use the axiom of choice somehow, because in Solovay's model of set theory, wherein there are no nonmeasurable functions, there are also no elements of $(\ell^1)^{**}$ which are not elements of $\ell^1$.} or a similar substitute.
 If $A \subseteq \NN$, one can define
 \[\langle \mu, 1_A\rangle = \mu(A)\]
@@ -554,8 +554,8 @@ This is rather problematic: in many situations in analysis, one is given a seque
 In this section we use H\"older duality introduce a new topology on $L^p$ in which the unit ball is compact, but which does not arise from a norm.
 
 \begin{definition}
-Let $p \in (1, \infty)$. We say that a sequence $(f_n)_n \in L^p$ \dfn{converges weakly} in $L^p$ to $f \in L^p$ provided that
-\[\lim_{n \to \infty} \langle f_n, g\rangle = \langle f, g\rangle\]
+Let $p \in (1, \infty)$. We say that a sequence $(f_{n})_{n} \in L^p$ \dfn{converges weakly} in $L^p$ to $f \in L^p$ provided that
+\[\lim_{n \to \infty} \langle f_{n}, g\rangle = \langle f, g\rangle\]
 for every $g \in L^{p^*}$.
 \end{definition}
 
@@ -567,14 +567,14 @@ Let $p \in (1, \infty)$. If a sequence converges strongly in $L^p$, then it conv
 \end{lemma}
 \begin{proof}
 One has
-\[\langle f_n - f, g \rangle \leq ||f_n - f||_p ||g||_{p^*}\]
+\[\langle f_{n} - f, g \rangle \leq ||f_{n} - f||_{p}  ||g||_{p^*}\]
 for every $g \in L^{p^*}$.
 \end{proof}
 
 The idea of weak convergence is the following. Say that $f(x)$ is the temperature of a bucket of water at point $x$.
 Then one measures $f(x)$ by taking a thermometer, which we model by $g$, chosen so that the thermometer picks up the temperature in a small ball near $x$ (so $g$ has compact support centered near $x$).
 Then the thermometer returns $\langle f, g\rangle$.
-So $f_n \to f$ weakly in $L^p$ if for every thermometer $g \in L^{p^*}$, the thermometer $g$ thinks that the error $f_n - f$ is negligible.
+So $f_{n} \to f$ weakly in $L^p$ if for every thermometer $g \in L^{p^*}$, the thermometer $g$ thinks that the error $f_{n} - f$ is negligible.
 
 We now show that weak convergence is induced by a topology, so it is in some sense ``better behaved" than, say, convergence almost pointwise.
 
@@ -610,13 +610,13 @@ The closed unit ball of $L^p$ is compact in the weakstar topology.
 The general proof uses a black box in the form of Tychonoff's theorem\footnote{The general proof must use a particularly strong form of the axiom of choice, as most results about compactness of very large spaces must, so this is unavoidable.} so we start by proving a special case, which is the particularly useful one in practice.
 
 \begin{theorem}[Alaoglu's sequential compactness theorem]
-Suppose that $L^{p^*}$ is separable. Then for every bounded sequence $(f_n)_n$ in $L^p$, there is a $f \in L^p$ such that a subsequence $(f_{n_k})_k$ converges to $f$ weakly in $L^p$.
+Suppose that $L^{p^*}$ is separable. Then for every bounded sequence $(f_{n})_{n}$ in $L^p$, there is a $f \in L^p$ such that a subsequence $(f_{n_{k}})_{k}$ converges to $f$ weakly in $L^p$.
 \end{theorem}
 \begin{proof}
 Let $D$ be a countable dense subset of the unit sphere $\{g \in L^{p^*}: ||g||_{p^*} = 1\}$ of $L^{p^*}$.
 Let
 \[d(f_1, f_2) = \sum_{g \in D} 2^{-n} p_g(f_1 - f_2).\]
-Since $p_g(f_1 - f_2) \leq ||g||_{p^*} ||f_1 - f_2||_p$ and $||g||_{p^*} \leq 1$, we can sum the geometric series to conclude that $d(f_1, f_2) \leq 1$.
+Since $p_g(f_1 - f_2) \leq ||g||_{p^*} ||f_1 - f_2||_{p} $ and $||g||_{p^*} \leq 1$, we can sum the geometric series to conclude that $d(f_1, f_2) \leq 1$.
 We claim that $d$ is a semimetric.\footnote{One can use Exercise \ref{weakstar is hausdorff} to show that $d$ is actually a metric, but we won't need this.}
 We just need to check the triangle inequality, and indeed,
 \[d(f_1, f_3) = \sum_{g \in D} 2^{-n} p_g(f_1 - f_3) \leq \sum_{g \in D} \frac{p_g(f_1 - f_2) + p_g(f_2 - f_3)}{2^n} = d(f_1, f_2) + d(f_2, f_3)\]
@@ -627,28 +627,28 @@ since $p_g$ is a seminorm.
 A sequence converges in $d$ iff it converges weakly in $L^p$.
 \end{lemma}
 \begin{proof}
-If $f_n \to f$ weakly in $L^p$ then for every $g \in L^{p^*}$, $p_g(f_n - f) \to 0$, so $d(f_n, f) \to 0$.
+If $f_{n} \to f$ weakly in $L^p$ then for every $g \in L^{p^*}$, $p_g(f_{n} - f) \to 0$, so $d(f_{n}, f) \to 0$.
 
-Conversely, if $(f_n)_n$ is a sequence in $L^p$ and $f \in L^p$, and $d(f_n, f) \to 0$, then $p_g(f_n - f) \to 0$ for every $g \in D$.
-But if $||g||_{p^*} = 1$ is arbitrary, and $g_m \in D$ have $g_m \to g$, then
-\[\lim_{n \to \infty} p_g(f_n - f) = \lim_{m \to \infty} \lim_{n \to \infty} p_{g_m}(f_n - f) = 0\]
-so that $p_g(f_n - f) \to 0$ for every $g$ in the unit sphere, and hence in all of $L^{p^*}$ by rescaling.
+Conversely, if $(f_{n})_{n}$ is a sequence in $L^p$ and $f \in L^p$, and $d(f_{n}, f) \to 0$, then $p_g(f_{n} - f) \to 0$ for every $g \in D$.
+But if $||g||_{p^*} = 1$ is arbitrary, and $g_{m} \in D$ have $g_{m} \to g$, then
+\[\lim_{n \to \infty} p_g(f_{n} - f) = \lim_{m \to \infty} \lim_{n \to \infty} p_{g_{m}}(f_{n} - f) = 0\]
+so that $p_g(f_{n} - f) \to 0$ for every $g$ in the unit sphere, and hence in all of $L^{p^*}$ by rescaling.
 \end{proof}
 
 We now use a variant of Cantor's diagonal argument to show that the unit ball of $L^p$ under the semimetric $d$ is compact, which, along with Lemma \ref{weakstar semimetric}, implies Alaoglu's theorem.
-Fix $(f_n)_n$, say $||f_n||_p \lesssim 1$, and an enumeration $(g_m)_m$ of $D$.
+Fix $(f_{n})_{n}$, say $||f_{n}||_{p}  \lesssim 1$, and an enumeration $(g_{m})_{m}$ of $D$.
 Then
-\[|\langle f_n, g_1\rangle| \lesssim ||g_1||_{p^*} = 1\]
-so by compactness of the closed unit ball of $\CC$, there is a subsequence $(f_{n_k^1})_k$ such that $(\langle f_{n_k^1}, g_1\rangle)_k$ is a Cauchy sequence.
+\[|\langle f_{n}, g_1\rangle| \lesssim ||g_1||_{p^*} = 1\]
+so by compactness of the closed unit ball of $\CC$, there is a subsequence $(f_{n_{k}^1})_{k}$ such that $(\langle f_{n_{k}^1}, g_1\rangle)_{k}$ is a Cauchy sequence.
 
-Suppose we have defined $(f_{n_k^j})_k$; then $|\langle f_{n_k^j}, g_1\rangle| \lesssim 1$ so there is a subsequence $(f_{n_k^{j+1}})_k$ of $(f_{n_k^j})_k$ such that $(\langle f_{n_k^{j+1}}, g_{j+1}\rangle)_k$ is a Cauchy sequence.
-Moreover, since $(f_{n_k^{j+1}})_k$ is a subsequence of $(f_{n_k^\ell})_k$ whenever $\ell \leq j$, $(\langle f_{n_k^{j+1}}, g_\ell\rangle)_k$ is also a Cauchy sequence.
+Suppose we have defined $(f_{n_{k}^j})_{k}$; then $|\langle f_{n_{k}^j}, g_1\rangle| \lesssim 1$ so there is a subsequence $(f_{n_{k}^{j+1}})_{k}$ of $(f_{n_{k}^j})_{k}$ such that $(\langle f_{n_{k}^{j+1}}, g_{j+1}\rangle)_{k}$ is a Cauchy sequence.
+Moreover, since $(f_{n_{k}^{j+1}})_{k}$ is a subsequence of $(f_{n_{k}^\ell})_{k}$ whenever $\ell \leq j$, $(\langle f_{n_{k}^{j+1}}, g_\ell\rangle)_{k}$ is also a Cauchy sequence.
 
-Let $f_{n_k} = f_{n_k^k}$. Then for any $j$, after finitely many entries $(f_{n_k})_k$ is a subsequence of $(f_{n_k^j})_k$, so $(\langle f_{n_k}, g_j\rangle)_k$ is a Cauchy sequence, and hence we can set
-\[\langle f, g_j\rangle = \lim_{k \to \infty} \langle f_{n_k}, g_j\rangle.\]
+Let $f_{n_{k}} = f_{n_{k}^k}$. Then for any $j$, after finitely many entries $(f_{n_{k}})_{k}$ is a subsequence of $(f_{n_{k}^j})_{k}$, so $(\langle f_{n_{k}}, g_{j}\rangle)_{k}$ is a Cauchy sequence, and hence we can set
+\[\langle f, g_{j}\rangle = \lim_{k \to \infty} \langle f_{n_{k}}, g_{j}\rangle.\]
 This defines $f$ as a map $D \to \CC$; then $f$ extends to a bounded linear map $L^{p^*} \to \CC$ uniquely, since $D$ was dense in the unit sphere of $L^{p^*}$.
 By H\"older duality, this implies that $f \in (L^p)^{**} = L^p$.
-By construction, $d(f_{n_k}, f) \to 0$, so the unit ball of $L^p$ is compact under the semimetric $d$.
+By construction, $d(f_{n_{k}}, f) \to 0$, so the unit ball of $L^p$ is compact under the semimetric $d$.
 \end{proof}
 
 \begin{proof}[Proof of the Banach-Alaoglu theorem]
@@ -672,10 +672,10 @@ Since $\CC^{d^i}$ is a Banach space (of dimension $d^i$), one can consider the n
 \begin{definition}
 Let $U \subseteq \RR^d$ be an open set and $s \in \NN$.
 The \dfn{Sobolev norm} is the norm
-\[||u||_{H^s(U)} = \sum_{i=0}^s ||\nabla u||_{L^2}.\]
+\[||u||_{H^s(U)} = \sum_{i=0}^{s} ||\nabla u||_{L^2}.\]
 The space $H^s(U)$ is the completion of the space of smooth functions $u: U \to \CC$ such that $||u||_{H^s(U)} < \infty$.
 \end{definition}
-In particular, a sequence $(u_n)_n$ converges (strongly) in $H^s$ (say, to $u$) if for every $i \in \{0, \dots, s\}$, $\nabla^iu \to u$ strongly in $L^2$.
+In particular, a sequence $(u_{n})_{n}$ converges (strongly) in $H^s$ (say, to $u$) if for every $i \in \{0, \dots, s\}$, $\nabla^iu \to u$ strongly in $L^2$.
 One can also define weak convergence in $H^s$ by simply requiring that the derivatives converge weakly in $L^2$.
 
 \begin{exercise}
@@ -689,16 +689,16 @@ Show that the weakstar topology is Hausdorff; that is, if $f_1, f_2 \in L^p$, th
 \end{exercise}
 
 \begin{exercise}[Riemann-Lebesgue]
-Show that if $f_n(x) = \sin nx$, then $f_n \to 0$ weakly in $L^2([0, 2\pi])$ but not strongly.
+Show that if $f_{n}(x) = \sin nx$, then $f_{n} \to 0$ weakly in $L^2([0, 2\pi])$ but not strongly.
 \end{exercise}
 
 \begin{exercise}
-Show that if $f_n = 1_{\{n\}}$, then $f_n \to 0$ weakly in $\ell^2$ but not strongly.
+Show that if $f_{n} = 1_{\{n\}}$, then $f_{n} \to 0$ weakly in $\ell^2$ but not strongly.
 \end{exercise}
 
 \begin{exercise}[Banach-Saks]
-Let $(x_n)_n$ be a bounded sequence in $L^2$. Show that there is a subsequence $(x_{n_k})_k$ and a $x \in L^2$ such that
-\[\lim_{n \to \infty} \frac{1}{N} \sum_{k=1}^N x_{n_k} = x\]
+Let $(x_{n})_{n}$ be a bounded sequence in $L^2$. Show that there is a subsequence $(x_{n_{k}})_{k}$ and a $x \in L^2$ such that
+\[\lim_{n \to \infty} \frac{1}{N} \sum_{k=1}^{N} x_{n_{k}} = x\]
 strongly in $L^2$.
 \end{exercise}
 
@@ -710,7 +710,7 @@ Modify the proof of Alaoglu's sequential compactness theorem to show that, if $X
 \begin{exercise}[Montel's little theorem -- for those who know complex analysis]
 \label{Montel}
 Let $U$ be an open subset of $\CC$, and let $\mathcal H(U)$ be the space of holomorphic functions $U \to \CC$.
-Suppose that $\mathcal F \subset \mathcal H(U)$ is locally uniformly $L^\infty$; that is, for every compact set $K \subset U$ there is a $M_K > 0$ such that for every $f \in \mathcal F$, $||f|K||_\infty \leq M_K$.
+Suppose that $\mathcal F \subset \mathcal H(U)$ is locally uniformly $L^\infty$; that is, for every compact set $K \subset U$ there is a $M_{K} > 0$ such that for every $f \in \mathcal F$, $||f|K||_{\infty} \leq M_K$.
 (Hint: You may need to use Cauchy's integral formula and Exercise \ref{Ascoli}.)
 Show that every sequence in $\mathcal F$ has a subsequence which converges in $L^\infty_l$.
 \end{exercise}
@@ -729,9 +729,9 @@ We are in the position to show that Dirichlet's problem, as defined in Exercise 
 Let $\mathcal A$ be the admissible set, and let $E$ be the Dirichlet energy, defined in \ref{Dirichlet problem}.
 Proceed as follows:
 \begin{enumerate}
-\item Let $(u_n)_n$ be a sequence of functions in $\mathcal A$ such that $E(u_n) \to \inf_{v \in \mathcal A} E(v)$.
-Show that $(u_n)_n$ is a bounded sequence in $H^1$.
-\item Show that if $(v_n)_n$ is a sequence of functions which converge in $H^1$ to a function $v \in H^1$, then $E(v_n) \to E(v)$.
+\item Let $(u_{n})_{n}$ be a sequence of functions in $\mathcal A$ such that $E(u_{n}) \to \inf_{v \in \mathcal A} E(v)$.
+Show that $(u_{n})_{n}$ is a bounded sequence in $H^1$.
+\item Show that if $(v_{n})_{n}$ is a sequence of functions which converge in $H^1$ to a function $v \in H^1$, then $E(v_{n}) \to E(v)$.
 \item Invoke Exercise \ref{Banach-Alaoglu-Sobolev}.
 \item Show that if $u$ is smooth, then $u$ solves Dirichlet's problem iff for every smooth function $v$ which is zero in an open set containing $\partial U$,
 \begin{equation}
@@ -780,13 +780,13 @@ We can extend to simple functions by taking linear combinations, then use monoto
 
 \begin{definition}
 The \dfn{time average} of $f$ is
-\[A_nf = \frac{1}{n} \sum_{j=0}^{n-1} U^jf.\]
+\[A_{n}f = \frac{1}{n} \sum_{j=0}^{n-1} U^jf.\]
 The \dfn{space average} of $f$ is $Ef$.
 \end{definition}
 
 The idea of time and space averages is as follows. Fix $x$, the state of the universe today. Then $T$ represents the passing of time from today to tomorrow.
-Every day, we measure the random variable $f$, and their average after $n$ days is $A_nf(x)$.
-Our goal will be to show that $A_nf \to Ef$ as long as $(\Omega, P, f)$ is ergodic, so in order to approximate the expected value of $f$, we can just keep testing $f$ every day over a long period of time and then take their mean.
+Every day, we measure the random variable $f$, and their average after $n$ days is $A_{n}f(x)$.
+Our goal will be to show that $A_{n}f \to Ef$ as long as $(\Omega, P, f)$ is ergodic, so in order to approximate the expected value of $f$, we can just keep testing $f$ every day over a long period of time and then take their mean.
 
 To do this, we need two general facts about contractions on Hilbert spaces.
 \begin{lemma}
@@ -815,15 +815,15 @@ If $f \in V$ then obviously both sides of (\ref{invariant projection}) are $f$.
 If $f \in V^\perp$, $\Pi(f) = 0$.
 Also
 \[||\frac{1}{n} \sum_{j=0}^{n-1} U^jf|| \leq ||f||\]
-since $U$ is unitary, so the map $S_nf = n^{-1} \sum_{j=0}^{n-1} U^jf$ is bounded.
+since $U$ is unitary, so the map $S_{n}f = n^{-1} \sum_{j=0}^{n-1} U^jf$ is bounded.
 Therefore
-\[g_n = \frac{S_n^*S_nf}{n^2}\]
-is a bounded sequence. Since $H$ has a weakstar compact unit ball (Exercise \ref{Banach-Alaoglu-Sobolev}, though in the applications we need this is just the Banach-Alaoglu theorem in $L^2$), $g_n$ has a weakstar limit $g$.
+\[g_{n} = \frac{S_{n}^*S_{n}f}{n^2}\]
+is a bounded sequence. Since $H$ has a weakstar compact unit ball (Exercise \ref{Banach-Alaoglu-Sobolev}, though in the applications we need this is just the Banach-Alaoglu theorem in $L^2$), $g_{n}$ has a weakstar limit $g$.
 Now
-\[(1 - U^*)(S_n^*/n) = \frac{1}{n} \sum_{j=0}^{n-1} (1 - U^*)(U^*)^{j-1} = \frac{1 - (U^*)^n}{n}\]
+\[(1 - U^*)(S_{n}^*/n) = \frac{1}{n} \sum_{j=0}^{n-1} (1 - U^*)(U^*)^{j-1} = \frac{1 - (U^*)^n}{n}\]
 satisfies
-\[||(1 - U^*)(S_n^*/n)|| \lesssim n^{-1}\]
-so $(1 - U^*)g_n \to 0$ and hence $(1 - U^*)g = 0$.
+\[||(1 - U^*)(S_{n}^*/n)|| \lesssim n^{-1}\]
+so $(1 - U^*)g_{n} \to 0$ and hence $(1 - U^*)g = 0$.
 By the previous lemma, $Ug = g$. Therefore $f \perp g$, so $\Pi(f) = 0$.
 \end{proof}
 
@@ -831,11 +831,11 @@ By the previous lemma, $Ug = g$. Therefore $f \perp g$, so $\Pi(f) = 0$.
 Let $f \in L^2$ and let $V = \{g \in L^2: Ug = g\}$.
 Let $\Pi: L^2 \to V$ be the orthogonal projection.
 Then
-\[\lim_{n \to \infty} A_nf = \Pi(f)\]
+\[\lim_{n \to \infty} A_{n}f = \Pi(f)\]
 in $L^2$.
 \end{theorem}
 \begin{proof}
-Expanding out the definitions of $A_n$ and $\Pi$, we get (\ref{invariant projection}).
+Expanding out the definitions of $A_{n}$ and $\Pi$, we get (\ref{invariant projection}).
 \end{proof}
 
 This theorem is mainly interesting in the case that $(\Omega, P, T)$ is an ergodic system.

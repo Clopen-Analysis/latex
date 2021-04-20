@@ -20,14 +20,14 @@ Let $(\Omega, \Sigma, P)$ be a probability space, $\mathcal F \subseteq \Sigma$ 
 The \dfn{conditional expectation} of $X$ given $\mathcal F$ is a measurable function
 \[E(X|\mathcal F): (\Omega, \mathcal F) \to \RR\]
 such that
-\[E(1_A E(X|\mathcal F)) = E(1_A X)\]
+\[E(1_{A} E(X|\mathcal F)) = E(1_{A} X)\]
 whenever $A \in \mathcal F$.
 \end{definition}
 
 \begin{example}
-A \dfn{measurable partition} of $\Omega$ is a set of mutually exclusive events $A_i$ such that $\bigcup_i A_i = \Omega$.
+A \dfn{measurable partition} of $\Omega$ is a set of mutually exclusive events $A_i$ such that $\bigcup_{i} A_{i} = \Omega$.
 If $(A_i)$ is a measurable partition and $\mathcal F$ is the smallest $\sigma$-algebra containing every $A_i$, then $E(X|\mathcal F)$ is constant on each $A_i$, namely
-\[E(X|\mathcal F)|A_i = E(1_{A_i} X)\]
+\[E(X|\mathcal F)|A_{i} = E(1_{A_i} X)\]
 is the mean of $X$ on $A_i$.
 \end{example}
 
@@ -37,12 +37,12 @@ The conditional expectation $E(X|\mathcal F)$ is well-defined in the sense that 
 \end{corollary}
 \begin{proof}
 Let $\mu$ be the measure
-\[\mu(A) = E(1_A X)\]
+\[\mu(A) = E(1_{A} X)\]
 defined for $A \in \mathcal F$.
 Then $\mu$ is absolutely continuous with respect to $P$, so it has a Radon-Nikodym derivative; we set
 \[E(X|\mathcal F) = \frac{d\mu}{dP}.\]
 Then
-\[E(1_A E(X|\mathcal F)) = \int_A \frac{d\mu}{dP} ~dP = \int_A ~d\mu = \mu(A) = E(1_A X)\]
+\[E(1_{A} E(X|\mathcal F)) = \int_{A} \frac{d\mu}{dP} ~dP = \int_{A} ~d\mu = \mu(A) = E(1_{A} X)\]
 as desired.
 
 For the uniqueness, assume $Y$ is also a conditional expectation and let $A$ be the event that $Y \neq E(X|\mathcal F)$.
@@ -60,7 +60,7 @@ Show that if $X$ is $\mathcal F$-measurable then $E(X|\mathcal F) = X$.
 \end{exercise}
 
 \begin{exercise}
-Verify that the monotone and dominated convergence theorems, and Fatou lemma, are valid when $EX_n$ is replaced with $E(X_n|\mathcal F)$, $\mathcal F$ a $\sigma$-algebra.
+Verify that the monotone and dominated convergence theorems, and Fatou lemma, are valid when $EX_{n}$ is replaced with $E(X_{n}|\mathcal F)$, $\mathcal F$ a $\sigma$-algebra.
 \end{exercise}
 
 \section{Existence of Radon measures}
@@ -102,7 +102,7 @@ You will need to use some kind of set-theoretic machinery to pull this off.
 
 \begin{theorem}[weaktype Hardy-Littlewood maximal inequality]
 Let $d \geq 1$ and $f \in L^1(\RR^d)$. Let $\mu$ denote Lebesgue measure. Then for every $\lambda > 0$,
-\[\mu(\{Mf > \lambda\}) \leq 3^d \frac{||f||_{L^1(\RR^d)}}{\lambda}.\]
+\[\mu(\{Mf > \lambda\}) \leq 3^{d} \frac{||f||_{L^1(\RR^d)}}{\lambda}.\]
 \end{theorem}
 TODO prove me
 

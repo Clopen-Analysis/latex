@@ -94,20 +94,20 @@ However, the definition of $\sigma$-additive function makes sense even if $(-\in
 \begin{subsec}
 Let $B$ be a Banach space, as discussed in Appendix \ref{Banach space appendix}.
 If the reader is unfamiliar with Banach spaces, they can take $B = \CC^d$ and not lose any insight.
-If $(x_n)$ is a sequence in $B$, then (\ref{banach space series}) is the definition of the infinite sum $\sum_n x_n$.
+If $(x_{n})$ is a sequence in $B$, then (\ref{banach space series}) is the definition of the infinite sum $\sum_{n} x_{n}$.
 \end{subsec}
 
 \begin{definition}
 Let $\Sigma$ be a $\sigma$-ring and $B$ a Banach space.
-A \dfn{vector-valued measure} on $\Sigma$, or simply a \dfn{measure}, is a function $\mu: \Sigma \to B$ such that whenever $(E_n)$ are countably many disjoint sets in $\Sigma$,
-\[\mu\left(\bigcup_n E_n\right) = \sum_n \mu(E_n).\]
+A \dfn{vector-valued measure} on $\Sigma$, or simply a \dfn{measure}, is a function $\mu: \Sigma \to B$ such that whenever $(E_{n})$ are countably many disjoint sets in $\Sigma$,
+\[\mu\left(\bigcup_{n} E_{n}\right) = \sum_{n} \mu(E_{n}).\]
 \end{definition}
 
 \begin{example}
 The most important examples of vector-valued measures will be of the following form.
 Let $\nu$ be a positive measure on a measurable space $X$, and let $f: X \to B$ be an ``integrable function".
 We will get back to what this means later -- but, taking the definition of integration as a black box, set
-\[\mu(E) = \int_E f(x) ~d\nu(x).\]
+\[\mu(E) = \int_{E} f(x) ~d\nu(x).\]
 Then $\mu$ is a vector-valued measure, and its ``derivative" is $f$.
 This will be the setting in which we generalize the fundamental theorem of calculus.
 \end{example}
@@ -118,8 +118,8 @@ Frequently, positive measures are easier to work with than vector-valued measure
 
 \begin{definition}
 Let $\mu$ be a measure. The \dfn{total variation measure} $|\mu|$ of $\mu$ is defined by
-\[|\mu|(E) = \sup_{E_1, \dots, E_n} \sum_{i=1}^n ||\mu(E_i)||_B\]
-where the supremum ranges over finite sequences $E_1, \dots, E_n$ of disjoint measurable sets such that $E = \bigcup_i E_i$.
+\[|\mu|(E) = \sup_{E_1, \dots, E_{n}} \sum_{i=1}^{n} ||\mu(E_i)||_B\]
+where the supremum ranges over finite sequences $E_1, \dots, E_{n}$ of disjoint measurable sets such that $E = \bigcup_{i} E_i$.
 \end{definition}
 
 \begin{theorem}
@@ -129,18 +129,18 @@ Every total variation measure is a positive measure.
 Let $\mu$ be a measure. Then $|\mu|$ is nonnegative. If $E \subseteq F$ are measurable sets, write $F = E \cup (F \setminus E)$ to see that $|\mu|(E) \leq |\mu|(F)$.
 
 To see that $|\mu|$ is $\sigma$-additive, suppose that $F,G$ are disjoint measurable sets, $E = F \cup G$.
-Write $F = \bigcup_{i \leq m} F_i$ and $G = \bigcup_{j \leq n} G_j$ where the $F_i,G_j$ are all disjoint; then
-\[|\mu|(E) \geq \sum_{i=1}^m ||\mu(F_i)||_B + \sum_{j=1}^n ||\mu(G_j)||_B.\]
+Write $F = \bigcup_{i \leq m} F_i$ and $G = \bigcup_{j \leq n} G_{j}$ where the $F_i,G_{j}$ are all disjoint; then
+\[|\mu|(E) \geq \sum_{i=1}^{m} ||\mu(F_i)||_{B} + \sum_{j=1}^{n} ||\mu(G_{j})||_B.\]
 Thus $|\mu|(E) \geq |\mu|(F) + |\mu|(G)$, so by induction if $E = \bigcup_{i \leq m} E_i$ where the $E_i$ are disjoint, then $|\mu|(E) \geq \sum_{i \leq m} |\mu|(E_i)$.
-Using the monotonicity, it follows that if $(E_i)$ is a disjoint countable sequence of sets and $E = \bigcup_i E_i$, then
-\[|\mu|(E) \geq \sum_{i=1}^\infty |\mu|(E_i).\]
+Using the monotonicity, it follows that if $(E_i)$ is a disjoint countable sequence of sets and $E = \bigcup_{i} E_i$, then
+\[|\mu|(E) \geq \sum_{i=1}^{\infty} |\mu|(E_i).\]
 
-Conversely, suppose that $E = \bigcup_j E_j = \bigcup_{i\leq n} F_i$ where $(E_j)$ is a disjoint countable sequence and $(F_i)$ is a disjoint finite sequence. Then
+Conversely, suppose that $E = \bigcup_{j} E_{j} = \bigcup_{i\leq n} F_i$ where $(E_{j})$ is a disjoint countable sequence and $(F_i)$ is a disjoint finite sequence. Then
 \begin{align*}
-\sum_{i=1}^n ||\mu(F_i)||_B &= \sum_{i=1}^n \left|\left|\mu\left(\bigcup_{j=1}^\infty \left(F_i \cap E_j\right)\right)\right|\right|_B \leq \sum_{i=1}^n \sum_{j=1}^\infty ||\mu(F_i \cap E_j)||_B \\
-&= \sum_{j=1}^\infty \sum_{i=1}^n ||\mu(F_i \cap E_j)||_B \leq \sum_{j=1}^\infty |\mu|(E_j).
+\sum_{i=1}^{n} ||\mu(F_i)||_{B} &= \sum_{i=1}^{n} \left|\left|\mu\left(\bigcup_{j=1}^{\infty} \left(F_{i} \cap E_{j}\right)\right)\right|\right|_{B} \leq \sum_{i=1}^{n} \sum_{j=1}^{\infty} ||\mu(F_{i} \cap E_{j})||_{B} \\
+&= \sum_{j=1}^{\infty} \sum_{i=1}^{n} ||\mu(F_{i} \cap E_{j})||_{B} \leq \sum_{j=1}^{\infty} |\mu|(E_{j}).
 \end{align*}
-Here we used the fact that $E_j = \bigcup_{i \leq n} F_i \cap E_j$. It follows that $|\mu|(E) \leq \sum_{i=1}^\infty |\mu|(E_i)$.
+Here we used the fact that $E_{j} = \bigcup_{i \leq n} F_{i} \cap E_{j}$. It follows that $|\mu|(E) \leq \sum_{i=1}^{\infty} |\mu|(E_i)$.
 \end{proof}
 
 \begin{theorem}[triangle inequality and reverse triangle inequality]
@@ -150,7 +150,7 @@ Let $\mu,\nu$ be measures on $\Sigma$ with values in $B$. Then $|\mu + \nu| \leq
 \end{theorem}
 \begin{proof}
 If $E = \bigcup_{i \leq n} E_i$, the $E_i$ disjoint, then
-\[\sum_{i=1}^n ||(\mu + \nu)(E_i)||_B \leq \sum_{i=1}^n ||\mu(E_i)||_B + ||\nu(E_i)||_B \leq |\mu|(E) + |\nu|(E)\]
+\[\sum_{i=1}^{n} ||(\mu + \nu)(E_i)||_{B} \leq \sum_{i=1}^{n} ||\mu(E_i)||_{B} + ||\nu(E_i)||_{B} \leq |\mu|(E) + |\nu|(E)\]
 which implies the two desired inequalities.
 \end{proof}
 
@@ -250,7 +250,7 @@ The probability of the event $\{X \geq x\}$ is frequently of interest, so we mak
 \begin{definition}
 Let $X$ be a random variable of type $E$.
 The \dfn{distribution} $\mu_X$ of $X$ is the pushforward $X_*P$ of $P$ on $E$.
-If $Y$ is another random variable and $\mu_X = \mu_Y$, we say that $X,Y$ are \dfn{identically distributed}.
+If $Y$ is another random variable and $\mu_{X} = \mu_Y$, we say that $X,Y$ are \dfn{identically distributed}.
 \end{definition}
 
 \begin{subsec}
@@ -270,10 +270,10 @@ We can write this in a more symmetrical form, which also avoids the issue of div
 \begin{definition}
 Let $(\Omega, \Sigma, P)$ be a probability space and $(E, \Gamma)$ a measurable space.
 
-Countably many events $A_n \in \Sigma$ are said to be \dfn{independent} if
-\[P\left(\bigcap_n A_n\right) = \prod_n P(A_n).\]
-Countably many $\sigma$-algebras $\mathcal A_n \subseteq \Sigma$ are said to be \dfn{independent} if for every $A_n \in \mathcal A_n$, the events $A_n$ are independent.
-Countably many random variables $X_n$ of type $E$ are said to be \dfn{independent} if the pullback $\sigma$-algebras $X_n^*\Gamma$ are independent.
+Countably many events $A_{n} \in \Sigma$ are said to be \dfn{independent} if
+\[P\left(\bigcap_{n} A_{n}\right) = \prod_{n} P(A_{n}).\]
+Countably many $\sigma$-algebras $\mathcal A_{n} \subseteq \Sigma$ are said to be \dfn{independent} if for every $A_{n} \in \mathcal A_{n}$, the events $A_{n}$ are independent.
+Countably many random variables $X_{n}$ of type $E$ are said to be \dfn{independent} if the pullback $\sigma$-algebras $X_{n}^*\Gamma$ are independent.
 
 Random variables $X,Y$ are said to be \dfn{iid} if they are independent and identically distributed.
 \end{definition}
@@ -285,16 +285,16 @@ The idea in the definition of independent random variables is that the pullback 
 \begin{example}
 Suppose that I am playing a game of cards.
 Every time I draw a card, I put it back in the deck and then shuffle again.
-Let $X_n$ be $1$ if I draw the queen of hearts on turn $n$, and $0$ otherwise.
-Then the distribution of $X_n$ is $(51/52)\delta_0 + (1/52)\delta_1$, where $\delta_x$ is the Dirac measure at $x$.
-Since I shuffle between turns, the $X_n$ are independent.
-So the $X_n$ are iid.
+Let $X_{n}$ be $1$ if I draw the queen of hearts on turn $n$, and $0$ otherwise.
+Then the distribution of $X_{n}$ is $(51/52)\delta_0 + (1/52)\delta_1$, where $\delta_x$ is the Dirac measure at $x$.
+Since I shuffle between turns, the $X_{n}$ are independent.
+So the $X_{n}$ are iid.
 \end{example}
 
 \begin{exercise}
 Verify the inclusion-exclusion formula
-\[P\left(\bigcup_{i=1}^n A_i\right) = \sum_{k=1}^n (-1)^{k+1} \sum{1 \leq i_1 < \cdots < i_k \leq n} P\left(\bigcap_{j=1}^k A_{i_j}\right)\]
-valid for any events $A_1, \dots, A_n$.
+\[P\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{k=1}^{n} (-1)^{k+1} \sum{1 \leq i_1 < \cdots < i_{k} \leq n} P\left(\bigcap_{j=1}^{k} A_{i_{j}}\right)\]
+valid for any events $A_1, \dots, A_{n}$.
 \end{exercise}
 
 \begin{exercise}[Skohorod representation]
@@ -304,14 +304,14 @@ Show that there is a probability space $\Omega$ and a random variable $X: \Omega
 \end{exercise}
 
 \begin{exercise}
-Let $X_n$ be random variables and suppose that for every $x \in \RR$, the events $X_n \geq x$ are independent.
-Show that the $X_n$ are independent random variables.
+Let $X_{n}$ be random variables and suppose that for every $x \in \RR$, the events $X_{n} \geq x$ are independent.
+Show that the $X_{n}$ are independent random variables.
 \end{exercise}
 
 \begin{exercise}
-Let $X_n$ be independent random variables of type $E$.
-Suppose that $f_n: E \to E$ are measurable maps.
-Show that the $f_n(X_n)$ are still independent.
+Let $X_{n}$ be independent random variables of type $E$.
+Suppose that $f_{n}: E \to E$ are measurable maps.
+Show that the $f_{n}(X_{n})$ are still independent.
 \end{exercise}
 
 \begin{exercise}
@@ -375,19 +375,19 @@ The theorem is due to Carathéodory, which is naturally why it is named after Po
 
 \begin{theorem}[Poincar\'e recurrence]
 Let $(X, \Sigma, P, f)$ be a measure-preserving system.
-For every $A \in \Sigma$, define $A^\flat = \{x \in A: \forall n~f^n(x) \notin A\}$.
+For every $A \in \Sigma$, define $A^{\flat} = \{x \in A: \forall n~f^n(x) \notin A\}$.
 Then $P(A^\flat) = 0$.
 \end{theorem}
 \begin{proof}
 We first note that
-\[A^\flat = A \setminus \bigcup_{n \in \NN} f^n(A)\]
+\[A^{\flat} = A \setminus \bigcup_{n \in \NN} f^n(A)\]
 which is measurable since each of the $f^n(A)$ are.
 
 If $m > n$, then $f^n(A^\flat) \cap f^m(A^\flat)$ is empty: if $x \in f^m(A^\flat)$, so that $f^{-m}(x) \in A^\flat$, then by definition of $A^\flat$,
 \[f^{-n}(x) = f^{m-n}(f^{-m}(x)) \notin A.\]
 
 Therefore, for any $N \in \NN$,
-\[P(A^\flat) = \frac{1}{N} \sum_{n=1}^N P(f^m(A^\flat)) = \frac{1}{N} P\left(\bigcup_{n=1}^N f^m(A^\flat)\right) \leq \frac{1}{N} P(X) = \frac{1}{N}.\]
+\[P(A^\flat) = \frac{1}{N} \sum_{n=1}^{N} P(f^m(A^\flat)) = \frac{1}{N} P\left(\bigcup_{n=1}^{N} f^m(A^\flat)\right) \leq \frac{1}{N} P(X) = \frac{1}{N}.\]
 So $P(A^\flat) = 0$.
 \end{proof}
 

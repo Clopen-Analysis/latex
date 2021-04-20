@@ -32,32 +32,32 @@ However, we will have no use for this.
 \begin{example}
 The most important example of a normed space has as its base space $\RR^d$.
 We define
-\[||(x_1, \dots, x_d)||_2^2 = \sum_{i=1}^d |x_i|^2,\]
+\[||(x_1, \dots, x_d)||_2^2 = \sum_{i=1}^{d} |x_i|^2,\]
 thus $||\cdot||_2$ is the \dfn{Euclidean norm} on $\RR^d$.
 Then the triangle inequality is just the usual triangle inequality for Euclidean geometry.
 \end{example}
 
 \begin{example}
 We can define several other norms on $\RR^d$, closely related to the Euclidean norm $||\cdot||_2$. First we let
-\[||(x_1, \dots, x_d)||_\infty = \max_{i=1}^d |x_i|.\]
+\[||(x_1, \dots, x_d)||_{\infty} = \max_{i=1}^{d} |x_i|.\]
 We then define, for any $p \in [1, \infty),$
-\[||(x_1, \dots, x_d)||_p^p = \sum_{i=1}^d |x_i|^p.\]
-Thus when $p = 2$ we recover the Euclidean norm, when $p = 1$ we recover the ``sum norm" $||(x_1, \dots, x_d)||_1 = \sum_i |x_i|$, and in the limit $p \to \infty$ we obtain the $||\cdot||_\infty$ norm.
+\[||(x_1, \dots, x_d)||_{p} ^{p} = \sum_{i=1}^{d} |x_i|^p.\]
+Thus when $p = 2$ we recover the Euclidean norm, when $p = 1$ we recover the ``sum norm" $||(x_1, \dots, x_d)||_1 = \sum_{i} |x_i|$, and in the limit $p \to \infty$ we obtain the $||\cdot||_\infty$ norm.
 \end{example}
 
 \begin{subsec}
 A normed space is a metric space in a natural way, namely the distance between two vectors $v,w$ is defined to be $||v - w||$.
 Thus we have access to the usual notion of sequences, convergence, etc. for normed spaces; so the equation
-\[\lim_{n \to \infty} v_n = w\]
-means that for every $\varepsilon > 0$ there is an $N$ such that for every $n \geq N$, $||v_n - w|| < \varepsilon$.
-Similarly a sequence of $v_n$ is Cauchy if for every $\varepsilon > 0$ there is an $N$ such that for every $n, n' \geq N$, $||v_n, v_{n'}|| < \varepsilon$.
+\[\lim_{n \to \infty} v_{n} = w\]
+means that for every $\varepsilon > 0$ there is an $N$ such that for every $n \geq N$, $||v_{n} - w|| < \varepsilon$.
+Similarly a sequence of $v_{n}$ is Cauchy if for every $\varepsilon > 0$ there is an $N$ such that for every $n, n' \geq N$, $||v_{n}, v_{n'}|| < \varepsilon$.
 \end{subsec}
 
 \begin{subsec}
 The notion of convergence makes sense in seminormed spaces, but it is no longer true that the limit of a sequence need be unique.
 In fact, consider the seminorm on $\RR^2$ defined by
 \[||(x, y)|| = |x|.\]
-Let $(x_n, y_n)_n$ be a sequence in $\RR^2$ and $x \in \RR$. Then for every $\lim_n x_n = x$, then for every $y \in \RR$, $\lim_n (x_n, y_n) = (x, y)$.
+Let $(x_{n}, y_{n})_{n}$ be a sequence in $\RR^2$ and $x \in \RR$. Then for every $\lim_{n} x_{n} = x$, then for every $y \in \RR$, $\lim_{n} (x_{n}, y_{n}) = (x, y)$.
 In the language of point-set topology, seminormed spaces are not Hausdorff (nor do they even satisfy Axiom $T_0$).
 We fix the lack of Hausdorffness by observing that it is always possible to turn a seminormed space into a normed space.
 \end{subsec}
@@ -127,34 +127,34 @@ However, this property is not true for normed spaces, as the following example w
 Let $C[0, 1]$ denote the vector space of continuous functions $[0, 1] \to \CC$.
 We turn $C[0, 1]$ into a normed space by introducing a Euclidean-type norm,
 \[||f||_2^2 = \int_0^1 |f(x)|^2 ~dx.\]
-It is easy to check that $||f||_2$ is a seminorm, and to see that it is a norm, note that if $\int_0^1 |g| = 0$, then for every $\varepsilon > 0$ there is a partition of $[0, 1]$ into intervals $I_1, \dots, I_n$ such that for every $i$, the length of $I_i$ is $<\varepsilon$ and the midpoint $I_i^*$ of $I_i$ satisfies $|g(I_i^*)| < \varepsilon$.
+It is easy to check that $||f||_2$ is a seminorm, and to see that it is a norm, note that if $\int_0^1 |g| = 0$, then for every $\varepsilon > 0$ there is a partition of $[0, 1]$ into intervals $I_1, \dots, I_{n}$ such that for every $i$, the length of $I_i$ is $<\varepsilon$ and the midpoint $I_i^*$ of $I_i$ satisfies $|g(I_i^*)| < \varepsilon$.
 Thus the set of points $x$ such that $|g(x)| < \varepsilon$ is $\varepsilon$-dense (i.e. for every $y$ there is an $x$ such that $|x - y| < \varepsilon$ and $|g(x)| < \varepsilon$).
 Taking $\varepsilon \to 0$ we see that the set of points $x$ such that $g(x) = 0$ is dense (i.e. for every $\delta > 0$ and every $y$ we can find an $x$ with $|x - y| < \delta$ and $g(y) = 0$).
 But $g$ is continuous so $g = 0$.
 
 Now define
-$$f_n(x) = \begin{cases}
+$$f_{n}(x) = \begin{cases}
 0, &x \leq 1/2 - 1/n\\
 n(x - 1/2 - 1/n), &1/2 - 1/n \leq x \leq 1/2 + 1/n\\
 2, &x \geq 1/2 + 1/n
 \end{cases}.$$
 TODO: Draw a picture
-To see that $(f_n)_n$ is Cauchy, note that if $m > n$ then
-\[||f_n - f_m||_2^2 = \int_{1/2-1/n}^{1/2+1/n} (m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))^2~dx\]
+To see that $(f_{n})_{n}$ is Cauchy, note that if $m > n$ then
+\[||f_{n} - f_{m}||_2^2 = \int_{1/2-1/n}^{1/2+1/n} (m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))^2~dx\]
 and the integrand satisfies
 \[(m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))^2 \leq 8.\]
 Thus
-\[||f_n - f_m||_2^2 \leq \int_{1/2-1/n}^{1/2+1/n} 8~dx = \frac{16}{n}.\]
+\[||f_{n} - f_{m}||_2^2 \leq \int_{1/2-1/n}^{1/2+1/n} 8~dx = \frac{16}{n}.\]
 Therefore
-\[||f_n - f_m||_2 \leq \frac{4}{\sqrt n} \to 0\]
+\[||f_{n} - f_{m}||_2 \leq \frac{4}{\sqrt n} \to 0\]
 as $n \to \infty$. However, it is not too hard to check that if
 $$f(x) = \begin{cases}
 0, x \leq 1/2\\
 1, x > 1/2
 \end{cases}$$
 then
-\[\lim_{n \to \infty} ||f_n - f||_2 = 0;\]
-yet $f$ is not continuous, and $||\cdot||_2$ is a norm, so $f_n$ cannot converge to any continuous function.
+\[\lim_{n \to \infty} ||f_{n} - f||_2 = 0;\]
+yet $f$ is not continuous, and $||\cdot||_2$ is a norm, so $f_{n}$ cannot converge to any continuous function.
 \end{example}
 
 \begin{definition}
@@ -162,30 +162,30 @@ A \dfn{Banach space} is a normed space for which every Cauchy sequence converges
 \end{definition}
 
 \begin{example}
-The $p$-norms $||\cdot||_p$ that we defined on $\RR^d$ turn $\RR^d$ into a Banach space.
+The $p$-norms $||\cdot||_{p} $ that we defined on $\RR^d$ turn $\RR^d$ into a Banach space.
 This is an exercise in the fact that every Cauchy sequence on $\RR$ converges.
 \end{example}
 
 \begin{subsec}
-The advantage of working in Banach spaces rather than general normed spaces is that it is meaningful to talk about infinite sums in Banach spaces. Indeed, if $(x_n)_n$ is a sequence of elements in a Banach space $X$, we define
+The advantage of working in Banach spaces rather than general normed spaces is that it is meaningful to talk about infinite sums in Banach spaces. Indeed, if $(x_{n})_{n}$ is a sequence of elements in a Banach space $X$, we define
 \begin{equation}
 \label{banach space series}
-\sum_{n=1}^\infty x_n = \lim_{N \to \infty} \sum_{n=1}^N x_n
+\sum_{n=1}^{\infty} x_{n} = \lim_{N \to \infty} \sum_{n=1}^{N} x_{n}
 \end{equation}
-whenever the limit on the right-hand side of (\ref{banach space series}) makes sense; thus, $y = \sum_n x_n$ if for every $\varepsilon > 0$, there is an $N$ such that
-\[\left|\left|y - \sum_{n=1}^N x_n\right|\right| < \varepsilon.\]
+whenever the limit on the right-hand side of (\ref{banach space series}) makes sense; thus, $y = \sum_{n} x_{n}$ if for every $\varepsilon > 0$, there is an $N$ such that
+\[\left|\left|y - \sum_{n=1}^{N} x_{n}\right|\right| < \varepsilon.\]
 In fact, the right-hand side of (\ref{banach space series}) makes sense as long as the partial sums are Cauchy; thus, for every $\varepsilon > 0$, there is an $N$ such that
-\[\left|\left|\sum_{n=N}^\infty x_n\right|\right| < \varepsilon.\]
+\[\left|\left|\sum_{n=N}^{\infty} x_{n}\right|\right| < \varepsilon.\]
 By the triangle inequality, it in fact suffices to show that for every $\varepsilon > 0$ there is an $N$ such that
 \begin{equation}
 \label{absolute convergence}
-\sum_{n=N}^\infty ||x_n|| < \varepsilon
+\sum_{n=N}^{\infty} ||x_{n}|| < \varepsilon
 \end{equation}
-to show that the $(x_n)_n$ are summable.
+to show that the $(x_{n})_{n}$ are summable.
 \end{subsec}
 
 \begin{definition}
-Let $(x_n)_n$ be a sequence in a Banach space. If for every $\varepsilon > 0$ there is an $N$ such that (\ref{absolute convergence}) holds, we say that $(x_n)_n$ is \dfn{absolutely convergent} or \dfn{absolutely summable}.
+Let $(x_{n})_{n}$ be a sequence in a Banach space. If for every $\varepsilon > 0$ there is an $N$ such that (\ref{absolute convergence}) holds, we say that $(x_{n})_{n}$ is \dfn{absolutely convergent} or \dfn{absolutely summable}.
 \end{definition}
 
 \begin{subsec}
@@ -208,27 +208,27 @@ commutes.
 \end{theorem}
 \begin{proof}[Proof (omit on first reading)]
 To do this, let $V$ be a normed space and let $\Cau (V)$ be the vector space of all Cauchy sequences in $V$.
-(We let $x$ denote a Cauchy sequence $(x_n)_n$.)
+(We let $x$ denote a Cauchy sequence $(x_{n})_{n}$.)
 Then $\Cau (V)$ is a seminormed space, where
-\[||x|| = \lim_{n \to \infty} ||x_n||.\]
-(To see that the limit exists, note that if $x$ is a Cauchy sequence then $n \mapsto ||x_n||$ is a Cauchy sequence in $\RR$, so it converges.)
+\[||x|| = \lim_{n \to \infty} ||x_{n}||.\]
+(To see that the limit exists, note that if $x$ is a Cauchy sequence then $n \mapsto ||x_{n}||$ is a Cauchy sequence in $\RR$, so it converges.)
 Let $W$ be the normalization of $\Cau (V)$ and $\pi: \Cau (V) \to W$ the natural projection.
 
 We claim that $W$ is the completion of $V$.
 First, $W$ is a Banach space, because if $x \in \Cau (W)$, then we can choose $\widetilde x \in \Cau (\Cau (V))$ such that for every $n$,
-\[\pi(\widetilde x_n) = x_n.\]
-Now $\widetilde x_n$ is a Cauchy sequence, say $(\widetilde x_{n,m})_m$. If we replace $\widetilde x_n$ with a subsequence (in $m$) of $\widetilde x_n$, $\pi(\widetilde x_n)$ will not change.
+\[\pi(\widetilde x_{n}) = x_{n}.\]
+Now $\widetilde x_{n}$ is a Cauchy sequence, say $(\widetilde x_{n,m})_{m}$. If we replace $\widetilde x_{n}$ with a subsequence (in $m$) of $\widetilde x_{n}$, $\pi(\widetilde x_{n})$ will not change.
 Thus we might as well assume that for any two $m,m'$,
 \[||\widetilde x_{n,m} - \widetilde x_{n,m'}|| < \frac{1}{n}.\]
 Now let
-\[\widetilde y_n = \widetilde x_{n,n}.\]
-We want $x_n \to \pi(\widetilde y)$ but it's not obvious that $\widetilde y$ is a Cauchy sequence.
+\[\widetilde y_{n} = \widetilde x_{n,n}.\]
+We want $x_{n} \to \pi(\widetilde y)$ but it's not obvious that $\widetilde y$ is a Cauchy sequence.
 
 Let $\varepsilon > 0$, so there is an $N > \varepsilon^{-1}$ such that for every $n, n' \geq N$,
-\[||x_n - x_{n'}|| < \varepsilon\]
+\[||x_{n} - x_{n'}|| < \varepsilon\]
 and for any $j$,
 \begin{align*}
-  ||\widetilde y_n - \widetilde y_{n'}|| &= ||\widetilde x_{n,n} - \widetilde x_{n',n'}||\\
+  ||\widetilde y_{n} - \widetilde y_{n'}|| &= ||\widetilde x_{n,n} - \widetilde x_{n',n'}||\\
   &\leq ||\widetilde x_{n,n} - \widetilde x_{n,j}|| + ||\widetilde x_{n,j} - \widetilde x_{n',j}|| + ||\widetilde x_{n',j} - \widetilde x_{n',n'}||\\
   &\leq \frac{1}{n} + ||\widetilde x_{n,j} - \widetilde x_{n',j}|| + \frac{1}{n'}\\
   &< 2\varepsilon + ||\widetilde x_{n,j} - \widetilde x_{n',j}||.
@@ -236,17 +236,17 @@ and for any $j$,
 But
 \[\lim_{j \to \infty} ||\widetilde x_{n,j} - \widetilde x_{n',j}|| = 0\]
 and since $j$ was large enough we can take $||\widetilde x_{n,j} - \widetilde x_{n',j}|| < \varepsilon$. Then
-\[||\widetilde y_n - \widetilde y_{n'}|| \lesssim \varepsilon.\]
+\[||\widetilde y_{n} - \widetilde y_{n'}|| \lesssim \varepsilon.\]
 Therefore $\widetilde y \in \Cau (V)$, and we can define
 \[y = \pi(\widetilde y).\]
 
 We similarly choose $N > \varepsilon^{-1}$ such that for every $n, n' \geq N$,
-\[||\widetilde y_n - \widetilde y_{n'}|| < \varepsilon.\]
+\[||\widetilde y_{n} - \widetilde y_{n'}|| < \varepsilon.\]
 Then
-\[||\widetilde x_{n',n} - \widetilde y_n|| \leq ||\widetilde x_{n',n} - \widetilde x_{n',n'}|| + ||\widetilde y_{n'} - \widetilde y_n|| \lesssim \varepsilon.\]
+\[||\widetilde x_{n',n} - \widetilde y_{n}|| \leq ||\widetilde x_{n',n} - \widetilde x_{n',n'}|| + ||\widetilde y_{n'} - \widetilde y_{n}|| \lesssim \varepsilon.\]
 But
-\[\lim_{m \to \infty} ||\widetilde x_{n,m} - \widetilde y_m|| = ||x_n - y||\]
-so $\lim_n x_n = y$.
+\[\lim_{m \to \infty} ||\widetilde x_{n,m} - \widetilde y_{m}|| = ||x_{n} - y||\]
+so $\lim_{n} x_{n} = y$.
 
 We can define
 \begin{equation}
@@ -257,8 +257,8 @@ Clearly the limit of the Cauchy sequence on the right-hand side of (\ref{inclusi
 
 To see that $\iota(V)$ is dense in $W$, let $x \in W$ and choose $\widetilde x \in \Cau (V)$ with $\pi(\widetilde x) = x$.
 Now $\widetilde x$ is a Cauchy sequence in $V$, so let
-\[y_n = \iota(\widetilde x_n);\]
-then $y \in \Cau (W)$, and the reader can check that $\lim_n y_n = x$.
+\[y_{n} = \iota(\widetilde x_{n});\]
+then $y \in \Cau (W)$, and the reader can check that $\lim_{n} y_{n} = x$.
 
 To check the universal property, let $T: V \to X$ be a linear map of $V$ into a Banach space $X$ such that $||Tv|| = ||v||$.
 Thus $T$ is a bounded linear map (c.f. Definition \ref{bounded linear map}). First define $T'(\iota(v)) = v$ for every $v$, thus $T'$ is defined on the dense subspace $V'$ of $W$.
@@ -289,21 +289,21 @@ Let $T: V \to W$ be a bounded linear map between normed spaces, and suppose that
 Then there is a unique extension of $T$ to a bounded linear map $X \to W$, which has the same operator norm.
 \end{lemma}
 \begin{proof}
-Let $x \in X$, and let $(x_n)_n$ be a sequence in $V$ with $\lim_n x_n = x$.
-Define $Tx = \lim_n Tx_n$.
+Let $x \in X$, and let $(x_{n})_{n}$ be a sequence in $V$ with $\lim_{n} x_{n} = x$.
+Define $Tx = \lim_{n} Tx_{n}$.
 We let $||T||_V$ denote the operator norm of $T$ with domain $V$ and $||T||_X$ with domain $X$.
 
-To see that this is well-defined, suppose that $\lim_n x_n' = x$ as well. Then
-\[\lim_{n \to \infty} ||Tx_n - Tx_n'|| \leq \lim_{n \to \infty} ||T||_V \cdot||x_n - x_n'|| = 0\]
-since $x_n \to x$ and $x_n' \to x$.
+To see that this is well-defined, suppose that $\lim_{n} x_{n}' = x$ as well. Then
+\[\lim_{n \to \infty} ||Tx_{n} - Tx_{n}'|| \leq \lim_{n \to \infty} ||T||_{V} \cdot||x_{n} - x_{n}'|| = 0\]
+since $x_{n} \to x$ and $x_{n}' \to x$.
 Thus $Tx$ does not depend on the choice of Cauchy sequence which approximates $x$.
 Similarly,
-\[||Tx|| = \lim_{n \to \infty} ||Tx_n|| \leq \lim_{n \to \infty} ||T||_V \cdot||x_n|| = ||T||_V ||x_n||.\]
-Thus $||T||_X \leq ||T||_V$, but $V$ is a subspace of $X$ so clearly $||T||_V \leq ||T||_X$.
+\[||Tx|| = \lim_{n \to \infty} ||Tx_{n}|| \leq \lim_{n \to \infty} ||T||_{V} \cdot||x_{n}|| = ||T||_{V} ||x_{n}||.\]
+Thus $||T||_{X} \leq ||T||_V$, but $V$ is a subspace of $X$ so clearly $||T||_{V} \leq ||T||_X$.
 
 To check that $T$ is linear on $X$, note that $T$ is continuous and hence can be commuted with limits. This means that
-\[T(x + y) = \lim_{n \to \infty} T(x_n + y_n) = \lim_{n \to \infty} Tx_n + Ty_n = Tx + Ty\]
-where $(x_n)_n$ and $(y_n)_n$ are appropriately chosen Cauchy sequences.
+\[T(x + y) = \lim_{n \to \infty} T(x_{n} + y_{n}) = \lim_{n \to \infty} Tx_{n} + Ty_{n} = Tx + Ty\]
+where $(x_{n})_{n}$ and $(y_{n})_{n}$ are appropriately chosen Cauchy sequences.
 The proof that $T(cx) = cTx$ is similar.
 \end{proof}
 
@@ -317,7 +317,7 @@ If $X$ is separable and $Y \subseteq X$, then $Y$ is separable; in fact, if $C$ 
 \end{subsec}
 
 \begin{example}
-$\CC^n$ is separable, since $\{(\alpha_1 + i\beta_1, \dots, \alpha_n + i \beta_n): \alpha_i, \beta_i \in \QQ\}$ is countable and dense in $\CC^n$.
+$\CC^n$ is separable, since $\{(\alpha_1 + i\beta_1, \dots, \alpha_{n} + i \beta_{n}): \alpha_i, \beta_{i} \in \QQ\}$ is countable and dense in $\CC^n$.
 In particular any finite-dimensional space is separable. Moreover, most spaces that we consider will turn out to be separable.
 \end{example}
 
@@ -530,7 +530,7 @@ There is clearly an injection $x \to 2^x$, given by $y \mapsto \{y\}$.
 \end{subsec}
 
 \begin{theorem}[Cantor's diagonal argument]
-For every set $x$, there is no injection $2^x \to x$.
+For every set $x$, there is no injection $2^{x} \to x$.
 \end{theorem}
 
 \begin{subsec}
@@ -615,8 +615,8 @@ The idea is that cardinals should be canonical representatives of the equivalenc
 \end{subsec}
 
 \begin{subsec}
-We let $\aleph_0$ be the least infinite cardinal (thus $\aleph_0 = \omega$), and for every cardinal $\aleph_n$, we define $\aleph_{n+1}$ to be the least cardinal greater than $\aleph_n$.
-We would like to continue this recursion and let $\aleph_\omega$ be the least cardinal greater than $\aleph_n$ for every $n \in \NN$.
+We let $\aleph_0$ be the least infinite cardinal (thus $\aleph_0 = \omega$), and for every cardinal $\aleph_{n}$, we define $\aleph_{n+1}$ to be the least cardinal greater than $\aleph_{n}$.
+We would like to continue this recursion and let $\aleph_\omega$ be the least cardinal greater than $\aleph_{n}$ for every $n \in \NN$.
 It is not possible to define $\aleph_\omega$ yet, but we can do so with the help of a new axiom schema.
 \end{subsec}
 
@@ -693,7 +693,7 @@ If $\delta$ is a limit ordinal we let $\beth_\delta$ be the cardinality of $\big
 \end{definition}
 
 \begin{subsec}
-By Cantor's diagonal argument, $\beth_\alpha < \beth_\beta$ whenever $\alpha < \beta$.
+By Cantor's diagonal argument, $\beth_{\alpha} < \beth_\beta$ whenever $\alpha < \beta$.
 \end{subsec}
 
 \begin{theorem}
@@ -730,11 +730,11 @@ Then $\PP$ has a maximal element.
 Let $\kappa = \card \PP$ and choose a bijection $f: \kappa \to \PP$.
 We will define an ordinal $\delta$ and an injection $g: \delta + 1 \to \PP$ as follows.
 Let $g(0) = f(0)$. If $g(\alpha)$ has been defined and is not maximal, there is a $\beta < \kappa$ such that $f(\beta) > g(\alpha)$; choose the least such $\beta$, and set $g(\alpha + 1) = f(\beta)$.
-If $g(\alpha)$ has been defined for all $\alpha < \gamma$, then let $\mathcal C_\gamma = \{g(\alpha): \alpha < \gamma\}$; then $\mathcal C_\gamma$ is a chain, so it has an upper bound, which we define to be $g(\gamma)$.
+If $g(\alpha)$ has been defined for all $\alpha < \gamma$, then let $\mathcal C_{\gamma} = \{g(\alpha): \alpha < \gamma\}$; then $\mathcal C_\gamma$ is a chain, so it has an upper bound, which we define to be $g(\gamma)$.
 
 If the above process stops at some $\delta$, then $g(\delta)$ is maximal in $\PP$.
 Otherwise, there are arbitrarily large ordinals $\delta$ such that there are injections $\delta \to \PP$, hence $\delta \to \kappa$.
-In particular we could take $\delta = \card 2^\kappa$ and get an injection $2^\kappa \to \kappa$, a contradiction.
+In particular we could take $\delta = \card 2^\kappa$ and get an injection $2^{\kappa} \to \kappa$, a contradiction.
 \end{proof}
 
 \section{Universal properties}
@@ -776,7 +776,7 @@ A \dfn{category} $C$ is a set, whose elements are called \dfn{objects}, along wi
 \end{align*}
 such that:
 \begin{enumerate}
-\item For every object $x \in C$, $\Hom(x, x)$ contains a morphism $1_x$ which is an \dfn{identity} in the sense that for all $\varphi \in \Hom(x, y)$, $\varphi = \varphi 1_x$ and for every $\psi \in \Hom(y, x)$, $\psi = 1_x \psi$.
+\item For every object $x \in C$, $\Hom(x, x)$ contains a morphism $1_x$ which is an \dfn{identity} in the sense that for all $\varphi \in \Hom(x, y)$, $\varphi = \varphi 1_x$ and for every $\psi \in \Hom(y, x)$, $\psi = 1_{x} \psi$.
 \item Composition is \dfn{associative} in the sense that $\psi(\varphi\rho) = (\psi\varphi)\rho$ whenever $\psi\varphi$ and $\varphi\rho$ are defined.
 \end{enumerate}
 \end{definition}
@@ -788,7 +788,7 @@ Similarly we define $\Grp$, the category of (small) groups where the morphisms a
 \end{subsec}
 
 \begin{subsec}
-It can be convenient to draw diagrams of morphisms, which are graphs where the nodes are objects, an edge from $x$ to $y$ is a morphism in $\Hom(x, y)$, and the diagram \dfn{commutes} if for any two objects $x, y$ in the diagram and any two paths $\varphi_1\cdots\varphi_n$ and $\psi_1\cdots\psi_m$ from $x, y$, $\varphi_1\cdots\varphi_n = \psi_1\cdots\psi_m$.
+It can be convenient to draw diagrams of morphisms, which are graphs where the nodes are objects, an edge from $x$ to $y$ is a morphism in $\Hom(x, y)$, and the diagram \dfn{commutes} if for any two objects $x, y$ in the diagram and any two paths $\varphi_1\cdots\varphi_{n}$ and $\psi_1\cdots\psi_{m}$ from $x, y$, $\varphi_1\cdots\varphi_{n} = \psi_1\cdots\psi_{m}$.
 For example, the diagram
 $$\begin{tikzcd}
 x_1 \arrow[r,"\varphi_1"] \arrow[d,"\psi_1"] & x_2 \arrow[d,"\psi_2"]\\
@@ -850,7 +850,7 @@ A \dfn{topology} $\mathcal T$ in a set $X$ is a set of subsets of $X$ such that:
 \begin{enumerate}
 \item $\emptyset, X \in \mathcal T$.
 \item If $\mathcal U \subseteq \mathcal T$, then the union $\bigcup_{U \in \mathcal U} U$ of all elements of $\mathcal U$ is also in $\mathcal T$.
-\item If $U_1, \dots, U_n \mathcal T$ then $U_1 \cap \cdots \cap U_n \in \mathcal T$.
+\item If $U_1, \dots, U_{n} \mathcal T$ then $U_1 \cap \cdots \cap U_{n} \in \mathcal T$.
 \end{enumerate}
 A pair $(X, \mathcal T)$ is called a \dfn{topological space} and usually just denoted $X$.
 Elements of $\mathcal T$ are called \dfn{open sets}.
@@ -868,7 +868,7 @@ The obvious examples of topologies on a set $X$ are the discrete topology (where
 \end{subsec}
 
 \begin{definition}
-A set $\mathcal B$ of subsets of a set $X$ is called a \dfn{basis} if for all $B_1, \dots, B_n \in \mathcal B$, $B_1 \cap \cdots \cap B_n \in \mathcal B$.
+A set $\mathcal B$ of subsets of a set $X$ is called a \dfn{basis} if for all $B_1, \dots, B_{n} \in \mathcal B$, $B_1 \cap \cdots \cap B_{n} \in \mathcal B$.
 \end{definition}
 
 \begin{subsec}
@@ -922,7 +922,7 @@ Let $X,Y$ be metric spaces and $f: X \to Y$. Then $f$ is continuous iff for ever
 \end{lemma}
 
 \begin{lemma}
-Let $\mathcal X$ be a set of topological spaces. Then $X = \prod \mathcal X$ satisfies the \dfn{universal property of products} in the category of topological spaces: for every $Y \in \mathcal X$, $\pi_Y: X \to Y$ the canonical projection, $\pi_Y$ is continuous, and for every topological space $Z$, if we are given maps $f_Y: Z \to Y$ for every $Y$, there is a unique map $f: Z \to X$ such that $\pi_Y \circ f = f_Y$.
+Let $\mathcal X$ be a set of topological spaces. Then $X = \prod \mathcal X$ satisfies the \dfn{universal property of products} in the category of topological spaces: for every $Y \in \mathcal X$, $\pi_Y: X \to Y$ the canonical projection, $\pi_Y$ is continuous, and for every topological space $Z$, if we are given maps $f_Y: Z \to Y$ for every $Y$, there is a unique map $f: Z \to X$ such that $\pi_{Y} \circ f = f_Y$.
 \end{lemma}
 
 \begin{subsec}
@@ -930,7 +930,7 @@ We now want to talk about limits. Unfortunately at the level of abstraction we a
 \end{subsec}
 
 \begin{definition}
-A \dfn{directed set} is a partially ordered set $\PP$ such that for all $\alpha_1, \dots, \alpha_k \in \PP$, $\sup(\alpha_1, \dots, \alpha_k)$ exists.
+A \dfn{directed set} is a partially ordered set $\PP$ such that for all $\alpha_1, \dots, \alpha_{k} \in \PP$, $\sup(\alpha_1, \dots, \alpha_{k})$ exists.
 \end{definition}
 
 \begin{subsec}
@@ -945,17 +945,17 @@ A \dfn{sequence} is a net indexed by $\NN$.
 
 \begin{definition}
 Let $\PP$ be a directed set and $X$ a topological space. Let $x$ be a net in $X$ indexed by $\PP$. Let $x^* \in X$.
-We say that $x^*$ is the \dfn{limit} of $x$ if for every neighborhood $U$ of $x$, there is an $\alpha \in \PP$ such that for every $\beta \geq \alpha$, $x_\beta \in U$.
-In this case we write $\lim_\gamma x_\gamma = x^*$ or $x_\gamma \to x^*$ if it is clear from context that $\gamma$ is a dummy variable.
+We say that $x^*$ is the \dfn{limit} of $x$ if for every neighborhood $U$ of $x$, there is an $\alpha \in \PP$ such that for every $\beta \geq \alpha$, $x_{\beta} \in U$.
+In this case we write $\lim_{\gamma} x_{\gamma} = x^*$ or $x_{\gamma} \to x^*$ if it is clear from context that $\gamma$ is a dummy variable.
 If $x$ has a limit we say that $X$ \dfn{converges}.
 \end{definition}
 
 \begin{lemma}
-In a metric space, $x_n \to x$ iff for every $\varepsilon > 0$ there is a $N \in \NN$ such that for all $n > N$, $d(x_n, x) < \varepsilon$.
+In a metric space, $x_{n} \to x$ iff for every $\varepsilon > 0$ there is a $N \in \NN$ such that for all $n > N$, $d(x_{n}, x) < \varepsilon$.
 \end{lemma}
 
 \begin{lemma}
-Let $f: X \to Y$. Then $f$ is continuous iff for every net $x_\gamma \to x^*$ in $X$, $f(x_\gamma) \to f(x^*)$ in $Y$.
+Let $f: X \to Y$. Then $f$ is continuous iff for every net $x_{\gamma} \to x^*$ in $X$, $f(x_\gamma) \to f(x^*)$ in $Y$.
 \end{lemma}
 
 \begin{definition}
@@ -966,7 +966,7 @@ We say that a function $f: \PP \to \PP$ between directed sets is \dfn{monotone} 
 \begin{definition}
 Let $X$ be a topological space.
 Let $x$ be a net indexed by $\PP$ and $x'$ a net indexed by $\PP'$.
-We say that $x'$ is a \dfn{subnet} of $x$ if there is a monotone cofinal function $f: \PP \to \PP'$ such that $x'_\alpha = x_{f(\alpha)}$.
+We say that $x'$ is a \dfn{subnet} of $x$ if there is a monotone cofinal function $f: \PP \to \PP'$ such that $x'_{\alpha} = x_{f(\alpha)}$.
 A \dfn{subsequence} is a sequence which is a subnet of a subsequence.
 \end{definition}
 
@@ -977,7 +977,7 @@ Moreover, given a set $A \subseteq X$, the smallest closed set $K$ containing $A
 \end{lemma}
 
 \begin{subsec}
-Subsequences are significantly easier to work with than subnets, as one can eliminate the need to worry about cofinality; $y$ is a subsequence of $x$ iff there is an increasing sequence $n$ of natural numbers such that $x_{n_k} = y_k$ for all $k \in \NN$.
+Subsequences are significantly easier to work with than subnets, as one can eliminate the need to worry about cofinality; $y$ is a subsequence of $x$ iff there is an increasing sequence $n$ of natural numbers such that $x_{n_{k}} = y_{k}$ for all $k \in \NN$.
 \end{subsec}
 
 \begin{subsec}
@@ -1141,7 +1141,7 @@ Then by compactness again there is a subnet $x'' = (y'', z'')$ of $x'$ such that
 But $y'$ is convergent in $Y$ and $y''$ is a subnet of $y'$ so $y''$ is convergent in $Y$.
 Therefore $x''$ is convergent in $X$.
 
-The interesting case is the limit case, thus if $\delta < \kappa$ then $Y_\delta = \prod_{\alpha < \delta}$ is compact, and $\kappa$ is not the successor of any ordinal.
+The interesting case is the limit case, thus if $\delta < \kappa$ then $Y_{\delta} = \prod_{\alpha < \delta}$ is compact, and $\kappa$ is not the successor of any ordinal.
 In that case $X = \prod_{\alpha < \kappa} X_\alpha$, and if $x$ is a net in $X$ then we can let $y^\delta$ be the projection of $x$ onto $Y_\delta$.
 So we can find subnets $z^\delta$ of $y^\delta$ which converge.
 

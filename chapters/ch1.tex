@@ -10,15 +10,15 @@ If $X$ is a set, we will define a measure known as the \dfn{counting measure} $\
 
 We define the \dfn{Lebesgue measure}\footnote{Named after Henri Lebesgue (1875-1941), a French mathematician who introduced measure theory in his book \emph{Intégrale, longueur, aire} (\emph{Integral, length, area}).}
 $\mu$ on boxes $[a_1, b_1] \times \cdots \times [a_d, b_d] \subseteq \RR^d$ by declaring that
-\[\mu([a_1, b_1] \times \cdots \times [a_d, b_d]) = (b_1 - a_1)(b_2 - a_2)\cdots(b_d - a_d).\]
+\[\mu([a_1, b_1] \times \cdots \times [a_d, b_d]) = (b_1 - a_1)(b_2 - a_2)\cdots(b_{d} - a_d).\]
 When $d = 1$ this is just the familiar notion of the length of a line segment; when $d = 2$ this is the area of a rectangle; when $d = 3$ this is the volume of a rectangular prism.
 
 In probability theory, one is concerned with sets of ``outcomes"; the sets are known as ``events". Given an event $E$ in a sample space $X$, we define $\mu(E)$ to be the probability that $\mu$ occurs. Thus $\mu(X) = 1$.
 \end{example}
 
 \begin{subsec}
-In all of the above examples, $\mu$ has the property that if $Y_1, \dots, Y_n$ is a collection of disjoint sets (thus $Y_i \cap Y_j = \emptyset$ whenever $i \neq j$), then
-\[\mu\bigcup_i Y_i = \sum_i \mu(Y_i).\]
+In all of the above examples, $\mu$ has the property that if $Y_1, \dots, Y_{n}$ is a collection of disjoint sets (thus $Y_{i} \cap Y_{j} = \emptyset$ whenever $i \neq j$), then
+\[\mu\bigcup_{i} Y_{i} = \sum_{i} \mu(Y_i).\]
 In fact this can be made to be true not just for finite, but countable, collections of disjoint sets.
 So it will be natural to require that the domain of our measure $\mu$ be closed under taking countable unions.
 \end{subsec}
@@ -33,7 +33,7 @@ By a \dfn{ring} $R$ we mean a nonempty set, whose elements are sets, such that i
 
 \begin{subsec}
 Let $R$ be a ring.
-One easily checks that if $X_1, \dots, X_n \in R$ then $X_1 \cup \cdots \cup X_n \in R$ and $X_1 \cap \cdots \cap X_n \in R$ (this follows by induction, because $X \cap Y = X \setminus (X \setminus Y)$).
+One easily checks that if $X_1, \dots, X_{n} \in R$ then $X_1 \cup \cdots \cup X_{n} \in R$ and $X_1 \cap \cdots \cap X_{n} \in R$ (this follows by induction, because $X \cap Y = X \setminus (X \setminus Y)$).
 Moreover, since $R$ is nonempty, say $X \in R$, $X \setminus X \in R$, so $R$ contains the empty set.
 \end{subsec}
 
@@ -42,7 +42,7 @@ Let $X$ be a set. By an \dfn{algebra} in $X$ we mean a ring such that $X \in R$ 
 \end{definition}
 
 \begin{definition}
-By a \dfn{$\sigma$-ring}\footnote{Here $\sigma$ should be thought of as meaning ``countable".} $R$ we mean a ring which is closed under countable unions, thus for every sequence $(X_n)_n$ of sets in $R$, $\bigcup_n X_n \in R$.
+By a \dfn{$\sigma$-ring}\footnote{Here $\sigma$ should be thought of as meaning ``countable".} $R$ we mean a ring which is closed under countable unions, thus for every sequence $(X_{n})_{n}$ of sets in $R$, $\bigcup_{n} X_{n} \in R$.
 
 We define a \dfn{$\sigma$-algebra} in a set $X$ to be a $\sigma$-ring which is an algebra in $X$.
 \end{definition}
@@ -55,13 +55,13 @@ The below lemma allows us to accomplish this.
 
 \begin{lemma}
 Let $\Sigma$ be a $\sigma$-ring.
-Let $(E_n)_n$ be a sequence of sets in $\Sigma$. Then there is a sequence of disjoint sets $(F_n)_n$ in $\Sigma$ such that $F_n \subseteq E_n$ and
-\[\bigcup_{n=1}^\infty E_n = \bigcup_{n=1}^\infty F_n.\]
+Let $(E_{n})_{n}$ be a sequence of sets in $\Sigma$. Then there is a sequence of disjoint sets $(F_{n})_{n}$ in $\Sigma$ such that $F_{n} \subseteq E_{n}$ and
+\[\bigcup_{n=1}^{\infty} E_{n} = \bigcup_{n=1}^{\infty} F_{n}.\]
 \end{lemma}
 \begin{proof}
 Let $F_1 = E_1$ and for $n \geq 2$,
-\[F_n = E_n \setminus \bigcup_{i=1}^{n-1} F_i.\]
-Then clearly the $F_n$ are disjoint and have the same union as the $E_n$.
+\[F_{n} = E_{n} \setminus \bigcup_{i=1}^{n-1} F_i.\]
+Then clearly the $F_{n}$ are disjoint and have the same union as the $E_{n}$.
 \end{proof}
 
 \begin{exercise}
@@ -81,7 +81,7 @@ Show that every ring (in our sense) is an algebraic ring, where addition and mul
 
 \begin{exercise}
 Let $\Sigma$ be an infinite $\sigma$-ring. Show that $\Sigma$ has cardinality at least that of $2^\NN$, the power set of the natural numbers.
-(Hint: let $\Sigma_0 = \Sigma$. Choose $X_n \in \Sigma_n$ appropriately and let $\Sigma_{n+1} = \{Y \in \Sigma_n: X \cap Y = \emptyset\}$. If done correctly, you should be able to find an injective function $F: 2^\NN \to \Sigma$ such that $F(\{n\}) = X_n$).
+(Hint: let $\Sigma_0 = \Sigma$. Choose $X_{n} \in \Sigma_{n}$ appropriately and let $\Sigma_{n+1} = \{Y \in \Sigma_{n}: X \cap Y = \emptyset\}$. If done correctly, you should be able to find an injective function $F: 2^{\NN} \to \Sigma$ such that $F(\{n\}) = X_{n}$).
 \end{exercise}
 
 \section{The Borel $\sigma$-algebra}
@@ -108,8 +108,8 @@ If $\mathcal C$ is a set of sets, there is a smallest ($\sigma$)-ring containing
 In the case of a ($\sigma$)-ring, let $X$ be the union of all elements of $\mathcal C$.
 We now prove this claim for the case of a ring; the other cases are similar.
 
-The power set $2^X = \{Y: Y \subseteq X\}$ is clearly a ring which contains every element of $\mathcal C$.
-Let $\mathcal R$ be the set of all rings that contain every element of $\mathcal C$; since $2^X \in \mathcal R$, $\mathcal R$ is nonempty.
+The power set $2^{X} = \{Y: Y \subseteq X\}$ is clearly a ring which contains every element of $\mathcal C$.
+Let $\mathcal R$ be the set of all rings that contain every element of $\mathcal C$; since $2^{X} \in \mathcal R$, $\mathcal R$ is nonempty.
 By Lemma \ref{intersection of rings is ring}, the intersection $R$ of $\mathcal R$ is a ring.
 But for every $C \in \mathcal C$, $C \in R$ since $C$ is in every element of $\mathcal R$.
 Therefore $R$ contains $\mathcal C$.
@@ -179,11 +179,11 @@ In fact, the set of Borel subsets of $\RR^d$ has strictly lower cardinality than
 Let $\Sigma_1 = \mathcal T$ be the topology of $\RR^d$.
 Given $\Sigma_\alpha$, $\alpha$ a countable ordinal (see Definition \ref{ordinal dfn}), let $\Pi_\alpha$ be the set of all complements of elements of $\Sigma_\alpha$.
 Let $\Sigma_{\alpha+1}$ be the set of countable unions of elements of $\Pi_\alpha$.
-If $\beta < \omega_1$ is not equal to $\alpha+1$ for any $\alpha$, let $\Sigma_\beta = \bigcup_{\alpha < \beta} \Sigma_\alpha$.
+If $\beta < \omega_1$ is not equal to $\alpha+1$ for any $\alpha$, let $\Sigma_{\beta} = \bigcup_{\alpha < \beta} \Sigma_\alpha$.
 Therefore $\Sigma_\alpha$ and $\Pi_\alpha$ are defined for all $\alpha < \omega_1$ by transfinite recursion (see the remarks after Theorem \ref{transfinite induction}).
 We note that $\Sigma_0$ has cardinality $\beth_1$ by Theorem \ref{cardinality of topology}.
 
-Now the mapping $A \mapsto A^c$ is a bijection $\Sigma_\alpha \to \Pi_\alpha$.
+Now the mapping $A \mapsto A^c$ is a bijection $\Sigma_{\alpha} \to \Pi_\alpha$.
 Moreover if $\Pi_\alpha$ has cardinality $\beth_1$ (see Definition \ref{beth dfn}) then so does $\Sigma_{\alpha+1}$, since each element of $\Sigma_{\alpha+1}$ can be expressed in terms of a countable number of elements of $\Pi_\alpha$, and $\beth_1 \times \beth_1 \times \cdots$ has cardinality $\beth_1$ by Theorem \ref{cardinal arithmetic trivial}.
 Finally if $\beta$ is a countable limit ordinal and for every $\alpha < \beta$, $\Sigma_\alpha$ is countable, then $\Sigma_\beta$ is a countable union of sets of cardinality $\beth_1$, hence has cardinality $\beth_1$ by Theorem \ref{cardinal arithmetic trivial}.
 It follows by induction that for every countable ordinal $\alpha$, $\Sigma_\alpha$ has cardinality $\beth_1$.
@@ -227,16 +227,16 @@ We do not define addition on $[-\infty, \infty]$, which would include $-\infty$,
 
 %\begin{definition}
 %Let $B$ be a Banach space or $(-\infty, \infty]$, and let $\mathcal C$ be a collection of sets
-%We say that a function $\mu: \mathcal C \to B$ such that for every disjoint sequence of sets $(X_n)_n$ in $\Sigma$ such that $\bigcup_n X_n %\in \mathcal C$,
-%\[\mu\bigcup_n X_n = \sum_{n=1}^\infty \mu(X_n),\]
+%We say that a function $\mu: \mathcal C \to B$ such that for every disjoint sequence of sets $(X_{n})_{n}$ in $\Sigma$ such that $\bigcup_{n} X_{n} %\in \mathcal C$,
+%\[\mu\bigcup_{n} X_{n} = \sum_{n=1}^{\infty} \mu(X_{n}),\]
 %is called a \dfn{$\sigma$-additive fuction}.
 %\end{definition}
 %Here the infinite sum is meant in the sense of (\ref{banach space series}) if $B$ is a Banach space.
 
 \begin{definition}
 Let $\mathcal C$ be a collection of sets.
-A function $\mu: \mathcal C \to [0, \infty]$ such that for every disjoint sequence of sets $(X_n)_n$ in $\Sigma$ such that $\bigcup_n X_n \in \mathcal C$,
-\[\mu\bigcup_n X_n = \sum_{n=1}^\infty \mu(X_n),\]
+A function $\mu: \mathcal C \to [0, \infty]$ such that for every disjoint sequence of sets $(X_{n})_{n}$ in $\Sigma$ such that $\bigcup_{n} X_{n} \in \mathcal C$,
+\[\mu\bigcup_{n} X_{n} = \sum_{n=1}^{\infty} \mu(X_{n}),\]
 is called a \dfn{$\sigma$-additive fuction}.
 \end{definition}
 
@@ -263,7 +263,7 @@ Therefore $\mu(\emptyset) = 0$.
 
 \begin{example}
 The examples in Example \ref{examples of measures} are $\sigma$-additive.
-However, they are not all defined on $\sigma$-algebras; for example, the union of two boxes $\prod_i [a_i, b_i]$ is not a box.
+However, they are not all defined on $\sigma$-algebras; for example, the union of two boxes $\prod_{i} [a_i, b_i]$ is not a box.
 Counting measure is defined on the $\sigma$-algebra of every subset of $X$, so counting measure is actually a measure.
 
 In fact, it is not yet clear that there are any interesting measures other than counting measure!
@@ -297,7 +297,7 @@ $$H(x) = \begin{cases}
 is a useful example of a left-continuous function which is not continuous.
 Clearly the derivative $H'(x)$ exists if $x \neq 0$, and in that case $H'(x) = 0$.
 We want to say that $H'(0) = \infty$ in some suitable sense, and in fact that for any $\varepsilon > 0$,
-\[\int_{-\infty}^\infty H'(x)~dx = \int_{-\varepsilon}^\varepsilon H'(x)~dx = 1.\]
+\[\int_{-\infty}^{\infty} H'(x)~dx = \int_{-\varepsilon}^{\varepsilon} H'(x)~dx = 1.\]
 Of course we can't do that, because the limit that would define $H'(0)$ does not exist.
 TODO: Draw a picture.
 \end{example}
@@ -326,7 +326,7 @@ If the following theory ever seems too abstract, try it out on the Lebesgue prem
 \begin{example}
 The Stieltjes premeasure of a differentiable function $f$ can be thought of as ``weighted length"; $\mu_f([a, b)) > b - a$ provided that $f' > 1$ on $b - a$, and $\mu_f([a, b)) < b - a$ if $f' < 1$.
 This is just an expression of the fundamental theorem of calculus: if $f$ is differentiable then
-\[\mu_f([a, b)) = f(b) - f(a) = \int_a^b f'(x)~dx.\]
+\[\mu_f([a, b)) = f(b) - f(a) = \int_{a}^{b} f'(x)~dx.\]
 Since $f$ is nondecreasing, $f' \geq 0$.
 This is our first clue that there is some connection between integration and measure theory.
 \end{example}
@@ -335,8 +335,8 @@ This is our first clue that there is some connection between integration and mea
 The Stieltjes premeasure of the Heaviside function $H$ will allow us to make some sense of our previous waffling about its derivative.
 If $0 \notin [a, b)$ then $\mu_H([a, b)) = 0$.
 Otherwise, $a \leq 0 < b$ and $H(b) = 1$, $H(a) = 0$; thus $\mu_H([a, b)) = 1$.
-If one instead considers a finite set $X = \{x_1, \dots, x_n\}$ and
-\[f(x) = \sum_{j=1}^n H(x - x_j),\]
+If one instead considers a finite set $X = \{x_1, \dots, x_{n}\}$ and
+\[f(x) = \sum_{j=1}^{n} H(x - x_{j}),\]
 then $\mu_f([a, b))$ is the cardinality of $X \cap [a, b)$.
 \end{example}
 
@@ -346,60 +346,60 @@ In particular, Lebesgue premeasure is $\sigma$-additive.
 \end{theorem}
 \begin{proof}
 Let $\mu_f$ be a Stieltjes premeasure.
-Let $E_n = [a_n, b_n)$, assume that the $E_n$ are disjoint, and let $E = \bigcup_n E_n$.
+Let $E_{n} = [a_{n}, b_{n})$, assume that the $E_{n}$ are disjoint, and let $E = \bigcup_{n} E_{n}$.
 Suppose that $E = [a, b)$. We must show
 \begin{equation}
 \label{SPM sum}
-f(b) - f(a) = \sum_{n=1}^\infty f(b_n) - f(a_n).
+f(b) - f(a) = \sum_{n=1}^{\infty} f(b_{n}) - f(a_{n}).
 \end{equation}
-To do so, we first note that since $f$ is nondecreasing, the quantities $\mu_f([a_n, b_n))$ are positive, so the sum in (\ref{SPM sum}) converges absolutely.
-Thus we may rearrange the order of the summands without affecting the value of the sum, so we can assume that $a_n \leq a_{n+1}$ for every $n$, by reordering the intervals $E_n$.
-Since the intervals are disjoint it follows that $b_n \leq a_{n+1}$.
+To do so, we first note that since $f$ is nondecreasing, the quantities $\mu_f([a_{n}, b_{n}))$ are positive, so the sum in (\ref{SPM sum}) converges absolutely.
+Thus we may rearrange the order of the summands without affecting the value of the sum, so we can assume that $a_{n} \leq a_{n+1}$ for every $n$, by reordering the intervals $E_{n}$.
+Since the intervals are disjoint it follows that $b_{n} \leq a_{n+1}$.
 
 We now prove
-\[\mu_f(E) \geq \sum_{n=1}^\infty \mu_f(E_n).\]
+\[\mu_f(E) \geq \sum_{n=1}^{\infty} \mu_f(E_{n}).\]
 To do this, we fix an $N$ and show that
 \begin{equation}
 \label{SPM sum bound 1}
-f(b) - f(a) \geq \sum_{n=1}^N f(b_n) - f(a_n).
+f(b) - f(a) \geq \sum_{n=1}^{N} f(b_{n}) - f(a_{n}).
 \end{equation}
-Now $b \geq b_n$ and $a \leq a_n$, so $f(b) - f(a) \geq f(b_N) - f(a_1)$, but
-\[\sum_{n=1}^N f(b_n) - f(a_n) = f(b_N) - f(a_1) + \sum_{n=1}^{N-1} f(b_n) - f(a_{n+1}).\]
-But $b_n \leq a_{n+1}$ so $f(b_n) \leq f(a_{n+1})$, so
-\[\sum_{n=1}^{N-1} f(b_n) - f(a_{n+1}) \leq 0.\]
+Now $b \geq b_{n}$ and $a \leq a_{n}$, so $f(b) - f(a) \geq f(b_N) - f(a_1)$, but
+\[\sum_{n=1}^{N} f(b_{n}) - f(a_{n}) = f(b_N) - f(a_1) + \sum_{n=1}^{N-1} f(b_{n}) - f(a_{n+1}).\]
+But $b_{n} \leq a_{n+1}$ so $f(b_{n}) \leq f(a_{n+1})$, so
+\[\sum_{n=1}^{N-1} f(b_{n}) - f(a_{n+1}) \leq 0.\]
 Therefore
-\[\sum_{n=1}^N f(b_n) - f(a_n) \leq f(b_N) - f(a_1) \leq f(b) - f(a).\]
+\[\sum_{n=1}^{N} f(b_{n}) - f(a_{n}) \leq f(b_N) - f(a_1) \leq f(b) - f(a).\]
 This proves (\ref{SPM sum bound 1}).
 
 Conversely, we must show that
-\[\mu_f(E) \leq \sum_{n=1}^\infty \mu_f(E_n).\]
+\[\mu_f(E) \leq \sum_{n=1}^{\infty} \mu_f(E_{n}).\]
 It suffices to show that for every $\varepsilon > 0$,
 \begin{equation}
 \label{SPM sum bound 2}
-f(b) - f(a) \leq \varepsilon + \sum_{n=1}^\infty f(b_n) - f(a_n).
+f(b) - f(a) \leq \varepsilon + \sum_{n=1}^{\infty} f(b_{n}) - f(a_{n}).
 \end{equation}
-Now choose $b' < b$ such that $f(b') \geq f(b) - \varepsilon/2$ and for each $n$ choose $a_n' < a_n$ such that $f(a_n') \geq f(a_n) - \varepsilon/2^{n+1}$.
-Such $a_n'$ and $b'$ exist because $f$ is left-continuous.
+Now choose $b' < b$ such that $f(b') \geq f(b) - \varepsilon/2$ and for each $n$ choose $a_{n}' < a_{n}$ such that $f(a_{n}') \geq f(a_{n}) - \varepsilon/2^{n+1}$.
+Such $a_{n}'$ and $b'$ exist because $f$ is left-continuous.
 Now
-\[[a_n', b'] \subseteq [a, b) = \bigcup_{n=1}^\infty [a_n, b_n) \subseteq \bigcup_{n=1}^\infty (a_n', b_n).\]
-Therefore the $(a_n', b_n)$ are an open cover of $[a_n', b]$, so by the Heine-Borel theorem there is an $N$ such that
-\[[a_n', b'] \subseteq \bigcup_{n=1}^N (a_n', b_n).\]
+\[[a_{n}', b'] \subseteq [a, b) = \bigcup_{n=1}^{\infty} [a_{n}, b_{n}) \subseteq \bigcup_{n=1}^{\infty} (a_{n}', b_{n}).\]
+Therefore the $(a_{n}', b_{n})$ are an open cover of $[a_{n}', b]$, so by the Heine-Borel theorem there is an $N$ such that
+\[[a_{n}', b'] \subseteq \bigcup_{n=1}^{N} (a_{n}', b_{n}).\]
 If any interval is superfluous, we now discard it.
-Then the way we ordered the intervals, $a_{n+1}' \leq b_n$.
+Then the way we ordered the intervals, $a_{n+1}' \leq b_{n}$.
 TODO: Draw a picture.
 Moreover, $a_1' \leq a$ and $b' \leq b_N$. Then
 \begin{align*}
 f(b) - f(a) &\leq f(b') - f(a) + \frac{\varepsilon}{2}\\
 & \leq f(b_N) - f(a_1') + \frac{\varepsilon}{2}\\
-& \leq f(b_N) - f(a_1') + \frac{\varepsilon}{2} + \sum_{n=1}^{N-1} f(b_n) - f(a_{n+1}')\\
-& \leq \frac{\varepsilon}{2} + \sum_{n=1}^N f(b_n) - f(a_n')\\
-& \leq \frac{\varepsilon}{2} + \sum_{n=1}^N f(b_n) - f(a_n) + \frac{\varepsilon}{2^{n+1}}\\
-& \leq \varepsilon + \sum_{n=1}^N f(b_n) - f(a_n)
+& \leq f(b_N) - f(a_1') + \frac{\varepsilon}{2} + \sum_{n=1}^{N-1} f(b_{n}) - f(a_{n+1}')\\
+& \leq \frac{\varepsilon}{2} + \sum_{n=1}^{N} f(b_{n}) - f(a_{n}')\\
+& \leq \frac{\varepsilon}{2} + \sum_{n=1}^{N} f(b_{n}) - f(a_{n}) + \frac{\varepsilon}{2^{n+1}}\\
+& \leq \varepsilon + \sum_{n=1}^{N} f(b_{n}) - f(a_{n})
 \end{align*}
 where we used Zeno's paradox
 \begin{equation}
 \label{zeno}
-\sum_{n=1}^\infty \frac{1}{2^n} = 1
+\sum_{n=1}^{\infty} \frac{1}{2^n} = 1
 \end{equation}
 to sum the geometric series of $\varepsilon$'s.
 But this estimate is exactly (\ref{SPM sum bound 2}).
@@ -412,7 +412,7 @@ Show that a nondecreasing function on $\RR$ can only be discontinuous on a count
 
 \begin{exercise}
 Let $\Sigma$ be a $\sigma$-ring, and let $\mu: \Sigma \to B$ be a function such that whenever $A_1 \subseteq A_2 \subseteq A_3 \subseteq \cdots$,
-\[\lim_{n \to \infty} \mu(A_n) = \mu\left(\bigcup_{n=1}^\infty A_n\right).\]
+\[\lim_{n \to \infty} \mu(A_{n}) = \mu\left(\bigcup_{n=1}^{\infty} A_{n}\right).\]
 Show that if $\mu$ is \dfn{additive} (that is, if $A \cap B = \emptyset$, then $\mu(A \cup B) = \mu(A) + \mu(B)$), then $\mu$ is $\sigma$-additive.
 \end{exercise}
 
@@ -429,8 +429,8 @@ Our goal is to define a $\sigma$-additive function that can be extended to a mea
 A set of sets $P$ is said to be a \dfn{semiring} if $\emptyset \in P$ and for every $E, F \in P$:
 \begin{enumerate}
 \item $E \cap F \in P$.
-\item There are $G_1, \dots, G_m$ disjoint such that
-\[E \setminus F = \bigcup_{n=1}^m G_n.\]
+\item There are $G_1, \dots, G_{m}$ disjoint such that
+\[E \setminus F = \bigcup_{n=1}^{m} G_{n}.\]
 \end{enumerate}
 A $\sigma$-additive function $P \to [0, \infty]$ which is not identically $\infty$ is called a \dfn{premeasure}.
 \end{definition}
@@ -443,8 +443,8 @@ The set of all half-open intervals $[a, b)$ is a semiring, so a Stieltjes premea
 \label{semiring prop 1}
 Let $P$ be a semiring and $\mu$ a premeasure on $P$. Then:
 \begin{enumerate}
-\item If $E_1, \dots, E_m \in P$ then there are disjoint $F_1, \dots, F_n \in P$ such that
-\[((((E_1 \setminus E_2) \setminus E_3) \setminus \cdots) \setminus E_m) = \bigcup_{i=1}^n F_i.\]
+\item If $E_1, \dots, E_{m} \in P$ then there are disjoint $F_1, \dots, F_{n} \in P$ such that
+\[((((E_1 \setminus E_2) \setminus E_3) \setminus \cdots) \setminus E_{m}) = \bigcup_{i=1}^{n} F_i.\]
 \item $\mu(\emptyset) = 0$.
 \end{enumerate}
 \end{lemma}
@@ -456,23 +456,23 @@ Exercise \ref{semiring exercise}.
 \label{semiring prop 2}
 Let $P$ be a semiring and $\mu$ a premeasure on $P$. Then:
 \begin{enumerate}
-\item If $(E_n)_n$ is a sequence of disjoint sets in $P$ and $E \supseteq \bigcup_n E_n$, $E \in P$, then
-\[\sum_{n=1}^\infty \mu(E_n) \leq \mu(E).\]
+\item If $(E_{n})_{n}$ is a sequence of disjoint sets in $P$ and $E \supseteq \bigcup_{n} E_{n}$, $E \in P$, then
+\[\sum_{n=1}^{\infty} \mu(E_{n}) \leq \mu(E).\]
 \item If $E \subseteq F$, $E, F \in P$, then $\mu(E) \leq \mu(F)$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-We first prove the first claim. By Lemma \ref{semiring prop 1}, there are $F_i \in P$ disjoint such that
-\[((((E_1 \setminus E_2) \setminus E_3) \setminus \cdots) \setminus E_m) = \bigcup_{i=1}^n F_i.\]
+We first prove the first claim. By Lemma \ref{semiring prop 1}, there are $F_{i} \in P$ disjoint such that
+\[((((E_1 \setminus E_2) \setminus E_3) \setminus \cdots) \setminus E_{m}) = \bigcup_{i=1}^{n} F_i.\]
 In particular, $E$ is the disjoint union of the $E_i$ and $F_i$. Thus
-\[\mu(E) = \sum_i \mu(E_i) + \sum_j \mu(F_j).\]
-But $\mu$ is nonnegative so $\sum_i \mu(E_i) \geq 0$, thus the claim.
+\[\mu(E) = \sum_{i} \mu(E_i) + \sum_{j} \mu(F_{j}).\]
+But $\mu$ is nonnegative so $\sum_{i} \mu(E_i) \geq 0$, thus the claim.
 
 The second claim follows from the first in the case $n = 1$, $E_1 = F$.
 \end{proof}
 
 \begin{subsec}
-The power of Lemma \ref{semiring prop 2} is that it does not assume that $\bigcup E_n \in P$.
+The power of Lemma \ref{semiring prop 2} is that it does not assume that $\bigcup E_{n} \in P$.
 \end{subsec}
 
 \begin{subsec}
@@ -481,8 +481,8 @@ First, we note that while premeasures are $\sigma$-additive, they also have anot
 \end{subsec}
 
 \begin{definition}
-Let $P$ be a set of sets. A function $\mu: P \to (-\infty, \infty]$ such that for every sequence of $E_i \in P$, if $E \in P$ and $E \subseteq \bigcup_i E_i$, then
-\[\mu(E) \leq \sum_{i=1}^\infty \mu(E_i),\]
+Let $P$ be a set of sets. A function $\mu: P \to (-\infty, \infty]$ such that for every sequence of $E_{i} \in P$, if $E \in P$ and $E \subseteq \bigcup_{i} E_i$, then
+\[\mu(E) \leq \sum_{i=1}^{\infty} \mu(E_i),\]
 is said to be a \dfn{$\sigma$-subadditive function}.
 \end{definition}
 
@@ -490,14 +490,14 @@ is said to be a \dfn{$\sigma$-subadditive function}.
 Every premeasure is $\sigma$-subadditive.
 \end{lemma}
 \begin{proof}
-Suppose that $E = \bigcup_i E_i$. By Lemma \ref{semiring prop 1}, we can write
-\[(((E_i \setminus E_{i-1}) \setminus E_{i-2}) \setminus \cdots \setminus E_1) = \bigcup_{j=1}^{k_i} F_i^j\]
+Suppose that $E = \bigcup_{i} E_i$. By Lemma \ref{semiring prop 1}, we can write
+\[(((E_{i} \setminus E_{i-1}) \setminus E_{i-2}) \setminus \cdots \setminus E_1) = \bigcup_{j=1}^{k_i} F_i^j\]
 where the $F_i^j$ are disjoint, hence
-\[\mu(E) = \mu(E_1) + \sum_{i=2}^\infty \sum_{j=1}^{k_i} \mu(F_i^j).\]
-But $\bigcup_j F_i^j \subseteq E_i$ so by Lemma \ref{semiring prop 2},
+\[\mu(E) = \mu(E_1) + \sum_{i=2}^{\infty} \sum_{j=1}^{k_i} \mu(F_i^j).\]
+But $\bigcup_{j} F_i^{j} \subseteq E_i$ so by Lemma \ref{semiring prop 2},
 \[\sum_{j=1}^{k_i} \mu(F_i^j) \leq \mu(E_i).\]
 Thus
-\[\mu(E) \leq \sum_{i=1}^\infty \mu(E_i)\]
+\[\mu(E) \leq \sum_{i=1}^{\infty} \mu(E_i)\]
 which was to be shown.
 \end{proof}
 
@@ -536,8 +536,8 @@ Let $E \in \mathcal H$; then for every $F \subseteq E$, $F$ is contained in ever
 
 \begin{definition}
 Let $P$ be a semiring and $\mu$ be a premeasure on $P$. For every $A \in \mathcal H(P)$, define
-\[\mu^*(A) = \inf \sum_{n=1}^\infty \mu(E_n)\]
-where the $\inf$ ranges over all sequenes of sets $(E_n)_n$, $E_n \in P$, such that $A \subseteq \bigcup_n E_n$.
+\[\mu^*(A) = \inf \sum_{n=1}^{\infty} \mu(E_{n})\]
+where the $\inf$ ranges over all sequenes of sets $(E_{n})_{n}$, $E_{n} \in P$, such that $A \subseteq \bigcup_{n} E_{n}$.
 We call $\mu^*$ the \dfn{outer measure generated by $\mu$}.
 \end{definition}
 
@@ -545,34 +545,34 @@ We call $\mu^*$ the \dfn{outer measure generated by $\mu$}.
 Let $P$ be a semiring and $\mu$ be a premeasure on $P$. Then the outer measure $\mu^*$ generated by $\mu$ is an outer measure on $\mathcal H(P)$ and for every $E \in P$, $\mu^*(E) = \mu(E)$.
 \end{theorem}
 \begin{proof}
-First, we check $\mu^*(\emptyset) = 0$. In fact, taking $E_n = \emptyset$ for every $n$, we have $\mu^*(\emptyset) \leq \sum_n 0 = 0$.
+First, we check $\mu^*(\emptyset) = 0$. In fact, taking $E_{n} = \emptyset$ for every $n$, we have $\mu^*(\emptyset) \leq \sum_{n} 0 = 0$.
 
 We now check that $\mu^*$ is $\sigma$-subadditive:
 \begin{lemma}
-Suppose that $A \in \mathcal H(P)$, $A_n \in \mathcal H(P)$, and $A \subseteq \bigcup_n A_n$. Then
-\[\mu^*(A) \leq \sum_{n=1}^\infty \mu^*(A_n).\]
+Suppose that $A \in \mathcal H(P)$, $A_{n} \in \mathcal H(P)$, and $A \subseteq \bigcup_{n} A_{n}$. Then
+\[\mu^*(A) \leq \sum_{n=1}^{\infty} \mu^*(A_{n}).\]
 \end{lemma}
 \begin{proof}[Proof of lemma]
-Obviously this is true if some $\mu^*(A_n) = \infty$, so suppose that for every $n$, $\mu^*(A_n) < \infty$ and let $\varepsilon > 0$.
-By definition of $\mu^*$, there are $E_i^j \in P$ such that $A_i \subseteq \bigcup_j E_i^j$
+Obviously this is true if some $\mu^*(A_{n}) = \infty$, so suppose that for every $n$, $\mu^*(A_{n}) < \infty$ and let $\varepsilon > 0$.
+By definition of $\mu^*$, there are $E_i^{j} \in P$ such that $A_{i} \subseteq \bigcup_{j} E_i^j$
 and
-\[\mu^*(A_i) \geq \sum_{j=1}^\infty \mu(E_i^j) - \frac{\varepsilon}{2^i}.\]
+\[\mu^*(A_i) \geq \sum_{j=1}^{\infty} \mu(E_i^j) - \frac{\varepsilon}{2^i}.\]
 Thus $A \subseteq \bigcup_{i,j}E_i^j$ whence
-\begin{align*}\mu^*(A) &\leq \sum_{i,j} \mu(E_i^j) \leq \sum_{i,j=1}^\infty \mu(E_i^j)\\ &\leq \sum_{i=1}^\infty \mu^*(A_i) + \frac{\varepsilon}{2_i}\\& \leq \varepsilon + \sum_{i=1}^\infty \mu^*(A_i).\end{align*}
+\begin{align*}\mu^*(A) &\leq \sum_{i,j} \mu(E_i^j) \leq \sum_{i,j=1}^{\infty} \mu(E_i^j)\\ &\leq \sum_{i=1}^{\infty} \mu^*(A_i) + \frac{\varepsilon}{2_i}\\& \leq \varepsilon + \sum_{i=1}^{\infty} \mu^*(A_i).\end{align*}
 This was to be shown.
 \end{proof}
 
 Finally we check that $\mu^*(A) = \mu(A)$ when $A \in P$. Clearly $\mu^*(A) \leq \mu(A)$.
-Since $\mu$ is $\sigma$-subadditive, for any $E_i \in P$ such that $A \subseteq \bigcup_i E_i$, $\mu(A) \leq \sum_i \mu(E_i)$, thus $\mu(A) \leq \mu^*(A)$.
+Since $\mu$ is $\sigma$-subadditive, for any $E_{i} \in P$ such that $A \subseteq \bigcup_{i} E_i$, $\mu(A) \leq \sum_{i} \mu(E_i)$, thus $\mu(A) \leq \mu^*(A)$.
 \end{proof}
 
 \begin{subsec}
 There is a dual approach to the extension of premeasures, introduced by Lebesgue.
 He considered not just outer measures but \dfn{inner measures} defined by the relation
-\[\mu_*(E) = \sup \sum_{n=1}^\infty \mu(E_n)\]
-where the $\sup$ ranges over all sequences of $E_n \in P$ such that $\bigcup_n E_n \subseteq P$ and the $E_n$ are disjoint.
+\[\mu_*(E) = \sup \sum_{n=1}^{\infty} \mu(E_{n})\]
+where the $\sup$ ranges over all sequences of $E_{n} \in P$ such that $\bigcup_{n} E_{n} \subseteq P$ and the $E_{n}$ are disjoint.
 Then Lebesgue proposed to study the $\sigma$-ring of all sets whose inner and outer measures agree.
-Note the asymmetry: for inner measure we need to assume that the $E_n$ are disjoint, or else we could ``double-count" elements of $E$.
+Note the asymmetry: for inner measure we need to assume that the $E_{n}$ are disjoint, or else we could ``double-count" elements of $E$.
 This asymmetry is the origin of several pathologies that make inner measures difficult to work with, and now this approach is considered nothing more than a historical footnote.
 \end{subsec}
 
@@ -581,12 +581,12 @@ An example of an oddity of inner measure comes from trying to compute the inner 
 Let $P$ be the semiring of intervals with rational endpoints in $[0, 1]$ and let $\mu$ be the Stieltjes premeasure on $P$ defined by $\mu([a, b)) = b - a$.
 Then $\mu^*(X) = 1$.
 
-To see this, let $x \in [0, 1]$; we will compute $\mu^*(\{x\})$. Let $[x]_n$ be a rational number such that $[x]_n < x < [x]_n + 1/n$; thus $\{x\} \subset [[x]_n, [x]_n + 1/n)$ and so
-\[\mu^*(\{x\}) \leq \mu([x]_n, [x]_n + 1/n) = \frac{1}{n}\]
+To see this, let $x \in [0, 1]$; we will compute $\mu^*(\{x\})$. Let $[x]_{n}$ be a rational number such that $[x]_{n} < x < [x]_{n} + 1/n$; thus $\{x\} \subset [[x]_{n}, [x]_{n} + 1/n)$ and so
+\[\mu^*(\{x\}) \leq \mu([x]_{n}, [x]_{n} + 1/n) = \frac{1}{n}\]
 whence $\mu^*(\{x\}) = 0$.
 
-Let $(x_n)_n$ be an enumeration of the countable set $\QQ \cap [0, 1]$; by $\sigma$-subadditity,
-\[\mu^*(\QQ \cap [0, 1]) \leq \sum_{n=1}^\infty \mu^*(\{x_n\}) = 0\]
+Let $(x_{n})_{n}$ be an enumeration of the countable set $\QQ \cap [0, 1]$; by $\sigma$-subadditity,
+\[\mu^*(\QQ \cap [0, 1]) \leq \sum_{n=1}^{\infty} \mu^*(\{x_{n}\}) = 0\]
 but $X \cup (\QQ \cap [0, 1]) = [0, 1]$, so
 \[1 = \mu([0, 1]) \leq \mu^*(X) + \mu^*(\QQ \cap [0, 1]) = \mu^*(X) + 0.\]
 Therefore $\mu^*(X) \geq 1$, but $X \subseteq [0, 1]$ so $\mu^*(X) \leq 1$.
@@ -613,7 +613,7 @@ The Carathéodory construction gives us a method to define measures: first defin
 
 \begin{definition}
 Let $(X, \Sigma, \mu)$ be a measured space.
-We say that $\mu$ is a \dfn{$\sigma$-finite measure} if there are countably many $E_n \in \Sigma$ such that $\bigcup_n E_n = X$ and $\mu(E_n) < \infty$.
+We say that $\mu$ is a \dfn{$\sigma$-finite measure} if there are countably many $E_{n} \in \Sigma$ such that $\bigcup_{n} E_{n} = X$ and $\mu(E_{n}) < \infty$.
 We say that $\mu$ is a \dfn{complete measure} if for every $E \in \Sigma$ such that $\mu(E) = 0$ and $F \subseteq E$, $F \in \Sigma$.
 \end{definition}
 
@@ -717,8 +717,8 @@ Fill in the details in the proof of Lemma \ref{measurable complements lemma}.
 Let $(X, \Sigma, \mu)$ be a measured space. Show that the following are equivalent:
 \begin{enumerate}
 \item $\mu$ is $\sigma$-finite.
-\item There are countably many disjoint $E_i \in \Sigma$, $\mu(E_i) < \infty$, such that $\bigcup_i E_i = X$.
-\item There are countably many $E_i \in \Sigma$, $\mu(E_i) < \infty$, such that $E_i \subseteq E_{i+1}$ and $\bigcup_i E_i = X$.
+\item There are countably many disjoint $E_{i} \in \Sigma$, $\mu(E_i) < \infty$, such that $\bigcup_{i} E_{i} = X$.
+\item There are countably many $E_{i} \in \Sigma$, $\mu(E_i) < \infty$, such that $E_{i} \subseteq E_{i+1}$ and $\bigcup_{i} E_{i} = X$.
 \end{enumerate}
 These equivalences are highly useful and will be used throughout the text without explicit mention.
 \end{exercise}
@@ -788,7 +788,7 @@ Therefore $\mu$ is the natural generalization of ``length" to as many subsets of
 Indeed, if $A$ is a Lebesgue measurable subset of $\RR$ (e.g. if $A$ is Borel) then
 \begin{equation}
 \label{lebesgue measure formula}
-\mu(A) = \inf \left\{\sum_{j=1}^\infty \beta_i - \alpha_i: A \subseteq \bigcup_{i=1}^\infty [\alpha_i, \beta_i)\right\}.
+\mu(A) = \inf \left\{\sum_{j=1}^{\infty} \beta_{i} - \alpha_i: A \subseteq \bigcup_{i=1}^{\infty} [\alpha_i, \beta_i)\right\}.
 \end{equation}
 \end{subsec}
 
@@ -801,9 +801,9 @@ Conversely, if $\nu$ is a translation-invariant complete Borel measure such that
 If $A = [\alpha, \beta)$ is an interval, then $\mu(A + x) = \beta + x - \alpha - x = \beta - \alpha = \mu(A)$.
 If $A$ is an arbitrary measurable set, then by (\ref{lebesgue measure formula}),
 \begin{align*}
-\mu(A + x) &= \inf \left\{\sum_{j=1}^\infty \beta_i - \alpha_i: A + x\subseteq \bigcup_{i=1}^\infty [\alpha_i, \beta_i)\right\} \\
-&= \inf \left\{\sum_{j=1}^\infty \beta_i + x- \alpha_i - x: A \subseteq \bigcup_{i=1}^\infty [\alpha_i, \beta_i)\right\}\\
-&= \inf \left\{\sum_{j=1}^\infty \beta_i - \alpha_i: A \subseteq \bigcup_{i=1}^\infty [\alpha_i, \beta_i)\right\}\\
+\mu(A + x) &= \inf \left\{\sum_{j=1}^{\infty} \beta_{i} - \alpha_i: A + x\subseteq \bigcup_{i=1}^{\infty} [\alpha_i, \beta_i)\right\} \\
+&= \inf \left\{\sum_{j=1}^{\infty} \beta_{i} + x- \alpha_{i} - x: A \subseteq \bigcup_{i=1}^{\infty} [\alpha_i, \beta_i)\right\}\\
+&= \inf \left\{\sum_{j=1}^{\infty} \beta_{i} - \alpha_i: A \subseteq \bigcup_{i=1}^{\infty} [\alpha_i, \beta_i)\right\}\\
 &= \mu(A).
 \end{align*}
 
@@ -820,7 +820,7 @@ Suppose first that $\beta$ is rational, say $\beta = p/q$. Then by translation i
 But
 \[1 = \nu([0, 1)) = \sum_{j=0}^{q-1} \nu([j, (j+1)/q)) = q\nu([0, 1/q))\]
 which implies that $\nu([0, 1/q)) = 1/q$ and hence $\nu([0, p/q)) = p/q$; therefore $\nu([\alpha, \beta)) = \beta - \alpha$ whenever $\beta - \alpha$ is rational.
-If $\beta - \alpha$ is irrational, choose $\beta_n > \beta_{n+1} > \cdots > \beta$ so that $\beta_n \to \beta$ and $\beta_n - \alpha$ is rational for all $n$; then $\nu([\alpha, \beta_n)) = \beta_n - \alpha$, so continuity of measure implies that $\nu([\alpha, \beta)) = \beta - \alpha$.
+If $\beta - \alpha$ is irrational, choose $\beta_{n} > \beta_{n+1} > \cdots > \beta$ so that $\beta_{n} \to \beta$ and $\beta_{n} - \alpha$ is rational for all $n$; then $\nu([\alpha, \beta_{n})) = \beta_{n} - \alpha$, so continuity of measure implies that $\nu([\alpha, \beta)) = \beta - \alpha$.
 
 Since $\mu([\alpha, \beta)) = \nu([\alpha, \beta))$ for all $\alpha < \beta$, uniqueness of the Carathéodory construction for $\sigma$-finite measures implies that $\mu = \nu$.
 \end{proof}
@@ -863,10 +863,10 @@ Let $X$ be a locally compact Hausdorff space.
 Suppose that $\mu$ is a Borel measure on $X$ such that:
 \begin{enumerate}
 \item \dfn{Outer regularity}: For every Borel set $W$,
-\[\mu(W) = \inf_U \mu(U)\]
+\[\mu(W) = \inf_{U} \mu(U)\]
 where the infimum is taken over all open sets $U \supseteq W$.
 \item \dfn{Inner regularity for open sets}: For every open set $U$,
-\[\mu(U) = \sup_K \mu(K)\]
+\[\mu(U) = \sup_{K} \mu(K)\]
 where the supremum is taken over all compact sets $K \subseteq U$.
 \item \dfn{Local finiteness}: For every compact set $K$, $\mu(K) < \infty$.
 \end{enumerate}
@@ -890,12 +890,12 @@ On the other hand,
 Therefore $\mu_f$ is inner regular.
 
 For outer regularity, let $W$ be a Borel set (actually, any Stieltjes measurable set); then
-\[\mu(W) = \inf_{(\alpha_n), (\beta_n)} \sum_n f(\beta_n) - f(\alpha_n)\]
-where the $\inf$ ranges over all sequences of $\alpha_n$ and $\beta_n$ such that $W \subseteq \bigcup_n [\alpha_n, \beta_n)$.
+\[\mu(W) = \inf_{(\alpha_{n}), (\beta_{n})} \sum_{n} f(\beta_{n}) - f(\alpha_{n})\]
+where the $\inf$ ranges over all sequences of $\alpha_{n}$ and $\beta_{n}$ such that $W \subseteq \bigcup_{n} [\alpha_{n}, \beta_{n})$.
 Fix any such sequences.
-Now $E_m^n = (\alpha_n - m^{-1}2^{-n}, \beta_n)$ is an open cover of $W$ for any $m$, so
-\[\mu(W) \leq \sum_n f(\beta_n) - f(\alpha_n) < \frac{1}{m} + \sum_n f(\beta_n) - f(\alpha_n) = \sum_n f(\beta_n) - f(\alpha_n) + m^{-1}2^{-n}.\]
-Taking $m \to \infty$ and minimizing $\sum_n f(\beta_n) - f(\alpha_n)$ by varying the $\alpha_n$ and $\beta_n$ we collapse the above inequalities into $\inf$s.
+Now $E_{m}^{n} = (\alpha_{n} - m^{-1}2^{-n}, \beta_{n})$ is an open cover of $W$ for any $m$, so
+\[\mu(W) \leq \sum_{n} f(\beta_{n}) - f(\alpha_{n}) < \frac{1}{m} + \sum_{n} f(\beta_{n}) - f(\alpha_{n}) = \sum_{n} f(\beta_{n}) - f(\alpha_{n}) + m^{-1}2^{-n}.\]
+Taking $m \to \infty$ and minimizing $\sum_{n} f(\beta_{n}) - f(\alpha_{n})$ by varying the $\alpha_{n}$ and $\beta_{n}$ we collapse the above inequalities into $\inf$s.
 \end{proof}
 
 \begin{subsec}
@@ -914,8 +914,8 @@ One can give a different construction of the Lebesgue measure if one is \emph{on
 Let us now construct a useful example of an uncountable, null compact set, known as the \dfn{standard Cantor set}.
 This set will frequently be useful as an example, and will be treated at length in the exercises.
 
-Let $C_0 = [0, 1]$, and given $C_n$ a finite union of closed intervals, let $C_{n+1}$ consist of $C_n$ with the open middle-thirds of each interval in $C_n$ removed. TODO: Draw a picture.
-Let $C$, the standard Cantor set, be defined by $C = \bigcap_n C_n$.
+Let $C_0 = [0, 1]$, and given $C_{n}$ a finite union of closed intervals, let $C_{n+1}$ consist of $C_{n}$ with the open middle-thirds of each interval in $C_{n}$ removed. TODO: Draw a picture.
+Let $C$, the standard Cantor set, be defined by $C = \bigcap_{n} C_{n}$.
 \end{subsec}
 
 \begin{subsec}
@@ -923,12 +923,12 @@ It is often convenient to view the Cantor set in the following way. Let $2$ be a
 Let $2^\omega$ denote the space of sequences in $2$, thus $2^\omega$ is the set of all functions $\NN \to \{0, 1\}$.
 For each $x \in 2^\omega$, we obtain a point $f(x) \in C$ in the following way.
 Assume that $D_{n-1}$ is one of the closed intervals obtained in stage $n-1$ of the Cantor set construction, thus $D_{n-1}$ is an interval in $C_{n-1}$.
-If $x_n = 0$, let $D_n$ be the left closed interval in $D_{n-1}$, and otherwise let $D_n$ be the right closed interval.
-Then $D_n \subseteq D_{n-1} \cap C_n$.
+If $x_{n} = 0$, let $D_{n}$ be the left closed interval in $D_{n-1}$, and otherwise let $D_{n}$ be the right closed interval.
+Then $D_{n} \subseteq D_{n-1} \cap C_{n}$.
 The intersection of closed nonempty intervals is a closed nonempty interval, so we obtain such an interval $D \subseteq C$.
 But a consequence of Exercise \ref{Cantor set props} is that the Cantor set contains no nontrivial intervals, so $D$ consists of a single point $f(x)$.
 The map $f$ is injective since if $f(x) = f(y)$ then, at the $n$th stage of the Cantor set construction, both $x$ and $y$ agreed on which subinterval to pass to, thus $x = y$.
-It is surjective since every point $p \in C$ must be in some interval $D_n$ at stage $n$, and if $D_n$ is the left interval of $D_{n-1}$ then we can set $x = 0$, and otherwise set $x = 1$; then $f(x) = p$.
+It is surjective since every point $p \in C$ must be in some interval $D_{n}$ at stage $n$, and if $D_{n}$ is the left interval of $D_{n-1}$ then we can set $x = 0$, and otherwise set $x = 1$; then $f(x) = p$.
 One can similarly interpret the Cantor set as the set of all paths through the full infinite binary tree.
 This perspective can be highly useful in some exercises and in applications.
 For more on Cantor sets, see Pugh \cite[Chapter 2]{pugh2013real}.
@@ -1000,8 +1000,8 @@ Let all definitions be as Exercise \ref{physical lebesgue measure 1}.
 Given $J \in \Sigma_0$, define $[J]$ to be the equivalence class of $J$ in $\Sigma$.
 Then, given $I \in \Sigma$, let
 \[\nu(I) = d(I, [\emptyset]).\]
-Show that $\nu$ is ``$\sigma$-additive" in the sense that whenever $(E_n)_n$ is a sequence in $\Sigma$ with $E_n \cap E_m = [\emptyset]$ whenever $n \neq m$, then
-\[\nu\left(\bigcup_n E_n\right) = \sum_n \nu(E_n).\]
+Show that $\nu$ is ``$\sigma$-additive" in the sense that whenever $(E_{n})_{n}$ is a sequence in $\Sigma$ with $E_{n} \cap E_{m} = [\emptyset]$ whenever $n \neq m$, then
+\[\nu\left(\bigcup_{n} E_{n}\right) = \sum_{n} \nu(E_{n}).\]
 So we can think of $\nu$ as an ``abstract measure" on the abstract $\sigma$-ring $\Sigma$.
 We call $\nu$ the \dfn{physical Lebesgue measure}.
 \end{exercise}
@@ -1012,7 +1012,7 @@ Let $\mu$ be Lebesgue measure and $\nu$ physical Lebesgue measure as in Exercise
 Let $\Gamma$ be the $\sigma$-algebra of Lebesgue measurable subsets of $\RR$. Show that there is a surjective map $\pi: \Gamma \to \Sigma$ such that:
 \begin{enumerate}
 \item For every rational interval $I$, $\pi(I)$ is the equivalence class of $I$ in $\Sigma$.
-\item For every sequence $(E_n)_n$ in $\Gamma$, $\pi(\bigcup_n E_n) = \bigcup_n \pi(E_n)$, and similarly for intersection and complement.
+\item For every sequence $(E_{n})_{n}$ in $\Gamma$, $\pi(\bigcup_{n} E_{n}) = \bigcup_{n} \pi(E_{n})$, and similarly for intersection and complement.
 \item For every $E \in \Gamma$, $\mu(E) = \nu(\pi(E))$.
 \end{enumerate}
 So we can think of $\pi(E)$ as the equivalence class of $E$ under the equivalence relation ``symmetric difference is null", and $\nu$ correctly computes the Lebesgue measurable of a set.
