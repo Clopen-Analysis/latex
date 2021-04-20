@@ -25,6 +25,10 @@ ellipses etc.) your PR will not be able to be merged until you fix them.
 If you would like to request a configuration change for chktex, please contact a
 moderator.
 
+Additionally, there is a github app called restyled that will restyle code for
+you automatically, but it currently only fixes small whitespace issues (TeX 
+support may come in the future). 
+
 #### Prose style
 
 Generally, prose style is pretty individual, but there are plenty of guides on
