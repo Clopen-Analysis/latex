@@ -13,6 +13,8 @@
 \usepackage{amscd}
 \usepackage{makeidx}
 \usepackage{enumitem}
+\usepackage{physics}
+\usepackage{bbm}
 
 \usepackage{./packages/nonmath}
 
@@ -30,9 +32,9 @@
 
 \newcommand{\Torus}{\mathbb{T}}
 
-\newcommand{\AAA}{\mathcal A}
-\newcommand{\BB}{\mathcal B}
-\newcommand{\HH}{\mathcal H}
+\newcommand{\AAA}{\mathcal{A}}
+\newcommand{\BB}{\mathcal{B}}
+\newcommand{\HH}{\mathcal{H}}
 
 \newcommand{\Grp}{\mathbf{Grp}}
 \newcommand{\Open}{\mathbf{Open}}
@@ -45,21 +47,19 @@
 \newcommand{\Sch}{\mathscr S}
 
 \DeclareMathOperator{\atanh}{atanh}
-\DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\sinc}{sinc}
 \DeclareMathOperator{\dom}{dom}
 
 \DeclareMathOperator{\card}{card}
 \DeclareMathOperator{\ch}{ch}
 \DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\rank}{rank}
+
 
 \newcommand{\dbar}{\overline\partial}
 
@@ -74,8 +74,6 @@
 \def\ddashint{\Xint=}
 \def\dashint{\Xint-}
 
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\dfn}[1]{\emph{#1}\index{#1}}
 
 \usepackage[backend=bibtex,style=alphabetic,maxcitenames=50,maxnames=50]{biblatex}
@@ -154,12 +152,6 @@
 \include{chapters/ch6}
 \include{chapters/ch7}
 \include{chapters/appendix}
-
-
-
-
-
-
 
 \newpage
 \printindex
