@@ -12,3 +12,46 @@ However, the proofs that appear in Clopen Analysis are drawn from a variety of s
 
 The added level of abstraction caused by the fact that integrals are Banach-spaced valued does not meaningfully increase the difficulty of proofs, with the exception of the characterization of measurable functions as those for which preimages of Borel sets are measurable.
 In spite of the level of abstraction, we have strived to include many examples, and to keep the content at a level that anyone with an undergraduate education in mathematics, including but not limited to real analysis at the level of Pugh~\cite{pugh2013real}, can peruse Clopen Analysis.
+\newpage
+\chapter*{Notation}
+\begin{center}
+\begin{tabular}{|p{0.25\linewidth}|p{0.7\linewidth}|}
+	\hline
+	$\mathbb{C}$, $\mathbb{R}$, $\mathbb{Q}$, $\mathbb{Z}$, $\mathbb{N}$ & The complex numbers, real numbers, rational numbers, integers, and natural numbers respectively \smallskip\\
+	$\ell_p^n(\mathbb{R})$, $\ell_p^n(\mathbb{C})$, $\norm{\cdot}_p$, for  $p\in[1, \infty]$ & $\mathbb{R}^n$ (resp. $\mathbb{C}^n$) endowed with the norm $\norm{x}_p = \qty(\sum_{i=1}^n |x_i|^p)^{1/p}$.  In particular if $p=2$  then also equip $\mathbb{R}^n$ (resp. $\mathbb{C}^n$ )with the inner product $\langle x, y \rangle = \sum_{i=1}^n x_i\overline{y_i}$. Note that these notes use the mathematics convention where linearity is in the first argument rather than the physics convention with linearity in the second argument of an inner product. If $p=\infty$, then the norm is given by $\norm{x}_\infty = \max\{|x_1|,...,|x_n|\}$\smallskip\\
+	$B_2^n$, $B_p^n$, $B_{\infty}^n$, $B_X$ & The $\ell_2^n$, $\ell_p^n$, $\ell_\infty^n$ and $(X, d)$ (where $d$ is a metric on $X$) unit balls\smallskip\\
+	$\mathbb{S}^n$, $\mathbb{T}^n$ & The Euclidean unit sphere in $\mathbb{R}^{n+1}$, the torus $\mathbb{T}^n = \underbrace{\mathbb{S}^1\times \cdots \times \mathbb{S}^1}_{n-\mathrm{times}}$\smallskip \\
+	$2^X$ & The power set of $X$ (abuse of notation)\smallskip\\
+	$\mathcal{R}_0$, $\mathcal{R}$ & A ring of sets, a $\sigma$-ring of sets\smallskip\\
+	$\mathcal{A}_0$, $\mathcal{A}$, $ \mathcal{F}$ & An algebra of sets, a $\sigma$-algebra of sets. $\mathcal{F}$ also refers to a $\sigma$-algebra but is reserved for just specifying probability spaces\smallskip\\
+	$\mathcal{B}(\mathbb{R})$, $\mathcal{B}(\mathbb{R}^n)$, $\mathcal{B}(X)$ & The Borel $\sigma$-algebra of $\mathbb{R}$, $\mathbb{R}^n$, and a topological (or metric or normed) space $X$ respectively. \smallskip \\
+	$\mu$ & Generally $\mu$ will refer to a measure with the following sub-script notations for special types of measure-type objects: \\
+	& \qquad $\mu^*$ - an outer measure \\
+	& \qquad $\mu_*$ - an inner measure \\
+	& \qquad $\mu_0$ - a general premeasure \\
+	& \qquad $\mu_f$ - the Stieltjes premeasure associated with $f$ (also, \\
+	& \qquad\qquad the Stieltjes measure associated with $f$ if it is clear)\smallskip\\
+	$\mathbb{P}$ & A probability measure \\
+	$m(A)$, $m_n(A)$, $|A|$ & The ($n$-dimensional) Lebesgue measure of a set $A$\\
+	$h_n(A)$, $\operatorname{vol}_n(A)$ & The $n$-dimensional Hausdorff measure of a set $A$\\
+	$\mu_{\partial A}$ & The $(n-1)$-dimensional Hausdorff measure on a set $A\subseteq \mathbb{R}^n$ \\
+	& normalized so that $\mu_{\partial A}(\partial A) = 1$\\
+	$\sigma_n$ & The boundary measure for the $n$-sphere $\mathbb{S}^n\subseteq \mathbb{R}^{n+1}$\\
+	\hline
+\end{tabular}
+\end{center}
+\newpage
+\begin{center}
+\begin{tabular}{|p{0.25\linewidth}|p{0.7\linewidth}|}
+	\hline\medskip
+
+	$\displaystyle \int \cdots \dd{x}$,  $\displaystyle \int \cdots \dd{f(x)}$ & The Riemann, (resp. Riemann-Stieltjes integral). At some points, $\int \cdots \dd{x}$ will also refer to integration w.r.t. Lebesgue Measure, when the notation is unambiguous in context. \smallskip\\
+	$\mathcal{M}(\mu^*)$, $\mathcal{N}(\mu^*)$ & The class of all $\mu^*$-measurable and $\mu^*$-null sets respectively\smallskip\\
+	$\mathcal{M}(X, \mathcal{A})$ & The vector space of signed measures $\mu$ on $X$ whose $\sigma$-algebra contains all of the $\mu$-measurable sets. If $\mathcal{A}$ is obvious from context, this is just denoted $\mathcal{M}(X)$. \smallskip\\
+	$A +x$, $A + B$, $\lambda A$, where $A, B \subset X$ and $x\in X$ and $\lambda \in \mathbb{F}$ & The translation of $A$ by $x$, the Minkowski sum of $A$ and $B$, and the dilation of $A$ by $\lambda$ respectively for any vector space $X$ over a field $\mathbb{F}$\\
+	$\mathbbm{1}_A$ & The indicator function of a set $A$\\
+	$\mathbb{E}$ & The expectation operator\\
+	
+	\hline
+\end{tabular}
+\end{center}
