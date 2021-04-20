@@ -93,7 +93,7 @@ Prove Lemma~\ref{Simp is closed under minmax}.
 \end{exercise}
 
 \begin{exercise}\label{Borel-Cantelli}
-If $(A_{n})_{n}$ is a sequence of measurable sets, we define $\limsup_{n \to \infty} A_{n}$ by the relation
+If ${(A_{n})}_{n}$ is a sequence of measurable sets, we define $\limsup_{n \to \infty} A_{n}$ by the relation
 \[1_{\limsup_{n \to \infty} A_{n}} = \limsup_{n \to \infty} 1_{A_{n}}.\]
 Then:
 \begin{enumerate}
@@ -216,7 +216,7 @@ In general, we will want to work with $M$ whenever possible rather than $\mathca
 
 \begin{exercise}
 Let $\mu$ be a probability measure on a measurable space $X$.
-Let $(f_{n})_{n}$ be a sequence of measurable functions on $(X, \mu)$, and $f$ a measurable function on $(X, \mu)$.
+Let ${(f_{n})}_{n}$ be a sequence of measurable functions on $(X, \mu)$, and $f$ a measurable function on $(X, \mu)$.
 Assume that for every $\varepsilon > 0$, one has
 \[\sum_{n=1}^{\infty} \mu(\{x \in X: ||f_{n}(x) - f(x)|| > \varepsilon\}) < \infty.\]
 Show that $f_{n} \to f$ almost everywhere.
@@ -292,7 +292,7 @@ For every open $U \subseteq B$, we define $U_{n} = \{y \in U: \inf_{x \notin U} 
 Then
 \[f^{-1}(U) = \bigcup_{n=1}^{\infty} \bigcup_{K=1}^{\infty} \bigcap_{k=K}^{\infty} f_{k}^{-1}(U_{n}).\]
 \end{lemma}
-TODO: Draw a picture of $U_{n}$
+TODO:\@Draw a picture of $U_{n}$
 \begin{proof}
 The following are equivalent:
 \begin{enumerate}
@@ -410,7 +410,7 @@ A monotone function has only jump discontinuities, so is measurable. A similar a
 And of course, we can modify any of the above functions on a countable set (or any null set!) to get another measurable function.
 See Exercise~\ref{all functions are measurable exer}.
 
-TODO: Draw a picture of continous functions converging to a finitely disct function or a function with jump disc.
+TODO:\@Draw a picture of continous functions converging to a finitely disct function or a function with jump disc.
 \end{subsec}
 
 \begin{example}\label{nonseparable function}
@@ -603,9 +603,9 @@ Routine and omitted.
 
 \begin{subsec}
 How does convergence in measure relate to other modes of convergence?
-It does not imply almost pointwise convergence --- imagine a sequence of functions racing back and forth along $[0, 1]$, their supports getting smaller with every time they turn around. TODO: Draw a picture.
+It does not imply almost pointwise convergence --- imagine a sequence of functions racing back and forth along $[0, 1]$, their supports getting smaller with every time they turn around. TODO:\@Draw a picture.
 Nor does it follow from almost pointwise convergence on infinite measure sets --- just take $f_{n} = 1_{[n, n+1]}$ as a counterexample.
-But convergence in measure is weaker than nearly uniform convergence, hence from almost pointwise convergence on finite measure sets. TODO: Draw a diagram.
+But convergence in measure is weaker than nearly uniform convergence, hence from almost pointwise convergence on finite measure sets. TODO:\@Draw a diagram.
 \end{subsec}
 
 \begin{lemma}\label{nearly uniform implies in measure}
@@ -741,7 +741,7 @@ We first check this when $f$ is the indicator function of a compact set $K$.
 By outer regularity, for every $n$ there is an open set $U_{n} \supseteq K$ such that $\mu(U_{n} \setminus K) < 1/n$, and after taking intersections we can assume that $U_{n} \supseteq U_{n+1}$.
 The complement $X \setminus U_{n}$ is closed, so by Urysohn's lemma there is a continuous function $f_{n}: X \to [0, 1]$, smooth if $X = \RR^c$, such that $f_{n}|K = 1$ and $f_{n}|(X \setminus U_{n}) = 0$.
 Now $f_{n} \to f$ almost pointwise. Indeed, if $x \in K$, then for every $n$, $f_{n}(x) = 1$; otherwise, unless $x$ is in $\bigcap_{n} U_{n} \setminus K$, which is a null set, there is an $N$ such that $x \notin U_N$, and hence for every $n > N$, $x \notin U_{n}$, so $f_{n}(x) = 0$.
-TODO: Draw a picture.
+TODO:\@Draw a picture.
 
 We now check when $f$ is the indicator function of an open set $U$.
 By inner regularity, there is a sequence of compact sets $K_{m}$ such that $K_{m} \subseteq K_{m+1}$ and $\mu(U \setminus K_{m}) < 1/m$.
@@ -749,7 +749,7 @@ In particular, $\lim_{m} 1_{K_{m}} = 1_U$ almost pointwise.
 Now there are sequences of continuous functions (smooth if $X = \RR^c$) $f_{n}^m: X \to [0, 1]$ such that $\lim_{n} f_{n}^{m} = 1_{K_{m}}$ almost pointwise, thus
 \[|f_{n}^n(x) - 1_U(x)| \leq |f_{n}^n(x) - 1_{K_{n}}(x)| + |1_{K_{n}}(x) - 1_U(x)|.\]
 The right-hand side vanishes as $n \to \infty$ so $f_{n}^{n} \to 1_U$ almost pointwise.
-TODO: Draw a picture.
+TODO:\@Draw a picture.
 
 A similar argument applies when $f$ is the indicator function of a Borel set $W$.
 Indeed, by outer regularity, there is a sequence of open sets $U_{m}$ such that $U_{m} \supseteq K_{m+1}$, $\mu(U_{m} \setminus W) < 1/m$.
@@ -922,8 +922,8 @@ We define the \dfn{integral} of $f$ to be
 \end{definition}
 
 \begin{subsec}
-Let's check that Definition~\ref{definition of integral} makes sense. When we say that $f_{n} \to f$ in $L^1$, we mean that $f$ is the equivalence class of the Cauchy sequence $(f_{n})_{n}$.
-So if there was another Cauchy sequence $(g_{n})_{n}$ with $g_{n} \to f$ in $L^1$,
+Let's check that Definition~\ref{definition of integral} makes sense. When we say that $f_{n} \to f$ in $L^1$, we mean that $f$ is the equivalence class of the Cauchy sequence ${(f_{n})}_{n}$.
+So if there was another Cauchy sequence ${(g_{n})}_{n}$ with $g_{n} \to f$ in $L^1$,
 \begin{align*}\left|\left|\lim_{n \to \infty} \int_{E} g_{n} - f_{n} ~d\mu\right|\right| &\leq \lim_{n \to \infty} \int_{E} ||g_{n}(x) - f_{n}(x)||_{B} ~d|\mu|(x)\\&
 \leq \lim_{n \to \infty} \int_{X} ||g_{n}(x) - f_{n}(x)||_{B} ~d|\mu|(x)
 \\& = \lim_{n \to \infty} ||g_{n} - f_{n}||_1 = 0,

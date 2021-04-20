@@ -40,7 +40,7 @@ Then the triangle inequality is just the usual triangle inequality for Euclidean
 \begin{example}
 We can define several other norms on $\RR^d$, closely related to the Euclidean norm $||\cdot||_2$. First we let
 \[||(x_1, \dots, x_d)||_{\infty} = \max_{i=1}^{d} |x_i|.\]
-We then define, for any $p \in [1, \infty),$
+We then define, for any $p \in [1, \infty)$, 
 \[||(x_1, \dots, x_d)||_{p} ^{p} = \sum_{i=1}^{d} |x_i|^p.\]
 Thus when $p = 2$ we recover the Euclidean norm, when $p = 1$ we recover the ``sum norm'' $||(x_1, \dots, x_d)||_1 = \sum_{i} |x_i|$, and in the limit $p \to \infty$ we obtain the $||\cdot||_\infty$ norm.
 \end{example}
@@ -134,8 +134,8 @@ $$f_{n}(x) = \begin{cases}
 n(x - 1/2 - 1/n), &1/2 - 1/n \leq x \leq 1/2 + 1/n\\
 2, &x \geq 1/2 + 1/n
 \end{cases}.$$
-TODO: Draw a picture
-To see that $(f_{n})_{n}$ is Cauchy, note that if $m > n$ then
+TODO:\@Draw a picture
+To see that ${(f_{n})}_{n}$ is Cauchy, note that if $m > n$ then
 \[||f_{n} - f_{m}||_2^2 = \int_{1/2-1/n}^{1/2+1/n} {(m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))}^2~dx\]
 and the integrand satisfies
 \[{(m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))}^2 \leq 8.\]
@@ -163,7 +163,7 @@ This is an exercise in the fact that every Cauchy sequence on $\RR$ converges.
 \end{example}
 
 \begin{subsec}
-The advantage of working in Banach spaces rather than general normed spaces is that it is meaningful to talk about infinite sums in Banach spaces. Indeed, if $(x_{n})_{n}$ is a sequence of elements in a Banach space $X$, we define
+The advantage of working in Banach spaces rather than general normed spaces is that it is meaningful to talk about infinite sums in Banach spaces. Indeed, if ${(x_{n})}_{n}$ is a sequence of elements in a Banach space $X$, we define
 \begin{equation}\label{banach space series}
 \sum_{n=1}^{\infty} x_{n} = \lim_{N \to \infty} \sum_{n=1}^{N} x_{n}
 \end{equation}
@@ -175,11 +175,11 @@ By the triangle inequality, it in fact suffices to show that for every $\varepsi
 \begin{equation}\label{absolute convergence}
 \sum_{n=N}^{\infty} ||x_{n}|| < \varepsilon
 \end{equation}
-to show that the $(x_{n})_{n}$ are summable.
+to show that the ${(x_{n})}_{n}$ are summable.
 \end{subsec}
 
 \begin{definition}
-Let $(x_{n})_{n}$ be a sequence in a Banach space. If for every $\varepsilon > 0$ there is an $N$ such that (\ref{absolute convergence}) holds, we say that $(x_{n})_{n}$ is \dfn{absolutely convergent} or \dfn{absolutely summable}.
+Let ${(x_{n})}_{n}$ be a sequence in a Banach space. If for every $\varepsilon > 0$ there is an $N$ such that (\ref{absolute convergence}) holds, we say that ${(x_{n})}_{n}$ is \dfn{absolutely convergent} or \dfn{absolutely summable}.
 \end{definition}
 
 \begin{subsec}
@@ -201,7 +201,7 @@ commutes.
 \end{theorem}
 \begin{proof}[Proof (omit on first reading)]
 To do this, let $V$ be a normed space and let $\Cau (V)$ be the vector space of all Cauchy sequences in $V$.
-(We let $x$ denote a Cauchy sequence $(x_{n})_{n}$.)
+(We let $x$ denote a Cauchy sequence ${(x_{n})}_{n}$.)
 Then $\Cau (V)$ is a seminormed space, where
 \[||x|| = \lim_{n \to \infty} ||x_{n}||.\]
 (To see that the limit exists, note that if $x$ is a Cauchy sequence then $n \mapsto ||x_{n}||$ is a Cauchy sequence in $\RR$, so it converges.)
@@ -279,7 +279,7 @@ Let $T: V \to W$ be a bounded linear map between normed spaces, and suppose that
 Then there is a unique extension of $T$ to a bounded linear map $X \to W$, which has the same operator norm.
 \end{lemma}
 \begin{proof}
-Let $x \in X$, and let $(x_{n})_{n}$ be a sequence in $V$ with $\lim_{n} x_{n} = x$.
+Let $x \in X$, and let ${(x_{n})}_{n}$ be a sequence in $V$ with $\lim_{n} x_{n} = x$.
 Define $Tx = \lim_{n} Tx_{n}$.
 We let $||T||_V$ denote the operator norm of $T$ with domain $V$ and $||T||_X$ with domain $X$.
 
@@ -293,7 +293,7 @@ Thus $||T||_{X} \leq ||T||_V$, but $V$ is a subspace of $X$ so clearly $||T||_{V
 
 To check that $T$ is linear on $X$, note that $T$ is continuous and hence can be commuted with limits. This means that
 \[T(x + y) = \lim_{n \to \infty} T(x_{n} + y_{n}) = \lim_{n \to \infty} Tx_{n} + Ty_{n} = Tx + Ty\]
-where $(x_{n})_{n}$ and $(y_{n})_{n}$ are appropriately chosen Cauchy sequences.
+where ${(x_{n})}_{n}$ and ${(y_{n})}_{n}$ are appropriately chosen Cauchy sequences.
 The proof that $T(cx) = cTx$ is similar.
 \end{proof}
 
@@ -337,7 +337,7 @@ Let $B$ be a Banach space and $K \subseteq B$. We say that $K$ is a \dfn{convex 
 It is straightforward to check that balls are convex, as are subspaces.
 \end{subsec}
 
-TODO: Hanh-Banach theorem
+TODO:\@Hanh-Banach theorem
 
 \begin{definition}
 Let $K$ be a convex set. A \dfn{face} of $K$ is a nonempty closed convex set $F$ such that for every $x,y \in K$ such that $(x, y) \subseteq F$, $x, y \in F$.
@@ -1107,7 +1107,7 @@ Note carefully that the above result does not imply that every locally compact H
 Let $\mathcal X$ be a nonempty set of nonempty compact spaces. Let $X = \prod \mathcal X$. Then $X$ is compact and nonempty.
 \end{theorem}
 \begin{proof}
-By Zermelo's well-ordering theorem we may write $\mathcal X = (X_\alpha)_{\alpha < \kappa}$ where $\kappa$ is a cardinal and the $\alpha$ are ordinals.
+By Zermelo's well-ordering theorem we may write $\mathcal X = {(X_\alpha)}_{\alpha < \kappa}$ where $\kappa$ is a cardinal and the $\alpha$ are ordinals.
 We proceed by transfinite induction, since $\kappa$ can be viewed as an ordinal.
 The base case is $\kappa = 1$, in which case $X = X_0$ is obviously compact.
 

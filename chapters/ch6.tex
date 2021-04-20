@@ -40,7 +40,7 @@ Recall that we defined the $L^1$-norm
 \[||f||_1 = \int_{X} ||f||~d\mu.\]
 Thus $||f||_1$ could be small even if $||f||$ was quite large or even infinite, as long as the set where $||f||$ was large had a small measure.
 We defined the $L^\infty$-norm $||f||_\infty$ to be the infimum of all $M$ such that $||f|| \leq M$ almost everywhere; thus $||f||_\infty$ could be small even if $||f||$ did not tend to $0$ anywhere, as long as $||f||$ did not ever go to infinity.
-TODO: Draw a picture.
+TODO:\@Draw a picture.
 We seek to consider a weighted average of the two extremes.
 
 \begin{definition}
@@ -369,11 +369,11 @@ Integrating both sides of (\ref{Markov pf}) $d\mu$ we get (\ref{Markov}).
 \end{proof}
 
 We now remind the reader what convergence in a normed space means: one has $f_{n} \to f$ in a normed space $V$ provided that for every $\varepsilon > 0$ and every $n$ large enough, $||f_{n} - f||_{V} < \varepsilon$.
-Similarly, $(f_{n})_{n}$ is Cauchy in $V$ provided that for every $\varepsilon > 0$ and every $n, m$ large enough, $||f_{n} - f_{m}||_{V} < \varepsilon$.
+Similarly, ${(f_{n})}_{n}$ is Cauchy in $V$ provided that for every $\varepsilon > 0$ and every $n, m$ large enough, $||f_{n} - f_{m}||_{V} < \varepsilon$.
 
 \begin{corollary}
 If $f_{n} \to f$ in $L^p$ then $f_{n} \to f$ in measure, and there is a subsequence which converges to $f$ pointwise.
-Moreover, if $(f_{n})_{n}$ is Cauchy in $L^p$, then $(f_{n})_{n}$ is Cauchy in measure, and there is a subsequence which is Cauchy almost everywhere.
+Moreover, if ${(f_{n})}_{n}$ is Cauchy in $L^p$, then ${(f_{n})}_{n}$ is Cauchy in measure, and there is a subsequence which is Cauchy almost everywhere.
 \end{corollary}
 \begin{proof}
 By hypothesis and Markov's inequality, one has
@@ -387,22 +387,22 @@ Convergence almost everywhere follows from the fundamental theorem of integratio
 $L^p$ is a Banach space.
 \end{theorem}
 \begin{proof}
-Suppose that $(f_{n})_{n}$ is Cauchy in $L^p$; then there is a subsequence $(f_{n_{k}})_{k}$ and a $f$ such that
+Suppose that ${(f_{n})}_{n}$ is Cauchy in $L^p$; then there is a subsequence ${(f_{n_{k}})}_{k}$ and a $f$ such that
 \[\lim_{k \to \infty} f_{n_{k}} = f\]
 almost everywhere. Therefore for every $n$ and $x$,
 \[||f(x) - f_{m}(x)||^{p} = \lim_{k \to \infty} ||f_{n_{k}}(x) - f_{m}(x)||^p.\]
 Therefore by Fatou's lemma,
 \[||f(x) - f_{m}(x)||_{p} ^{p} \leq \lim_{k \to \infty} \int_{X} ||f_{n_{k}}(x) - f_{m}(x)||^p~d\mu = \lim_{k \to \infty} ||f_{n_{k}} - f_{m}||_{p} ^p.\]
-Taking the limit as $m \to \infty$ of both sides and using the fact that $(f_{n})_{n}$ was Cauchy in $L^p$,
+Taking the limit as $m \to \infty$ of both sides and using the fact that ${(f_{n})}_{n}$ was Cauchy in $L^p$,
 \[\lim_{m \to \infty} ||f(x) - f_{m}(x)||_{p} ^{p} \leq \lim_{k \to \infty} \lim_{m \to \infty} ||f_{n_{k}} - f_{m}||_{p} ^{p} = 0.\]
 This implies that $f_{m} \to f$ in $L^p$; in particular, $f \in L^p$.
 \end{proof}
 
-TODO: Monotone and dominated convergence
+TODO:\@Monotone and dominated convergence
 
-TODO: ISF is dense
+TODO:\@ISF is dense
 
-TODO: Separability
+TODO:\@Separability
 
 \begin{exercise}[strongtype Hardy-Littlewood maximal inequality]
 Let $p \in (1, \infty]$, $f \in L^p(\RR^d)$, and let $Mf$ denote the Hardy-Littlewood maximal function of $f$.
@@ -433,7 +433,7 @@ Since every finite-dimensional vector space over $\CC$ is indeed isomorphic to $
 
 Throughout, we will assume that $\mu$ is a $\sigma$-finite measure valued in $\CC$ and that $B$ is a Hilbert space with inner product denoted
 \[(f, g) \mapsto f \overline g.\]
-(TODO: Explain this? Is this allowed by mixed norm duality??)
+(TODO:\@Explain this? Is this allowed by mixed norm duality??)
 Actually, since $\mu$ is valued in $\CC$, it is no loss of generality to assume that $\mu$ is nonnegative; so when convenient we will take $\mu = \mu$.
 
 \begin{definition}
@@ -531,7 +531,7 @@ This is rather problematic: in many situations in analysis, one is given a seque
 In this section we use H\"older duality introduce a new topology on $L^p$ in which the unit ball is compact, but which does not arise from a norm.
 
 \begin{definition}
-Let $p \in (1, \infty)$. We say that a sequence $(f_{n})_{n} \in L^p$ \dfn{converges weakly} in $L^p$ to $f \in L^p$ provided that
+Let $p \in (1, \infty)$. We say that a sequence ${(f_{n})}_{n} \in L^p$ \dfn{converges weakly} in $L^p$ to $f \in L^p$ provided that
 \[\lim_{n \to \infty} \langle f_{n}, g\rangle = \langle f, g\rangle\]
 for every $g \in L^{p^*}$.
 \end{definition}
@@ -587,7 +587,7 @@ The closed unit ball of $L^p$ is compact in the weakstar topology.
 The general proof uses a black box in the form of Tychonoff's theorem\footnote{The general proof must use a particularly strong form of the axiom of choice, as most results about compactness of very large spaces must, so this is unavoidable.} so we start by proving a special case, which is the particularly useful one in practice.
 
 \begin{theorem}[Alaoglu's sequential compactness theorem]
-Suppose that $L^{p^*}$ is separable. Then for every bounded sequence $(f_{n})_{n}$ in $L^p$, there is a $f \in L^p$ such that a subsequence $(f_{n_{k}})_{k}$ converges to $f$ weakly in $L^p$.
+Suppose that $L^{p^*}$ is separable. Then for every bounded sequence ${(f_{n})}_{n}$ in $L^p$, there is a $f \in L^p$ such that a subsequence ${(f_{n_{k}})}_{k}$ converges to $f$ weakly in $L^p$.
 \end{theorem}
 \begin{proof}
 Let $D$ be a countable dense subset of the unit sphere $\{g \in L^{p^*}: ||g||_{p^*} = 1\}$ of $L^{p^*}$.
@@ -605,22 +605,22 @@ A sequence converges in $d$ iff it converges weakly in $L^p$.
 \begin{proof}
 If $f_{n} \to f$ weakly in $L^p$ then for every $g \in L^{p^*}$, $p_g(f_{n} - f) \to 0$, so $d(f_{n}, f) \to 0$.
 
-Conversely, if $(f_{n})_{n}$ is a sequence in $L^p$ and $f \in L^p$, and $d(f_{n}, f) \to 0$, then $p_g(f_{n} - f) \to 0$ for every $g \in D$.
+Conversely, if ${(f_{n})}_{n}$ is a sequence in $L^p$ and $f \in L^p$, and $d(f_{n}, f) \to 0$, then $p_g(f_{n} - f) \to 0$ for every $g \in D$.
 But if $||g||_{p^*} = 1$ is arbitrary, and $g_{m} \in D$ have $g_{m} \to g$, then
 \[\lim_{n \to \infty} p_g(f_{n} - f) = \lim_{m \to \infty} \lim_{n \to \infty} p_{g_{m}}(f_{n} - f) = 0\]
 so that $p_g(f_{n} - f) \to 0$ for every $g$ in the unit sphere, and hence in all of $L^{p^*}$ by rescaling.
 \end{proof}
 
 We now use a variant of Cantor's diagonal argument to show that the unit ball of $L^p$ under the semimetric $d$ is compact, which, along with Lemma~\ref{weakstar semimetric}, implies Alaoglu's theorem.
-Fix $(f_{n})_{n}$, say $||f_{n}||_{p}  \lesssim 1$, and an enumeration $(g_{m})_{m}$ of $D$.
+Fix ${(f_{n})}_{n}$, say $||f_{n}||_{p}  \lesssim 1$, and an enumeration ${(g_{m})}_{m}$ of $D$.
 Then
 \[|\langle f_{n}, g_1\rangle| \lesssim ||g_1||_{p^*} = 1\]
 so by compactness of the closed unit ball of $\CC$, there is a subsequence $(f_{n_{k}^1})_{k}$ such that $(\langle f_{n_{k}^1}, g_1\rangle)_{k}$ is a Cauchy sequence.
 
-Suppose we have defined $(f_{n_{k}^j})_{k}$; then $|\langle f_{n_{k}^j}, g_1\rangle| \lesssim 1$ so there is a subsequence $(f_{n_{k}^{j+1}})_{k}$ of $(f_{n_{k}^j})_{k}$ such that $(\langle f_{n_{k}^{j+1}}, g_{j+1}\rangle)_{k}$ is a Cauchy sequence.
-Moreover, since $(f_{n_{k}^{j+1}})_{k}$ is a subsequence of $(f_{n_{k}^\ell})_{k}$ whenever $\ell \leq j$, $(\langle f_{n_{k}^{j+1}}, g_\ell\rangle)_{k}$ is also a Cauchy sequence.
+Suppose we have defined ${(f_{n_{k}^j})}_{k}$; then $|\langle f_{n_{k}^j}, g_1\rangle| \lesssim 1$ so there is a subsequence $(f_{n_{k}^{j+1}})_{k}$ of ${(f_{n_{k}^j})}_{k}$ such that $(\langle f_{n_{k}^{j+1}}, g_{j+1}\rangle)_{k}$ is a Cauchy sequence.
+Moreover, since $(f_{n_{k}^{j+1}})_{k}$ is a subsequence of ${(f_{n_{k}^\ell})}_{k}$ whenever $\ell \leq j$, $(\langle f_{n_{k}^{j+1}}, g_\ell\rangle)_{k}$ is also a Cauchy sequence.
 
-Let $f_{n_{k}} = f_{n_{k}^k}$. Then for any $j$, after finitely many entries $(f_{n_{k}})_{k}$ is a subsequence of $(f_{n_{k}^j})_{k}$, so $(\langle f_{n_{k}}, g_{j}\rangle)_{k}$ is a Cauchy sequence, and hence we can set
+Let $f_{n_{k}} = f_{n_{k}^k}$. Then for any $j$, after finitely many entries ${(f_{n_{k}})}_{k}$ is a subsequence of ${(f_{n_{k}^j})}_{k}$, so $(\langle f_{n_{k}}, g_{j}\rangle)_{k}$ is a Cauchy sequence, and hence we can set
 \[\langle f, g_{j}\rangle = \lim_{k \to \infty} \langle f_{n_{k}}, g_{j}\rangle.\]
 This defines $f$ as a map $D \to \CC$; then $f$ extends to a bounded linear map $L^{p^*} \to \CC$ uniquely, since $D$ was dense in the unit sphere of $L^{p^*}$.
 By H\"older duality, this implies that $f \in (L^p)^{**} = L^p$.
@@ -651,7 +651,7 @@ The \dfn{Sobolev norm} is the norm
 \[||u||_{H^s(U)} = \sum_{i=0}^{s} ||\nabla u||_{L^2}.\]
 The space $H^s(U)$ is the completion of the space of smooth functions $u: U \to \CC$ such that $||u||_{H^s(U)} < \infty$.
 \end{definition}
-In particular, a sequence $(u_{n})_{n}$ converges (strongly) in $H^s$ (say, to $u$) if for every $i \in \{0, \dots, s\}$, $\nabla^iu \to u$ strongly in $L^2$.
+In particular, a sequence ${(u_{n})}_{n}$ converges (strongly) in $H^s$ (say, to $u$) if for every $i \in \{0, \dots, s\}$, $\nabla^iu \to u$ strongly in $L^2$.
 One can also define weak convergence in $H^s$ by simply requiring that the derivatives converge weakly in $L^2$.
 
 \begin{exercise}\label{unit ball compactness}
@@ -671,7 +671,7 @@ Show that if $f_{n} = 1_{\{n\}}$, then $f_{n} \to 0$ weakly in $\ell^2$ but not 
 \end{exercise}
 
 \begin{exercise}[Banach-Saks]
-Let $(x_{n})_{n}$ be a bounded sequence in $L^2$. Show that there is a subsequence $(x_{n_{k}})_{k}$ and a $x \in L^2$ such that
+Let ${(x_{n})}_{n}$ be a bounded sequence in $L^2$. Show that there is a subsequence ${(x_{n_{k}})}_{k}$ and a $x \in L^2$ such that
 \[\lim_{n \to \infty} \frac{1}{N} \sum_{k=1}^{N} x_{n_{k}} = x\]
 strongly in $L^2$.
 \end{exercise}
@@ -699,9 +699,9 @@ We are in the position to show that Dirichlet's problem, as defined in Exercise~
 Let $\mathcal A$ be the admissible set, and let $E$ be the Dirichlet energy, defined in~\ref{Dirichlet problem}.
 Proceed as follows:
 \begin{enumerate}
-\item Let $(u_{n})_{n}$ be a sequence of functions in $\mathcal A$ such that $E(u_{n}) \to \inf_{v \in \mathcal A} E(v)$.
-Show that $(u_{n})_{n}$ is a bounded sequence in $H^1$.
-\item Show that if $(v_{n})_{n}$ is a sequence of functions which converge in $H^1$ to a function $v \in H^1$, then $E(v_{n}) \to E(v)$.
+\item Let ${(u_{n})}_{n}$ be a sequence of functions in $\mathcal A$ such that $E(u_{n}) \to \inf_{v \in \mathcal A} E(v)$.
+Show that ${(u_{n})}_{n}$ is a bounded sequence in $H^1$.
+\item Show that if ${(v_{n})}_{n}$ is a sequence of functions which converge in $H^1$ to a function $v \in H^1$, then $E(v_{n}) \to E(v)$.
 \item Invoke Exercise~\ref{Banach-Alaoglu-Sobolev}.
 \item Show that if $u$ is smooth, then $u$ solves Dirichlet's problem iff for every smooth function $v$ which is zero in an open set containing $\partial U$,
 \begin{equation}\label{weak Dirichlet problem}
@@ -808,4 +808,4 @@ Expanding out the definitions of $A_{n}$ and $\Pi$, we get (\ref{invariant proje
 
 This theorem is mainly interesting in the case that $(\Omega, P, T)$ is an ergodic system.
 In that case, the only random variables in $V$ are constant almost surely, so $\Pi(f)$ is a constant.
-TODO: Conditional expectation arguement -> $\Pi = E$.
+TODO:\@Conditional expectation arguement -> $\Pi = E$.
