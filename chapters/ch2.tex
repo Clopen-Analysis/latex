@@ -5,7 +5,7 @@ These turn out to be especially useful in applications, including probability th
 
 \section{Measurable maps}
 In topology, a continuous map is one that pulls back open sets to open sets.
-Here we have no open sets to work with -- only measurable spaces -- but this turns out to be exactly what we want.
+Here we have no open sets to work with --- only measurable spaces --- but this turns out to be exactly what we want.
 
 \begin{definition}
 Let $(X, \Sigma)$ and $(Y, \Gamma)$ be measurable spaces.
@@ -17,7 +17,7 @@ If a measurable isomorphism exists, we say that $X,Y$ are \dfn{isomorphic} as me
 
 \begin{example}
 Isomorphism of measurable spaces is a very weak notion.
-If $X$ is an uncountable \dfn{Polish space} -- a complete separate metric space -- then we call its Borel $\sigma$-algebra $\Sigma$ the \dfn{standard Borel algebra}.
+If $X$ is an uncountable \dfn{Polish space} --- a complete separate metric space --- then we call its Borel $\sigma$-algebra $\Sigma$ the \dfn{standard Borel algebra}.
 A theorem of a branch of logic known as descriptive set theory implies that there is only one standard Borel algebra, up to isomorphism.
 So any two Polish spaces, when viewed as measurable spaces, are the same!
 \end{example}
@@ -128,7 +128,7 @@ A \dfn{vector-valued measure} on $\Sigma$, or simply a \dfn{measure}, is a funct
 \begin{example}
 The most important examples of vector-valued measures will be of the following form.
 Let $\nu$ be a positive measure on a measurable space $X$, and let $f: X \to B$ be an ``integrable function''.
-We will get back to what this means later -- but, taking the definition of integration as a black box, set
+We will get back to what this means later --- but, taking the definition of integration as a black box, set
 \[\mu(E) = \int_{E} f(x) ~d\nu(x).\]
 Then $\mu$ is a vector-valued measure, and its ``derivative'' is $f$.
 This will be the setting in which we generalize the fundamental theorem of calculus.
@@ -201,7 +201,7 @@ Thus, explain why we cannot define a $\mu$-null set to simply be a set $E$ such 
 
 
 \section{Probability}
-In 1933, Andrey Kolmogorov put probability theory -- which was long viewed as not part of rigorous mathematics -- on a sound footing by establishing three axioms that probability theory ought to satisfy.
+In 1933, Andrey Kolmogorov put probability theory --- which was long viewed as not part of rigorous mathematics --- on a sound footing by establishing three axioms that probability theory ought to satisfy.
 These axioms, however, are exactly the definition of a probability measure!
 Thus measure theory is an invaluable tool in applied mathematics, such as statistics.
 However, even the myopic reader who only cares about pure, abstract mathematics will find probability useful to their work.
@@ -244,7 +244,7 @@ valid for any two events $E,F$ familiar from elementary probability theory.
 
 \begin{subsec}
 So far we have only discussed events. But what role do outcomes play?
-Outcomes are ``microstates'' and each outcome carries all possible information about a particular state that the universe could be -- the position and momentum of every last molecule, the value of every card in every player's hand.
+Outcomes are ``microstates'' and each outcome carries all possible information about a particular state that the universe could be --- the position and momentum of every last molecule, the value of every card in every player's hand.
 But we are just puny mortal observers of the universe; we cannot possibly have access to all that information!
 So outcomes are not terribly useful, and one generally avoids ever mentioning outcomes directly.
 What we mortal observers can observe are random variables.
@@ -259,7 +259,7 @@ A \dfn{random variable} of \dfn{type} $E$, also known as an \dfn{observable} of 
 The points of the space $E$ represent possible values that an experiment can return.
 The random variable $X: \Omega \to E$ represents an experiment. If $\omega$ is an outcome, $X(\omega)$ is the result of the experiment $X$ if the universe is in state $\omega$.
 One generally takes $E = \RR$ with its Borel $\sigma$-algebra, since most experiments return numerical data, but there are other examples of useful types $E$; for example, points of $E$ are often sequences, vectors, or graphs.
-If the type of $X$ is clear -- especially if it is $\RR$ -- we will suppress it.
+If the type of $X$ is clear --- especially if it is $\RR$ --- we will suppress it.
 \end{subsec}
 
 \begin{subsec}
