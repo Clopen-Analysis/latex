@@ -13,7 +13,7 @@ The only modes of convergence that we have considered so far which are induced b
 But why do we like Banach spaces? Well, Banach spaces have an algebraic structure, since they are vector spaces.
 More critically, if $B$ is a Banach space with norm $||\cdot||$, and $f \in B$, then $||f||$ can reasonably viewed as the ``size'' of $f$.
 In applications, being able to size functions is crucial.
-Many theorems in PDE amount to proving that if a function $f$, that we can think of as ``initial data" for some dynamical system, is ``small enough'' (in the sense that $||f|| < \delta$ for some $\delta$ that does not depend on $f$), then the dynamical system stabilizes to $0$.
+Many theorems in PDE amount to proving that if a function $f$, that we can think of as ``initial data'' for some dynamical system, is ``small enough'' (in the sense that $||f|| < \delta$ for some $\delta$ that does not depend on $f$), then the dynamical system stabilizes to $0$.
 As a concrete example, models of the spread of an infection inside a human body often have the property that if the initial data $f$ is small enough (thus very few virions are present in the body), then the infection will die out.
 
 Another useful feature of Banach spaces is the notion of duality.
@@ -55,7 +55,7 @@ We let $L^p(X \to B, \mu)$, often abbreviated to $L^p$ or similar, be the vector
 
 Here $L$ stands for ``Lebesgue''; thus $L^p$ is sometimes known as a \dfn{Lebesgue space}.
 However, the term ``Lebesgue space'' also refers in the literature to the measured space $[0, 1]$ with Lebesgue measure.
-Worse, while the key fact about $L^p$ spaces is H\"older duality, a ``H\"older space'' is a space of continuous functions satisfying a certain inequality.
+Worse, while the key fact about $L^p$ spaces is H\"older duality, a ``H\''older space'' is a space of continuous functions satisfying a certain inequality.
 So, to avoid confusion, we will simply call the spaces that we defined above \dfn{$L^p$ sspaces}.
 
 We will shortly prove that the above definition makes sense, but, assuming that $||\cdot||_{p} $ is a norm, what does it measure?
@@ -192,7 +192,7 @@ We stop to consider the case that $\mu$ is counting measure.
 \begin{definition}
 Let $A$ be a set. Let $\nu$ be counting measure on $A$. We define $\ell^p(A) = L^p(A \to B, \nu)$.
 If $A = \NN$, we leave $A$ as understood and simply let $\ell^{p} = L^p(\NN \to B, \nu)$.
-Here $\ell^p$ is pronounced ``little LP."''
+Here $\ell^p$ is pronounced ``little LP.''''
 \end{definition}
 
 Thus $\ell^p$ is the space of sequences $x$ in $B$ with
@@ -268,7 +268,7 @@ We leave the proof of the case when $\mu$ is granular as Exercise~\ref{granular 
 H\"older comparison is especially useful when $\mu$ is a probability measure, in which case it can be interpreted as the statement that every bounded random variable has a finite standard deviation and finite expected value, or when $\mu$ is counting measure, in which case it can be interpreted as saying that every absolutely summable sequence is bounded.
 
 Let us finish the section by giving an example of Banach-valued $L^p$ spaces which frequently come up in applications.
-Let $T > 0$. An \dfn{evolution equation} (say, on an open set $U \subseteq \RR^d$) is a partial differential equation satisfied by functions $u: [0, T] \times U \to \CC$ relating the ``time derivatives" of $u$ (i.e. those in the domain $[0, T]$) to the ``space derivatives'' (those in $U$).
+Let $T > 0$. An \dfn{evolution equation} (say, on an open set $U \subseteq \RR^d$) is a partial differential equation satisfied by functions $u: [0, T] \times U \to \CC$ relating the ``time derivatives'' of $u$ (i.e. those in the domain $[0, T]$) to the ``space derivatives'' (those in $U$).
 For instance, the Schr\"odinger equation
 \[-i\frac{\partial u}{\partial t} + \Delta u = f,\]
 where $f$ is given, $t$ is the time variable $\in [0, T]$, $\Delta$ is the Laplace operator on $U$, so
@@ -435,13 +435,13 @@ using the weaktype Hardy-Littlewood maximal inequality.
 We now come to the important notion of H\"older duality, which we should motivate before stating.
 
 ``Duality'' is a funny word that many mathematicians use, but only a few would dare try to give a precise definition of.
-For our purposes, we can think of an ``algebraic" object $X$ (a ring, an abelian group, et cetra) as being ``dual" to a ``geometric" object $X^*$ (a topological space, a manifold, et cetra) if there is a ``good bijection" between ``good" maps $X \to Y$ (say homomorphisms) and ``good'' maps $Y^* \to X^*$ (continuous maps, smooth maps, et cetra), and another good bijection between good maps $Y \to X$ and good maps $X^* \to Y^*$.
+For our purposes, we can think of an ``algebraic" object $X$ (a ring, an abelian group, et cetra) as being ``dual" to a ``geometric" object $X^*$ (a topological space, a manifold, et cetra) if there is a ``good bijection" between ``good'' maps $X \to Y$ (say homomorphisms) and ``good'' maps $Y^* \to X^*$ (continuous maps, smooth maps, et cetra), and another good bijection between good maps $Y \to X$ and good maps $X^* \to Y^*$.
 The data consisting of the good bijections, for every such pair $(X, X^*)$, is then known as a ``duality theory''.
 We leave all the words in scare quotes undefined; the reader who is familiar with modern algebra may try to replace them with precisely defined terms, perhaps using the language of category theory or universal algebra.
 However, there is a good chance that the resulting notion will not quite be satisfied by H\"older duality, because in the edge cases $p = 1$ and $p = \infty$, H\"older duality is rather ill-behaved.
 
 One duality theory that every mathematician is familiar with is duality on finite-dimensional vector spaces.
-Finite-dimensional vector spaces are both ``algebraic" and ``geometric'', and indeed if $V$ is a finite-dimensional vector space over a field $K$, then there is an isomorphism $V \to V^*$, where $V^*$ is the finite-dimensional vector space of all linear maps $V \to K$.
+Finite-dimensional vector spaces are both ``algebraic'' and ``geometric'', and indeed if $V$ is a finite-dimensional vector space over a field $K$, then there is an isomorphism $V \to V^*$, where $V^*$ is the finite-dimensional vector space of all linear maps $V \to K$.
 If $V$ consists of column vectors over $K$, then $V^*$ can be canonically identified with a space of row vectors over $K$.
 For any linear map $V \to W$ one obtains its adjoint map $W^* \to V^*$.
 In particular, if we select an isomorphism $V \to V^*$, then we can talk about the self-adjoint maps $V \to V$, which have especially nice properties (for example, being orthogonally diagonalizable).
@@ -560,7 +560,7 @@ for every $g \in L^{p^*}$.
 \end{definition}
 
 To avoid confusion, we will say that a sequence \dfn{converges strongly} in $L^p$ if it converges in norm.
-The words ``strong" and ``weak'' are motivated by the following lemma:
+The words ``strong'' and ``weak'' are motivated by the following lemma:
 
 \begin{lemma}
 Let $p \in (1, \infty)$. If a sequence converges strongly in $L^p$, then it converges weakly in $L^p$.
@@ -585,7 +585,7 @@ We define the \dfn{weakstar seminorm}
 The \dfn{weakstar topology} on $L^p$ is the topology induced by the weakstar seminorms $\{p_g: g \in L^{p^*}\}$.
 \end{definition}
 
-The term ``weakstar" is motivated by the fact that the weakstar topology will induce weak convergence, and that the weakstar topology is induced by duality (hence ``star'').
+The term ``weakstar'' is motivated by the fact that the weakstar topology will induce weak convergence, and that the weakstar topology is induced by duality (hence ``star'').
 
 There are several suspicious things about this definition. First, we check that $p_g$ is a seminorm. Indeed, one has a triangle inequality
 \[p_g(f_1 + f_2) = |\langle f_1 + f_2, g\rangle| = |\langle f_1, g\rangle + \langle f_2, g\rangle| \leq p_g(f_1) + p_g(f_2)\]
