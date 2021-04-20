@@ -1,0 +1,5 @@
+commit_template: "style: Restyled by ${restyler.name}"
+statuses:
+    differences: true
+    no_differences: true
+    error: false
