@@ -105,10 +105,10 @@ A \dfn{vector-valued measure} on $\Sigma$, or simply a \dfn{measure}, is a funct
 
 \begin{example}
 The most important examples of vector-valued measures will be of the following form.
-Let $\nu$ be a positive measure on a measurable space $X$, and let $f: X \to B$ be an ``integrable function".
+Let $\nu$ be a positive measure on a measurable space $X$, and let $f: X \to B$ be an ``integrable function''.
 We will get back to what this means later -- but, taking the definition of integration as a black box, set
 \[\mu(E) = \int_{E} f(x) ~d\nu(x).\]
-Then $\mu$ is a vector-valued measure, and its ``derivative" is $f$.
+Then $\mu$ is a vector-valued measure, and its ``derivative'' is $f$.
 This will be the setting in which we generalize the fundamental theorem of calculus.
 \end{example}
 
@@ -156,7 +156,7 @@ which implies the two desired inequalities.
 
 \begin{subsec}
 Let $\mu$ be a vector-valued measure.
-The total variation measure $|\mu|$ can be viewed as the positive measure that ``best dominates" $||\mu||_B$ in the sense that for every measurable set $E$, $|\mu(E)| \geq ||\mu(E)||_B$.
+The total variation measure $|\mu|$ can be viewed as the positive measure that ``best dominates'' $||\mu||_B$ in the sense that for every measurable set $E$, $|\mu(E)| \geq ||\mu(E)||_B$.
 On the other hand, if $\mu$ is already a positive measure, then the definition of the total variation measure $|\mu|$ still makes sense, and additivity of $\mu$ implies that $\mu = |\mu|$.
 Thus we can use total variation to extend definitions of measures to this more general setting.
 \end{subsec}
@@ -196,8 +196,8 @@ The quantity $P(A)$, where $A$ is an event, is called the \dfn{probability} that
 \begin{subsec}
 The intuition here is that the events form an algebra $\Sigma$ of statements that could be true or false about the world, with varying probabilities.
 By an algebra of statements, more precisely, one means that it is meaningful to conjoin them using grammar: $A \cup B$ is the event that $A$ happens or $B$ happens, while $A \cap B$ is the probability that both $A$ happens and $B$ happens. The event $\Omega \setminus A$ is the probability that $A$ does not happen, and so on.
-The event $\Omega$ is vacuously true; it represents the statement ``$2 + 2 = 4$".
-The event $\emptyset$, on the other hand, is vacuously false; it represents the statement ``$2 + 2 = 5$".
+The event $\Omega$ is vacuously true; it represents the statement ``$2 + 2 = 4$''.
+The event $\emptyset$, on the other hand, is vacuously false; it represents the statement ``$2 + 2 = 5$''.
 Thus probability theory sits somewhere between analysis and logic in the world of mathematics, and the language used in the following definition is motivated.
 \end{subsec}
 
@@ -223,7 +223,7 @@ valid for any two events $E,F$ familiar from elementary probability theory.
 
 \begin{subsec}
 So far we have only discussed events. But what role do outcomes play?
-Outcomes are ``microstates" and each outcome carries all possible information about a particular state that the universe could be -- the position and momentum of every last molecule, the value of every card in every player's hand.
+Outcomes are ``microstates'' and each outcome carries all possible information about a particular state that the universe could be -- the position and momentum of every last molecule, the value of every card in every player's hand.
 But we are just puny mortal observers of the universe; we cannot possibly have access to all that information!
 So outcomes are not terribly useful, and one generally avoids ever mentioning outcomes directly.
 What we mortal observers can observe are random variables.
@@ -261,7 +261,7 @@ We think of two identically distributed random variables as being isomorphic, bu
 \end{subsec}
 
 \begin{subsec}
-Recall that in elementary probability theory two events $A,B$ are said to be independent if $P(A) = P(A|B)$, where $P(A|B)$ (``the probability of $A$ given $B$") is by definition $P(A \cap B)/P(B)$.
+Recall that in elementary probability theory two events $A,B$ are said to be independent if $P(A) = P(A|B)$, where $P(A|B)$ (``the probability of $A$ given $B$'') is by definition $P(A \cap B)/P(B)$.
 The intuition is that if we know that $B$ is true, then we want to restrict to subsets of $B$ and rescale the probability measure $P$ so that $B$ is almost surely true.
 However, if $A$ and $B$ really have nothing to do with each other, the probability of $A$ given $B$ is just the probability of $A$.
 We can write this in a more symmetrical form, which also avoids the issue of division by zero, as in the following definition.
@@ -351,7 +351,7 @@ An \dfn{ergodic system} is a measure-preserving system $(X, \Sigma, P, f)$ for w
 
 \begin{subsec}
 Ergodic systems are the most important examples of measure-preserving systems.
-The reason is that ergodic systems behave ``randomly".
+The reason is that ergodic systems behave ``randomly''.
 In an ergodic system, the universe might have property $A$ today, but this is no evidence that the universe will have property $A$ tomorrow, because every day all the properties that the universe could have get completely mixed up every time $f$ is applied.
 
 Let $(X, P, f)$ be an ergodic system.
@@ -368,7 +368,7 @@ The reader who is familiar with some Fourier analysis may show this in Exercise 
 \end{example}
 
 \begin{subsec}
-As a sample of the power of ergodic theory, let us prove the following theorem that ``breaks the laws of thermodynamics".
+As a sample of the power of ergodic theory, let us prove the following theorem that ``breaks the laws of thermodynamics''.
 If $(X, f)$ is a measure-preserving system and $x \in X$, we let $f^n(x)$ denote $f \circ \cdots \circ f$, where there are $n$ copies of $f$.
 The theorem is due to Carathéodory, which is naturally why it is named after Poincar\'e.
 \end{subsec}

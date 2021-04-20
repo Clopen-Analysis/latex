@@ -76,9 +76,9 @@ The space $\mathcal L^\infty$ is defined to be the space of all versions of all 
 \end{subsec}
 
 \begin{subsec}
-It is worth contrasting the norms $L^1$ and $L^\infty$. $L^1$ only cares about the ``area under the graph"; a function $f$ whose graph is a narrow but very tall spike is tiny in $L^1$. Meanwhile $L^\infty$ only cares about ``height of the graph"; that same function $f$ would have an enormous $L^\infty$ norm.
+It is worth contrasting the norms $L^1$ and $L^\infty$. $L^1$ only cares about the ``area under the graph"; a function $f$ whose graph is a narrow but very tall spike is tiny in $L^1$. Meanwhile $L^\infty$ only cares about ``height of the graph''; that same function $f$ would have an enormous $L^\infty$ norm.
 On the other hand, a function which is very wide but shallow would be tiny in $L^\infty$ but huge in $L^1$. TODO: Draw a picture.
-Later we will define $L^p$ norms which serve as a ``weighted average" between the two extremes.
+Later we will define $L^p$ norms which serve as a ``weighted average'' between the two extremes.
 \end{subsec}
 
 \begin{lemma}
@@ -90,7 +90,7 @@ One has $\ISF \subseteq L^1 \cap L^{\infty} \subseteq L^1$, but $\ISF$ is dense 
 
 \begin{subsec}
 How are the $L^\infty$ and $L^1$ norms related?
-Well, if the measure of $X$ is finite, then the graph of the function cannot be ``too wide", as our next lemma shows.
+Well, if the measure of $X$ is finite, then the graph of the function cannot be ``too wide'', as our next lemma shows.
 \end{subsec}
 
 \begin{lemma}
@@ -104,8 +104,8 @@ Easy as that!
 \end{proof}
 
 \begin{subsec}
-Conversely, if the graph of the function cannot be ``too skinny", then we have the opposite bound.
-To make this precise, we need the notion of a ``granular measure".
+Conversely, if the graph of the function cannot be ``too skinny'', then we have the opposite bound.
+To make this precise, we need the notion of a ``granular measure''.
 \end{subsec}
 
 \begin{definition}
@@ -280,7 +280,7 @@ Let $f_{n} = 1_{[n, n + 1]}$. Then $f_{n} \to 0$ pointwise but
 
 \begin{subsec}
 Roughly speaking, there are two settings in which it is acceptable to commute an integral with a limit.
-For one, if all functions involved are ``dominated" by some function in $L^1$, then it is usually safe to do so; one way to make this precise is the dominated convergence theorem.
+For one, if all functions involved are ``dominated'' by some function in $L^1$, then it is usually safe to do so; one way to make this precise is the dominated convergence theorem.
 \end{subsec}
 
 \begin{theorem}[dominated convergence]
@@ -457,7 +457,7 @@ We call $(X, \bigotimes_{\alpha} \Sigma_\alpha)$ the \dfn{product measurable spa
 Let $(\prod_{\alpha} X_\alpha, \bigotimes_{\alpha} \Sigma_\alpha)$ be a product measurable space. We will usually just denote this space by $\prod_{\alpha} X_\alpha$, leaving $\bigotimes_{\alpha} \Sigma_\alpha$ understood, since usually $\bigotimes_{\alpha} \Sigma_\alpha$ is the only interesting $\sigma$-algebra on $\prod_{\alpha} X_\alpha$.
 
 We leave it to the categorically-minded reader to check that the product measurable space satisfies the universal property of products, and leave everyone else to quizzically wonder what such a sentence means.
-This is another sign that our definition of measurable space, with its bizarre clause that all but finitely many of the factors are trivial, is ``correct".
+This is another sign that our definition of measurable space, with its bizarre clause that all but finitely many of the factors are trivial, is ``correct''.
 
 We recall that a measure $\mu$ is complex-valued if for every measurable $E$, $\mu(E)$ is a complex number or $\infty$.
 We will restrict to complex-valued measures because we need to be able to multiply the measures of sets.
@@ -639,7 +639,7 @@ if $n$ is large enough, since the sequence of $\mu^d(U_{m})$ is absolutely summa
 Therefore the $L_{n}$ approximate $U$ from within.
 
 The proof of outer regularity is similar to the proof of inner regularity, and we leave it as an exercise.
-The reader may wish to use ``half-open rectangles" in the proof of outer regularity.
+The reader may wish to use ``half-open rectangles'' in the proof of outer regularity.
 \end{proof}
 
 \begin{theorem}
@@ -669,7 +669,7 @@ Then
 \[\mu^{d+1}(U) = \int_{\RR^d} f(x)~dx.\]
 \end{theorem}
 \begin{proof}
-All functions here are nonnegative (so that we do not have to talk about ``net signed area"), so by monotone convergence and continuity of measure, it suffices to check this for simple functions, and then by linearity it suffices to check this for an indicator function $f = 1_A$.
+All functions here are nonnegative (so that we do not have to talk about ``net signed area''), so by monotone convergence and continuity of measure, it suffices to check this for simple functions, and then by linearity it suffices to check this for an indicator function $f = 1_A$.
 But this is obvious:
 \begin{align*}U &= \{(x, y): x \in \RR^d, ~0 \leq y \leq f(x)\} \\&= \{(x, y): x \in A, ~0 \leq y \leq 1\} \cup \{(x, y): x \notin A, ~0 \leq y \leq 0\} \\&= (A \times [0, 1]) \cup (A^{c} \times \{0\}).\end{align*}
 Since $\mu^{d+1}(A^{c} \times \{0\}) = 0$,
@@ -768,7 +768,7 @@ Now $\{0\}$ is a null set so we can discard it, and the reader who recalls their
 \[\mu(E) = \int_{E} r~dr\]
 and $[0, 2\pi)$ is given Lebesgue measure. That is,
 \[dA(r \cos \theta, r \sin \theta) = d\mu(r) ~d\theta = r~dr~d\theta.\]
-To check this claim, one just needs to show that the Borel sets in $\RR^2 \setminus \{0\}$ are generated by ``rectangles" (which here are sectors $\{(r \cos \theta, r \sin \theta): r \in [r_1, r_2], ~\theta \in [\theta_1, \theta_2]\}$), and that for every such rectangle $R$, which we identify with the (plain old) rectangle $[r_1, r_2] \times [\theta_1, \theta_2]$, its area satisfies
+To check this claim, one just needs to show that the Borel sets in $\RR^2 \setminus \{0\}$ are generated by ``rectangles'' (which here are sectors $\{(r \cos \theta, r \sin \theta): r \in [r_1, r_2], ~\theta \in [\theta_1, \theta_2]\}$), and that for every such rectangle $R$, which we identify with the (plain old) rectangle $[r_1, r_2] \times [\theta_1, \theta_2]$, its area satisfies
 \[A(R) = (\theta_2 - \theta_1)\int_{r_1}^{r_2} r~dr.\]
 TODO:Draw a picture of a sector
 Once the reader verifies this, they are entitled to apply Fubini's theorem again, and

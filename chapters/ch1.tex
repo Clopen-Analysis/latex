@@ -2,7 +2,7 @@
 \label{ch:ch1}
 
 \label{measureChapter}
-A measure is a rule by which we assign ``size" to certain sets.
+A measure is a rule by which we assign ``size'' to certain sets.
 The notion of a measure generalizes a handful of familiar notions, which we now review.
 \begin{example}
 \label{examples of measures}
@@ -13,7 +13,7 @@ $\mu$ on boxes $[a_1, b_1] \times \cdots \times [a_d, b_d] \subseteq \RR^d$ by d
 \[\mu([a_1, b_1] \times \cdots \times [a_d, b_d]) = (b_1 - a_1)(b_2 - a_2)\cdots(b_{d} - a_d).\]
 When $d = 1$ this is just the familiar notion of the length of a line segment; when $d = 2$ this is the area of a rectangle; when $d = 3$ this is the volume of a rectangular prism.
 
-In probability theory, one is concerned with sets of ``outcomes"; the sets are known as ``events". Given an event $E$ in a sample space $X$, we define $\mu(E)$ to be the probability that $\mu$ occurs. Thus $\mu(X) = 1$.
+In probability theory, one is concerned with sets of ``outcomes"; the sets are known as ``events''. Given an event $E$ in a sample space $X$, we define $\mu(E)$ to be the probability that $\mu$ occurs. Thus $\mu(X) = 1$.
 \end{example}
 
 \begin{subsec}
@@ -42,7 +42,7 @@ Let $X$ be a set. By an \dfn{algebra} in $X$ we mean a ring such that $X \in R$ 
 \end{definition}
 
 \begin{definition}
-By a \dfn{$\sigma$-ring}\footnote{Here $\sigma$ should be thought of as meaning ``countable".} $R$ we mean a ring which is closed under countable unions, thus for every sequence $(X_{n})_{n}$ of sets in $R$, $\bigcup_{n} X_{n} \in R$.
+By a \dfn{$\sigma$-ring}\footnote{Here $\sigma$ should be thought of as meaning ``countable''.} $R$ we mean a ring which is closed under countable unions, thus for every sequence $(X_{n})_{n}$ of sets in $R$, $\bigcup_{n} X_{n} \in R$.
 
 We define a \dfn{$\sigma$-algebra} in a set $X$ to be a $\sigma$-ring which is an algebra in $X$.
 \end{definition}
@@ -85,7 +85,7 @@ Let $\Sigma$ be an infinite $\sigma$-ring. Show that $\Sigma$ has cardinality at
 \end{exercise}
 
 \section{The Borel $\sigma$-algebra}
-We now consider certain $\sigma$-algebras that are built up by a process similar to the notion of ``generators and relations" from algebra.
+We now consider certain $\sigma$-algebras that are built up by a process similar to the notion of ``generators and relations'' from algebra.
 
 \begin{lemma}
 \label{intersection of rings is ring}
@@ -98,7 +98,7 @@ Therefore $X \cup Y, X \setminus Y \in R$.
 \end{proof}
 
 \begin{subsec}
-Whenever we refer to a ``smallest" set $X$ with a property $P$, we mean that for every set $Y$ with property $P$, $X \subseteq Y$.
+Whenever we refer to a ``smallest'' set $X$ with a property $P$, we mean that for every set $Y$ with property $P$, $X \subseteq Y$.
 \end{subsec}
 
 \begin{lemma}
@@ -167,7 +167,7 @@ By Lemma \ref{generators and relations}.
 \begin{subsec}
 When is a set Borel? If $X = \NN$, then every set is open and so every set is Borel.
 But it is not so obvious how to check whether a subset of $\RR^d$ is Borel.
-Certainly any set you will ever ``naturally" encounter is Borel, but not every subset of $\RR^d$ is Borel.
+Certainly any set you will ever ``naturally'' encounter is Borel, but not every subset of $\RR^d$ is Borel.
 \end{subsec}
 
 \begin{lemma}
@@ -281,7 +281,7 @@ Since the Borel sets form a $\sigma$-algebra, this will define a measure on the 
 \end{subsec}
 
 \begin{subsec}
-Recall that a function $f$ on an interval $I$ is said to be ``left-continuous" if for every $x \in I$,
+Recall that a function $f$ on an interval $I$ is said to be ``left-continuous'' if for every $x \in I$,
 \[f(x) = \lim_{\varepsilon \to 0^+} f(x - \varepsilon).\]
 Here the limit is taken over \emph{positive} $\varepsilon$, and so ignores the behavior of $f$ to the right of $x$.
 Clearly any continuous function is left-continuous.
@@ -289,7 +289,7 @@ One can also define right-continuous functions by ignoring the behavior of $f$ t
 \end{subsec}
 
 \begin{example}
-The \dfn{Heaviside step function}\footnote{Named after Oliver Heaviside (1850-1925), an engineer who introduced an early version of the ``distributional calculus" used to solve differential equations. Mathematicians did not consider the distributional calculus rigorous until the 1950s, however.}
+The \dfn{Heaviside step function}\footnote{Named after Oliver Heaviside (1850-1925), an engineer who introduced an early version of the ``distributional calculus'' used to solve differential equations. Mathematicians did not consider the distributional calculus rigorous until the 1950s, however.}
 $$H(x) = \begin{cases}
 0, & x \leq 0\\
 1, & x > 0
@@ -324,7 +324,7 @@ If the following theory ever seems too abstract, try it out on the Lebesgue prem
 \end{example}
 
 \begin{example}
-The Stieltjes premeasure of a differentiable function $f$ can be thought of as ``weighted length"; $\mu_f([a, b)) > b - a$ provided that $f' > 1$ on $b - a$, and $\mu_f([a, b)) < b - a$ if $f' < 1$.
+The Stieltjes premeasure of a differentiable function $f$ can be thought of as ``weighted length''; $\mu_f([a, b)) > b - a$ provided that $f' > 1$ on $b - a$, and $\mu_f([a, b)) < b - a$ if $f' < 1$.
 This is just an expression of the fundamental theorem of calculus: if $f$ is differentiable then
 \[\mu_f([a, b)) = f(b) - f(a) = \int_{a}^{b} f'(x)~dx.\]
 Since $f$ is nondecreasing, $f' \geq 0$.
@@ -572,7 +572,7 @@ He considered not just outer measures but \dfn{inner measures} defined by the re
 \[\mu_*(E) = \sup \sum_{n=1}^{\infty} \mu(E_{n})\]
 where the $\sup$ ranges over all sequences of $E_{n} \in P$ such that $\bigcup_{n} E_{n} \subseteq P$ and the $E_{n}$ are disjoint.
 Then Lebesgue proposed to study the $\sigma$-ring of all sets whose inner and outer measures agree.
-Note the asymmetry: for inner measure we need to assume that the $E_{n}$ are disjoint, or else we could ``double-count" elements of $E$.
+Note the asymmetry: for inner measure we need to assume that the $E_{n}$ are disjoint, or else we could ``double-count'' elements of $E$.
 This asymmetry is the origin of several pathologies that make inner measures difficult to work with, and now this approach is considered nothing more than a historical footnote.
 \end{subsec}
 
@@ -627,7 +627,7 @@ Moreover, if $\mu$ is $\sigma$-finite, then $(X, \Sigma, \mu)$ is the unique mea
 \begin{subsec}
 The rest of this section is devoted to the proof of the Carathéodory construction theorem.
 We begin by constructing $\Sigma$.
-We will do this by giving a property -- namely, ``measurability" -- that every set in the $\sigma$-algebra $\Sigma$ ought to satisfy.
+We will do this by giving a property -- namely, ``measurability'' -- that every set in the $\sigma$-algebra $\Sigma$ ought to satisfy.
 We will then show that the set of all measurable sets forms a $\sigma$-algebra; thus, we might as well define $\Sigma$ to be that $\sigma$-algebra.
 \end{subsec}
 
@@ -784,7 +784,7 @@ The \dfn{Lebesgue measure} on $\RR$ is the Stieltjes measure arising from the Le
 
 \begin{subsec}
 Let $\mu$ denote Lebesgue measure; then $\mu([\alpha, \beta)) = \beta - \alpha$ is the length of the interval $[\alpha, \beta)$.
-Therefore $\mu$ is the natural generalization of ``length" to as many subsets of $\RR$ as one reasonably can generalize it to.
+Therefore $\mu$ is the natural generalization of ``length'' to as many subsets of $\RR$ as one reasonably can generalize it to.
 Indeed, if $A$ is a Lebesgue measurable subset of $\RR$ (e.g. if $A$ is Borel) then
 \begin{equation}
 \label{lebesgue measure formula}
@@ -826,7 +826,7 @@ Since $\mu([\alpha, \beta)) = \nu([\alpha, \beta))$ for all $\alpha < \beta$, un
 \end{proof}
 
 \begin{subsec}
-The above argument is an example of a ``bootstrapping" strategy that is common in measure theory.
+The above argument is an example of a ``bootstrapping'' strategy that is common in measure theory.
 Once one has established a simple case (here $\nu([0, 1)) = 1$), it is often possible to propagate that case to a slightly more complicated case ($\nu([0, 1/q)) = 1/q$, say), and then repeat this process until all sets of interest have been considered.
 If you find yourself stuck on an exercise, it is worth trying to prove the claim in the simplest possible case and then iteratively improving the cases your proof works for until all cases are hit.
 \end{subsec}
@@ -904,7 +904,7 @@ However, this fact is rarely useful; as discussed below, we are mainly intereste
 \end{subsec}
 
 \begin{subsec}
-After this chapter, we will mainly be interested in not measurable sets, but rather equivalence classes of measurable sets under the equivalence relation ``symmetric difference is a null set".
+After this chapter, we will mainly be interested in not measurable sets, but rather equivalence classes of measurable sets under the equivalence relation ``symmetric difference is a null set''.
 That is, we think of two measurable sets $A,B$ as the same if the symmetric difference $A \Delta B = (A \setminus B) \cup (B \setminus A)$ is null.
 For example, every countable set is the same as the empty set.
 One can give a different construction of the Lebesgue measure if one is \emph{only} interested in equivalence classes of measurable sets, rather than measurable sets themselves; see Exercises \ref{physical lebesgue measure 1} through \ref{physical lebesgue measure 3}.
@@ -989,9 +989,9 @@ If $I, J \in \Sigma_0$, then $I \setminus J \in \Sigma_0$, so we can define
 \[d_0(I, J) = \nu(I \setminus J) + \nu(J \setminus I).\]
 Show that $d_0$ is a semimetric, so the completion $(\Sigma, d)$ of $(\Sigma_0, d_0)$ is a complete metric space, and $\nu$ is a continuous function on $\Sigma$.
 
-Show that the ``union" of countably many elements of $\Sigma$ is well-defined, as is the ``intersection" of countably many elements and ``complement" of one element.
-That is, show that these operations drop to equivalence classes of elements of $\Sigma_0$ under the equivalence relation ``distance is $0$", and then extend uniquely to $\Sigma$.
-So $\Sigma$ can be thought of as an ``abstract $\sigma$-ring" in some sense, even though its elements are not sets, but something more abstract.
+Show that the ``union" of countably many elements of $\Sigma$ is well-defined, as is the ``intersection" of countably many elements and ``complement'' of one element.
+That is, show that these operations drop to equivalence classes of elements of $\Sigma_0$ under the equivalence relation ``distance is $0$'', and then extend uniquely to $\Sigma$.
+So $\Sigma$ can be thought of as an ``abstract $\sigma$-ring'' in some sense, even though its elements are not sets, but something more abstract.
 \end{exercise}
 
 \begin{exercise}
@@ -1000,9 +1000,9 @@ Let all definitions be as Exercise \ref{physical lebesgue measure 1}.
 Given $J \in \Sigma_0$, define $[J]$ to be the equivalence class of $J$ in $\Sigma$.
 Then, given $I \in \Sigma$, let
 \[\nu(I) = d(I, [\emptyset]).\]
-Show that $\nu$ is ``$\sigma$-additive" in the sense that whenever $(E_{n})_{n}$ is a sequence in $\Sigma$ with $E_{n} \cap E_{m} = [\emptyset]$ whenever $n \neq m$, then
+Show that $\nu$ is ``$\sigma$-additive'' in the sense that whenever $(E_{n})_{n}$ is a sequence in $\Sigma$ with $E_{n} \cap E_{m} = [\emptyset]$ whenever $n \neq m$, then
 \[\nu\left(\bigcup_{n} E_{n}\right) = \sum_{n} \nu(E_{n}).\]
-So we can think of $\nu$ as an ``abstract measure" on the abstract $\sigma$-ring $\Sigma$.
+So we can think of $\nu$ as an ``abstract measure'' on the abstract $\sigma$-ring $\Sigma$.
 We call $\nu$ the \dfn{physical Lebesgue measure}.
 \end{exercise}
 
@@ -1015,5 +1015,5 @@ Let $\Gamma$ be the $\sigma$-algebra of Lebesgue measurable subsets of $\RR$. Sh
 \item For every sequence $(E_{n})_{n}$ in $\Gamma$, $\pi(\bigcup_{n} E_{n}) = \bigcup_{n} \pi(E_{n})$, and similarly for intersection and complement.
 \item For every $E \in \Gamma$, $\mu(E) = \nu(\pi(E))$.
 \end{enumerate}
-So we can think of $\pi(E)$ as the equivalence class of $E$ under the equivalence relation ``symmetric difference is null", and $\nu$ correctly computes the Lebesgue measurable of a set.
+So we can think of $\pi(E)$ as the equivalence class of $E$ under the equivalence relation ``symmetric difference is null'', and $\nu$ correctly computes the Lebesgue measurable of a set.
 \end{exercise}

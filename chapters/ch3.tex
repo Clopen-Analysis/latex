@@ -1,16 +1,16 @@
 \chapter{Measurable functions}
 Throughout this chapter, let $(X, \Sigma)$ be a measurable space and let $B$ be a Banach space.
-We would like to consider functions $f: X \to B$ which ``respect" $\Sigma$. Then, given a measure $\mu$ defined on $\Sigma$, we will be able to define the integral $\int_{X} f~d\mu$ of $f$ with respect to $\mu$.
+We would like to consider functions $f: X \to B$ which ``respect'' $\Sigma$. Then, given a measure $\mu$ defined on $\Sigma$, we will be able to define the integral $\int_{X} f~d\mu$ of $f$ with respect to $\mu$.
 
 \section{Simple functions}
 When we prove a theorem $T$ about functions in measure theory, we want to follow the following template:
 \begin{enumerate}
-\item Let $\mathcal F$ be the set of functions for which $T$ is true. Show that $\mathcal F$ contains all functions which are ``sufficiently simple."
+\item Let $\mathcal F$ be the set of functions for which $T$ is true. Show that $\mathcal F$ contains all functions which are ``sufficiently simple.''
 \item Show that $\mathcal F$ is closed under linear combination, so is a vector space.
 \item Show that $\mathcal F$ is closed under taking limits of appropriate type.
 \item Conclude that every appropriate function lies in $\mathcal F$.
 \end{enumerate}
-In this section we treat the ``sufficiently simple" functions.
+In this section we treat the ``sufficiently simple'' functions.
 
 \begin{definition}
 A \dfn{simple function} is a function $f: X \to B$ such that the image of $f$ is finite, and for every $b$ in the image of $f$, $f^{-1}(b)$ is a measurable set.
@@ -108,7 +108,7 @@ Then:
 \[\sum_{n=1}^{\infty} \mu(A_{n}) < \infty,\]
 then $\limsup_{n \to \infty} A_{n}$ is $\mu$-null.
 \end{enumerate}
-The Borel-Cantelli lemma is a primitive example of a ``zero-one law", a theorem that implies that certain sets must either be null or have null complement.
+The Borel-Cantelli lemma is a primitive example of a ``zero-one law'', a theorem that implies that certain sets must either be null or have null complement.
 \end{exercise}
 
 \begin{exercise}
@@ -124,7 +124,7 @@ Show that $A$ is a Borel set, and that $A$ is Lebesgue null. (Hint: Use the Bore
 
 
 \section{Measurable functions}
-We want to know which functions $X \to B$ are ``good" from the perspective of measure theory. To accomplish this, recall the notion of pointwise convergence.
+We want to know which functions $X \to B$ are ``good'' from the perspective of measure theory. To accomplish this, recall the notion of pointwise convergence.
 
 \begin{definition}
 A sequence of functions $f_{n}: X \to B$ is said to \dfn{converge pointwise} to a function $f$ if for every $x \in X$,
@@ -148,8 +148,8 @@ So we can view $f$ as a function $\RR \to \CC$, even though it is only defined a
 \end{example}
 
 \begin{subsec}
-Because $\mu$-null sets are not very important, we want to view two functions that are equal almost everywhere as actually being the same function, modulo ``measurement error".
-For example, if $u(x)$ denotes the temperature in the air at a point $x \in \RR^3$ measured by some thermometer, and we measure that $u(x) = 0$ at every $x$ close to $0$, but $u(0) = 1$, then we must have made an error in the measurement of $u(0)$, and might as well view this measurement $u$ as ``the same as" the measurement of temperature which is identically $0$ in a neighborhood of $0$.
+Because $\mu$-null sets are not very important, we want to view two functions that are equal almost everywhere as actually being the same function, modulo ``measurement error''.
+For example, if $u(x)$ denotes the temperature in the air at a point $x \in \RR^3$ measured by some thermometer, and we measure that $u(x) = 0$ at every $x$ close to $0$, but $u(0) = 1$, then we must have made an error in the measurement of $u(0)$, and might as well view this measurement $u$ as ``the same as'' the measurement of temperature which is identically $0$ in a neighborhood of $0$.
 \end{subsec}
 
 \begin{definition}
@@ -212,7 +212,7 @@ In particular, if we take the quotient $\mathcal M(X \to B)/N$, two functions $f
 \begin{definition}
 Let $N$ be the space of all functions that are zero almost everywhere is a vector subspace. We denote its quotient space
 \[M(X \to B) = \frac{\mathcal M(X \to B)}{N}.\]
-We will abuse terminology and refer to equivalence classes $f \in M(X \to B)$ as ``functions", and a representative of an equivalence class $f$ as a \dfn{version} of $f$.
+We will abuse terminology and refer to equivalence classes $f \in M(X \to B)$ as ``functions'', and a representative of an equivalence class $f$ as a \dfn{version} of $f$.
 \end{definition}
 
 \begin{subsec}
@@ -258,7 +258,7 @@ The reader who is only interested in the case $B = \CC$, which is reasonable to 
 \end{subsec}
 
 \begin{definition}
-The \dfn{carrier}\footnote{Some books prefer the term ``support", but we use ``support" to mean the closure of the carrier, whenever $(X, \mu)$ has a topology.} of a function $f: X \to B$ is the set $\{x \in X: f(x) \neq 0\}$.
+The \dfn{carrier}\footnote{Some books prefer the term ``support", but we use ``support'' to mean the closure of the carrier, whenever $(X, \mu)$ has a topology.} of a function $f: X \to B$ is the set $\{x \in X: f(x) \neq 0\}$.
 \end{definition}
 
 \begin{subsec}
@@ -393,7 +393,7 @@ Since $\Gamma$ contains the open sets, $\Gamma$ contains the Borel sets.
 
 \begin{proof}[Proof of Theorem \ref{characterization of measurable functions}]
 We can show that $f$ is measurable iff $f$ is almost separably valued and for every open set $U$, $f^{-1}(U) \cap C$ is measurable.
-In fact, Lemma \label{Newberger lemma 3} then immediately shows that for every open set $U$, $f^{-1}(U) \cap C$ is measurable iff the same is true when ``open set" is replaced with ``closed set" or ``Borel set".
+In fact, Lemma \label{Newberger lemma 3} then immediately shows that for every open set $U$, $f^{-1}(U) \cap C$ is measurable iff the same is true when ``open set" is replaced with ``closed set" or ``Borel set''.
 
 First assume that $f$ is measurable. Then there are $f_{n} \in \Simp(X \to B)$ and a null set $Z$ such that $f_{n} \to f$ pointwise on $X \setminus Z$ and $f$ is defined on $X \setminus Z$.
 So $f_{n}1_{X \setminus Z} \to f1_{X \setminus Z}$ (where $f1_{X \setminus Z} = 0$ if $f$ is undefined), so $f1_{X \setminus Z}$ meets the criteria of Lemma \ref{Newberger lemma 2}; since null sets are measurable, so does $f$.
@@ -454,8 +454,8 @@ Therefore $X$ is nonmeasurable, and so is its indicator function $1_X$.
 But should you, dear reader, worry about nonmeasurable functions?
 Example \ref{all functions are measurable} shows that functions that appear in mainstream analysis, algebra, or number theory are measurable.
 Example \ref{nonseparable function} does suggest that in deeply infinitary parts of functional analysis, one may have to worry about functions which are not separably valued, and Vitali's set shows that in logic, where the axiom of choice (and its evil friends such as the axiom of power set and the axiom schema of replacement) is of import, nonmeasurable sets may emerge.
-But there exist models of set theory \cite{Solovay1970} with certain axioms weakened where Vitali's construction fails and every almost separably valued function is measurable, and someone with a more constructivist bent may conclude from that theorem that indeed every function is measurable in ``reality" (whatever that means).
-Strichartz \cite[Chapter 1]{strichartz2003guide} summarized these observations by remarking that ``wise-guys who like using the axiom of choice will have to worry about ... wolves under the bed, etc."
+But there exist models of set theory \cite{Solovay1970} with certain axioms weakened where Vitali's construction fails and every almost separably valued function is measurable, and someone with a more constructivist bent may conclude from that theorem that indeed every function is measurable in ``reality'' (whatever that means).
+Strichartz \cite[Chapter 1]{strichartz2003guide} summarized these observations by remarking that ``wise-guys who like using the axiom of choice will have to worry about ... wolves under the bed, etc.''
 \end{subsec}
 
 \begin{exercise}
@@ -497,7 +497,7 @@ A sequence of functions $f_{n}$ converge to a function $f$ \dfn{uniformly} if fo
 \end{definition}
 
 \begin{subsec}
-Now, by analogy with the notion of a property holding ``almost everywhere" (everywhere except a null set), we introduce the notion of a property holding \dfn{nearly everywhere}; that is, everywhere except a set of measure $\varepsilon > 0$. The property holds for arbitrarily small $\varepsilon$, but the parameters in the property (the $\delta$s, $N$s, and so on) may become arbitrarily ``bad" as $\varepsilon \to 0$.
+Now, by analogy with the notion of a property holding ``almost everywhere" (everywhere except a null set), we introduce the notion of a property holding \dfn{nearly everywhere}; that is, everywhere except a set of measure $\varepsilon > 0$. The property holds for arbitrarily small $\varepsilon$, but the parameters in the property (the $\delta$s, $N$s, and so on) may become arbitrarily ``bad'' as $\varepsilon \to 0$.
 \end{subsec}
 
 \begin{definition}
@@ -838,7 +838,7 @@ Show that if $G$ is Borel then $G$ is null.
 We are ready to define the integral, at least for simple functions.
 
 \begin{subsec}
-A priori, our intuitive definition of integration as ``the net signed area under the graph" is problematic.
+A priori, our intuitive definition of integration as ``the net signed area under the graph'' is problematic.
 Consider the function $f = 1_{[0, \infty)} - 1_{(-\infty, 0]}$. What is the net signed area under the graph of $f$? Well, to the left of $0$, it is $-\infty$, and to the right it is $+\infty$, so we run into our usual pesky foe, $\infty - \infty$.
 To put off this problem for now, we dodge the issue by declaring that we will for now only try to integrate functions whose integrals will be finite.
 \end{subsec}
@@ -1075,7 +1075,7 @@ Elements of $M$ are functions up to the equivalence relation of being equal almo
 That is,
 \[M = \frac{\mathcal M}{\mathcal N}\]
 where $\mathcal M$ is the space of all measurable functions and $\mathcal N$ is the space of measurable functions which are zero almost everywhere.
-Therefore if $f_{n} \to f$ in $L^1$ and $f_{n} \to f'$ in measure (equivalently, nearly uniformly, or almost everywhere), we can actually identify $f$ with $f'$ and think of $f'$ as a ``function" by choosing a version of $f'$.
+Therefore if $f_{n} \to f$ in $L^1$ and $f_{n} \to f'$ in measure (equivalently, nearly uniformly, or almost everywhere), we can actually identify $f$ with $f'$ and think of $f'$ as a ``function'' by choosing a version of $f'$.
 Henceforth we will not make a distinction between elements of $L^1$, elements $f$ of $M$ which admit an $L^1$ Cauchy sequence of simple functions which converge to $f$ in measure, and versions of $f$.
 Therefore we are (finally!) ready to define the integral in general.
 \end{subsec}

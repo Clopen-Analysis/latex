@@ -3,7 +3,7 @@ Previously we have considered a menagerie of different modes of convergence: poi
 In this chapter we introduce many more.
 
 It is worth asking why we would bother to do this.
-Our previously considered modes of convergence served the purpose of allowing us to ``approximate", in various senses, arbitrary measurable functions by simple functions, or other functions that are similarly easy to understand.
+Our previously considered modes of convergence served the purpose of allowing us to ``approximate'', in various senses, arbitrary measurable functions by simple functions, or other functions that are similarly easy to understand.
 However, these notions of convergence were rather badly behaved.
 For example, we say that a mode of convergence $M$ is \dfn{topologizable} if there is a topology $T$ such that a sequence of functions converges in $T$ iff it converges in $M$.
 Almost pointwise convergence, for one, is not topologizable.
@@ -11,14 +11,14 @@ In particular, one cannot find a Banach space $B$ such that almost pointwise con
 The only modes of convergence that we have considered so far which are induced by the norm of a Banach space are convergence in $L^1$, uniform convergence, and convergence in $L^\infty$.
 
 But why do we like Banach spaces? Well, Banach spaces have an algebraic structure, since they are vector spaces.
-More critically, if $B$ is a Banach space with norm $||\cdot||$, and $f \in B$, then $||f||$ can reasonably viewed as the ``size" of $f$.
+More critically, if $B$ is a Banach space with norm $||\cdot||$, and $f \in B$, then $||f||$ can reasonably viewed as the ``size'' of $f$.
 In applications, being able to size functions is crucial.
-Many theorems in PDE amount to proving that if a function $f$, that we can think of as ``initial data" for some dynamical system, is ``small enough" (in the sense that $||f|| < \delta$ for some $\delta$ that does not depend on $f$), then the dynamical system stabilizes to $0$.
+Many theorems in PDE amount to proving that if a function $f$, that we can think of as ``initial data" for some dynamical system, is ``small enough'' (in the sense that $||f|| < \delta$ for some $\delta$ that does not depend on $f$), then the dynamical system stabilizes to $0$.
 As a concrete example, models of the spread of an infection inside a human body often have the property that if the initial data $f$ is small enough (thus very few virions are present in the body), then the infection will die out.
 
 Another useful feature of Banach spaces is the notion of duality.
-Given a Banach space $B$ of functions, one can introduce the dual space $B^*$ of bounded linear maps $B \to \CC$; then $B^*$ is a Banach space, whose elements can often be canonically identified with functions that we want to think of as ``dual to" the functions in $B$.
-One then has an ``inner product"
+Given a Banach space $B$ of functions, one can introduce the dual space $B^*$ of bounded linear maps $B \to \CC$; then $B^*$ is a Banach space, whose elements can often be canonically identified with functions that we want to think of as ``dual to'' the functions in $B$.
+One then has an ``inner product''
 \[\langle \cdot, \cdot\rangle: B^* \times B \to \CC\]
 where, if $f$ is the function which is canonically identified with a linear map $\lambda \in B^*$, and $g \in B$, then
 \[\langle f, g\rangle = \lambda(g).\]
@@ -32,7 +32,7 @@ H\"older duality is especially effective when $p = 2$, since there is a canonica
 
 Throughout, we fix a measured space $(X, \mu)$ and a Banach space $B$ to serve as a codomain.
 Later we will need to assume that $\mu$ is $\sigma$-finite, but for now the general setting will be quite sufficient.
-Recall that we identify two functions which are equal almost everywhere, and that if we really need to refer to a particular representative of an equivalence class $f$, we call it a ``version" of the function $f$.
+Recall that we identify two functions which are equal almost everywhere, and that if we really need to refer to a particular representative of an equivalence class $f$, we call it a ``version'' of the function $f$.
 This identification will be critical for our Banach spaces to be well-defined!
 
 \section{$L^p$-norms}
@@ -53,13 +53,13 @@ The \dfn{$L^p$-norm} of a measurable function $f$ is
 We let $L^p(X \to B, \mu)$, often abbreviated to $L^p$ or similar, be the vector space of all measurable functions $f$ such that $||f||_{p}  < \infty$.
 \end{definition}
 
-Here $L$ stands for ``Lebesgue"; thus $L^p$ is sometimes known as a \dfn{Lebesgue space}.
-However, the term ``Lebesgue space" also refers in the literature to the measured space $[0, 1]$ with Lebesgue measure.
-Worse, while the key fact about $L^p$ spaces is H\"older duality, a ``H\"older space" is a space of continuous functions satisfying a certain inequality.
+Here $L$ stands for ``Lebesgue''; thus $L^p$ is sometimes known as a \dfn{Lebesgue space}.
+However, the term ``Lebesgue space'' also refers in the literature to the measured space $[0, 1]$ with Lebesgue measure.
+Worse, while the key fact about $L^p$ spaces is H\"older duality, a ``H\"older space'' is a space of continuous functions satisfying a certain inequality.
 So, to avoid confusion, we will simply call the spaces that we defined above \dfn{$L^p$ sspaces}.
 
 We will shortly prove that the above definition makes sense, but, assuming that $||\cdot||_{p} $ is a norm, what does it measure?
-If $f$ is a function that we can think of as a ``wave" of amplitude $A$, supported on a set of measure $V$, then one approximately has
+If $f$ is a function that we can think of as a ``wave'' of amplitude $A$, supported on a set of measure $V$, then one approximately has
 \begin{equation}
 \label{Lp amplitude}
 ||f||_{p}  \approx AV^{1/p}.
@@ -154,7 +154,7 @@ This is what we wanted to prove.
 
 To motivate H\"older's inequality, suppose that $f$ is a wave of amplitude $A_1$ and supported on a set of measure $V_1$.
 Suppose that $g$ has amplitude $A_2$ and supported on a set of measure $V_2$.
-Then the left-hand side of (\ref{Holder inequality}) is maximized when one has ``constructive interference", which is only possible when $f$ and $g$ are supported on the same set, thus $V_1 = V_2$.
+Then the left-hand side of (\ref{Holder inequality}) is maximized when one has ``constructive interference'', which is only possible when $f$ and $g$ are supported on the same set, thus $V_1 = V_2$.
 In that case $fg$ has amplitude $A_1A_2$ and support on a set of measure $V_1^{1/p}V_2^{1/p^*} = V_1^{1/p+1/p^*} = V_1$.
 This is exactly what H\"older's inequality would predict.
 
@@ -192,7 +192,7 @@ We stop to consider the case that $\mu$ is counting measure.
 \begin{definition}
 Let $A$ be a set. Let $\nu$ be counting measure on $A$. We define $\ell^p(A) = L^p(A \to B, \nu)$.
 If $A = \NN$, we leave $A$ as understood and simply let $\ell^{p} = L^p(\NN \to B, \nu)$.
-Here $\ell^p$ is pronounced ``little LP.""
+Here $\ell^p$ is pronounced ``little LP."''
 \end{definition}
 
 Thus $\ell^p$ is the space of sequences $x$ in $B$ with
@@ -268,7 +268,7 @@ We leave the proof of the case when $\mu$ is granular as Exercise \ref{granular 
 H\"older comparison is especially useful when $\mu$ is a probability measure, in which case it can be interpreted as the statement that every bounded random variable has a finite standard deviation and finite expected value, or when $\mu$ is counting measure, in which case it can be interpreted as saying that every absolutely summable sequence is bounded.
 
 Let us finish the section by giving an example of Banach-valued $L^p$ spaces which frequently come up in applications.
-Let $T > 0$. An \dfn{evolution equation} (say, on an open set $U \subseteq \RR^d$) is a partial differential equation satisfied by functions $u: [0, T] \times U \to \CC$ relating the ``time derivatives" of $u$ (i.e. those in the domain $[0, T]$) to the ``space derivatives" (those in $U$).
+Let $T > 0$. An \dfn{evolution equation} (say, on an open set $U \subseteq \RR^d$) is a partial differential equation satisfied by functions $u: [0, T] \times U \to \CC$ relating the ``time derivatives" of $u$ (i.e. those in the domain $[0, T]$) to the ``space derivatives'' (those in $U$).
 For instance, the Schr\"odinger equation
 \[-i\frac{\partial u}{\partial t} + \Delta u = f,\]
 where $f$ is given, $t$ is the time variable $\in [0, T]$, $\Delta$ is the Laplace operator on $U$, so
@@ -329,7 +329,7 @@ Show that the $L^0$-quasinorm is a quasinorm, but the triangle inequality does n
 \end{exercise}
 
 \begin{exercise}
-This exercise is an example of a common phenomenon in PDE and physics: if $p$ is chosen correctly, then $||u(t)||_{L^p}$ can often be viewed as the ``energy" of the scalar field $u(t)$. Here $u: [0, T] \to L^p(U)$, and $U \subseteq \RR^d$ is an open set.
+This exercise is an example of a common phenomenon in PDE and physics: if $p$ is chosen correctly, then $||u(t)||_{L^p}$ can often be viewed as the ``energy'' of the scalar field $u(t)$. Here $u: [0, T] \to L^p(U)$, and $U \subseteq \RR^d$ is an open set.
 Consider the heat equation
 \[\partial_{t} u - \Delta u = f,\]
 where $f$ is given and $u$ is unknown. The \dfn{heat energy} of $u$ at time $t$ is $||u(t)||_{L^2(U)}$.
@@ -434,18 +434,18 @@ using the weaktype Hardy-Littlewood maximal inequality.
 \section{Duality and representation}
 We now come to the important notion of H\"older duality, which we should motivate before stating.
 
-``Duality" is a funny word that many mathematicians use, but only a few would dare try to give a precise definition of.
-For our purposes, we can think of an ``algebraic" object $X$ (a ring, an abelian group, et cetra) as being ``dual" to a ``geometric" object $X^*$ (a topological space, a manifold, et cetra) if there is a ``good bijection" between ``good" maps $X \to Y$ (say homomorphisms) and ``good" maps $Y^* \to X^*$ (continuous maps, smooth maps, et cetra), and another good bijection between good maps $Y \to X$ and good maps $X^* \to Y^*$.
-The data consisting of the good bijections, for every such pair $(X, X^*)$, is then known as a ``duality theory".
+``Duality'' is a funny word that many mathematicians use, but only a few would dare try to give a precise definition of.
+For our purposes, we can think of an ``algebraic" object $X$ (a ring, an abelian group, et cetra) as being ``dual" to a ``geometric" object $X^*$ (a topological space, a manifold, et cetra) if there is a ``good bijection" between ``good" maps $X \to Y$ (say homomorphisms) and ``good'' maps $Y^* \to X^*$ (continuous maps, smooth maps, et cetra), and another good bijection between good maps $Y \to X$ and good maps $X^* \to Y^*$.
+The data consisting of the good bijections, for every such pair $(X, X^*)$, is then known as a ``duality theory''.
 We leave all the words in scare quotes undefined; the reader who is familiar with modern algebra may try to replace them with precisely defined terms, perhaps using the language of category theory or universal algebra.
 However, there is a good chance that the resulting notion will not quite be satisfied by H\"older duality, because in the edge cases $p = 1$ and $p = \infty$, H\"older duality is rather ill-behaved.
 
 One duality theory that every mathematician is familiar with is duality on finite-dimensional vector spaces.
-Finite-dimensional vector spaces are both ``algebraic" and ``geometric", and indeed if $V$ is a finite-dimensional vector space over a field $K$, then there is an isomorphism $V \to V^*$, where $V^*$ is the finite-dimensional vector space of all linear maps $V \to K$.
+Finite-dimensional vector spaces are both ``algebraic" and ``geometric'', and indeed if $V$ is a finite-dimensional vector space over a field $K$, then there is an isomorphism $V \to V^*$, where $V^*$ is the finite-dimensional vector space of all linear maps $V \to K$.
 If $V$ consists of column vectors over $K$, then $V^*$ can be canonically identified with a space of row vectors over $K$.
 For any linear map $V \to W$ one obtains its adjoint map $W^* \to V^*$.
 In particular, if we select an isomorphism $V \to V^*$, then we can talk about the self-adjoint maps $V \to V$, which have especially nice properties (for example, being orthogonally diagonalizable).
-Moreover, there is a ``canonical" isomorphism $V \to V^{**}$.
+Moreover, there is a ``canonical'' isomorphism $V \to V^{**}$.
 Here we again use scare quotes for a word that we will refuse to define precisely.
 
 We try to recover the same ideas in higher generality, replacing finite-dimensional vector spaces with $L^p$ spaces.
@@ -507,7 +507,7 @@ which preserves norms. Moreover, if $p \in (1, \infty)$ then $\varphi$ is an iso
 \end{corollary}
 TODO
 
-Henceforth, we simply write $L^{p} = (L^p)^{**}$ and $(L^p)^* = L^{p^*}$ (whenever these spaces are isomorphic!) to emphasize that these isomorphisms are in some sense ``natural"; they do not depend on a choice of basis.
+Henceforth, we simply write $L^{p} = (L^p)^{**}$ and $(L^p)^* = L^{p^*}$ (whenever these spaces are isomorphic!) to emphasize that these isomorphisms are in some sense ``natural''; they do not depend on a choice of basis.
 In particular, we will always identify a function $f \in L^{p^*}$ with the corresponding linear map $f: L^{p} \to \CC$; to avoid writing awkward things like $f(g)$, we will continue to use $\langle f, g\rangle$ to mean the evaluation of $f$ at $g \in L^p$ when thinking of $f$ as a linear map.
 
 \begin{corollary}
@@ -560,7 +560,7 @@ for every $g \in L^{p^*}$.
 \end{definition}
 
 To avoid confusion, we will say that a sequence \dfn{converges strongly} in $L^p$ if it converges in norm.
-The words ``strong" and ``weak" are motivated by the following lemma:
+The words ``strong" and ``weak'' are motivated by the following lemma:
 
 \begin{lemma}
 Let $p \in (1, \infty)$. If a sequence converges strongly in $L^p$, then it converges weakly in $L^p$.
@@ -576,7 +576,7 @@ Then one measures $f(x)$ by taking a thermometer, which we model by $g$, chosen 
 Then the thermometer returns $\langle f, g\rangle$.
 So $f_{n} \to f$ weakly in $L^p$ if for every thermometer $g \in L^{p^*}$, the thermometer $g$ thinks that the error $f_{n} - f$ is negligible.
 
-We now show that weak convergence is induced by a topology, so it is in some sense ``better behaved" than, say, convergence almost pointwise.
+We now show that weak convergence is induced by a topology, so it is in some sense ``better behaved'' than, say, convergence almost pointwise.
 
 \begin{definition}
 Let $p \in (1, \infty)$ and $g \in L^{p^*}$.
@@ -585,7 +585,7 @@ We define the \dfn{weakstar seminorm}
 The \dfn{weakstar topology} on $L^p$ is the topology induced by the weakstar seminorms $\{p_g: g \in L^{p^*}\}$.
 \end{definition}
 
-The term ``weakstar" is motivated by the fact that the weakstar topology will induce weak convergence, and that the weakstar topology is induced by duality (hence ``star").
+The term ``weakstar" is motivated by the fact that the weakstar topology will induce weak convergence, and that the weakstar topology is induced by duality (hence ``star'').
 
 There are several suspicious things about this definition. First, we check that $p_g$ is a seminorm. Indeed, one has a triangle inequality
 \[p_g(f_1 + f_2) = |\langle f_1 + f_2, g\rangle| = |\langle f_1, g\rangle + \langle f_2, g\rangle| \leq p_g(f_1) + p_g(f_2)\]
@@ -660,7 +660,7 @@ So $D^{B^*}$ is compact by Tychonoff's theorem and hence $B$, a closed subset of
 \end{proof}
 
 One application of compactness theorems, which we discuss in the exercises, is to show that certain PDE have solutions.
-The idea is to consider a set of ``admissible functions" $\mathcal A$, show that $\mathcal A$ is compact in some function space $X$, and then show that an admissible function $u \in \mathcal A$ is a solution iff $u$ minimizes the norm $||u||_X$.
+The idea is to consider a set of ``admissible functions'' $\mathcal A$, show that $\mathcal A$ is compact in some function space $X$, and then show that an admissible function $u \in \mathcal A$ is a solution iff $u$ minimizes the norm $||u||_X$.
 A famous example of this is the Riemann mapping theorem, which says that for every simply connected open set $U \subseteq \CC$ there is a holomorphic bijection with holomorphic inverse $U \to \{z \in \CC: z < 1\}$.
 We sketch the relevant part of the proof of the Riemann mapping theorem in Exercises \ref{Ascoli} and \ref{Montel}, and the solution of Dirichlet's problem in Exercise \ref{Dirichlet problem 2}.
 
