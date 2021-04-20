@@ -38,7 +38,7 @@ Recall that if $G_1, G_2$ are abelian groups, then one can form a group $G_1 \op
 The finite product of Haar measures is a Haar measure on the direct sum.
 \end{lemma}
 \begin{proof}
-See Exercise \ref{Haar product measure exercise}.
+See Exercise~\ref{Haar product measure exercise}.
 \end{proof}
 Thus we have Haar measures on, for example, $\Torus^{d_1} \times \ZZ^{d_2}$.
 One can extend this to infinite products, but the statement and proof become much trickier, for algebraic reasons (direct sum and direct product no longer coincide), set-theoretic reasons (the Borel and Baire $\sigma$-algebras no longer coincide, and one needs to use Tychonoff's theorem to show that the infinite product of compact spaces is compact), and topological reasons (the infinite product of locally compact spaces is not locally compact).
@@ -67,7 +67,7 @@ Though we will not treat probability theory in detail, it will be at times conve
 
 \begin{exercise}
 \label{Haar product measure exercise}
-Prove Lemma \ref{Haar product measure}.
+Prove Lemma~\ref{Haar product measure}.
 \end{exercise}
 
 \begin{exercise}
@@ -206,7 +206,7 @@ so the Fourier transform can be extended to a linear map $L^p(\RR^d) \to L^{p^*}
 
 \begin{exercise}[restriction estimates]
 Suppose that $p \in [1, 2]$ and $q \in [1, \infty]$.
-Let $\sigma$ denote Lebesgue measure on the unit sphere $S^{d-1}$ (defined in Exercise \ref{Lebesgue measure on sphere}).
+Let $\sigma$ denote Lebesgue measure on the unit sphere $S^{d-1}$ (defined in Exercise~\ref{Lebesgue measure on sphere}).
 Suppose that, for every Schwartz function $f$, the \dfn{restriction estimate}
 \[||\hat f||_{L^q(S^{d-1}, \sigma)} \lesssim ||f||_{L^p(\RR^d)}\]
 holds.
@@ -224,7 +224,7 @@ This allows us to define the \dfn{Sobolev space} $H^s$ in general.
 \end{exercise}
 
 \begin{exercise}
-This Exercise should be done after Exercise \ref{general Sobolev space}.
+This Exercise should be done after Exercise~\ref{general Sobolev space}.
 Let $s \in \RR$. Show that there is an isomorphism $(H^s)^* \to H^{-s}$ -- so while we can think of $H^s$ as its own dual (since $H^s$ is a Hilbert space), we can also think of $H^{-s}$ and $H^s$ as dual spaces.
 \end{exercise}
 
@@ -403,7 +403,7 @@ If $f^{B} \in L^1(\widehat{A/B})$, then for almost all $x \in G$
 If $f^B$ is continuous and everywhere defined, then (\ref{abstract poisson summation}) is valid for every $x \in G$.
 \end{theorem}
 \begin{proof}
-If $\xi \in \widehat{A/B}$ then $\xi|B = 0$. Indeed, $\xi|B = \hat \iota(\xi) = \hat \iota(\hat q(B)) = 0$, by Corollary \ref{duality is exact 2}.
+If $\xi \in \widehat{A/B}$ then $\xi|B = 0$. Indeed, $\xi|B = \hat \iota(\xi) = \hat \iota(\hat q(B)) = 0$, by Corollary~\ref{duality is exact 2}.
 Therefore $\xi(x + y) = \xi(x)$ for any $(x, y) \in A \times B$.
 So
 \begin{align*}\widehat{f^B}(\xi) &= \int_{A/B} f^B(x + B) \overline{\xi(x)}~d(x + B)\\& = \iint_{A/B \times B} f(x + y) \overline{\xi(x + y)}~dy~d(x+B) \\&= \int_{A} f(x)\overline{[\xi](x) + B}~dx = \hat f([\xi]).\end{align*}
@@ -463,7 +463,7 @@ Note that $dt/t$ is the Haar measure of $\RR^+$, the positive real numbers under
 Simplifying, we see that
 \[\xi(s) = \int_0^{\infty} t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} = \left[\int_0^1 + \int_1^{\infty} \right]t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t}.\]
 Now $\Theta - 1$ is Schwartz, so the integral over $[1, \infty]$ converges locally uniformly in $s$, hence to an entire function in $s$.
-Applying the transform $t \mapsto 1/t$, which preserves the Haar measure of $\RR^+$, and using Lemma \ref{functional equation of the theta function},
+Applying the transform $t \mapsto 1/t$, which preserves the Haar measure of $\RR^+$, and using Lemma~\ref{functional equation of the theta function},
 \[\int_0^1 t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} = \int_1^{\infty} t^{-s/2} \frac{\sqrt t \Theta(t) - 1}{2}~\frac{dt}{t}\]
 thus
 \[\xi(s) = \int_1^{\infty} t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} + \int_1^{\infty} t^{(1-s)/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} + \frac{1}{2} \left[\int_1^{\infty} t^{(1-s)/2} \frac{dt}{t} - \int_1^{\infty} t^{-s/2}\frac{dt}{t} \right].\]

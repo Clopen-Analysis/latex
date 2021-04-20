@@ -110,7 +110,7 @@ We now prove this claim for the case of a ring; the other cases are similar.
 
 The power set $2^{X} = \{Y: Y \subseteq X\}$ is clearly a ring which contains every element of $\mathcal C$.
 Let $\mathcal R$ be the set of all rings that contain every element of $\mathcal C$; since $2^{X} \in \mathcal R$, $\mathcal R$ is nonempty.
-By Lemma \ref{intersection of rings is ring}, the intersection $R$ of $\mathcal R$ is a ring.
+By Lemma~\ref{intersection of rings is ring}, the intersection $R$ of $\mathcal R$ is a ring.
 But for every $C \in \mathcal C$, $C \in R$ since $C$ is in every element of $\mathcal R$.
 Therefore $R$ contains $\mathcal C$.
 \end{proof}
@@ -161,7 +161,7 @@ Assume that $P$ is a property that subsets of $X$ can have, and that every open 
 If the set of subsets of $X$ with property $P$ is a $\sigma$-algebra, then every Borel set has property $P$.
 \end{lemma}
 \begin{proof}
-By Lemma \ref{generators and relations}.
+By Lemma~\ref{generators and relations}.
 \end{proof}
 
 \begin{subsec}
@@ -177,20 +177,20 @@ In fact, the set of Borel subsets of $\RR^d$ has strictly lower cardinality than
 \end{lemma}
 \begin{proof}[Proof (omit on first reading)]
 Let $\Sigma_1 = \mathcal T$ be the topology of $\RR^d$.
-Given $\Sigma_\alpha$, $\alpha$ a countable ordinal (see Definition \ref{ordinal dfn}), let $\Pi_\alpha$ be the set of all complements of elements of $\Sigma_\alpha$.
+Given $\Sigma_\alpha$, $\alpha$ a countable ordinal (see Definition~\ref{ordinal dfn}), let $\Pi_\alpha$ be the set of all complements of elements of $\Sigma_\alpha$.
 Let $\Sigma_{\alpha+1}$ be the set of countable unions of elements of $\Pi_\alpha$.
 If $\beta < \omega_1$ is not equal to $\alpha+1$ for any $\alpha$, let $\Sigma_{\beta} = \bigcup_{\alpha < \beta} \Sigma_\alpha$.
-Therefore $\Sigma_\alpha$ and $\Pi_\alpha$ are defined for all $\alpha < \omega_1$ by transfinite recursion (see the remarks after Theorem \ref{transfinite induction}).
-We note that $\Sigma_0$ has cardinality $\beth_1$ by Theorem \ref{cardinality of topology}.
+Therefore $\Sigma_\alpha$ and $\Pi_\alpha$ are defined for all $\alpha < \omega_1$ by transfinite recursion (see the remarks after Theorem~\ref{transfinite induction}).
+We note that $\Sigma_0$ has cardinality $\beth_1$ by Theorem~\ref{cardinality of topology}.
 
 Now the mapping $A \mapsto A^c$ is a bijection $\Sigma_{\alpha} \to \Pi_\alpha$.
-Moreover if $\Pi_\alpha$ has cardinality $\beth_1$ (see Definition \ref{beth dfn}) then so does $\Sigma_{\alpha+1}$, since each element of $\Sigma_{\alpha+1}$ can be expressed in terms of a countable number of elements of $\Pi_\alpha$, and $\beth_1 \times \beth_1 \times \cdots$ has cardinality $\beth_1$ by Theorem \ref{cardinal arithmetic trivial}.
-Finally if $\beta$ is a countable limit ordinal and for every $\alpha < \beta$, $\Sigma_\alpha$ is countable, then $\Sigma_\beta$ is a countable union of sets of cardinality $\beth_1$, hence has cardinality $\beth_1$ by Theorem \ref{cardinal arithmetic trivial}.
+Moreover if $\Pi_\alpha$ has cardinality $\beth_1$ (see Definition~\ref{beth dfn}) then so does $\Sigma_{\alpha+1}$, since each element of $\Sigma_{\alpha+1}$ can be expressed in terms of a countable number of elements of $\Pi_\alpha$, and $\beth_1 \times \beth_1 \times \cdots$ has cardinality $\beth_1$ by Theorem~\ref{cardinal arithmetic trivial}.
+Finally if $\beta$ is a countable limit ordinal and for every $\alpha < \beta$, $\Sigma_\alpha$ is countable, then $\Sigma_\beta$ is a countable union of sets of cardinality $\beth_1$, hence has cardinality $\beth_1$ by Theorem~\ref{cardinal arithmetic trivial}.
 It follows by induction that for every countable ordinal $\alpha$, $\Sigma_\alpha$ has cardinality $\beth_1$.
 
 Now every Borel set is in $\Sigma_\alpha$ for some $\alpha$, since it was obtained by applying countable union and complement countably many times to an open set, and thus is in $\Sigma_{\omega_1} = \bigcup_{\alpha < \omega_1} \Sigma_\alpha$.
-But $\Sigma_{\omega_1}$ is a union of $\aleph_1$ many sets of cardinality $\beth_1$, so has cardinality $\beth_1$ by Theorem \ref{cardinal arithmetic trivial},
-since $\aleph_1 \leq \beth_1$ (which follows by Zermelo's well-ordering theorem \ref{well-ordering theorem}).
+But $\Sigma_{\omega_1}$ is a union of $\aleph_1$ many sets of cardinality $\beth_1$, so has cardinality $\beth_1$ by Theorem~\ref{cardinal arithmetic trivial},
+since $\aleph_1 \leq \beth_1$ (which follows by Zermelo's well-ordering theorem~\ref{well-ordering theorem}).
 Therefore $\Sigma_{\omega_1}$ is the set of all Borel sets, and has cardinality $\beth_1$.
 
 But $\Sigma_{\omega_1}$ is a subset of the power set $2^\RR$, which has cardinality $\beth_2$. Thus there is an element of $2^\RR$ which is not Borel.
@@ -217,7 +217,7 @@ So our definitions will generalize those that one learned in a first course in r
 
 \section{The definition of a measure}
 We are almost ready to define a measure.
-Throughout this section, the reader should refer back to Example \ref{examples of measures} frequently, as the point of the definitions in this section is to generalize those concepts.
+Throughout this section, the reader should refer back to Example~\ref{examples of measures} frequently, as the point of the definitions in this section is to generalize those concepts.
 
 \begin{subsec}
 Let $(-\infty, \infty]$ denote the set of real numbers, plus another point $\infty$ which is greater than any real number.
@@ -262,7 +262,7 @@ Therefore $\mu(\emptyset) = 0$.
 \end{proof}
 
 \begin{example}
-The examples in Example \ref{examples of measures} are $\sigma$-additive.
+The examples in Example~\ref{examples of measures} are $\sigma$-additive.
 However, they are not all defined on $\sigma$-algebras; for example, the union of two boxes $\prod_{i} [a_i, b_i]$ is not a box.
 Counting measure is defined on the $\sigma$-algebra of every subset of $X$, so counting measure is actually a measure.
 
@@ -310,7 +310,7 @@ We call $\mu_f$ the \dfn{Stieltjes premeasure} of $f$.
 \end{definition}
 
 \begin{subsec}
-A nondecreasing function can only be discontinuous on a countable set (Exercise \ref{nondecreasing exercise}).
+A nondecreasing function can only be discontinuous on a countable set (Exercise~\ref{nondecreasing exercise}).
 Thus we can turn a nondecreasing function $f$ into a left-continuous function $g$ by declaring that if $f$ is continuous at $x$ then $g(x) = f(x)$, and otherwise setting
 \[g(x) = \lim_{\varepsilon \to 0} f(x - \varepsilon).\]
 Henceforth we will talk about Stieltjes premeasures of any nondecreasing function, knowing that we may have to redefine them on a countable set in order that the definition make sense.
@@ -449,7 +449,7 @@ Let $P$ be a semiring and $\mu$ a premeasure on $P$. Then:
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-Exercise \ref{semiring exercise}.
+Exercise~\ref{semiring exercise}.
 \end{proof}
 
 \begin{lemma}
@@ -462,7 +462,7 @@ Let $P$ be a semiring and $\mu$ a premeasure on $P$. Then:
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-We first prove the first claim. By Lemma \ref{semiring prop 1}, there are $F_{i} \in P$ disjoint such that
+We first prove the first claim. By Lemma~\ref{semiring prop 1}, there are $F_{i} \in P$ disjoint such that
 \[((((E_1 \setminus E_2) \setminus E_3) \setminus \cdots) \setminus E_{m}) = \bigcup_{i=1}^{n} F_i.\]
 In particular, $E$ is the disjoint union of the $E_i$ and $F_i$. Thus
 \[\mu(E) = \sum_{i} \mu(E_i) + \sum_{j} \mu(F_{j}).\]
@@ -472,7 +472,7 @@ The second claim follows from the first in the case $n = 1$, $E_1 = F$.
 \end{proof}
 
 \begin{subsec}
-The power of Lemma \ref{semiring prop 2} is that it does not assume that $\bigcup E_{n} \in P$.
+The power of Lemma~\ref{semiring prop 2} is that it does not assume that $\bigcup E_{n} \in P$.
 \end{subsec}
 
 \begin{subsec}
@@ -490,11 +490,11 @@ is said to be a \dfn{$\sigma$-subadditive function}.
 Every premeasure is $\sigma$-subadditive.
 \end{lemma}
 \begin{proof}
-Suppose that $E = \bigcup_{i} E_i$. By Lemma \ref{semiring prop 1}, we can write
+Suppose that $E = \bigcup_{i} E_i$. By Lemma~\ref{semiring prop 1}, we can write
 \[(((E_{i} \setminus E_{i-1}) \setminus E_{i-2}) \setminus \cdots \setminus E_1) = \bigcup_{j=1}^{k_i} F_i^j\]
 where the $F_i^j$ are disjoint, hence
 \[\mu(E) = \mu(E_1) + \sum_{i=2}^{\infty} \sum_{j=1}^{k_i} \mu(F_i^j).\]
-But $\bigcup_{j} F_i^{j} \subseteq E_i$ so by Lemma \ref{semiring prop 2},
+But $\bigcup_{j} F_i^{j} \subseteq E_i$ so by Lemma~\ref{semiring prop 2},
 \[\sum_{j=1}^{k_i} \mu(F_i^j) \leq \mu(E_i).\]
 Thus
 \[\mu(E) \leq \sum_{i=1}^{\infty} \mu(E_i)\]
@@ -598,7 +598,7 @@ Thus this seemingly reasonable way of defining an inner measure fails to measure
 
 \begin{exercise}
 \label{semiring exercise}
-Prove Lemma \ref{semiring prop 1}.
+Prove Lemma~\ref{semiring prop 1}.
 \end{exercise}
 
 
@@ -688,7 +688,7 @@ If $A_1, A_2$ are $\mu^*$-measurable sets, then so is $A_1 \setminus A_2$.
 \end{lemma}
 \begin{proof}
 Since $E$ is the disjoint union of the sets $E \cap (A_1 \cap A_2)$, $E \cap (A_1 \setminus A_2)$, $E \cap (A_2 \setminus A_1)$, and $E \cap (A_1 \cup A_2)$, this follows from the fact that $A_1$ and $A_2$ divide each of the above sets cleanly.
-We leave the details as Exercise \ref{measurable complements}.
+We leave the details as Exercise~\ref{measurable complements}.
 \end{proof}
 
 \begin{lemma}
@@ -710,7 +710,7 @@ Leave lots of the above as exercises.
 
 \begin{exercise}
 \label{measurable complements}
-Fill in the details in the proof of Lemma \ref{measurable complements lemma}.
+Fill in the details in the proof of Lemma~\ref{measurable complements lemma}.
 \end{exercise}
 
 \begin{exercise}
@@ -832,7 +832,7 @@ If you find yourself stuck on an exercise, it is worth trying to prove the claim
 \end{subsec}
 
 \begin{subsec}
-Theorem \ref{translation invariance in R1} shows that we could have defined Lebesgue measure axiomatically. We would have had to demanded that:
+Theorem~\ref{translation invariance in R1} shows that we could have defined Lebesgue measure axiomatically. We would have had to demanded that:
 \begin{enumerate}
 \item Countable additivity: Lebesgue measure be a measure.
 \item Borel: Every open interval be Lebesgue measurable.
@@ -846,8 +846,8 @@ However, it is convenient to pass through the notion of a Stieltjes measure alon
 
 \begin{subsec}
 One may wonder if \emph{every} subset of $\RR$ is Lebesgue measurable.
-Under certain reasonable set-theoretic hypotheses, this is false; we discuss a counterexample, Vitali's set, in Example \ref{Vitali set}.
-But the next-best thing is true, as any set that an analyst, algebraist, topologist, or applied mathematician will ever have to work with will turn out to be measurable. We discuss this in Example \ref{all functions are measurable}.
+Under certain reasonable set-theoretic hypotheses, this is false; we discuss a counterexample, Vitali's set, in Example~\ref{Vitali set}.
+But the next-best thing is true, as any set that an analyst, algebraist, topologist, or applied mathematician will ever have to work with will turn out to be measurable. We discuss this in Example~\ref{all functions are measurable}.
 This is closely related to a theorem of Solovay \cite{Solovay1970} which shows that in a certain sense, those set-theoretic hypotheses \emph{cannot} be avoided in the construction of a nonmeasurable set: a slightly different logical setup would imply that every subset of $\RR$ is measurable.
 \end{subsec}
 
@@ -899,7 +899,7 @@ Taking $m \to \infty$ and minimizing $\sum_{n} f(\beta_{n}) - f(\alpha_{n})$ by 
 \end{proof}
 
 \begin{subsec}
-The proof of Theorem \ref{lebesgue is radon} shows that Stieltjes measures are not just outer regular for Borel sets, but outer regular for any Stieltjes measurable set whatsoever.
+The proof of Theorem~\ref{lebesgue is radon} shows that Stieltjes measures are not just outer regular for Borel sets, but outer regular for any Stieltjes measurable set whatsoever.
 However, this fact is rarely useful; as discussed below, we are mainly interested in equivalence classes of sets modulo null sets, and every Lebesgue measurable set is equivalent under that equivalence relation to a Borel set.
 \end{subsec}
 
@@ -907,7 +907,7 @@ However, this fact is rarely useful; as discussed below, we are mainly intereste
 After this chapter, we will mainly be interested in not measurable sets, but rather equivalence classes of measurable sets under the equivalence relation ``symmetric difference is a null set''.
 That is, we think of two measurable sets $A,B$ as the same if the symmetric difference $A \Delta B = (A \setminus B) \cup (B \setminus A)$ is null.
 For example, every countable set is the same as the empty set.
-One can give a different construction of the Lebesgue measure if one is \emph{only} interested in equivalence classes of measurable sets, rather than measurable sets themselves; see Exercises \ref{physical lebesgue measure 1} through \ref{physical lebesgue measure 3}.
+One can give a different construction of the Lebesgue measure if one is \emph{only} interested in equivalence classes of measurable sets, rather than measurable sets themselves; see Exercises~\ref{physical lebesgue measure 1} through~\ref{physical lebesgue measure 3}.
 \end{subsec}
 
 \begin{subsec}
@@ -926,7 +926,7 @@ Assume that $D_{n-1}$ is one of the closed intervals obtained in stage $n-1$ of 
 If $x_{n} = 0$, let $D_{n}$ be the left closed interval in $D_{n-1}$, and otherwise let $D_{n}$ be the right closed interval.
 Then $D_{n} \subseteq D_{n-1} \cap C_{n}$.
 The intersection of closed nonempty intervals is a closed nonempty interval, so we obtain such an interval $D \subseteq C$.
-But a consequence of Exercise \ref{Cantor set props} is that the Cantor set contains no nontrivial intervals, so $D$ consists of a single point $f(x)$.
+But a consequence of Exercise~\ref{Cantor set props} is that the Cantor set contains no nontrivial intervals, so $D$ consists of a single point $f(x)$.
 The map $f$ is injective since if $f(x) = f(y)$ then, at the $n$th stage of the Cantor set construction, both $x$ and $y$ agreed on which subinterval to pass to, thus $x = y$.
 It is surjective since every point $p \in C$ must be in some interval $D_{n}$ at stage $n$, and if $D_{n}$ is the left interval of $D_{n-1}$ then we can set $x = 0$, and otherwise set $x = 1$; then $f(x) = p$.
 One can similarly interpret the Cantor set as the set of all paths through the full infinite binary tree.
@@ -963,12 +963,12 @@ Show that the standard Cantor set is compact and Lebesgue null, has the same car
 \begin{exercise}
 Let $\mu$ denote Lebesgue measure on $\RR$.
 Show that there is a Borel probability measure $\nu$ on $\RR$, such that for every countable set $A$, $\nu(A) = 0$, and if $\mu(A) > 0$, then $\nu(A) = 0$.
-(Hint: Define $\nu$ in such a way that, if $C$ denotes the standard Cantor set, then $\nu(C) = 1$, and use Exercise \ref{Cantor set props}.)
+(Hint: Define $\nu$ in such a way that, if $C$ denotes the standard Cantor set, then $\nu(C) = 1$, and use Exercise~\ref{Cantor set props}.)
 \end{exercise}
 
 \begin{exercise}
 Show that the set of Lebesgue measurable subsets of $\RR$ has cardinality equal to that of the power set $2^\RR$ of $\RR$. Conclude that there exists a Lebesgue measurable set which is not Borel.
-(Hint: Exercise \ref{Cantor set props}.)
+(Hint: Exercise~\ref{Cantor set props}.)
 \end{exercise}
 
 \begin{exercise}
@@ -996,7 +996,7 @@ So $\Sigma$ can be thought of as an ``abstract $\sigma$-ring'' in some sense, ev
 
 \begin{exercise}
 \label{physical lebesgue measure 2}
-Let all definitions be as Exercise \ref{physical lebesgue measure 1}.
+Let all definitions be as Exercise~\ref{physical lebesgue measure 1}.
 Given $J \in \Sigma_0$, define $[J]$ to be the equivalence class of $J$ in $\Sigma$.
 Then, given $I \in \Sigma$, let
 \[\nu(I) = d(I, [\emptyset]).\]
@@ -1008,7 +1008,7 @@ We call $\nu$ the \dfn{physical Lebesgue measure}.
 
 \begin{exercise}
 \label{physical lebesgue measure 3}
-Let $\mu$ be Lebesgue measure and $\nu$ physical Lebesgue measure as in Exercise \ref{physical lebesgue measure 2}, defined on the abstract $\sigma$-ring $\Sigma$.
+Let $\mu$ be Lebesgue measure and $\nu$ physical Lebesgue measure as in Exercise~\ref{physical lebesgue measure 2}, defined on the abstract $\sigma$-ring $\Sigma$.
 Let $\Gamma$ be the $\sigma$-algebra of Lebesgue measurable subsets of $\RR$. Show that there is a surjective map $\pi: \Gamma \to \Sigma$ such that:
 \begin{enumerate}
 \item For every rational interval $I$, $\pi(I)$ is the equivalence class of $I$ in $\Sigma$.

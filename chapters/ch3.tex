@@ -47,7 +47,7 @@ If the multiplication of $A$ has an identity, we call the identity $1$ and call 
 
 \begin{subsec}
 In particular, a collection of functions is an algebra iff it is closed under multiplication.
-See Exercise \ref{algebra review}.
+See Exercise~\ref{algebra review}.
 \end{subsec}
 
 \begin{lemma}
@@ -76,7 +76,7 @@ Let $f, g \in \Simp(X \to \CC)$. Then $|f| \in \Simp(X \to \CC)$. In fact, if $f
 Moreover, if $f \in \Simp(X \to B)$, the function $x \mapsto ||f(x)||$ is in $\Simp(X \to \CC)$.
 \end{lemma}
 \begin{proof}
-Left as Exercise \ref{Simp closure exer}.
+Left as Exercise~\ref{Simp closure exer}.
 \end{proof}
 
 \begin{exercise}
@@ -93,7 +93,7 @@ However, you are not expected to check that.
 
 \begin{exercise}
 \label{Simp closure exer}
-Prove Lemma \ref{Simp is closed under minmax}.
+Prove Lemma~\ref{Simp is closed under minmax}.
 \end{exercise}
 
 \begin{exercise}
@@ -118,7 +118,7 @@ Let us say that $x$ has \dfn{uniform expansion} at $n \in \NN$ if for every $d \
 In other words, $x$ has uniform expansion at $n$ iff for every $d \in \{0, \dots, 9\}$ the probability that a $j \in \{1, \dots, 10n\}$ drawn uniformly at random satisfies $x_{j} = d$ is $1/10$.
 
 Let $A$ be the set of $x \in [0, 1)$ such that there are infinitely many $n \in \NN$ such that $x$ has uniform expansion at $n$.
-Show that $A$ is a Borel set, and that $A$ is Lebesgue null. (Hint: Use the Borel-Cantelli lemma, Exercise \ref{Borel-Cantelli}).)
+Show that $A$ is a Borel set, and that $A$ is Lebesgue null. (Hint: Use the Borel-Cantelli lemma, Exercise~\ref{Borel-Cantelli}).)
 \end{exercise}
 
 
@@ -160,7 +160,7 @@ noting that the limit is meant almost everywhere if unclear from context.
 \end{definition}
 
 \begin{subsec}
-Note that in Definition \ref{almost converge dfn}, we allow the functions $f_{n}$, or their limit $f$, to be undefined on a null set, which is then viewed as a subset of the bad set $Z$ where the $f_{n}$ may not converge to $f$.
+Note that in Definition~\ref{almost converge dfn}, we allow the functions $f_{n}$, or their limit $f$, to be undefined on a null set, which is then viewed as a subset of the bad set $Z$ where the $f_{n}$ may not converge to $f$.
 \end{subsec}
 
 \begin{example}
@@ -185,7 +185,7 @@ Moreover, if $f \in \mathcal M(X \to B)$, then $x \mapsto ||f(x)||$ is in $\math
 \end{lemma}
 \begin{proof}
 Let $f,g \in \mathcal M(X \to B)$, and suppose that $f_{n} \in \Simp(X \to B)$, $f_{n} \to f$. Similarly let $g_{n} \to g$, $g_{n} \in \Simp(X \to B)$.
-Then $f_{n} + g_{n} \in \Simp(X \to B)$ by Lemma \ref{Simp is an algebra} and $f_{n} + g_{n} \to f + g$.
+Then $f_{n} + g_{n} \in \Simp(X \to B)$ by Lemma~\ref{Simp is an algebra} and $f_{n} + g_{n} \to f + g$.
 
 We leave the other claims as an exercise for the reader.
 \end{proof}
@@ -228,7 +228,7 @@ Assume that for every $\varepsilon > 0$, one has
 Show that $f_{n} \to f$ almost everywhere.
 
 This characterization is highly useful in probability, where one is typically not able to refer directly to elements of $X$, but only measurable sets, but still wants to be able to discuss convergence almost everywhere.
-(Hint: Use the Borel-Cantelli lemma, Exercise \ref{Borel-Cantelli}).)
+(Hint: Use the Borel-Cantelli lemma, Exercise~\ref{Borel-Cantelli}).)
 \end{exercise}
 
 
@@ -253,7 +253,7 @@ Think of how difficult $\RR$ would be to work with if we did not have $\QQ$, who
 
 \begin{subsec}
 Thankfully, most Banach spaces that arise naturally in analysis turn out to be separable; certainly any finite-dimensional vector space has this property, and all but one Banach space that we will consider in this text will be separable.
-Certainly any function into a separable Banach space is almost separably valued. So Definition \ref{almost separably valued dfn} will turn out to be a slightly annoying technical condition, and not at all of import, in practice.
+Certainly any function into a separable Banach space is almost separably valued. So Definition~\ref{almost separably valued dfn} will turn out to be a slightly annoying technical condition, and not at all of import, in practice.
 The reader who is only interested in the case $B = \CC$, which is reasonable to do on one's first reading, can forget about this hypothesis altogether.
 \end{subsec}
 
@@ -288,11 +288,11 @@ Then a function $f: X \to B$ is measurable iff $f$ is almost separably valued an
 \end{corollary}
 
 \begin{subsec}
-The reader should compare Corollary \ref{characterization of measurable functions II} to the result which says that a function $f$ is continuous iff the preimage of an open set is open. It says that a measurable function $X \to B$ is, modulo sets of measure zero, the same thing as a measurable map $X \to B$, where $B$ is equipped with its Borel $\sigma$-algebra.
+The reader should compare Corollary~\ref{characterization of measurable functions II} to the result which says that a function $f$ is continuous iff the preimage of an open set is open. It says that a measurable function $X \to B$ is, modulo sets of measure zero, the same thing as a measurable map $X \to B$, where $B$ is equipped with its Borel $\sigma$-algebra.
 \end{subsec}
 
 \begin{subsec}
-Before we prove Theorem \ref{characterization of measurable functions}, we need several lemmata which are useful in their own right.
+Before we prove Theorem~\ref{characterization of measurable functions}, we need several lemmata which are useful in their own right.
 \end{subsec}
 
 \begin{lemma}
@@ -336,7 +336,7 @@ Let $K$ be the closure of $K_0 = \{b_i^n: n \in \NN,~i \in \{1, \dots, k(n)\}\}$
 Then $K_0$ is countable and dense in $K$, so $K$ is separable; moreover, $f(X) \subseteq K$, so $f$ is separably valued.
 Now let $U \subseteq B$ be an open set; then $f^{-1}(U) \cap C = f^{-1}(U \setminus \{0\})$, and $U \setminus \{0\}$ is open.
 
-Thus we must show that if $V$ is an open set which does not contain $0$, $f^{-1}(V)$ is measurable. Let $V_{k} = \{y \in V: \inf_{x \notin V} ||x - y|| > 1/n\}$. Clearly $f_{n}^{-1}(V_{k})$ is measurable since there are only finitely many points of $f_{n}(X)$ in $V_{k}$, each with a measurable preimage, and Lemma \ref{Newberger lemma 1} implies
+Thus we must show that if $V$ is an open set which does not contain $0$, $f^{-1}(V)$ is measurable. Let $V_{k} = \{y \in V: \inf_{x \notin V} ||x - y|| > 1/n\}$. Clearly $f_{n}^{-1}(V_{k})$ is measurable since there are only finitely many points of $f_{n}(X)$ in $V_{k}$, each with a measurable preimage, and Lemma~\ref{Newberger lemma 1} implies
 \[f^{-1}(V) = \bigcup_{n=1}^{\infty} \bigcup_{K=1}^{\infty} \bigcap_{k=K}^{\infty} f_{k}^{-1}(V_{n})\]
 which is measurable since the measurable sets form a $\sigma$-algebra.
 
@@ -391,14 +391,14 @@ Indeed $\Gamma$ contains $\emptyset$ so is nonempty, is closed under complement 
 Since $\Gamma$ contains the open sets, $\Gamma$ contains the Borel sets.
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{characterization of measurable functions}]
+\begin{proof}[Proof of Theorem~\ref{characterization of measurable functions}]
 We can show that $f$ is measurable iff $f$ is almost separably valued and for every open set $U$, $f^{-1}(U) \cap C$ is measurable.
 In fact, Lemma \label{Newberger lemma 3} then immediately shows that for every open set $U$, $f^{-1}(U) \cap C$ is measurable iff the same is true when ``open set" is replaced with ``closed set" or ``Borel set''.
 
 First assume that $f$ is measurable. Then there are $f_{n} \in \Simp(X \to B)$ and a null set $Z$ such that $f_{n} \to f$ pointwise on $X \setminus Z$ and $f$ is defined on $X \setminus Z$.
-So $f_{n}1_{X \setminus Z} \to f1_{X \setminus Z}$ (where $f1_{X \setminus Z} = 0$ if $f$ is undefined), so $f1_{X \setminus Z}$ meets the criteria of Lemma \ref{Newberger lemma 2}; since null sets are measurable, so does $f$.
+So $f_{n}1_{X \setminus Z} \to f1_{X \setminus Z}$ (where $f1_{X \setminus Z} = 0$ if $f$ is undefined), so $f1_{X \setminus Z}$ meets the criteria of Lemma~\ref{Newberger lemma 2}; since null sets are measurable, so does $f$.
 
-Conversely, if $Z$ is a null set such that $f(X \setminus Z)$ is separable and for every open set $U$, $f^{-1}(U) \cap C$ is measurable, then $f1_{X \setminus Z}$ is separably valued and for every open set $U$, $(f1_{X \setminus Z})^{-1}(U) \cap C$ is measurable, so Lemma \ref{Newberger lemma 2} implies the claim.
+Conversely, if $Z$ is a null set such that $f(X \setminus Z)$ is separable and for every open set $U$, $f^{-1}(U) \cap C$ is measurable, then $f1_{X \setminus Z}$ is separably valued and for every open set $U$, $(f1_{X \setminus Z})^{-1}(U) \cap C$ is measurable, so Lemma~\ref{Newberger lemma 2} implies the claim.
 \end{proof}
 
 We now prove a very important theorem about measurable functions. Note that the analogous result for continuous functions (or even Riemann integrable functions) does not hold.
@@ -410,7 +410,7 @@ Suppose that $f_{n}$ are measurable functions which almost converge to a functio
 \begin{proof}
 We apply Newberger's theorem.
 Since the $f_{n}$ are almost separably valued, there are null sets $Z_{n}$ such that $K = \overline{\bigcup_{n} f_{n}(X \setminus Z_{n})}$ is closed.
-Therefore $f$ is almost separably valued. Then Lemma \ref{Newberger lemma 1} implies that for every open set $U \subseteq B$,
+Therefore $f$ is almost separably valued. Then Lemma~\ref{Newberger lemma 1} implies that for every open set $U \subseteq B$,
 \[f^{-1}(U) \cap C = \bigcup_{n=1}^{\infty} \bigcup_{K=1}^{\infty} \bigcup_{k=K}^{\infty} f_{n}^{-1}(U_{n}) \cap C\]
 which implies that $f^{-1}(U)$ is a countable union of countable unions of countable intersections of measurable sets, hence is measurable.
 \end{proof}
@@ -418,31 +418,31 @@ which implies that $f^{-1}(U)$ is a countable union of countable unions of count
 \begin{subsec}
 \label{all functions are measurable}
 Let $\RR$ be equipped with its usual Lebesgue measure (or really any Borel measure $\mu$ on any space with a countable dense subset, such that for every countable set $Z$, $\mu(Z) = 0$).
-Then any continuous function $\RR \to B$ pulls back open sets to open (hence Borel) sets and has separable image (since the image of $\QQ$ is dense in the image of $\RR$), hence is measurable by Theorem \ref{characterization of measurable functions}.
+Then any continuous function $\RR \to B$ pulls back open sets to open (hence Borel) sets and has separable image (since the image of $\QQ$ is dense in the image of $\RR$), hence is measurable by Theorem~\ref{characterization of measurable functions}.
 Any pointwise limit of continuous functions is also measurable; for example any function with only a discrete set of discontinuities, or with only jump discontinuities.
 A monotone function has only jump discontinuities, so is measurable. A similar argument applies for any left-continuous or right-continuous function.
 And of course, we can modify any of the above functions on a countable set (or any null set!) to get another measurable function.
-See Exercise \ref{all functions are measurable exer}.
+See Exercise~\ref{all functions are measurable exer}.
 
 TODO: Draw a picture of continous functions converging to a finitely disct function or a function with jump disc.
 \end{subsec}
 
 \begin{example}
 \label{nonseparable function}
-An example of a function which is not almost separably valued is given by Example \ref{nonseparable space}.
+An example of a function which is not almost separably valued is given by Example~\ref{nonseparable space}.
 Let $\delta$ be as in that example and let $f(x) = \delta_x$. Then for any uncountable $Y \subseteq \RR$, $f(Y)$ is an uncountable discrete set, so removing a null set cannot possibly help us here.
 \end{example}
 
 \begin{example}[Vitali's set]
 \label{Vitali set}
-Recall that we defined Lebesgue measure on $\Torus$, $\mu$, in Example \ref{lebesgue measure torus}.
+Recall that we defined Lebesgue measure on $\Torus$, $\mu$, in Example~\ref{lebesgue measure torus}.
 If we rotate $\Torus$ by an angle $\theta$, then the rotation preserves $\mu$; that is, if $A \subseteq \Torus$ is measurable, and $A + \theta = \{e^{i(\varphi+\theta)}: e^{i\varphi} \in A\}$, then $\mu(A) = \mu(A + \theta)$.
 The group $\QQ$ of rational numbers under addition acts on $A$ by rotation: if $q \in \QQ$, define a map $e^{i\theta} \mapsto e^{i(\theta + 2\pi q)}$ from the circle to itself.
 
 Let $\mathcal O$ be the set of all orbits of the action of $\QQ$; that is, elements of $\mathcal O$ are sets
 \[\{e^{i(\varphi+2\pi q)}: q \in \QQ\}.\]
 Each orbit is countable since it is indexed by $\QQ$, yet $\Torus$ is uncountable, so $\mathcal O$ must be uncountable.
-Now the axiom of choice \ref{axiom of choice} implies that there is a set $X \subset \Torus$ which contains exactly one element from each orbit in $\mathcal O$.
+Now the axiom of choice~\ref{axiom of choice} implies that there is a set $X \subset \Torus$ which contains exactly one element from each orbit in $\mathcal O$.
 Suppose that $X$ is measurable. Then $\bigcup_{q \in \QQ} X + q = \Torus$ and the union is disjoint, so
 \[1 = \mu(\Torus) = \sum_{q \in \QQ} \mu(X +  q) = \sum_{q \in \QQ} \mu(X),\]
 so $\mu(X) > 0$ (so that it sums to $1$) yet $\mu(X) = 0$ (since the sum of infinitely many copies of any nonzero number is infinite and hence $> 1$), a contradiction.
@@ -452,15 +452,15 @@ Therefore $X$ is nonmeasurable, and so is its indicator function $1_X$.
 
 \begin{subsec}
 But should you, dear reader, worry about nonmeasurable functions?
-Example \ref{all functions are measurable} shows that functions that appear in mainstream analysis, algebra, or number theory are measurable.
-Example \ref{nonseparable function} does suggest that in deeply infinitary parts of functional analysis, one may have to worry about functions which are not separably valued, and Vitali's set shows that in logic, where the axiom of choice (and its evil friends such as the axiom of power set and the axiom schema of replacement) is of import, nonmeasurable sets may emerge.
+Example~\ref{all functions are measurable} shows that functions that appear in mainstream analysis, algebra, or number theory are measurable.
+Example~\ref{nonseparable function} does suggest that in deeply infinitary parts of functional analysis, one may have to worry about functions which are not separably valued, and Vitali's set shows that in logic, where the axiom of choice (and its evil friends such as the axiom of power set and the axiom schema of replacement) is of import, nonmeasurable sets may emerge.
 But there exist models of set theory \cite{Solovay1970} with certain axioms weakened where Vitali's construction fails and every almost separably valued function is measurable, and someone with a more constructivist bent may conclude from that theorem that indeed every function is measurable in ``reality'' (whatever that means).
 Strichartz \cite[Chapter 1]{strichartz2003guide} summarized these observations by remarking that ``wise-guys who like using the axiom of choice will have to worry about ... wolves under the bed, etc.''
 \end{subsec}
 
 \begin{exercise}
 \label{all functions are measurable exer}
-Prove the assertions in Example \ref{all functions are measurable}.
+Prove the assertions in Example~\ref{all functions are measurable}.
 \end{exercise}
 
 \begin{definition}
@@ -532,7 +532,7 @@ Then $f_{n} \to f$ nearly uniformly.
 \begin{proof}
 After throwing away a harmless null set, we may assume that $f_{n} \to f$ pointwise. Now define
 \[E_{m}^{n} = \{x \in X: \exists k \geq n(||f(x) - f_{k}(x)||_{B} \geq \frac{1}{m})\}.\]
-Since $x \mapsto ||f(x) - f_{k}(x)||_B$ is measurable, by Theorem \ref{characterization of measurable functions}, $E_{mn}$ is measurable.
+Since $x \mapsto ||f(x) - f_{k}(x)||_B$ is measurable, by Theorem~\ref{characterization of measurable functions}, $E_{mn}$ is measurable.
 Moreover, if $m$ is fixed, the $E_{m}^n$ shrink as $n$ increases and $\bigcap_{n} E_{mn} = \emptyset$, since $f_{n} \to f$.
 By Lemma TODO, since $|\mu|(X) < \infty$, $\lim_{n} \mu(E_{m}^n) = 0$. So for every $\varepsilon > 0$ and every $m$ we may find $n(m)$ such that
 \[\mu(E_{m}^{n(m)}) < \frac{\varepsilon}{2^m}.\]
@@ -641,7 +641,7 @@ So $f_{n} \to f$ in measure.
 If $\mu(X) < \infty$ and $f_{n} \to f$ almost pointwise, then $f_{n} \to f$ in measure.
 \end{corollary}
 \begin{proof}
-By Egorov's theorem and Lemma \ref{nearly uniform implies in measure}.
+By Egorov's theorem and Lemma~\ref{nearly uniform implies in measure}.
 \end{proof}
 
 \begin{subsec}
@@ -677,14 +677,14 @@ Now let $\delta > 0$ and choose $N$ so large that $N \geq K$, $2^{1-N} < \delta$
 \end{align*}
 Therefore the $g_{k}$ are a uniform Cauchy sequence on $F$ and hence nearly uniform on $X$.
 \end{proof}
-So by Lemma \ref{nearly uniform cauchy converges}, there is an $f$ such that $\lim_{k} g_{k} = f$ nearly uniformly.
-But then Lemma \ref{nearly uniform implies in measure} implies that $\lim_{k} g_{k} = f$ in measure.
+So by Lemma~\ref{nearly uniform cauchy converges}, there is an $f$ such that $\lim_{k} g_{k} = f$ nearly uniformly.
+But then Lemma~\ref{nearly uniform implies in measure} implies that $\lim_{k} g_{k} = f$ in measure.
 But
 \begin{equation}
 \label{form1}\{||f - f_{n}(x)||_{B} > \varepsilon\} \subseteq \{||f - g_{k}||_{B} > \varepsilon/2\} \cup \{||f_{n} - g_{k}||_{B} > \varepsilon/2\},
 \end{equation}
 and the $g_{k}$ are a subsequence of the Cauchy-in-measure sequence $f_{n}$, hence the right hand side of (\ref{form1}) is $<\varepsilon$ if $n,k$ are large enough. So $f_{n} \to f$ in measure.
-Uniqueness follows by Lemma \ref{conv in measure is hausdorff}.
+Uniqueness follows by Lemma~\ref{conv in measure is hausdorff}.
 \end{proof}
 
 \begin{corollary}
@@ -734,7 +734,7 @@ Every continuous function is measurable with respect to the Borel $\sigma$-algeb
 \end{lemma}
 \begin{proof}
 Let $f: X \to B$ be continuous; then the $f$-preimage of an open set is open, hence Borel, hence measurable.
-We now appeal to Theorem \ref{characterization of measurable functions}.
+We now appeal to Theorem~\ref{characterization of measurable functions}.
 \end{proof}
 
 \begin{definition}
@@ -795,7 +795,7 @@ Taking their union, we conclude that $f$ is measurable at almost every point of 
 Note that this direction was already valid for any Borel measure and any Banach space codomain.
 
 Conversely, suppose that $f$ is measurable.
-By Lemma \ref{smooth functions are pointwise dense}, we can find a sequence of continuous (or even smooth) functions $f_{n}$ with $f_{n} \to f$ almost pointwise, and hence nearly uniformly by Egorov's theorem.
+By Lemma~\ref{smooth functions are pointwise dense}, we can find a sequence of continuous (or even smooth) functions $f_{n}$ with $f_{n} \to f$ almost pointwise, and hence nearly uniformly by Egorov's theorem.
 The uniform limit of a sequence of functions is continuous, so the nearly uniform limit is nearly continuous.
 \end{proof}
 
@@ -812,7 +812,7 @@ Since this is in particular true for Lebesgue measure, it is often no loss of ge
 \begin{exercise}
 Let $\mu$ be Lebesgue measure on $\RR$.
 Show that there is a Borel set $A \subseteq [0, 1]$ such that for every open interval $U \subseteq [0, 1]$, $0 < \mu(A \cap U) < \mu(U)$.
-(Hint: Start with a fat Cantor set, c.f. Exercise \ref{fat cat}, and then put more fat Cantor sets in the leftover intervals, but be careful.)
+(Hint: Start with a fat Cantor set, c.f. Exercise~\ref{fat cat}, and then put more fat Cantor sets in the leftover intervals, but be careful.)
 \end{exercise}
 
 \begin{exercise}
@@ -830,7 +830,7 @@ Prove \dfn{Steinhaus' theorem}: Let $A$ be a Borel subset of $\RR$ with positive
 \begin{exercise}
 Let $G \subset \RR$ be a proper subgroup of $\RR$ under addition.
 Show that if $G$ is Borel then $G$ is null.
-(Hint: use Exercise \ref{steinhaus}, Steinhaus' theorem).
+(Hint: use Exercise~\ref{steinhaus}, Steinhaus' theorem).
 \end{exercise}
 
 
@@ -902,7 +902,7 @@ Let $f,g \in \ISF(X \to B)$. Then:
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-See Exercise \ref{integral props exer 1}.
+See Exercise~\ref{integral props exer 1}.
 \end{proof}
 
 \begin{subsec}
@@ -922,13 +922,13 @@ One calls $||f||_1$ the \dfn{$L^1$-norm} of $f$.
 \end{definition}
 
 \begin{subsec}
-As the reader should check, the $L^1$ norm is a seminorm. See Exercise \ref{L1 norm exer}.
+As the reader should check, the $L^1$ norm is a seminorm. See Exercise~\ref{L1 norm exer}.
 Now when we say that $f_{n} \to f$ in $L^1$, we mean that $||f_{n} - f||_1 \to 0$. Similarly if we say that the $f_{n}$ are Cauchy in $L^1$, we mean that $||f_{n} - f_{m}||_1 \to 0$.
 \end{subsec}
 
 \begin{subsec}
 It is natural to want to extend the $L^1$ norm to the completion of the space $\ISF(X \to B)$, on which it will actually be a norm.
-(See Theorem \ref{completion exists} for more on that.)
+(See Theorem~\ref{completion exists} for more on that.)
 \end{subsec}
 
 \begin{definition}
@@ -949,28 +949,28 @@ We define the \dfn{integral} of $f$ to be
 \end{definition}
 
 \begin{subsec}
-Let's check that Definition \ref{definition of integral} makes sense. When we say that $f_{n} \to f$ in $L^1$, we mean that $f$ is the equivalence class of the Cauchy sequence $(f_{n})_{n}$.
+Let's check that Definition~\ref{definition of integral} makes sense. When we say that $f_{n} \to f$ in $L^1$, we mean that $f$ is the equivalence class of the Cauchy sequence $(f_{n})_{n}$.
 So if there was another Cauchy sequence $(g_{n})_{n}$ with $g_{n} \to f$ in $L^1$,
 \begin{align*}\left|\left|\lim_{n \to \infty} \int_{E} g_{n} - f_{n} ~d\mu\right|\right| &\leq \lim_{n \to \infty} \int_{E} ||g_{n}(x) - f_{n}(x)||_{B} ~d|\mu|(x)\\&
 \leq \lim_{n \to \infty} \int_{X} ||g_{n}(x) - f_{n}(x)||_{B} ~d|\mu|(x)
 \\& = \lim_{n \to \infty} ||g_{n} - f_{n}||_1 = 0,
 \end{align*}
 the last equality following because the $g_{n}$ and the $f_{n}$ are Cauchy equivalent.
-Therefore the choice of Cauchy sequence in Lemma \ref{definition of integral} is immaterial, and any choice will return the same integral.
+Therefore the choice of Cauchy sequence in Lemma~\ref{definition of integral} is immaterial, and any choice will return the same integral.
 As a consequence, the $L^1$ norm extends to all of $L^1(X \to B)$ by the equation (\ref{L1 norm dfn}).
 \end{subsec}
 
 \begin{lemma}
 \label{properties of ISF integral 2}
-The conclusion of Lemma \ref{properties of ISF integral} holds for any $f,g \in L^1(X \to B)$, not just $f,g \in \ISF(X \to B)$.
+The conclusion of Lemma~\ref{properties of ISF integral} holds for any $f,g \in L^1(X \to B)$, not just $f,g \in \ISF(X \to B)$.
 \end{lemma}
 \begin{proof}
-Left as Exercise \ref{integral props exer 2}.
+Left as Exercise~\ref{integral props exer 2}.
 \end{proof}
 
 \begin{exercise}
 \label{integral props exer 1}
-Prove Lemma \ref{properties of ISF integral}.
+Prove Lemma~\ref{properties of ISF integral}.
 \end{exercise}
 
 \begin{exercise}
@@ -980,7 +980,7 @@ Show that the $L^1$-norm is a seminorm on $\ISF$, and that $||f||_1 = 0$ iff $f 
 
 \begin{exercise}
 \label{integral props exer 2}
-Prove Lemma \ref{properties of ISF integral 2}.
+Prove Lemma~\ref{properties of ISF integral 2}.
 \end{exercise}
 
 \begin{exercise}
@@ -1160,7 +1160,7 @@ Here $||f||_{B} \geq t$ is the set $\{x \in X: ||f(x)||_{B} \geq t\}$.
 \end{exercise}
 
 \begin{exercise}
-Let $\delta_x$ be the Dirac measure at $x \in \RR$, as in Exercise \ref{Dirac measure}.
+Let $\delta_x$ be the Dirac measure at $x \in \RR$, as in Exercise~\ref{Dirac measure}.
 Show that every function $f: \RR \to B$ is Dirac measurable and compute the integral $\int_{\RR} f~d\delta_x$.
 \end{exercise}
 

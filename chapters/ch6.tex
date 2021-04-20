@@ -104,7 +104,7 @@ One has
 whenever $\theta \in [0, 1]$ and $x, y \in \RR$.
 \end{lemma}
 \begin{proof}
-See Exercise \ref{exp is convex exer}.
+See Exercise~\ref{exp is convex exer}.
 \end{proof}
 
 Recall that $[1, \infty]$ is the set of all real numbers $\geq 1$, along with $\infty$.
@@ -226,7 +226,7 @@ Then
 for any $f_1, \dots, f_{m}$.
 \end{corollary}
 \begin{proof}
-See Exercise \ref{Holder induction exer}.
+See Exercise~\ref{Holder induction exer}.
 \end{proof}
 
 \begin{corollary}[Cauchy-Schwarz inequality]
@@ -262,7 +262,7 @@ The inequality (\ref{Holder comparison 1}) is equivalent to
 \[\left|\left|1 ||f||^p\right|\right|_1 \leq ||1||_{q/(q-p)} \cdot \left|\left| ||f||^p\right|\right|_{q/p}\]
 by (\ref{pull exponent of Lp}) and the fact that $||1||_{q/(q-p)}^{p} = \mu(X)^{1/p-1/q}$.
 Thus (\ref{Holder comparison 1}) is a consequence of H\"older's inequality.
-We leave the proof of the case when $\mu$ is granular as Exercise \ref{granular comparison}.
+We leave the proof of the case when $\mu$ is granular as Exercise~\ref{granular comparison}.
 \end{proof}
 
 H\"older comparison is especially useful when $\mu$ is a probability measure, in which case it can be interpreted as the statement that every bounded random variable has a finite standard deviation and finite expected value, or when $\mu$ is counting measure, in which case it can be interpreted as saying that every absolutely summable sequence is bounded.
@@ -294,18 +294,18 @@ Prove (\ref{exp is convex}) using the fact that $\exp' = \exp$.
 
 \begin{exercise}
 \label{Holder induction exer}
-Prove Corollary \ref{Holder induction}.
+Prove Corollary~\ref{Holder induction}.
 \end{exercise}
 
 \begin{exercise}
 \label{granular comparison}
-Complete the proof of Corollary \ref{Holder comparison}.
+Complete the proof of Corollary~\ref{Holder comparison}.
 \end{exercise}
 
 \begin{exercise}
 Suppose that $f \in \bigcap_{p \in [1, \infty]} L^p$. Show that
 \[||f||_{\infty} = \lim_{p \to \infty} ||f||_{p} .\]
-To do this, try using Corollary \ref{Holder comparison}.
+To do this, try using Corollary~\ref{Holder comparison}.
 \end{exercise}
 
 \begin{definition}
@@ -321,7 +321,7 @@ Show that $||\cdot||_{p} $ is in fact a quasinorm, but the triangle inequality d
 \end{exercise}
 
 \begin{exercise}
-Let $f \in \bigcap_{p \in (0, \delta)} L^p$, where $L^p$ is meant in the sense of Exercise \ref{Lp quasinorm} and $\delta > 0$ is a small constant.
+Let $f \in \bigcap_{p \in (0, \delta)} L^p$, where $L^p$ is meant in the sense of Exercise~\ref{Lp quasinorm} and $\delta > 0$ is a small constant.
 Let $C$ be the carrier of $f$. Show that
 \[\mu(C) = \lim_{p \to 0} ||f||_{p} .\]
 Thus we may define the \dfn{$L^0$-quasinorm} $||f||_0 = \mu(C)$.
@@ -362,7 +362,7 @@ where $C^2(\overline U)$ is the space of continuous functions $\overline U \to \
 \item Show that if $f = 0$ and $u$ is a solution of Dirichlet's problem then $E(u) = 0$.
 \item Show that there is at most one solution to Dirichlet's problem.
 \end{enumerate}
-Later, when we have more advanced techniques at our disposal, we will actually solve Dirichlet's problem (Exercise \ref{Dirichlet problem 2}).
+Later, when we have more advanced techniques at our disposal, we will actually solve Dirichlet's problem (Exercise~\ref{Dirichlet problem 2}).
 \end{exercise}
 
 \section{Convergence in $L^p$}
@@ -468,7 +468,7 @@ with the norm
 An element of $X^*$ is known as a \dfn{linear functional} or a \dfn{covector} on $X$.
 \end{definition}
 
-To check that $X^*$ is indeed a Banach space, one needs to use the fact that $\CC$ is itself a Banach space; see Exercise \ref{dual space is banach}.
+To check that $X^*$ is indeed a Banach space, one needs to use the fact that $\CC$ is itself a Banach space; see Exercise~\ref{dual space is banach}.
 
 Recall that $p^*$ is the H\"older dual of $p$; we want a canonical isomorphism
 \[L^{p^*} \cong (L^p)^*\]
@@ -549,7 +549,7 @@ If $\mu$ is induced by an element of $\ell^1$, however, one can conclude a contr
 \end{exercise}
 
 \section{Compactness of the unit ball}
-An annoying technical difficulty with $L^p$ spaces is that, unlike $\CC^d$, the unit ball of $L^p$ is not compact (Exercise \ref{unit ball compactness}).
+An annoying technical difficulty with $L^p$ spaces is that, unlike $\CC^d$, the unit ball of $L^p$ is not compact (Exercise~\ref{unit ball compactness}).
 This is rather problematic: in many situations in analysis, one is given a sequence and needs to extract a limit point from the sequence.
 In this section we use H\"older duality introduce a new topology on $L^p$ in which the unit ball is compact, but which does not arise from a norm.
 
@@ -617,7 +617,7 @@ Let $D$ be a countable dense subset of the unit sphere $\{g \in L^{p^*}: ||g||_{
 Let
 \[d(f_1, f_2) = \sum_{g \in D} 2^{-n} p_g(f_1 - f_2).\]
 Since $p_g(f_1 - f_2) \leq ||g||_{p^*} ||f_1 - f_2||_{p} $ and $||g||_{p^*} \leq 1$, we can sum the geometric series to conclude that $d(f_1, f_2) \leq 1$.
-We claim that $d$ is a semimetric.\footnote{One can use Exercise \ref{weakstar is hausdorff} to show that $d$ is actually a metric, but we won't need this.}
+We claim that $d$ is a semimetric.\footnote{One can use Exercise~\ref{weakstar is hausdorff} to show that $d$ is actually a metric, but we won't need this.}
 We just need to check the triangle inequality, and indeed,
 \[d(f_1, f_3) = \sum_{g \in D} 2^{-n} p_g(f_1 - f_3) \leq \sum_{g \in D} \frac{p_g(f_1 - f_2) + p_g(f_2 - f_3)}{2^n} = d(f_1, f_2) + d(f_2, f_3)\]
 since $p_g$ is a seminorm.
@@ -635,7 +635,7 @@ But if $||g||_{p^*} = 1$ is arbitrary, and $g_{m} \in D$ have $g_{m} \to g$, the
 so that $p_g(f_{n} - f) \to 0$ for every $g$ in the unit sphere, and hence in all of $L^{p^*}$ by rescaling.
 \end{proof}
 
-We now use a variant of Cantor's diagonal argument to show that the unit ball of $L^p$ under the semimetric $d$ is compact, which, along with Lemma \ref{weakstar semimetric}, implies Alaoglu's theorem.
+We now use a variant of Cantor's diagonal argument to show that the unit ball of $L^p$ under the semimetric $d$ is compact, which, along with Lemma~\ref{weakstar semimetric}, implies Alaoglu's theorem.
 Fix $(f_{n})_{n}$, say $||f_{n}||_{p}  \lesssim 1$, and an enumeration $(g_{m})_{m}$ of $D$.
 Then
 \[|\langle f_{n}, g_1\rangle| \lesssim ||g_1||_{p^*} = 1\]
@@ -662,7 +662,7 @@ So $D^{B^*}$ is compact by Tychonoff's theorem and hence $B$, a closed subset of
 One application of compactness theorems, which we discuss in the exercises, is to show that certain PDE have solutions.
 The idea is to consider a set of ``admissible functions'' $\mathcal A$, show that $\mathcal A$ is compact in some function space $X$, and then show that an admissible function $u \in \mathcal A$ is a solution iff $u$ minimizes the norm $||u||_X$.
 A famous example of this is the Riemann mapping theorem, which says that for every simply connected open set $U \subseteq \CC$ there is a holomorphic bijection with holomorphic inverse $U \to \{z \in \CC: z < 1\}$.
-We sketch the relevant part of the proof of the Riemann mapping theorem in Exercises \ref{Ascoli} and \ref{Montel}, and the solution of Dirichlet's problem in Exercise \ref{Dirichlet problem 2}.
+We sketch the relevant part of the proof of the Riemann mapping theorem in Exercises~\ref{Ascoli} and~\ref{Montel}, and the solution of Dirichlet's problem in Exercise~\ref{Dirichlet problem 2}.
 
 For the latter, we need a definition that we will use in some more exercises later on, and is of fundamental importance in applications.
 Recall that $\nabla^iu$ is the vector of all partial derivatives of order $i$ of $u$, so $\nabla^iu: U \to \CC^{d^i}$ if $U \subseteq \RR^d$ is open and $u: U \to \CC$.
@@ -711,7 +711,7 @@ Modify the proof of Alaoglu's sequential compactness theorem to show that, if $X
 \label{Montel}
 Let $U$ be an open subset of $\CC$, and let $\mathcal H(U)$ be the space of holomorphic functions $U \to \CC$.
 Suppose that $\mathcal F \subset \mathcal H(U)$ is locally uniformly $L^\infty$; that is, for every compact set $K \subset U$ there is a $M_{K} > 0$ such that for every $f \in \mathcal F$, $||f|K||_{\infty} \leq M_K$.
-(Hint: You may need to use Cauchy's integral formula and Exercise \ref{Ascoli}.)
+(Hint: You may need to use Cauchy's integral formula and Exercise~\ref{Ascoli}.)
 Show that every sequence in $\mathcal F$ has a subsequence which converges in $L^\infty_l$.
 \end{exercise}
 
@@ -724,15 +724,15 @@ Let $H$ be any Hilbert space. Show that the unit ball of $H$ is weakstar compact
 \label{Dirichlet problem 2}
 Let $U$ be an open subset of $\RR^d$ such that the boundary $\partial U$ is a smooth manifold, and let $f: \partial U \to \RR$ be a continuous function.
 If you're not comfortable with smooth manifolds, you may assume that $U$ is a ball, in which case $\partial U$ is a sphere.
-We are in the position to show that Dirichlet's problem, as defined in Exercise \ref{Dirichlet problem}, has a solution, if we are willing to take a result known as \dfn{Weyl's lemma} as a black box.
+We are in the position to show that Dirichlet's problem, as defined in Exercise~\ref{Dirichlet problem}, has a solution, if we are willing to take a result known as \dfn{Weyl's lemma} as a black box.
 
-Let $\mathcal A$ be the admissible set, and let $E$ be the Dirichlet energy, defined in \ref{Dirichlet problem}.
+Let $\mathcal A$ be the admissible set, and let $E$ be the Dirichlet energy, defined in~\ref{Dirichlet problem}.
 Proceed as follows:
 \begin{enumerate}
 \item Let $(u_{n})_{n}$ be a sequence of functions in $\mathcal A$ such that $E(u_{n}) \to \inf_{v \in \mathcal A} E(v)$.
 Show that $(u_{n})_{n}$ is a bounded sequence in $H^1$.
 \item Show that if $(v_{n})_{n}$ is a sequence of functions which converge in $H^1$ to a function $v \in H^1$, then $E(v_{n}) \to E(v)$.
-\item Invoke Exercise \ref{Banach-Alaoglu-Sobolev}.
+\item Invoke Exercise~\ref{Banach-Alaoglu-Sobolev}.
 \item Show that if $u$ is smooth, then $u$ solves Dirichlet's problem iff for every smooth function $v$ which is zero in an open set containing $\partial U$,
 \begin{equation}
 \label{weak Dirichlet problem}
@@ -818,7 +818,7 @@ Also
 since $U$ is unitary, so the map $S_{n}f = n^{-1} \sum_{j=0}^{n-1} U^jf$ is bounded.
 Therefore
 \[g_{n} = \frac{S_{n}^*S_{n}f}{n^2}\]
-is a bounded sequence. Since $H$ has a weakstar compact unit ball (Exercise \ref{Banach-Alaoglu-Sobolev}, though in the applications we need this is just the Banach-Alaoglu theorem in $L^2$), $g_{n}$ has a weakstar limit $g$.
+is a bounded sequence. Since $H$ has a weakstar compact unit ball (Exercise~\ref{Banach-Alaoglu-Sobolev}, though in the applications we need this is just the Banach-Alaoglu theorem in $L^2$), $g_{n}$ has a weakstar limit $g$.
 Now
 \[(1 - U^*)(S_{n}^*/n) = \frac{1}{n} \sum_{j=0}^{n-1} (1 - U^*)(U^*)^{j-1} = \frac{1 - (U^*)^n}{n}\]
 satisfies
