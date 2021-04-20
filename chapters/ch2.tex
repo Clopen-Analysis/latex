@@ -29,8 +29,7 @@ We define $f_*(\mu)$ on $(Y, \Gamma)$ by
 and call $f_*(\mu)$ the \dfn{pushforward measure} of $\mu$ by $f$.
 \end{definition}
 
-\begin{example}
-\label{lebesgue measure torus}
+\begin{example}\label{lebesgue measure torus}
 Let $\Torus$ be the circle, viewed for now as the set $\{z \in \CC: |z| = 1\}$.
 Then $\Torus$ has its Borel $\sigma$-algebra $\Gamma$.
 Let $\Sigma$ be the Borel $\Sigma$-algebra of $\RR$ and $\mu$ the Lebesgue measure restricted to $\Sigma$.
@@ -63,15 +62,22 @@ This is part of the content of Exercise~\ref{pullback makes sense}, which also s
 Show that measurable spaces with measurable maps form a category.
 \end{exercise}
 
-\begin{exercise}
-\label{arc length exercise}
+\begin{exercise}\label{arc length exercise}
 By an \dfn{arc} we mean a compact connected subset of $\Torus$.
 Recall the definition of the length of an arc from calculus.
 Show that the length of an arc equals its Lebesgue measure.
 \end{exercise}
 
-\begin{exercise}
-\label{pullback makes sense}
+\begin{exercise}\label{Lebesgue measure on sphere}
+Let $S^d$ denote the unit sphere in $\RR^{d+1}$, and let $N$ be its open northern hemisphere.
+Let $U$ be the open unit ball in $\RR^d$, so $U \times \{0\}$ is a subset of the unit ball of $\RR^{d+1}$.
+Show that the map $p: N \to \RR^{d+1}$, $p(x_1, \dots, x_{d+1}) = (x_1, \dots, x_d, 0)$, is a homeomorphism between $N$ and $U \times \{0\}$.
+So the pushforward of Lebesgue measure on $\RR^d$ by $p^{-1}$ gives a Borel measure on $N$, which we call \dfn{Lebesgue measure} on $N$.
+Use this fact to define Lebesgue measure of any Borel subset of $S^d$.
+Show that when $d = 2$, Lebesgue measure on $S^d$ agrees with the usual notion of surface area, up to a constant factor.
+\end{exercise}
+
+\begin{exercise}\label{pullback makes sense}
 Let $F: X \to Y$ be a map, $\Gamma$ a $\sigma$-algebra on $Y$.
 Show that $F^*\Gamma$ is a $\sigma$-algebra on $X$ and $F: (X, F^*\Gamma) \to (Y, \Gamma)$ is measurable.
 Conversely, show that $F^*\Gamma$ is the intersection of all $\sigma$-algebras $\Sigma$ on $X$ such that $F: (X, \Sigma) \to (Y, \Gamma)$ is measurable.
@@ -159,8 +165,7 @@ Conversely, suppose that $E = \bigcup_{j} E_{j} = \bigcup_{i\leq n} F_i$ where $
 Here we used the fact that $E_{j} = \bigcup_{i \leq n} F_{i} \cap E_{j}$. It follows that $|\mu|(E) \leq \sum_{i=1}^{\infty} |\mu|(E_i)$.
 \end{proof}
 
-\begin{theorem}[triangle inequality and reverse triangle inequality]
-\label{reverse triangle inequality}
+\begin{theorem}[triangle inequality and reverse triangle inequality]\label{reverse triangle inequality}
 Let $\mu,\nu$ be measures on $\Sigma$ with values in $B$. Then $|\mu + \nu| \leq |\mu| + |\nu|$ and
 \[||\mu|(E) - |\nu|(E)| \leq |\mu - \nu|(E).\]
 \end{theorem}
@@ -323,8 +328,7 @@ Verify the inclusion-exclusion formula
 valid for any events $A_1, \dots, A_{n}$.
 \end{exercise}
 
-\begin{exercise}[Skohorod representation]
-\label{Skohorod representation}
+\begin{exercise}[Skohorod representation]\label{Skohorod representation}
 Let $\mu$ be a Borel probability measure on $\RR$.
 Show that there is a probability space $\Omega$ and a random variable $X: \Omega \to \RR$ of distribution $\mu$.
 \end{exercise}
@@ -443,8 +447,7 @@ We refer the reader to Coud\'ene~\cite{coudène2016ergodic} to learn about ergod
 Show that Poincar\'e recurrence fails for infinite measure spaces by giving a counterexample.
 \end{exercise}
 
-\begin{exercise}
-\label{irrational rotation exercise}
+\begin{exercise}\label{irrational rotation exercise}
 Show that the irrational rotation with Lebesgue measure forms an ergodic system.
 (Hint: Let $A$ be a subset of the circle which the irrational rotation sends into itself. Consider the Fourier series of $1_A$. You are allowed to assume basic facts about Fourier series.)
 \end{exercise}

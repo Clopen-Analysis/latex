@@ -1,11 +1,7 @@
-\chapter{Constructing the Lebesgue measure}
-\label{ch:ch1}
-
-\label{measureChapter}
+\chapter{Constructing the Lebesgue measure}\label{ch:ch1}\label{measureChapter}
 A measure is a rule by which we assign ``size'' to certain sets.
 The notion of a measure generalizes a handful of familiar notions, which we now review.
-\begin{example}
-\label{examples of measures}
+\begin{example}\label{examples of measures}
 If $X$ is a set, we will define a measure known as the \dfn{counting measure} $\mu$ of $X$, by declaring that for every finite subset $Y \subseteq X$, $\mu(Y)$ is the cardinality of $Y$ (i.e. the number of elements of $Y$).
 
 We define the \dfn{Lebesgue measure}\footnote{Named after Henri Lebesgue (1875-1941), a French mathematician who introduced measure theory in his book \emph{Intégrale, longueur, aire} (\emph{Integral, length, area}).}
@@ -87,8 +83,7 @@ Let $\Sigma$ be an infinite $\sigma$-ring. Show that $\Sigma$ has cardinality at
 \section{The Borel $\sigma$-algebra}
 We now consider certain $\sigma$-algebras that are built up by a process similar to the notion of ``generators and relations'' from algebra.
 
-\begin{lemma}
-\label{intersection of rings is ring}
+\begin{lemma}\label{intersection of rings is ring}
 The intersection of a nonempty set of rings (resp. $\sigma$-rings, algebras, or $\sigma$-algebras) is a ring (resp. $\sigma$-ring, etc.)
 \end{lemma}
 \begin{proof}
@@ -125,8 +120,7 @@ The advantage of defining a $\sigma$-algebra by referring to its generators is t
 This is quite easy to prove, as the following lemma shows, but so very useful.
 \end{subsec}
 
-\begin{lemma}
-\label{generators and relations}
+\begin{lemma}\label{generators and relations}
 Let $X$ be a set, and let $P$ be a property that subsets of $X$ can have.
 Assume that $\mathcal C$ is a set whose elements are subsets of $X$, and every element of $\mathcal C$ has property $P$.
 If the set of all subsets of $X$ with property $P$ is a $\sigma$-algebra, then every element of $\sigma(\mathcal C)$ has property $P$.
@@ -170,8 +164,7 @@ But it is not so obvious how to check whether a subset of $\RR^d$ is Borel.
 Certainly any set you will ever ``naturally'' encounter is Borel, but not every subset of $\RR^d$ is Borel.
 \end{subsec}
 
-\begin{lemma}
-\label{Borel sigma algebra}
+\begin{lemma}\label{Borel sigma algebra}
 There exists a subset of $\RR^d$ which is not Borel.
 In fact, the set of Borel subsets of $\RR^d$ has strictly lower cardinality than the set of all subsets of $\RR^d$.
 \end{lemma}
@@ -205,8 +198,7 @@ Show that the set of compact subsets of $\RR^d$ generates the Borel $\sigma$-alg
 Show that there exists a metric space $X$, such that the set of compact subsets of $X$ does not generate the Borel $\sigma$-algebra of $X$. (Hint: Cardinality!)
 \end{exercise}
 
-\begin{exercise}
-\label{Jordan content 1}
+\begin{exercise}\label{Jordan content 1}
 Let us say that a bounded subset $A$ of $\RR$ has \dfn{Jordan content} if the indicator function $1_A$ of $A$ is Riemann integrable.
 Here $1_A(x) = 1$ if $x \in A$ and $1_A(x) = 0$ otherwise.
 Show that $\QQ$ is Borel, but does not have Jordan content.
@@ -250,8 +242,7 @@ If $\mu$ is a measure on $\Sigma$, we call $(X, \Sigma, \mu)$ a \dfn{measured sp
 If the image of $\mu$ is $[0, 1]$, we say that $\mu$ is a \dfn{probability measure}.
 \end{definition}
 
-\begin{lemma}
-\label{empty set is null}
+\begin{lemma}\label{empty set is null}
 For any measure $\mu$, $\mu(\emptyset) = 0$.
 \end{lemma}
 \begin{proof}
@@ -384,8 +375,7 @@ In particular, Lebesgue premeasure is $\sigma$-additive.
 Let $\mu_f$ be a Stieltjes premeasure.
 Let $E_{n} = [a_{n}, b_{n})$, assume that the $E_{n}$ are disjoint, and let $E = \bigcup_{n} E_{n}$.
 Suppose that $E = [a, b)$. We must show
-\begin{equation}
-\label{SPM sum}
+\begin{equation}\label{SPM sum}
 f(b) - f(a) = \sum_{n=1}^{\infty} f(b_{n}) - f(a_{n}).
 \end{equation}
 To do so, we first note that since $f$ is nondecreasing, the quantities $\mu_f([a_{n}, b_{n}))$ are positive, so the sum in (\ref{SPM sum}) converges absolutely.
@@ -395,8 +385,7 @@ Since the intervals are disjoint it follows that $b_{n} \leq a_{n+1}$.
 We now prove
 \[\mu_f(E) \geq \sum_{n=1}^{\infty} \mu_f(E_{n}).\]
 To do this, we fix an $N$ and show that
-\begin{equation}
-\label{SPM sum bound 1}
+\begin{equation}\label{SPM sum bound 1}
 f(b) - f(a) \geq \sum_{n=1}^{N} f(b_{n}) - f(a_{n}).
 \end{equation}
 Now $b \geq b_{n}$ and $a \leq a_{n}$, so $f(b) - f(a) \geq f(b_N) - f(a_1)$, but
@@ -410,8 +399,7 @@ This proves (\ref{SPM sum bound 1}).
 Conversely, we must show that
 \[\mu_f(E) \leq \sum_{n=1}^{\infty} \mu_f(E_{n}).\]
 It suffices to show that for every $\varepsilon > 0$,
-\begin{equation}
-\label{SPM sum bound 2}
+\begin{equation}\label{SPM sum bound 2}
 f(b) - f(a) \leq \varepsilon + \sum_{n=1}^{\infty} f(b_{n}) - f(a_{n}).
 \end{equation}
 Now choose $b' < b$ such that $f(b') \geq f(b) - \varepsilon/2$ and for each $n$ choose $a_{n}' < a_{n}$ such that $f(a_{n}') \geq f(a_{n}) - \varepsilon/2^{n+1}$.
@@ -433,16 +421,14 @@ f(b) - f(a) &\leq f(b') - f(a) + \frac{\varepsilon}{2}\\
 & \leq \varepsilon + \sum_{n=1}^{N} f(b_{n}) - f(a_{n})
 \end{align*}
 where we used Zeno's paradox
-\begin{equation}
-\label{zeno}
+\begin{equation}\label{zeno}
 \sum_{n=1}^{\infty} \frac{1}{2^n} = 1
 \end{equation}
 to sum the geometric series of $\varepsilon$'s.
 But this estimate is exactly (\ref{SPM sum bound 2}).
 \end{proof}
 
-\begin{exercise}
-\label{nondecreasing exercise}
+\begin{exercise}\label{nondecreasing exercise}
 Show that a nondecreasing function on $\RR$ can only be discontinuous on a countable set.
 \end{exercise}
 
@@ -475,8 +461,7 @@ A $\sigma$-additive function $P \to [0, \infty]$ which is not identically $\inft
 The set of all half-open intervals $[a, b)$ is a semiring, so a Stieltjes premeasure is a premeasure.
 \end{example}
 
-\begin{lemma}
-\label{semiring prop 1}
+\begin{lemma}\label{semiring prop 1}
 Let $P$ be a semiring and $\mu$ a premeasure on $P$. Then:
 \begin{enumerate}
 \item If $E_1, \dots, E_{m} \in P$ then there are disjoint $F_1, \dots, F_{n} \in P$ such that
@@ -488,8 +473,7 @@ Let $P$ be a semiring and $\mu$ a premeasure on $P$. Then:
 Exercise~\ref{semiring exercise}.
 \end{proof}
 
-\begin{lemma}
-\label{semiring prop 2}
+\begin{lemma}\label{semiring prop 2}
 Let $P$ be a semiring and $\mu$ a premeasure on $P$. Then:
 \begin{enumerate}
 \item If $(E_{n})_{n}$ is a sequence of disjoint sets in $P$ and $E \supseteq \bigcup_{n} E_{n}$, $E \in P$, then
@@ -632,8 +616,7 @@ But there are no intervals in $P$ which are contained in $X$; thus the only elem
 Thus this seemingly reasonable way of defining an inner measure fails to measure the set of irrational numbers.
 \end{example}
 
-\begin{exercise}
-\label{semiring exercise}
+\begin{exercise}\label{semiring exercise}
 Prove Lemma~\ref{semiring prop 1}.
 \end{exercise}
 
@@ -674,8 +657,7 @@ In practice, $\mu^*$ will be the extension of a premeasure and $\mathcal H$ will
 
 \begin{definition}
 A \dfn{$\mu^*$-measurable set} is a set $A \in \mathcal H$ such that for every $E \in \mathcal H$,
-\begin{equation}
-\label{clean division}
+\begin{equation}\label{clean division}
 \mu^*(E) = \mu^*(E \cap A) + \mu^*(E \setminus A).
 \end{equation}
 We let $\mathcal M(\mu^*)$ denote the set of all $\mu^*$-measurable sets.
@@ -686,8 +668,7 @@ In the event that (\ref{clean division}) holds, we say that $A$ \dfn{cleanly div
 Since an outer measure is subadditive, one already has
 \[\mu^*(E) \leq \mu^*(E \cap A) + \mu^*(E \setminus A)\]
 and so one just has to prove the opposite inequality
-\begin{equation}
-\label{Caratheodory inequality}
+\begin{equation}\label{Caratheodory inequality}
 \mu^*(E \cap A) + \mu^*(E \setminus A) \leq \mu^*(E)
 \end{equation}
 to check that a set is $\mu^*$-measurable.
@@ -718,8 +699,7 @@ If $A$ cleanly divides $E$ then clearly so do $A \cup Z$ and $A \setminus Z$, so
 Countable subadditivity implies that $\mathcal N(\mu^*)$ is a $\sigma$-ring.
 \end{proof}
 
-\begin{lemma}
-\label{measurable complements lemma}
+\begin{lemma}\label{measurable complements lemma}
 If $A_1, A_2$ are $\mu^*$-measurable sets, then so is $A_1 \setminus A_2$.
 \end{lemma}
 \begin{proof}
@@ -744,8 +724,7 @@ TODO: Uniqueness of extensions
 
 Leave lots of the above as exercises.
 
-\begin{exercise}
-\label{measurable complements}
+\begin{exercise}\label{measurable complements}
 Fill in the details in the proof of Lemma~\ref{measurable complements lemma}.
 \end{exercise}
 
@@ -822,14 +801,12 @@ The \dfn{Lebesgue measure} on $\RR$ is the Stieltjes measure arising from the Le
 Let $\mu$ denote Lebesgue measure; then $\mu([\alpha, \beta)) = \beta - \alpha$ is the length of the interval $[\alpha, \beta)$.
 Therefore $\mu$ is the natural generalization of ``length'' to as many subsets of $\RR$ as one reasonably can generalize it to.
 Indeed, if $A$ is a Lebesgue measurable subset of $\RR$ (e.g. if $A$ is Borel) then
-\begin{equation}
-\label{lebesgue measure formula}
+\begin{equation}\label{lebesgue measure formula}
 \mu(A) = \inf \left\{\sum_{j=1}^{\infty} \beta_{i} - \alpha_i: A \subseteq \bigcup_{i=1}^{\infty} [\alpha_i, \beta_i)\right\}.
 \end{equation}
 \end{subsec}
 
-\begin{theorem}
-\label{translation invariance in R1}
+\begin{theorem}\label{translation invariance in R1}
 Lebesgue measure $\mu$ is \dfn{translation-invariant} in the sense that if $A$ is a Lebesgue measurable set, and $A + x = \{a + x: a \in A\}$, then $\mu(A) = \mu(A + x)$.
 Conversely, if $\nu$ is a translation-invariant complete Borel measure such that $\nu([0, 1)) = 1$, then $\mu = \nu$.
 \end{theorem}
@@ -893,8 +870,7 @@ To see an example of another good property of Lebesgue measure, we need a new de
 If the reader is uncomfortable with the abstract definition of a locally compact Hausdorff space, they may take $X = \RR$ in the following definition without losing any insight.
 \end{subsec}
 
-\begin{definition}
-\label{dfn of radon measure}
+\begin{definition}\label{dfn of radon measure}
 Let $X$ be a locally compact Hausdorff space.
 Suppose that $\mu$ is a Borel measure on $X$ such that:
 \begin{enumerate}
@@ -909,8 +885,7 @@ where the supremum is taken over all compact sets $K \subseteq U$.
 Then we say that $\mu$ is a \dfn{Radon measure}.
 \end{definition}
 
-\begin{theorem}
-\label{lebesgue is radon}
+\begin{theorem}\label{lebesgue is radon}
 Every Stieltjes measure on $\RR$ is Radon.
 In particular, Lebesgue measure is Radon.
 \end{theorem}
@@ -980,8 +955,7 @@ Conclude that if $f$ is continuous, then $\mu_f$ makes all countable sets null.
 Let $f$ be a nondecreasing, left-continuous function. Show that there is a nonempty open set $U$ such that $\mu_f(U) = 0$ iff $f$ is not strictly increasing (i.e. there are $x < y$ with $f(x) = f(y)$).
 \end{exercise}
 
-\begin{exercise}
-\label{Dirac measure}
+\begin{exercise}\label{Dirac measure}
 Let $x \in \RR$. The \dfn{Dirac measure} at $x$, denoted $\delta_x$, is the Stieltjes measure arising from the function
 $$y \mapsto \begin{cases}
 0, &y \leq x\\
@@ -991,8 +965,7 @@ A set is \dfn{Dirac measurable} at $x$ if it is measurable with respect to $\del
 Show that every subset of $\RR$ is Dirac measurable at $x$, and compute its Dirac measure.
 \end{exercise}
 
-\begin{exercise}
-\label{Cantor set props}
+\begin{exercise}\label{Cantor set props}
 Show that the standard Cantor set is compact and Lebesgue null, has the same cardinality as $\RR$, and contains no interval except for points and the empty set.
 \end{exercise}
 
@@ -1007,16 +980,14 @@ Show that the set of Lebesgue measurable subsets of $\RR$ has cardinality equal 
 (Hint: Exercise~\ref{Cantor set props}.)
 \end{exercise}
 
-\begin{exercise}
-\label{fat cat}
+\begin{exercise}\label{fat cat}
 Show that for every $\alpha \in [0, 1)$ there exists a Cantoresque subset $C_\alpha$ of $[0, 1]$ whose Lebesgue measure is $\alpha$.
 In particular, $C_\alpha$ should be compact and contain no open subset of $\RR$.
 This is known as a \dfn{fat Cantor set}.
 Show that there does not exist a fat Cantor set of measure $1$ in $[0, 1]$.
 \end{exercise}
 
-\begin{exercise}
-\label{physical lebesgue measure 1}
+\begin{exercise}\label{physical lebesgue measure 1}
 In this exercise and the following we give a different construction of Lebesgue measure, other than the axiomatic definition or the construction using Stieltjes measures.
 
 Let $\Sigma_0$ be the set of all intervals (open, closed, or half-open) with rational endpoints.
@@ -1030,8 +1001,7 @@ That is, show that these operations drop to equivalence classes of elements of $
 So $\Sigma$ can be thought of as an ``abstract $\sigma$-ring'' in some sense, even though its elements are not sets, but something more abstract.
 \end{exercise}
 
-\begin{exercise}
-\label{physical lebesgue measure 2}
+\begin{exercise}\label{physical lebesgue measure 2}
 Let all definitions be as Exercise~\ref{physical lebesgue measure 1}.
 Given $J \in \Sigma_0$, define $[J]$ to be the equivalence class of $J$ in $\Sigma$.
 Then, given $I \in \Sigma$, let
@@ -1042,8 +1012,7 @@ So we can think of $\nu$ as an ``abstract measure'' on the abstract $\sigma$-rin
 We call $\nu$ the \dfn{physical Lebesgue measure}.
 \end{exercise}
 
-\begin{exercise}
-\label{physical lebesgue measure 3}
+\begin{exercise}\label{physical lebesgue measure 3}
 Let $\mu$ be Lebesgue measure and $\nu$ physical Lebesgue measure as in Exercise~\ref{physical lebesgue measure 2}, defined on the abstract $\sigma$-ring $\Sigma$.
 Let $\Gamma$ be the $\sigma$-algebra of Lebesgue measurable subsets of $\RR$. Show that there is a surjective map $\pi: \Gamma \to \Sigma$ such that:
 \begin{enumerate}

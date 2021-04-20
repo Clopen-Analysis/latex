@@ -46,8 +46,7 @@ We seek to consider a weighted average of the two extremes.
 \begin{definition}
 Let $p \in (1, \infty)$.
 The \dfn{$L^p$-norm} of a measurable function $f$ is
-\begin{equation}
-\label{Lp definition}
+\begin{equation}\label{Lp definition}
 ||f||_{p}  = \left(\int_{X} ||f||^{p} ~d\mu\right)^{1/p}.
 \end{equation}
 We let $L^p(X \to B, \mu)$, often abbreviated to $L^p$ or similar, be the vector space of all measurable functions $f$ such that $||f||_{p}  < \infty$.
@@ -60,8 +59,7 @@ So, to avoid confusion, we will simply call the spaces that we defined above \df
 
 We will shortly prove that the above definition makes sense, but, assuming that $||\cdot||_{p} $ is a norm, what does it measure?
 If $f$ is a function that we can think of as a ``wave'' of amplitude $A$, supported on a set of measure $V$, then one approximately has
-\begin{equation}
-\label{Lp amplitude}
+\begin{equation}\label{Lp amplitude}
 ||f||_{p}  \approx AV^{1/p}.
 \end{equation}
 Here and throughout we take the very important convention that $1/\infty = 0$.
@@ -89,16 +87,14 @@ Conversely, if $f \neq 0$ on a positive measure set, say $E$, then
 
 Thus we just need to check the triangle inequality. Before we do that, however, we will need to prove some inequalities and equations which will turn out to be highly useful in their own right.
 We first assert that
-\begin{equation}
-\label{pull exponent of Lp}
+\begin{equation}\label{pull exponent of Lp}
 \left|\left|||f||^q\right|\right|_{p}  = ||f||_{pq}^q
 \end{equation}
 whenever $p, q \in [1, \infty]$ and $f \in L^{pq}$ or $||f||^{q} \in L^p$; this follows straight from the definitions.
 
 \begin{lemma}
 One has
-\begin{equation}
-\label{exp is convex}
+\begin{equation}\label{exp is convex}
 \exp(\theta x + (1 - \theta)y) \leq \theta e^{x} + (1 - \theta)e^y
 \end{equation}
 whenever $\theta \in [0, 1]$ and $x, y \in \RR$.
@@ -132,8 +128,7 @@ here we are taking $\theta = 1/p$ and $1 - \theta = 1/q$, and letting $\log$ den
 Let $p, q \in [1, \infty]$.
 Let $f \in L^p(X \to \CC)$, $g \in L^q(X \to \CC)$, and $q = p^*$.
 Then $fg \in L^1(X \to \CC)$ and
-\begin{equation}
-\label{Holder inequality}
+\begin{equation}\label{Holder inequality}
 ||fg||_1 \leq ||f||_{p}  \cdot ||g||_q.
 \end{equation}
 \end{theorem}
@@ -160,8 +155,7 @@ This is exactly what H\"older's inequality would predict.
 
 \begin{theorem}[Minkowski's triangle inequality]
 Let $p \in [1, \infty]$ and $f, g \in L^p$. Then $f + g \in L^p$ and
-\begin{equation}
-\label{Mink triangle inequality}
+\begin{equation}\label{Mink triangle inequality}
 ||f + g||_{p}  \leq ||f||_{p}  + ||g||_{p} .
 \end{equation}
 Thus $L^p$ is a normed space with norm $||\cdot||_{p} $.
@@ -204,8 +198,7 @@ Let us state some useful corollaries of H\"older's inequality.
 Let $1 \leq s \leq r \leq t \leq \infty$ and
 \[\frac{1}{r} = \frac{\theta}{s} + \frac{1 - \theta}{t}\]
 where $\theta \in [0, 1]$. Then, for every $f \in L^s(X \to \CC) \cap L^t(X \to \CC)$, $f \in L^r(X \to \CC)$ and
-\begin{equation}
-\label{holder interpolation}
+\begin{equation}\label{holder interpolation}
 ||f||_{r} \leq ||f||_s^{\theta} \cdot ||f||_t^{1-\theta}.
 \end{equation}
 \end{corollary}
@@ -217,8 +210,7 @@ we can use H\"older's inequality to check
 taking $r$th roots of both sides and using (\ref{pull exponent of Lp}), we prove (\ref{holder interpolation}).
 \end{proof}
 
-\begin{corollary}[H\"older's inequality with induction]
-\label{Holder induction}
+\begin{corollary}[H\"older's inequality with induction]\label{Holder induction}
 Let $p_1, \dots, p_{m}, r \in [1, \infty]$ with
 \[\frac{1}{r} = \sum_{j=1}^{m} \frac{1}{p_{j}}.\]
 Then
@@ -231,13 +223,11 @@ See Exercise~\ref{Holder induction exer}.
 
 \begin{corollary}[Cauchy-Schwarz inequality]
 Whenever $f, g \in L^2(X \to \CC)$ one has
-\begin{equation}
-\label{CS 1}
+\begin{equation}\label{CS 1}
 ||fg||_1 \leq ||f||_2 \cdot ||g||_2.
 \end{equation}
 In particular, if $v, w$ are vectors in $\CC^d$, then
-\begin{equation}
-\label{CS 2}
+\begin{equation}\label{CS 2}
 |\langle v, w\rangle|^2 \leq \langle v, v\rangle \cdot \langle w, w\rangle.
 \end{equation}
 \end{corollary}
@@ -246,12 +236,10 @@ The first claim (\ref{CS 1}) is just H\"older's inequality when $p = 2$.
 The second claim (\ref{CS 2}) is (\ref{CS 1}) specialized to $\CC^{d} = \ell^p(\{1, \dots, d\} \to \CC)$.
 \end{proof}
 
-\begin{corollary}[H\"older comparison]
-\label{Holder comparison}
+\begin{corollary}[H\"older comparison]\label{Holder comparison}
 Suppose that $p \leq q$ and $f$ is measurable $X \to \CC$.
 If $\mu$ is a finite measure, then
-\begin{equation}
-\label{Holder comparison 1}
+\begin{equation}\label{Holder comparison 1}
 ||f||_{p}  \leq \mu(X)^{1/p-1/q} ||f||_q
 \end{equation}
 and so $L^{q} \subseteq L^p$.
@@ -287,18 +275,15 @@ defined on functions $u: [0, T] \to L^q(U \to \CC)$.
 
 Later in the text we will have exercises extending the results in the text to spaces with mixed norms.
 
-\begin{exercise}
-\label{exp is convex exer}
+\begin{exercise}\label{exp is convex exer}
 Prove (\ref{exp is convex}) using the fact that $\exp' = \exp$.
 \end{exercise}
 
-\begin{exercise}
-\label{Holder induction exer}
+\begin{exercise}\label{Holder induction exer}
 Prove Corollary~\ref{Holder induction}.
 \end{exercise}
 
-\begin{exercise}
-\label{granular comparison}
+\begin{exercise}\label{granular comparison}
 Complete the proof of Corollary~\ref{Holder comparison}.
 \end{exercise}
 
@@ -313,8 +298,7 @@ Let $V$ be a vector space.
 A map $||\cdot||: V \to [0, \infty)$ is called a \dfn{quasinorm} if for every $f \in V$ and $c \in \CC$, $||f|| = 0$ iff $f = 0$, $||cf|| = |c|\cdot||f||$, and one has a \dfn{quasitriangle inequality} $||f + g|| \lesssim ||f|| + ||g||$.
 \end{definition}
 
-\begin{exercise}
-\label{Lp quasinorm}
+\begin{exercise}\label{Lp quasinorm}
 One can also define $||f||_{p} $ when $p \in (0, 1)$, but then $||\cdot||_{p} $ is not well-behaved.
 In fact, define the \dfn{$L^p$-quasinorm} by (\ref{Lp definition}) for $p \in (0, 1)$.
 Show that $||\cdot||_{p} $ is in fact a quasinorm, but the triangle inequality does not hold.
@@ -342,12 +326,10 @@ Conclude that if $\overline U$ is compact,
 on $U$, and $u = v = 0$ on $\partial U$, then $u = v$ almost everywhere (and hence everywhere, since $u,v$ are smooth).
 \end{exercise}
 
-\begin{exercise}[Dirichlet's principle]
-\label{Dirichlet problem}
+\begin{exercise}[Dirichlet's principle]\label{Dirichlet problem}
 Let $U$ be a bounded open subset of $\RR^d$, and let $f: \partial U \to \RR$ be a continuous function defined on the boundary of $U$.
 \dfn{Dirichlet's problem} for the Laplace equation
-\begin{equation}
-\label{Laplace equation}
+\begin{equation}\label{Laplace equation}
 \Delta u = 0
 \end{equation}
 is to find a smooth function $u$ such that (\ref{Laplace equation}) holds on $U$ and $u = f$ on $\partial U$.
@@ -371,8 +353,7 @@ First we need to relate convergence in $L^p$ to other modes of convergence, espe
 
 \begin{theorem}[Markov's inequality]
 For any measurable function $f$ and $\varepsilon > 0$,
-\begin{equation}
-\label{Markov}
+\begin{equation}\label{Markov}
 \mu(\{||f|| \geq \varepsilon\}) \leq \left(\frac{||f||^p}{\varepsilon}\right)^p.
 \end{equation}
 \end{theorem}
@@ -380,8 +361,7 @@ For any measurable function $f$ and $\varepsilon > 0$,
 Let
 \[E = \{x \in X: ||f|| \geq \varepsilon\}.\]
 Then
-\begin{equation}
-\label{Markov pf}
+\begin{equation}\label{Markov pf}
 \varepsilon^{p} 1_{E} \leq ||f||^p.
 \end{equation}
 Indeed, if $x \in E$ then $\varepsilon^{p} 1_E(x) = 0$; otherwise $\varepsilon^{p} 1_E(x) = \varepsilon^{p} \leq ||f(x)||^p$.
@@ -459,8 +439,7 @@ Actually, since $\mu$ is valued in $\CC$, it is no loss of generality to assume 
 \begin{definition}
 Let $X$ be a normed space.
 The \dfn{dual space} $X^*$ of $X$ is the Banach space of all linear maps $X \to \CC$ such that
-\begin{equation}
-\label{bounded covector}
+\begin{equation}\label{bounded covector}
 |Tf| \lesssim ||f||_X,
 \end{equation}
 with the norm
@@ -477,8 +456,7 @@ whenever possible.
 \begin{lemma}
 Let $p \in [1, \infty]$.
 One has an injective linear map $\lambda: L^{p^*} \to (L^p)^*$ defined by
-\begin{equation}
-\label{isomorphism of holder duals}
+\begin{equation}\label{isomorphism of holder duals}
 \lambda(g)(f) = \int_{X} f\overline g ~d\mu.
 \end{equation}
 \end{lemma}
@@ -528,8 +506,7 @@ TODO proof
 
 
 
-\begin{exercise}
-\label{dual space is banach}
+\begin{exercise}\label{dual space is banach}
 Prove that if $X$ is a normed space, then $X^*$ is Banach.
 \end{exercise}
 
@@ -622,8 +599,7 @@ We just need to check the triangle inequality, and indeed,
 \[d(f_1, f_3) = \sum_{g \in D} 2^{-n} p_g(f_1 - f_3) \leq \sum_{g \in D} \frac{p_g(f_1 - f_2) + p_g(f_2 - f_3)}{2^n} = d(f_1, f_2) + d(f_2, f_3)\]
 since $p_g$ is a seminorm.
 
-\begin{lemma}
-\label{weakstar semimetric}
+\begin{lemma}\label{weakstar semimetric}
 A sequence converges in $d$ iff it converges weakly in $L^p$.
 \end{lemma}
 \begin{proof}
@@ -678,13 +654,11 @@ The space $H^s(U)$ is the completion of the space of smooth functions $u: U \to 
 In particular, a sequence $(u_{n})_{n}$ converges (strongly) in $H^s$ (say, to $u$) if for every $i \in \{0, \dots, s\}$, $\nabla^iu \to u$ strongly in $L^2$.
 One can also define weak convergence in $H^s$ by simply requiring that the derivatives converge weakly in $L^2$.
 
-\begin{exercise}
-\label{unit ball compactness}
+\begin{exercise}\label{unit ball compactness}
 Let $X$ be a Banach space. Show that the unit ball of $X$ is compact (in the norm topology, not the weakstar topology) iff $X$ is finite-dimensional.
 \end{exercise}
 
-\begin{exercise}
-\label{weakstar is hausdorff}
+\begin{exercise}\label{weakstar is hausdorff}
 Show that the weakstar topology is Hausdorff; that is, if $f_1, f_2 \in L^p$, then there are $g_1, g_2 \in L^{p^*}$ and a $\varepsilon > 0$ such that $B_{g_1}(f_1, \varepsilon) \cap B_{g_2}(f_2, \varepsilon)$ is empty.
 \end{exercise}
 
@@ -702,26 +676,22 @@ Let $(x_{n})_{n}$ be a bounded sequence in $L^2$. Show that there is a subsequen
 strongly in $L^2$.
 \end{exercise}
 
-\begin{exercise}[Arzel\`a-Ascoli]
-\label{Ascoli}
+\begin{exercise}[Arzel\`a-Ascoli]\label{Ascoli}
 Modify the proof of Alaoglu's sequential compactness theorem to show that, if $X$ is a compact metric space, then $C(X)$ (with $L^\infty$ norm) satisfies the following result: a subset $A \subseteq C(X)$ is compact iff $A$ is closed, bounded, and \dfn{equicontinuous} in the sense that for every $\varepsilon > 0$ there is a $\delta > 0$ such that for every $f \in A$ and every $x_1,x_2 \in X$ if $d(x_1, x_2) < \delta$ then $|f(x_1) - f(x_2)| < \varepsilon$. (Here $\delta$ does not depend on $f$ or $x_1, x_2$.)
 \end{exercise}
 
-\begin{exercise}[Montel's little theorem -- for those who know complex analysis]
-\label{Montel}
+\begin{exercise}[Montel's little theorem -- for those who know complex analysis]\label{Montel}
 Let $U$ be an open subset of $\CC$, and let $\mathcal H(U)$ be the space of holomorphic functions $U \to \CC$.
 Suppose that $\mathcal F \subset \mathcal H(U)$ is locally uniformly $L^\infty$; that is, for every compact set $K \subset U$ there is a $M_{K} > 0$ such that for every $f \in \mathcal F$, $||f|K||_{\infty} \leq M_K$.
 (Hint: You may need to use Cauchy's integral formula and Exercise~\ref{Ascoli}.)
 Show that every sequence in $\mathcal F$ has a subsequence which converges in $L^\infty_l$.
 \end{exercise}
 
-\begin{exercise}[Banach-Alaoglu in Hilbert spaces]
-\label{Banach-Alaoglu-Sobolev}
+\begin{exercise}[Banach-Alaoglu in Hilbert spaces]\label{Banach-Alaoglu-Sobolev}
 Let $H$ be any Hilbert space. Show that the unit ball of $H$ is weakstar compact.
 \end{exercise}
 
-\begin{exercise}[solving Dirichlet's problem]
-\label{Dirichlet problem 2}
+\begin{exercise}[solving Dirichlet's problem]\label{Dirichlet problem 2}
 Let $U$ be an open subset of $\RR^d$ such that the boundary $\partial U$ is a smooth manifold, and let $f: \partial U \to \RR$ be a continuous function.
 If you're not comfortable with smooth manifolds, you may assume that $U$ is a ball, in which case $\partial U$ is a sphere.
 We are in the position to show that Dirichlet's problem, as defined in Exercise~\ref{Dirichlet problem}, has a solution, if we are willing to take a result known as \dfn{Weyl's lemma} as a black box.
@@ -734,8 +704,7 @@ Show that $(u_{n})_{n}$ is a bounded sequence in $H^1$.
 \item Show that if $(v_{n})_{n}$ is a sequence of functions which converge in $H^1$ to a function $v \in H^1$, then $E(v_{n}) \to E(v)$.
 \item Invoke Exercise~\ref{Banach-Alaoglu-Sobolev}.
 \item Show that if $u$ is smooth, then $u$ solves Dirichlet's problem iff for every smooth function $v$ which is zero in an open set containing $\partial U$,
-\begin{equation}
-\label{weak Dirichlet problem}
+\begin{equation}\label{weak Dirichlet problem}
 \langle u, \Delta v\rangle_{L^2} = 0.
 \end{equation}
 The problem of finding a $u \in L^2(U)$ (not necessarily smooth) such that for every smooth $v$ which is zero near $\partial U$, (\ref{weak Dirichlet problem}) holds, is called the \dfn{weak Dirichlet problem}.
@@ -802,8 +771,7 @@ so the inequalities collapse and $U^*g = g$.
 \begin{lemma}
 Let $H$ be a Hilbert space, $U: H \to H$ a bounded linear operator such that $||U|| \leq 1$.
 Let $V = \{f \in H: Uf = f\}$ and let $\Pi: H \to V$ be the orthogonal projection. Then
-\begin{equation}
-\label{invariant projection}
+\begin{equation}\label{invariant projection}
 \lim_{n \to \infty} \frac{1}{n} \sum_{j=0}^{n-1} U^jf = \Pi(f).
 \end{equation}
 \end{lemma}

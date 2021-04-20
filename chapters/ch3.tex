@@ -50,8 +50,7 @@ In particular, a collection of functions is an algebra iff it is closed under mu
 See Exercise~\ref{algebra review}.
 \end{subsec}
 
-\begin{lemma}
-\label{Simp is an algebra}
+\begin{lemma}\label{Simp is an algebra}
 $\Simp(X \to B)$ is a vector space. In particular, $\Simp(X \to \CC)$ is a unital algebra.
 \end{lemma}
 \begin{proof}
@@ -69,8 +68,7 @@ Therefore $fg$ is simple.
 Moreover, the function $f(x) = 1$ is an identity for multiplication.
 \end{proof}
 
-\begin{lemma}
-\label{Simp is closed under minmax}
+\begin{lemma}\label{Simp is closed under minmax}
 Let $f, g \in \Simp(X \to \CC)$. Then $|f| \in \Simp(X \to \CC)$. In fact, if $f, g \in \Simp(X \to \RR)$, then $\max(f, g) \in \Simp(X \to \RR)$ and $\min(f, g) \in \Simp(X \to \RR)$.
 
 Moreover, if $f \in \Simp(X \to B)$, the function $x \mapsto ||f(x)||$ is in $\Simp(X \to \CC)$.
@@ -79,8 +77,7 @@ Moreover, if $f \in \Simp(X \to B)$, the function $x \mapsto ||f(x)||$ is in $\S
 Left as Exercise~\ref{Simp closure exer}.
 \end{proof}
 
-\begin{exercise}
-\label{algebra review}
+\begin{exercise}\label{algebra review}
 Look up or prove the following algebraic theorems:
 \begin{enumerate}
 \item Let $\varphi: \CC \to A$ be a morphism of rings. Then $A$ is an algebra, where scalar multiplication is defined by $za = \varphi(z)a$, for any $z \in \CC$ and $a \in A$. We call $\varphi$ the \dfn{canonical inclusion} of $\CC$ into $A$.
@@ -91,13 +88,11 @@ None of these theorems actually require that we are working over $\CC$; they are
 However, you are not expected to check that.
 \end{exercise}
 
-\begin{exercise}
-\label{Simp closure exer}
+\begin{exercise}\label{Simp closure exer}
 Prove Lemma~\ref{Simp is closed under minmax}.
 \end{exercise}
 
-\begin{exercise}
-\label{Borel-Cantelli}
+\begin{exercise}\label{Borel-Cantelli}
 If $(A_{n})_{n}$ is a sequence of measurable sets, we define $\limsup_{n \to \infty} A_{n}$ by the relation
 \[1_{\limsup_{n \to \infty} A_{n}} = \limsup_{n \to \infty} 1_{A_{n}}.\]
 Then:
@@ -152,8 +147,7 @@ Because $\mu$-null sets are not very important, we want to view two functions th
 For example, if $u(x)$ denotes the temperature in the air at a point $x \in \RR^3$ measured by some thermometer, and we measure that $u(x) = 0$ at every $x$ close to $0$, but $u(0) = 1$, then we must have made an error in the measurement of $u(0)$, and might as well view this measurement $u$ as ``the same as'' the measurement of temperature which is identically $0$ in a neighborhood of $0$.
 \end{subsec}
 
-\begin{definition}
-\label{almost converge dfn}
+\begin{definition}\label{almost converge dfn}
 Let $\mu$ be a measure on $\Sigma$. A sequence of functions $f_{n}: X \to B$ is said to \dfn{converge pointwise almost everywhere} with respect to $\mu$, or simply \dfn{almost converge}, to a function $f: X \to B$ if there is a null set $Z$ such that on $X \setminus Z$, $f_{n} \to f$ pointwise. In this case, we write
 \[f = \lim_{n \to \infty} f_{n},\]
 noting that the limit is meant almost everywhere if unclear from context.
@@ -241,8 +235,7 @@ Here we give another characterization of measurability that is somewhat easier t
 Throughout, we as usual fix a complete measured space $(X, \Sigma, \mu)$ and a Banach space $B$.
 \end{subsec}
 
-\begin{definition}
-\label{almost separably valued dfn}
+\begin{definition}\label{almost separably valued dfn}
 A function $f: X \to B$ is \dfn{almost separably valued} if there is a null set $Z$ such that $f(X \setminus Z)$ is separable in the topology of $B$.
 \end{definition}
 
@@ -270,8 +263,7 @@ So we can define its Borel $\sigma$-algebra in the usual way: it is the smallest
 Our goal in this section is to prove the following theorem:
 \end{subsec}
 
-\begin{theorem}
-\label{characterization of measurable functions}
+\begin{theorem}\label{characterization of measurable functions}
 Let $f: X \to B$ be a function with carrier $C$, possibly only defined almost everywhere. Then the following are equivalent:
 \begin{enumerate}
 \item $f$ is measurable.
@@ -281,8 +273,7 @@ Let $f: X \to B$ be a function with carrier $C$, possibly only defined almost ev
 \end{enumerate}
 \end{theorem}
 
-\begin{corollary}
-\label{characterization of measurable functions II}
+\begin{corollary}\label{characterization of measurable functions II}
 Let $\Gamma$ be the Borel $\sigma$-algebra of $B$, so $B = (B, \Gamma)$ is a measurable space whose measurable sets are exactly the Borel sets.
 Then a function $f: X \to B$ is measurable iff $f$ is almost separably valued and for every measurable $Y \subseteq B$, $f^{-1}(Y)$ is measurable.
 \end{corollary}
@@ -295,8 +286,7 @@ The reader should compare Corollary~\ref{characterization of measurable function
 Before we prove Theorem~\ref{characterization of measurable functions}, we need several lemmata which are useful in their own right.
 \end{subsec}
 
-\begin{lemma}
-\label{Newberger lemma 1}
+\begin{lemma}\label{Newberger lemma 1}
 Let $f_{n}: X \to B$ be a sequence of functions converging pointwise to a function $f$.
 For every open $U \subseteq B$, we define $U_{n} = \{y \in U: \inf_{x \notin U} ||x - y|| > 1/n\}$.
 Then
@@ -320,8 +310,7 @@ Indeed, for every $i \in \{1, \dots, 6\}$, the $i$th entry in the above list is 
 A function $f: X \to B$ is \dfn{separably valued} if the image of $f$ is separable in $B$.
 \end{definition}
 
-\begin{lemma}
-\label{Newberger lemma 2}
+\begin{lemma}\label{Newberger lemma 2}
 Let $f: X \to B$ be a function with carrier $C$. Then the following are equivalent:
 \begin{enumerate}
 \item $f$ is the pointwise limit of simple functions.
@@ -370,8 +359,7 @@ But $f_{n}(x) = b_{k}$, so $||f_{n}(x) - f(x)|| < \varepsilon$.
 This implies $1$.
 \end{proof}
 
-\begin{lemma}
-\label{Newberger lemma 3}
+\begin{lemma}\label{Newberger lemma 3}
 Let $f: X \to B$ be a function with carrier $C$. The following are equivalent:
 \begin{enumerate}
 \item For every closed set $K \subseteq B$, $f^{-1}(K) \cap C$ is measurable.
@@ -393,7 +381,7 @@ Since $\Gamma$ contains the open sets, $\Gamma$ contains the Borel sets.
 
 \begin{proof}[Proof of Theorem~\ref{characterization of measurable functions}]
 We can show that $f$ is measurable iff $f$ is almost separably valued and for every open set $U$, $f^{-1}(U) \cap C$ is measurable.
-In fact, Lemma \label{Newberger lemma 3} then immediately shows that for every open set $U$, $f^{-1}(U) \cap C$ is measurable iff the same is true when ``open set" is replaced with ``closed set'' or ``Borel set''.
+In fact, Lemma\label{Newberger lemma 3} then immediately shows that for every open set $U$, $f^{-1}(U) \cap C$ is measurable iff the same is true when ``open set" is replaced with ``closed set'' or ``Borel set''.
 
 First assume that $f$ is measurable. Then there are $f_{n} \in \Simp(X \to B)$ and a null set $Z$ such that $f_{n} \to f$ pointwise on $X \setminus Z$ and $f$ is defined on $X \setminus Z$.
 So $f_{n}1_{X \setminus Z} \to f1_{X \setminus Z}$ (where $f1_{X \setminus Z} = 0$ if $f$ is undefined), so $f1_{X \setminus Z}$ meets the criteria of Lemma~\ref{Newberger lemma 2}; since null sets are measurable, so does $f$.
@@ -403,8 +391,7 @@ Conversely, if $Z$ is a null set such that $f(X \setminus Z)$ is separable and f
 
 We now prove a very important theorem about measurable functions. Note that the analogous result for continuous functions (or even Riemann integrable functions) does not hold.
 
-\begin{theorem}
-\label{measurable functions converge}
+\begin{theorem}\label{measurable functions converge}
 Suppose that $f_{n}$ are measurable functions which almost converge to a function $f$. Then $f$ is measurable.
 \end{theorem}
 \begin{proof}
@@ -415,8 +402,7 @@ Therefore $f$ is almost separably valued. Then Lemma~\ref{Newberger lemma 1} imp
 which implies that $f^{-1}(U)$ is a countable union of countable unions of countable intersections of measurable sets, hence is measurable.
 \end{proof}
 
-\begin{subsec}
-\label{all functions are measurable}
+\begin{subsec}\label{all functions are measurable}
 Let $\RR$ be equipped with its usual Lebesgue measure (or really any Borel measure $\mu$ on any space with a countable dense subset, such that for every countable set $Z$, $\mu(Z) = 0$).
 Then any continuous function $\RR \to B$ pulls back open sets to open (hence Borel) sets and has separable image (since the image of $\QQ$ is dense in the image of $\RR$), hence is measurable by Theorem~\ref{characterization of measurable functions}.
 Any pointwise limit of continuous functions is also measurable; for example any function with only a discrete set of discontinuities, or with only jump discontinuities.
@@ -427,14 +413,12 @@ See Exercise~\ref{all functions are measurable exer}.
 TODO: Draw a picture of continous functions converging to a finitely disct function or a function with jump disc.
 \end{subsec}
 
-\begin{example}
-\label{nonseparable function}
+\begin{example}\label{nonseparable function}
 An example of a function which is not almost separably valued is given by Example~\ref{nonseparable space}.
 Let $\delta$ be as in that example and let $f(x) = \delta_x$. Then for any uncountable $Y \subseteq \RR$, $f(Y)$ is an uncountable discrete set, so removing a null set cannot possibly help us here.
 \end{example}
 
-\begin{example}[Vitali's set]
-\label{Vitali set}
+\begin{example}[Vitali's set]\label{Vitali set}
 Recall that we defined Lebesgue measure on $\Torus$, $\mu$, in Example~\ref{lebesgue measure torus}.
 If we rotate $\Torus$ by an angle $\theta$, then the rotation preserves $\mu$; that is, if $A \subseteq \Torus$ is measurable, and $A + \theta = \{e^{i(\varphi+\theta)}: e^{i\varphi} \in A\}$, then $\mu(A) = \mu(A + \theta)$.
 The group $\QQ$ of rational numbers under addition acts on $A$ by rotation: if $q \in \QQ$, define a map $e^{i\theta} \mapsto e^{i(\theta + 2\pi q)}$ from the circle to itself.
@@ -458,8 +442,7 @@ But there exist models of set theory~\cite{Solovay1970} with certain axioms weak
 Strichartz~\cite[Chapter 1]{strichartz2003guide} summarized these observations by remarking that ``wise-guys who like using the axiom of choice will have to worry about ... wolves under the bed, etc.''
 \end{subsec}
 
-\begin{exercise}
-\label{all functions are measurable exer}
+\begin{exercise}\label{all functions are measurable exer}
 Prove the assertions in Example~\ref{all functions are measurable}.
 \end{exercise}
 
@@ -550,8 +533,7 @@ A sequence of functions $f_{n}: X \to B$ is said to be a \dfn{nearly uniform Cau
 Since the hypothesis of being nearly uniform Cauchy is not altered if we change the functions $f_{n}$ on a null set, we can work with equivalence classes of functions (equivalent iff equal almost everywhere) rather than functions themselves. This will be important when we demand that the limit of a Cauchy sequence be unique; it will not be a unique function everywhere, but only almost everywhere.
 \end{subsec}
 
-\begin{lemma}
-\label{nearly uniform cauchy converges}
+\begin{lemma}\label{nearly uniform cauchy converges}
 Let $f_{n} \in M(X \to B)$ be a nearly uniform Cauchy sequence. Then there is a unique $f \in M(X \to B)$ such that $f_{n} \to f$ nearly uniformly.
 \end{lemma}
 \begin{proof}
@@ -590,8 +572,7 @@ However, on the off-chance that an error of size at least $\varepsilon$ occurs, 
 Thus $f_{n} \to f$ in probability and a priori we can prove no stronger.
 \end{subsec}
 
-\begin{lemma}
-\label{conv in measure is hausdorff}
+\begin{lemma}\label{conv in measure is hausdorff}
 If $f_{n} \to f$ in measure, then $f$ is unique almost everywhere, hence as an element of $M(X \to B)$.
 \end{lemma}
 \begin{proof}
@@ -627,8 +608,7 @@ Nor does it follow from almost pointwise convergence on infinite measure sets --
 But convergence in measure is weaker than nearly uniform convergence, hence from almost pointwise convergence on finite measure sets. TODO: Draw a diagram.
 \end{subsec}
 
-\begin{lemma}
-\label{nearly uniform implies in measure}
+\begin{lemma}\label{nearly uniform implies in measure}
 Suppose that $f_{n} \to f$ nearly uniformly; then $f_{n} \to f$ in measure.
 \end{lemma}
 \begin{proof}
@@ -680,8 +660,7 @@ Therefore the $g_{k}$ are a uniform Cauchy sequence on $F$ and hence nearly unif
 So by Lemma~\ref{nearly uniform cauchy converges}, there is an $f$ such that $\lim_{k} g_{k} = f$ nearly uniformly.
 But then Lemma~\ref{nearly uniform implies in measure} implies that $\lim_{k} g_{k} = f$ in measure.
 But
-\begin{equation}
-\label{form1}\{||f - f_{n}(x)||_{B} > \varepsilon\} \subseteq \{||f - g_{k}||_{B} > \varepsilon/2\} \cup \{||f_{n} - g_{k}||_{B} > \varepsilon/2\},
+\begin{equation}\label{form1}\{||f - f_{n}(x)||_{B} > \varepsilon\} \subseteq \{||f - g_{k}||_{B} > \varepsilon/2\} \cup \{||f_{n} - g_{k}||_{B} > \varepsilon/2\},
 \end{equation}
 and the $g_{k}$ are a subsequence of the Cauchy-in-measure sequence $f_{n}$, hence the right hand side of (\ref{form1}) is $<\varepsilon$ if $n,k$ are large enough. So $f_{n} \to f$ in measure.
 Uniqueness follows by Lemma~\ref{conv in measure is hausdorff}.
@@ -753,8 +732,7 @@ Throughout the rest of the section, we fix a positive Radon measure $\mu$ on $X$
 Thus $X$ is equipped with a topology, a $\sigma$-algebra, and a measure; so $X$ is a lot like the real line $\RR$, and when we refer to measurable functions, nearly continuous functions, and so on, we do so with respect to $\Sigma$.
 \end{subsec}
 
-\begin{lemma}
-\label{smooth functions are pointwise dense}
+\begin{lemma}\label{smooth functions are pointwise dense}
 If $f: X \to \CC^d$ is a measurable function, then there is a sequence of continuous functions $f_{n}: X \to \CC^d$ such that $f_{n} \to f$ almost pointwise.
 If $X = \RR^c$ then we can even take the $f_{n}$ to be smooth.
 \end{lemma}
@@ -822,8 +800,7 @@ Show that for every $\varepsilon > 0$ there is an open interval $U$ such that $\
 (Hint: Use the pigeonhole principle.)
 \end{exercise}
 
-\begin{exercise}
-\label{steinhaus}
+\begin{exercise}\label{steinhaus}
 Prove \dfn{Steinhaus' theorem}: Let $A$ be a Borel subset of $\RR$ with positive Lebesgue measure. Then the set $\{x - y: (x, y) \in A^2\}$ contains an open set $U$ such that $0 \in U$.
 \end{exercise}
 
@@ -860,8 +837,7 @@ To motivate it, let's suppose that $B = \CC$, $X = \RR$, $\mu$ is Lebesgue measu
 
 \begin{subsec}
 For every integrable simple function $f$, $f$ can be written in terms of the indicator functions in a unique way; namely, if $\{b_1, \dots, b_{n}\}$ is the image of $f$,
-\begin{equation}
-\label{canonical ISF rep}
+\begin{equation}\label{canonical ISF rep}
 f(x) = \sum_{i=1}^{n} b_i1_{f^{-1}(b_i)}(x).
 \end{equation}
 In particular, the indicator functions span $\ISF(X \to \CC)$.
@@ -883,8 +859,7 @@ For example, once we will have adequately defined integration,
 as one would expect.
 \end{subsec}
 
-\begin{lemma}
-\label{properties of ISF integral}
+\begin{lemma}\label{properties of ISF integral}
 Let $f,g \in \ISF(X \to B)$. Then:
 \begin{enumerate}
 \item \dfn{Linearity}: For every $c \in \CC$,
@@ -914,8 +889,7 @@ We need another notion of convergence, which will turn out to be closely related
 
 \begin{definition}
 Given $f \in \ISF(X \to B)$, let
-\begin{equation}
-\label{L1 norm dfn}
+\begin{equation}\label{L1 norm dfn}
 ||f||_1 = \int_{X} ||f(x)||_{B} ~d|\mu|(x).
 \end{equation}
 One calls $||f||_1$ the \dfn{$L^1$-norm} of $f$.
@@ -940,8 +914,7 @@ Formally, $L^1(X \to B)$ consists of Cauchy sequences of simple functions modulo
 We will define the integral as a linear map $L^1(X \to B) \to B$:
 \end{subsec}
 
-\begin{definition}
-\label{definition of integral}
+\begin{definition}\label{definition of integral}
 Let $f \in L^1(X \to B)$ and suppose that $E$ is a measurable set.
 Choose a Cauchy sequence of $f_{n} \in \ISF(X \to B)$ such that $f_{n} \to f$ in $L^1$.
 We define the \dfn{integral} of $f$ to be
@@ -960,26 +933,22 @@ Therefore the choice of Cauchy sequence in Lemma~\ref{definition of integral} is
 As a consequence, the $L^1$ norm extends to all of $L^1(X \to B)$ by the equation (\ref{L1 norm dfn}).
 \end{subsec}
 
-\begin{lemma}
-\label{properties of ISF integral 2}
+\begin{lemma}\label{properties of ISF integral 2}
 The conclusion of Lemma~\ref{properties of ISF integral} holds for any $f,g \in L^1(X \to B)$, not just $f,g \in \ISF(X \to B)$.
 \end{lemma}
 \begin{proof}
 Left as Exercise~\ref{integral props exer 2}.
 \end{proof}
 
-\begin{exercise}
-\label{integral props exer 1}
+\begin{exercise}\label{integral props exer 1}
 Prove Lemma~\ref{properties of ISF integral}.
 \end{exercise}
 
-\begin{exercise}
-\label{L1 norm exer}
+\begin{exercise}\label{L1 norm exer}
 Show that the $L^1$-norm is a seminorm on $\ISF$, and that $||f||_1 = 0$ iff $f = 0$ almost everywhere.
 \end{exercise}
 
-\begin{exercise}
-\label{integral props exer 2}
+\begin{exercise}\label{integral props exer 2}
 Prove Lemma~\ref{properties of ISF integral 2}.
 \end{exercise}
 
@@ -1151,8 +1120,7 @@ If in addition $X^2 \in L^1$ and $B = \RR$, then the \dfn{variance} of $X$ is
 The \dfn{standard deviation} of $X$ is $\sqrt{\Var X}$.
 \end{definition}
 
-\begin{exercise}
-\label{Chebyshev}
+\begin{exercise}\label{Chebyshev}
 Let $\mu$ be a positive measure.
 Prove \dfn{Chebyshev's inequality}, which says that if $f \in M$, then for any $t > 0$ and $p > 0$,
 \[\mu(||f(x)||_{B} \geq t) \leq t^{-p} \int_{||f||_{B} \geq t} ||f||_B^p~d\mu.\]
@@ -1170,8 +1138,7 @@ Let $X$ be a random variable of type $\RR$. Show that
 with equality iff $X$ is almost surely constant, as long as the definition of $\Var X$ makes sense.
 \end{exercise}
 
-\begin{exercise}
-\label{integrating a distribution}
+\begin{exercise}\label{integrating a distribution}
 Let $X$ be a random variable of type $\RR$ and distribution $\mu$. Show that
 \[EX = \int_{-\infty}^{\infty} x ~d\mu(x)\]
 as long as the definition of $EX$ makes sense.

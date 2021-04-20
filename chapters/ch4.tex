@@ -35,8 +35,7 @@ If $f \in L^1$, then the carrier of $f$ is $\sigma$-finite.
 Let $f_{n} \in \ISF$, $f_{n} \to f$. Then the $f_{n}$ have finite-support carriers $C_{n}$, and the carrier of $f$ is contained in the union $\bigcup_{n} C_{n}$.
 \end{proof}
 
-\begin{lemma}
-\label{L1 functions almost have finite carrier}
+\begin{lemma}\label{L1 functions almost have finite carrier}
 Let $f \in L^1$. Then for every $\varepsilon > 0$ there is a measurable set $E$ such that $|\mu|(E) < \infty$ and
 \[\int_{X \setminus E} ||f(x)||_{B} ~d|\mu|(x) < \varepsilon.\]
 \end{lemma}
@@ -249,8 +248,7 @@ Now a straightforward approximation argument shows that the ISF case extends to 
 A measure $\nu$ is \dfn{absolutely continuous} with respect to $\mu$ if for every $\varepsilon > 0$ there is $\delta > 0$ such that for every measurable set $E$, if $|\mu|(E) < \delta$, then $|\nu|(E) < \varepsilon$.
 \end{definition}
 
-\begin{theorem}
-\label{indefinite integral is abs cts}
+\begin{theorem}\label{indefinite integral is abs cts}
 For every $f \in L^1$, the indefinite integral of $f$ is absolutely continuous.
 \end{theorem}
 \begin{proof}
@@ -309,17 +307,17 @@ Since $f_{n} \to f$ almost pointwise, it follows that $f_{n} \to f$ in $L^1$.
 
 \begin{example}
 We will compute
-\[\lim_{n \to \infty} \int_0^{n} \left(1 + \frac{x}{n}\right)^{n} e^{-2x} ~dx.\]
+\[\lim_{n \to \infty} \int_0^{n} \left{(1 + \frac{x}{n}\right)}^{n} e^{-2x} ~dx.\]
 First we compute
-\[\lim_{n \to \infty} \left(1 + \frac{x}{n}\right)^{n} e^{-2x} = e^{x} e^{-2x} = e^{-x}.\]
+\[\lim_{n \to \infty} \left{(1 + \frac{x}{n}\right)}^{n} e^{-2x} = e^{x} e^{-2x} = e^{-x}.\]
 Now, we have a pesky changing bound of integration, so we write
-\[\lim_{n \to \infty} \int_0^{n} \left(1 + \frac{x}{n}\right)^{n} e^{-2x} ~dx = \lim_{n \to \infty} \int_0^{\infty} 1_{[0, n]}(x) \left(1 + \frac{x}{n}\right)^{n} e^{-2x} ~dx.\]
+\[\lim_{n \to \infty} \int_0^{n} left(1 + \frac{x}{n}right)}^{n} e^{-2x} ~dx = \lim_{n \to \infty} \int_0^{\infty} 1_{[0, n]}(x) left(1 + \frac{x}{n}right)}^{n} e^{-2x} ~dx.\]
 Since the integrand converges to $e^{-x}$, after finitely many $n$ (which are are allowed to discard, since we only care about the limiting behavior), we get
-\[1_{[0, n]}(x) \left(1 + \frac{x}{n}\right)^{n} e^{-2x} \leq 2e^{-x}.\]
+\[1_{[0, n]}{(x) \left(1 + \frac{x}{n}\right)}^{n} e^{-2x} \leq 2e^{-x}.\]
 On the other hand,
 \[\int_0^{\infty} e^{-x} ~dx = 1,\]
 so $x \mapsto 2e^{-x}$ is in $L^1$ and by dominated convergence,
-\[\lim_{n \to \infty} \int_0^{n} \left(1 + \frac{x}{n}\right)^{n} e^{-2x} ~dx = \int_0^{\infty} \lim_{n \to \infty} 1_{[0, n]}(x) \left(1 + \frac{x}{n}\right)^{n} e^{-2x} ~dx = \int_0^{\infty} e^{-x} ~dx = 1\]
+\[\lim_{n \to \infty} \int_0^{n} left(1 + \frac{x}{n}right)}^{n} e^{-2x} ~dx = \int_0^{\infty} \lim_{n \to \infty} 1_{[0, n]}(x) left(1 + \frac{x}{n}right)}^{n} e^{-2x} ~dx = \int_0^{\infty} e^{-x} ~dx = 1\]
 as desired.
 These sorts of problems are very common on preliminary exams for graduate students, so the reader should probably master them.
 \end{example}
@@ -331,8 +329,7 @@ So, we will need to restrict to the case when $B = [0, \infty)$ for the rest of 
 
 TODO: Monotone convergence
 
-\begin{corollary}
-\label{positive summation}
+\begin{corollary}\label{positive summation}
 Let $f_{n} \geq 0$ be nonnegative integrable functions and $\mu$ a nonnegative measure on $X$. Then
 \[\int_{X} \sum_{n} f_{n}~d\mu = \sum_{n} \int_{X} f_{n}~d\mu.\]
 \end{corollary}
@@ -480,8 +477,7 @@ For example this happens if, for every $\alpha$, $\mu_\alpha$ is a probability m
 However, this case can be rather tricky, due to the technicalities in the definition of a product of infinitely many measurable spaces.
 We discuss this in more detail in Example~\ref{cantor measure}.
 
-\begin{lemma}
-\label{product premeasure is a premeasure}
+\begin{lemma}\label{product premeasure is a premeasure}
 Let $(X_1, \Sigma_1, \mu_1), \dots, (X_{n}, \Sigma_{m}, \mu_{n})$ be measured spaces, where all the $\mu_{m}$ are complex-valued measures.
 Then $\bigoplus_{m} \mu_{m}$ is a premeasure on $\bigoplus_{m} \Sigma_{m}$.
 \end{lemma}
@@ -522,8 +518,7 @@ We call $\bigotimes_{m} \mu_{m}$ the \dfn{product measure} of the $\mu_{m}$ and 
 Let us give some examples of product measures.
 We first consider the simplest example, which any reader who has played a children's card game is familiar with.
 
-\begin{example}
-\label{card games}
+\begin{example}\label{card games}
 Let $A = \{1, \dots, n\}$, equipped with the $\sigma$-algebra consisting of \emph{every} subset of $A$, and consider a function $\beta: A \to [0, 1]$ such that $\sum_{m=1}^{n} \beta(m) = 1$.
 Then $\beta$ defines a probability measure $\mu$ by
 \[\mu(\{a_1, \dots, a_{k}\}) = \sum_{j=1}^{k} \beta(a_{j}).\]
@@ -535,8 +530,7 @@ Elements of $A^\ell$ are vectors of $\ell$ elements of $A$, and if $\mu^{\ell} =
 In particular, if $E^{\ell} = E \times \cdots \times E$ is the Cartesian power of a set $E \subseteq A$, then $\mu^\ell(E^\ell) = \mu(E)^\ell$ is the probability of drawing a card in $E$ $\ell$ times in a row, with replacement.
 \end{example}
 
-\begin{example}
-\label{cantor measure}
+\begin{example}\label{cantor measure}
 Let $A, \beta$ be as in Example~\ref{card games}.
 Now let us consider an infinitely long game, where one draws an infinite sequence of cards (the logicians would say that the player draws $\omega$ cards, because of TODO:Appendix) with replacement.
 Let $A^\omega$ be the set of sequences with values in $A$, viewed as a measurable space by endowing it with the $\sigma$-algebra generated by the measurable rectangles.
@@ -565,13 +559,11 @@ On the other hand, if $\Delta$ was measurable, then (as the set-theoretically mi
 The above example is highly pathological.
 The below lemma covers most interesting cases.
 We remind the reader that if $X_{m}$ are metric spaces with metrics $d_{m}$ then $\prod_{m} X_{m}$ can be given the metric
-\begin{equation}
-\label{max metric}
+\begin{equation}\label{max metric}
 d(x, y) = \max_{m} d_{m}(\pi_{m}(x), \pi_{m}(y)).
 \end{equation}
 
-\begin{lemma}
-\label{borel products}
+\begin{lemma}\label{borel products}
 Let $X_1, \dots, X_{n}$ be separable metric spaces.
 Then the Borel $\sigma$-algebra on $\prod_{m} X_{m}$ is the product of the Borel $\sigma$-algebras on $X_{m}$.
 \end{lemma}
@@ -613,8 +605,7 @@ For example, we will usually just write $\int f$ or $\int f(x) ~dx$ for the Lebe
 
 In this section we record the basic properties of the Lebesgue measure.
 
-\begin{theorem}
-\label{lebesgue is radon 2}
+\begin{theorem}\label{lebesgue is radon 2}
 The Lebesgue measure is a $\sigma$-finite Radon measure.
 \end{theorem}
 \begin{proof}
@@ -642,8 +633,7 @@ The proof of outer regularity is similar to the proof of inner regularity, and w
 The reader may wish to use ``half-open rectangles'' in the proof of outer regularity.
 \end{proof}
 
-\begin{theorem}
-\label{translation invariance in Rd}
+\begin{theorem}\label{translation invariance in Rd}
 If $A$ is Borel in $\RR^d$ and $x \in \RR^d$, then the translation $A + x$ has the same Lebesgue measure as $A$.
 \end{theorem}
 \begin{proof}
@@ -681,13 +671,11 @@ Be aware, however, that there are Riemann integrable functions which are not Leb
 The reason is that, to avoid integrals of the form $\infty - \infty$, we demanded that Lebesgue integrals converge absolutely, while the Riemann integral is allowed to converge conditionally.
 See Exercise~\ref{sinc} for an example of this phemonenon.
 
-\begin{exercise}
-\label{translation invariance exer}
+\begin{exercise}\label{translation invariance exer}
 Prove Theorem~\ref{translation invariance in Rd}. (Hint: Use Theorem~\ref{translation invariance in R1}.)
 \end{exercise}
 
-\begin{exercise}
-\label{euclidean group}
+\begin{exercise}\label{euclidean group}
 The \dfn{euclidean group} is the group of invertible functions $\RR^{d} \to \RR^d$ generated by translations, rotations around the origin, and reflections. Equivalently, it is the group generated by translations and orthogonal linear maps.
 An element of the euclidean group is called a \dfn{rigid motion}. Show that if $A$ is a rigid motion and $\mu$ denotes Lebesgue measure, then $A_*\mu = \mu$.
 This generalizes Theorem~\ref{translation invariance in Rd}.
@@ -698,8 +686,7 @@ Let $A: \RR^{d} \to \RR^d$ be an invertible linear map, $\mu$ Lebesgue measurabl
 (Hint: Use Exercise~\ref{euclidean group} to show that without loss of generality, we may assume that $A$ is positive. Now use the spectral theorem.)
 \end{exercise}
 
-\begin{exercise}
-\label{sinc}
+\begin{exercise}\label{sinc}
 Define the \dfn{sampling function} $\sinc: \RR \to \RR$ by $\sinc x = \sin x/x$ for $x \neq 0$ and $\sinc 0 = 1$.
 Let $F(r)$ be the Riemann integral of $\sinc$ on $[0, r]$. Show that $\lim_{r \to \infty} F(r)$ exists and is finite.
 However, show that $\sinc$ is not Lebesgue integrable on $[0, \infty)$.
@@ -722,8 +709,7 @@ is in $L^1(X \to \CC, \mu)$.
 is in $L^1(Y \to \CC, \nu)$.
 \end{enumerate}
 Moreover,
-\begin{equation}
-\label{change order of integration}
+\begin{equation}\label{change order of integration}
 \int_{X \times Y} f~d(\mu \otimes \nu) = \int_{X} \int_{Y} f(x, y) ~d\mu(x)~d\nu(y) = \int_{Y} \int_{X} f(x, y) ~d\nu(y) ~d\mu(x).
 \end{equation}
 \end{theorem}
@@ -758,8 +744,7 @@ One has the \dfn{Gaussian integral formula}
 We first note that
 \[\int_{-\infty}^{\infty} e^{-x^2}~dx = \int_{-\infty}^{\infty} e^{-y^2}~dy\]
 since all we have done is replace a dummy variable. Therefore it suffices to show that
-\begin{equation}
-\label{gaussian integral squared}
+\begin{equation}\label{gaussian integral squared}
 \int_{-\infty}^{\infty} e^{-x^2}~dx \int_{-\infty}^{\infty} e^{-y^2}~dy = \pi.
 \end{equation}
 Clearly $x \mapsto e^{-x^2}$ is nonnegative, so by Fubini's theorem we can replace the product integral by a double integral:

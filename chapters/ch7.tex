@@ -33,8 +33,7 @@ On finite abelian groups $G$, we define the \dfn{uniform probability measure} $\
 The uniform probability measure of a finite abelian group is Haar.
 
 Recall that if $G_1, G_2$ are abelian groups, then one can form a group $G_1 \oplus G_2$, called the direct sum of $G_1,G_2$, on the set $G_1 \times G_2$ by pointwise operations.
-\begin{lemma}
-\label{Haar product measure}
+\begin{lemma}\label{Haar product measure}
 The finite product of Haar measures is a Haar measure on the direct sum.
 \end{lemma}
 \begin{proof}
@@ -65,8 +64,7 @@ In this case we may refer to $f$ as a \dfn{random variable} drawn from $X$, and 
 \end{definition}
 Though we will not treat probability theory in detail, it will be at times convenient to use the language of probability theory when thinking about compact abelian groups.
 
-\begin{exercise}
-\label{Haar product measure exercise}
+\begin{exercise}\label{Haar product measure exercise}
 Prove Lemma~\ref{Haar product measure}.
 \end{exercise}
 
@@ -88,8 +86,7 @@ Such a function is in $L^\infty$ since $\Torus$ is compact, thus in $L^2$ since 
 To ease notation, we identify $\Torus$ with $[0, 1)$ and $f$ with a periodic function on $[0, 1]$.
 
 In applications, it is frequently useful to decompose $f$ into a linear combination of waves, namely
-\begin{equation}
-\label{fourier series}
+\begin{equation}\label{fourier series}
 f(x) = \sum_{\xi=-\infty}^{\infty} \hat f(\xi) e^{2\pi ix\xi}.
 \end{equation}
 For example, if the function $\hat f: \ZZ \to \CC$ has finite support, then $f$ really is just a linear combination of plane waves $e_\xi(x) = e^{2\pi i x\xi}$, which are extremely easy to work with in calculus since they are eigenfunctions of the derivative operator $u \mapsto u'$.
@@ -97,21 +94,18 @@ On the other hand, the waves $e_\xi$ are an orthonormal basis of $L^2(\Torus)$; 
 \[\langle e_\xi, e_{\eta\rangle} = \int_{\Torus} e^{2\pi i x(\xi - \eta)} ~dx = \delta_\xi^\eta,\]
 so the representation (\ref{fourier series}) converges for the norm of $L^2(\Torus)$, and $\hat f$ exists and is unique for any $f \in L^2(\Torus)$.
 We can recover $\hat f$ from $f$ by taking the orthogonal projections
-\begin{equation}
-\label{fourier series 2}
+\begin{equation}\label{fourier series 2}
 \hat f(\xi) = \langle f, e_{\xi\rangle} = \int_{\Torus} f(x) e^{-2\pi ix\xi} ~dx.
 \end{equation}
 Putting together (\ref{fourier series}) and (\ref{fourier series 2}), we obtain the \dfn{Fourier inversion formula}
-\begin{equation}
-\label{fourier series 3}
+\begin{equation}\label{fourier series 3}
 f(x) = \sum_{\xi = -\infty}^{\infty} \int_{\Torus} f(y) e^{2\pi i(x-y)}~dy
 \end{equation}
 which is valid for any $f \in L^2(\Torus)$. Though at first this just seems like a trick using the structure of $L^2(\Torus)$, it suggests some sort of ``duality'' between $\Torus$ and $\ZZ$.
 Moreover, these ideas work in much higher generality.
 
 Recall that if $G,H$ are abelian groups, a \dfn{morphism} $\psi: G \to H$ is a map $\psi$ such that for any $g_1, g_2 \in G$,
-\begin{equation}
-\label{morphism of groups}
+\begin{equation}\label{morphism of groups}
 \psi(g_1 + g_2) = \psi(g_1) + \psi(g_2).
 \end{equation}
 By $\CC^*$ we mean the group of nonzero complex numbers under multiplication. Thus $\CC^*$ is a locally compact abelian group.
@@ -214,8 +208,7 @@ Show that for every $f \in L^p(\RR^d)$, the restriction $\hat f|S^{d-1}$ is defi
 Restriction estimates are an active area of research in harmonic analysis; the above restriction estimate is valid whenever $p = 2$ and $q \in [1, 4d/(3d+1)]$.
 \end{exercise}
 
-\begin{exercise}
-\label{general Sobolev space}
+\begin{exercise}\label{general Sobolev space}
 Let $s \in \RR$. Define the \dfn{Sobolev measure} $\mu_s$ so that its Radon-Nikodym derivative with respect to Lebesgue measure is $(1 + |\xi|^s)^2$.
 Show that for any $s \in \NN$ and $u \in H^s(\RR^d)$ one has
 \[||u||_{H^s} \lesssim ||u||_{L^2(\mu_s)} \lesssim ||u||_{H^s}.\]
@@ -296,8 +289,7 @@ We induct on the primes. First,
 so
 \[\zeta(s)\left(1 - \frac{1}{2^s}\right) = \sum_{n \not \equiv 0 \mod 2} n^{-s}.\]
 Now suppose that $q$ is a prime and
-\begin{equation}
-\label{partial euler product}
+\begin{equation}\label{partial euler product}
 \zeta(s) \prod_{p}  1 - \frac{1}{p^s} = \sum_{n} n^{-s}
 \end{equation}
 where the product is taken over all primes $p < q$, and the sum is taken over all $n$ such that for each prime $p < q$, $n \not \equiv 0 \mod p$.
@@ -322,8 +314,7 @@ Define the \dfn{Riemann xi function}
 
 \begin{theorem}[Riemann's functional equation]
 For any $s \in \Omega$,
-\begin{equation}
-\label{functional equation}
+\begin{equation}\label{functional equation}
 \xi(s) = \xi(1-s).
 \end{equation}
 Therefore $\xi(s)$, and hence $\zeta(s)$, can be defined for any $s \neq 1$, and $\zeta$ extends to a holomorphic function on $\CC \setminus \{1\}$.
@@ -336,7 +327,7 @@ We prove (\ref{functional equation}) later in this section; the holomorphy claim
 First we relate (\ref{functional equation}) to harmonic analysis.
 
 We shall recall some algebraic machinery.
-The trivial group is denoted $0$; for any group $G$, there are unique morphisms $0 \to G$ and $G \to 0$, namely the trivial morphism, which we leave unlabeled when clear from context.
+The trivial group is denoted $0$; for any group $G$, there are unique morphisms $0 \to G$ and $G \to 0$, namely the trivial morphism, which we leave nlabeled when clear from context.
 We let $0$ denote the trivial morphism between any two groups when we do need to specify it.
 
 A \dfn{short exact sequence} of abelian groups is a commutative diagram
@@ -346,8 +337,7 @@ $$\begin{tikzcd}
 where $A,B,C$ are abelian groups, all the arrows are morphisms, and the kernel of any arrow is the image of the arrow before it.
 This is equivalent to requiring that $\alpha$ is injective, $\beta$ is surjective, and the image of $\alpha$ is the kernel of $\beta$, thus for any $b \in B$, $\beta(b) = 0$ iff there is an $a \in A$ with $b = \alpha(a)$.
 Whenever $B$ is a subgroup of $A$, we get a short exact sequence
-\begin{equation}
-\label{quotient SES}
+\begin{equation}\label{quotient SES}
 \begin{tikzcd}
 0 \arrow[r] & B \arrow[r,"\iota"] & A \arrow[r,"q"] & \frac{A}{B} \arrow[r] & 0
 \end{tikzcd}
@@ -359,8 +349,7 @@ If $\alpha: A \to B$ is a continuous morphism between locally compact abelian gr
 Note that this is not the same as taking the Fourier transform of $\alpha$; we will always use Roman letters for functions and Greek letters for morphisms, to avoid confusion.
 If $B \subseteq A$, and $\iota: B \to A$ is the inclusion morphism $\iota(b) = b$, then $\hat \iota(\xi) = \xi \circ \iota = \xi|B$, thus $\hat \iota$ is the restriction map $\hat A \to \hat B$.
 
-\begin{theorem}
-\label{duality is exact}
+\begin{theorem}\label{duality is exact}
 Pontraygin duality is \dfn{exact} in the sense that whenever one has a diagram of locally compact abelian groups and continuous morphisms between them
 $$\begin{tikzcd}
 A \arrow[r,"\alpha"] & B \arrow[r, "\beta"] & C
@@ -373,8 +362,7 @@ Let $H = \hat \beta(\hat C)$. Then $\hat \beta \circ \hat \alpha = \widehat{\bet
 Applying the Pontraygin duality theorem, we see that if $H \subset \ker \hat \alpha$ then $\widehat{\ker \hat \alpha} = \alpha(A)$ is a proper subgroup of $\hat H = \ker \beta$, which is impossible.
 \end{proof}
 
-\begin{corollary}
-\label{duality is exact 2}
+\begin{corollary}\label{duality is exact 2}
 Let $A$ be a locally compact abelian group, $B$ a closed subgroup of $A$.
 Then the Pontraygin dual of (\ref{quotient SES}),
 $$
@@ -396,8 +384,7 @@ Then for any $\xi \in \widehat{A/B}$, $\widehat{f^B}(\xi) = \hat f([\xi])$
 where $[\xi](x) = \xi(x + B)$ for any $x \in A$.
 
 If $f^{B} \in L^1(\widehat{A/B})$, then for almost all $x \in G$
-\begin{equation}
-\label{abstract poisson summation}
+\begin{equation}\label{abstract poisson summation}
 \int_{B} f(x + y)~dy = \int_{\widehat{A/B}} \hat f([\xi]) [\xi](x) ~d\xi.
 \end{equation}
 If $f^B$ is continuous and everywhere defined, then (\ref{abstract poisson summation}) is valid for every $x \in G$.
@@ -414,11 +401,9 @@ almost everywhere, and everywhere under the necessary hypotheses.
 Substituting the definition of $f^B$ in the above equation we obtain (\ref{abstract poisson summation})
 \end{proof}
 
-\begin{corollary}[Poisson summation on $\RR$]
-\label{poisson summation on R}
+\begin{corollary}[Poisson summation on $\RR$]\label{poisson summation on R}
 Let $f$ be a Schwartz function on $\RR$. Then for every $x \in \RR$,
-\begin{equation}
-\label{poisson summation on R 2}
+\begin{equation}\label{poisson summation on R 2}
 \sum_{k=-\infty}^{\infty} f(x + k) = \sum_{\xi = -\infty}^{\infty} \hat f(\xi) e^{-2\pi ix\xi}.
 \end{equation}
 \end{corollary}
@@ -434,8 +419,7 @@ Then plugging in $f$ into (\ref{abstract poisson summation}) we obtain (\ref{poi
 
 \begin{corollary}
 Let $f$ be a Schwartz function on $\RR$. Then
-\begin{equation}
-\label{poisson summation on R simple}
+\begin{equation}\label{poisson summation on R simple}
 \sum_{k=-\infty}^{\infty} f(k) = \sum_{\xi = -\infty}^{\infty} \hat f(\xi).
 \end{equation}
 \end{corollary}
@@ -446,8 +430,7 @@ Define, for $\Re z > 0$,
 the \dfn{Jacobi theta function} of one variable.
 \end{definition}
 
-\begin{lemma}
-\label{functional equation of the theta function}
+\begin{lemma}\label{functional equation of the theta function}
 For every $\Re z > 0$,
 \[\sqrt z \Theta(z) = \Theta(z^{-1}).\]
 \end{lemma}
@@ -470,8 +453,7 @@ thus
 But
 \[-\frac{1}{2} \left[\int_1^{\infty} t^{(1-s)/2} \frac{dt}{t} - \int_1^{\infty} t^{-s/2}\frac{dt}{t} \right] = \frac{1}{s} + \frac{1}{1-s}.\]
 Therefore
-\begin{equation}
-\label{partial functional equation}
+\begin{equation}\label{partial functional equation}
 \xi(s) = \int_1^{\infty} t^{s/2} + t^{(1-s)/2}\frac{\Theta(t) - 1}{2} ~\frac{dt}{t} - \left(\frac{1}{s} + \frac{1}{1-s}\right).
 \end{equation}
 The right-hand side of (\ref{partial functional equation}) does not change when one replaces $s$ with $1-s$, thus $\xi(s) = \xi(1-s)$.

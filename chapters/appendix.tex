@@ -62,14 +62,12 @@ In the language of point-set topology, seminormed spaces are not Hausdorff (nor 
 We fix the lack of Hausdorffness by observing that it is always possible to turn a seminormed space into a normed space.
 \end{subsec}
 
-\begin{theorem}
-\label{existence of normalization}
+\begin{theorem}\label{existence of normalization}
 For every seminormed space $V$ there is a normed space $V'$, called the \dfn{normalization} of $V$, such that:
 \begin{enumerate}
 \item There is a surjective linear map $\pi: V \to V'$.
 \item For every normed space $W$ and every linear map $T: V \to W$ such that for every $v$, $||Tv|| = ||v||$, there is a linear map $T': V/\ker V \to W$ such that $||T'v|| = ||v||$ and the diagram
-\begin{equation}
-\label{normification universal}
+\begin{equation}\label{normification universal}
 \begin{tikzcd}
 V \arrow[rr,"T"] \arrow[dr,"\pi"] && W\\
 & \frac{V}{\ker V} \arrow[ur,"T'"]
@@ -88,8 +86,7 @@ Thus the normalization (and the closely related completion that we discuss in Th
 \begin{proof}[Proof of Theorem~\ref{existence of normalization} (omit on first reading)]
 In fact, we define the \dfn{kernel} of a seminormed space $V$ by $\ker V = \{v \in V: ||v|| = 0\}$.
 The kernel is a subspace of $V$, so we can take the quotient space $V/\ker V$ and form a short exact sequence
-\begin{equation}
-\label{normification exact}
+\begin{equation}\label{normification exact}
 \begin{tikzcd}
 0 \arrow[r] & \ker V \arrow[r] & V \arrow[r,"\pi"] & \frac{V}{\ker V} \arrow[r] & 0
 \end{tikzcd}
@@ -118,8 +115,7 @@ Similarly,
 But $\max(||v|| - ||w||, ||w|| - ||v||) = |||v|| - ||w|||$.
 \end{proof}
 
-\section{Banach spaces}
-\label{Banach space appendix}
+\section{Banach spaces}\label{Banach space appendix}
 The defining property of $\RR$ is that every Cauchy sequence in $\RR$ converges.
 However, this property is not true for normed spaces, as the following example will show.
 
@@ -140,9 +136,9 @@ n(x - 1/2 - 1/n), &1/2 - 1/n \leq x \leq 1/2 + 1/n\\
 \end{cases}.$$
 TODO: Draw a picture
 To see that $(f_{n})_{n}$ is Cauchy, note that if $m > n$ then
-\[||f_{n} - f_{m}||_2^2 = \int_{1/2-1/n}^{1/2+1/n} (m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))^2~dx\]
+\[||f_{n} - f_{m}||_2^2 = \int_{1/2-1/n}^{1/2+1/n} {(m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))}^2~dx\]
 and the integrand satisfies
-\[(m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))^2 \leq 8.\]
+\[{(m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))}^2 \leq 8.\]
 Thus
 \[||f_{n} - f_{m}||_2^2 \leq \int_{1/2-1/n}^{1/2+1/n} 8~dx = \frac{16}{n}.\]
 Therefore
@@ -168,8 +164,7 @@ This is an exercise in the fact that every Cauchy sequence on $\RR$ converges.
 
 \begin{subsec}
 The advantage of working in Banach spaces rather than general normed spaces is that it is meaningful to talk about infinite sums in Banach spaces. Indeed, if $(x_{n})_{n}$ is a sequence of elements in a Banach space $X$, we define
-\begin{equation}
-\label{banach space series}
+\begin{equation}\label{banach space series}
 \sum_{n=1}^{\infty} x_{n} = \lim_{N \to \infty} \sum_{n=1}^{N} x_{n}
 \end{equation}
 whenever the limit on the right-hand side of (\ref{banach space series}) makes sense; thus, $y = \sum_{n} x_{n}$ if for every $\varepsilon > 0$, there is an $N$ such that
@@ -177,8 +172,7 @@ whenever the limit on the right-hand side of (\ref{banach space series}) makes s
 In fact, the right-hand side of (\ref{banach space series}) makes sense as long as the partial sums are Cauchy; thus, for every $\varepsilon > 0$, there is an $N$ such that
 \[\left|\left|\sum_{n=N}^{\infty} x_{n}\right|\right| < \varepsilon.\]
 By the triangle inequality, it in fact suffices to show that for every $\varepsilon > 0$ there is an $N$ such that
-\begin{equation}
-\label{absolute convergence}
+\begin{equation}\label{absolute convergence}
 \sum_{n=N}^{\infty} ||x_{n}|| < \varepsilon
 \end{equation}
 to show that the $(x_{n})_{n}$ are summable.
@@ -192,8 +186,7 @@ Let $(x_{n})_{n}$ be a sequence in a Banach space. If for every $\varepsilon > 0
 Just as we had a universal way to turn any seminormed space into a normed space, its normalization, we have a universal way to turn any normed space (hence any seminormed space) into a Banach space by adding limits to each of its Cauchy sequences.
 \end{subsec}
 
-\begin{theorem}
-\label{completion exists}
+\begin{theorem}\label{completion exists}
 For every normed space $V$ there is a Banach space $W$, called the \dfn{completion} of $V$, such that:
 \begin{enumerate}
 \item There is an injective linear map $\iota: V \to W$ such that for every $v$, $||\iota(v)|| = ||v||$.
@@ -249,8 +242,7 @@ But
 so $\lim_{n} x_{n} = y$.
 
 We can define
-\begin{equation}
-\label{inclusion into completion}
+\begin{equation}\label{inclusion into completion}
 \iota(v) \mapsto \pi(v, v, v, \dots).
 \end{equation}
 Clearly the limit of the Cauchy sequence on the right-hand side of (\ref{inclusion into completion}) is $v$, so $||\iota(v)|| = ||v||$.
@@ -267,8 +259,7 @@ Since the completion is defined by a universal property, it is unique.
 \end{proof}
 
 \section{Linear maps}
-\begin{definition}
-\label{bounded linear map}
+\begin{definition}\label{bounded linear map}
 Let $T: V\to W$ be a linear map between normed spaces. We say that $T$ is a \dfn{bounded linear map} if there is a $C>0$ such that for every $v \in V$,
 \[||Tv|| \leq C||v||.\]
 The infima of all choices of $C$ is called the \dfn{operator norm} of $T$, denoted $||T||$.
@@ -283,8 +274,7 @@ Then the operator norm is a norm on $B(V \to W)$.
 Routine and omitted.
 \end{proof}
 
-\begin{lemma}
-\label{linear extension}
+\begin{lemma}\label{linear extension}
 Let $T: V \to W$ be a bounded linear map between normed spaces, and suppose that $V$ is a dense subspace of a normed space $X$.
 Then there is a unique extension of $T$ to a bounded linear map $X \to W$, which has the same operator norm.
 \end{lemma}
@@ -321,8 +311,7 @@ $\CC^n$ is separable, since $\{(\alpha_1 + i\beta_1, \dots, \alpha_{n} + i \beta
 In particular any finite-dimensional space is separable. Moreover, most spaces that we consider will turn out to be separable.
 \end{example}
 
-\begin{example}
-\label{nonseparable space}
+\begin{example}\label{nonseparable space}
 Let $X$ be the space of all bounded functions $\CC \to \CC$, where
 \[||f - g|| = \sup_{z \in \CC}|f(z) - g(z)|.\]
 Then $X$ is not separable. In fact, if $z \in \CC$, let $1_z(z) = 1$ and $1_z(w) = 0$ if $w \neq z$.
@@ -333,8 +322,7 @@ So $Y$ is discrete and uncountable, and hence cannot be separable.
 \section{Convexity}
 \begin{subsec}
 If $x, y$ are elements of a Banach space, we denote by $[x, y]$ the \emph{closed} line segment between $x, y$ -- that is, the set of all $z$ which can be written
-\begin{equation}
-\label{line segment}
+\begin{equation}\label{line segment}
 z = tx + (1 - t)y
 \end{equation}
 with $t \in [0, 1]$.
@@ -356,8 +344,7 @@ Let $K$ be a convex set. A \dfn{face} of $K$ is a nonempty closed convex set $F$
 A \dfn{vertex} or \dfn{extreme point} of $K$ is a face which consists of a single point.
 \end{definition}
 
-\begin{example}
-\label{cube is convex}
+\begin{example}\label{cube is convex}
 Let $K$ be a cube. Then $K$ is convex, and so is a face. The boundary of $K$ is made up of squares, which are also faces of $K$ (as well as faces in the sense of euclidean geometry!), and are also convex. The boundary of each square is a line segment, which is a face of the square and hence of $K$. The boundary of each line segment is a vertex (of the line segment, the square, and $K$ itself), and are also vertices in the sense of euclidean geometry.
 \end{example}
 
@@ -368,8 +355,7 @@ To do this, we first need to show that every compact convex set has a vertex.
 The proof of this fact is motivated by Example~\ref{cube is convex}, since we expect that vertices should be minimal faces.
 \end{subsec}
 
-\begin{lemma}
-\label{vertices exist}
+\begin{lemma}\label{vertices exist}
 Let $K$ be a compact convex set. Then $K$ has a vertex.
 \end{lemma}
 \begin{proof}
@@ -560,8 +546,7 @@ A \dfn{transitive set} is a set $x$ such that $x \subset 2^x$.
 Thus every element of a transitive set is also a subset of $x$.
 \end{subsec}
 
-\begin{definition}
-\label{ordinal dfn}
+\begin{definition}\label{ordinal dfn}
 An \dfn{ordinal} is a transitive set $x$ such that for every $y \in x$, $y$ is an ordinal.
 \end{definition}
 
@@ -572,8 +557,7 @@ Not every ordinal is a successor or $0$; for example $\omega$ was not. Such ordi
 They are limit points in the order topology.
 \end{subsec}
 
-\begin{theorem}[transfinite induction]
-\label{transfinite induction}
+\begin{theorem}[transfinite induction]\label{transfinite induction}
 Fix a limit ordinal $\kappa$. Let $X$ be a set of ordinals such that:
 \begin{enumerate}
 \item $0 \in X$.
@@ -638,8 +622,7 @@ Zermelo-Fraenkel set theory cannot prove that every set is in bijection with a c
 To prove that every set is in bijection with a cardinal, Zermelo introduced the so-called axiom of choice.
 \end{subsec}
 
-\begin{axiom}[choice]
-\label{axiom of choice}
+\begin{axiom}[choice]\label{axiom of choice}
 For every surjection $f: X \to Y$ there is an injection $g: Y \to X$ such that for every $y \in Y$, $f(g(y)) = y$.
 \end{axiom}
 
@@ -653,8 +636,7 @@ The above axioms comprise \dfn{Zermelo-Fraenkel set theory with choice}.
 Throughout the text, we assume Zermelo-Fraenkel set theory with choice.
 \end{subsec}
 
-\begin{theorem}[Zermelo's well-ordering theorem]
-\label{well-ordering theorem}
+\begin{theorem}[Zermelo's well-ordering theorem]\label{well-ordering theorem}
 For every set $x$ there is a unique cardinal $\kappa$ such that $x \cong \kappa$.
 \end{theorem}
 
@@ -686,8 +668,7 @@ This breaks Russell's paradox.
 Note that while we technically don't need Zermelo's well-ordering theorem to prove the Cantor-Bernstein theorem, it is an immediate consequence.
 \end{subsec}
 
-\begin{definition}
-\label{beth dfn}
+\begin{definition}\label{beth dfn}
 We define $\beth_0 = \aleph_0$, and for every $\alpha$, $\beth_{\alpha + 1}$ to be the cardinality of $2^{\beth_\alpha}$.
 If $\delta$ is a limit ordinal we let $\beth_\delta$ be the cardinality of $\bigcup_{\alpha < \delta} \beth_\alpha$.
 \end{definition}
@@ -696,8 +677,7 @@ If $\delta$ is a limit ordinal we let $\beth_\delta$ be the cardinality of $\big
 By Cantor's diagonal argument, $\beth_{\alpha} < \beth_\beta$ whenever $\alpha < \beta$.
 \end{subsec}
 
-\begin{theorem}
-\label{cardinal arithmetic trivial}
+\begin{theorem}\label{cardinal arithmetic trivial}
 Let $\lambda \leq \kappa$ be infinite cardinals.
 Suppose that $X$ is a set of cardinality $\lambda$, whose elements are sets of cardinality $\kappa$. Then $\bigcup_{x \in X} x$ has cardinality $\kappa$.
 Moreover, if $\lambda < \kappa$ and $\kappa = \beth_\alpha$ for some $\alpha$, then the Cartesian product of $\lambda$ many copies of $\kappa$ has cardinality $\kappa$.
@@ -707,8 +687,7 @@ Moreover, if $\lambda < \kappa$ and $\kappa = \beth_\alpha$ for some $\alpha$, t
 In particular, if $\lambda$ is countable or $\lambda = \beth_1$, then a union of $\lambda$ many sets of cardinality $\beth_1$ has cardinality $\beth_1$.
 \end{subsec}
 
-\begin{theorem}
-\label{cardinality of topology}
+\begin{theorem}\label{cardinality of topology}
 Let $\mathcal T$ be the set of all open subsets of $\RR$; then $\mathcal T$ has cardinality $\beth_1$.
 \end{theorem}
 
@@ -1090,8 +1069,7 @@ We now arrive at the two nontrivial theorems of point-set topology which will be
 Since they are so important we sketch their proofs, but since these results rely on the above lemmata which we have not proved, these arguments are incomplete; see Munkres~\cite{munkres2000topology} for a complete exposition.
 \end{subsec}
 
-\begin{theorem}[Urysohn lemma and Tietze extension]
-\label{Urysohn and Tietze}
+\begin{theorem}[Urysohn lemma and Tietze extension]\label{Urysohn and Tietze}
 Let $X$ be a topological space, $A, K \subseteq X$ are disjoint, and $A$ is closed. Suppose that one of the following is true.
 \begin{enumerate}
 \item $X$ satisfies Axiom $T^4$ and $K$ is closed.
