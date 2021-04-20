@@ -5,18 +5,18 @@ It is reasonable to take the results that we are using, most notably Fubini's th
 
 \section{Haar measures}
 We begin by introducing measure theory on abelian groups. Recall that a group is called abelian if its group operation is commutative.
-In that case we will usually write its operations additively; that is, if $G$ is an abelian group, we write $g_1 + g_2$ for the composition of $g_1$ and $g_2$, we let $-g$ denote the inverse of an element $g$, and let $0$ denote the identity of $G$, so that $g - g = 0$.
+In that case we will usually write its operations additively; that is, if $G$ is an abelian group, we write $g_{1} + g_{2}$ for the composition of $g_{1}$ and $g_{2}$, we let $-g$ denote the inverse of an element $g$, and let $0$ denote the identity of $G$, so that $g - g = 0$.
 
 \begin{definition}
 A \dfn{locally compact abelian group} $G$ is an abelian group $(G, +)$ equipped with a topology, under which it is locally compact and Hausdorff, $+$ is a continuous function $G \times G \to G$, and $g \mapsto -g$ is continuous.
 \end{definition}
 
 We note that the finite product of locally compact abelian groups is a locally compact abelian group.
-Thus $\RR^d$ is a locally compact abelian group, as is the $d$-dimensional lattice $\ZZ^d$, and the $d$-dimensional torus $\Torus^d$.
+Thus $\RR^{d}$ is a locally compact abelian group, as is the $d$-dimensional lattice $\ZZ^{d}$, and the $d$-dimensional torus $\Torus^{d}$.
 In addition, any finite abelian group is a locally compact abelian group for the discrete topology (wherein every set is open).
 
 We may define, for any set $A \subseteq G$, its translate
-$$A + y = \{x + y \in G: x \in A\}.$$
+\[A + y = \{x + y \in G: x \in A\}.\]
 
 \begin{definition}
 A \dfn{Haar measure} on $G$ is a nonnegative Radon measure $\mu$ on $G$ with the following properties:
@@ -32,15 +32,14 @@ First, Lebesgue measure is a Haar measure on $\RR$ and on $\Torus$, and counting
 On finite abelian groups $G$, we define the \dfn{uniform probability measure} $\mu(A) = |A|/|G|$ where $|\cdot|$ denotes cardinality.
 The uniform probability measure of a finite abelian group is Haar.
 
-Recall that if $G_1, G_2$ are abelian groups, then one can form a group $G_1 \oplus G_2$, called the direct sum of $G_1,G_2$, on the set $G_1 \times G_2$ by pointwise operations.
-\begin{lemma}
-\label{Haar product measure}
+Recall that if $G_{1}, G_{2}$ are abelian groups, then one can form a group $G_{1} \oplus G_{2}$, called the direct sum of $G_{1},G_{2}$, on the set $G_{1} \times G_{2}$ by pointwise operations.
+\begin{lemma}\label{Haar product measure}
 The finite product of Haar measures is a Haar measure on the direct sum.
 \end{lemma}
 \begin{proof}
-See Exercise \ref{Haar product measure exercise}.
+See Exercise~\ref{Haar product measure exercise}.
 \end{proof}
-Thus we have Haar measures on, for example, $\Torus^{d_1} \times \ZZ^{d_2}$.
+Thus we have Haar measures on, for example, $\Torus^{d_{1}} \times \ZZ^{d_{2}}$.
 One can extend this to infinite products, but the statement and proof become much trickier, for algebraic reasons (direct sum and direct product no longer coincide), set-theoretic reasons (the Borel and Baire $\sigma$-algebras no longer coincide, and one needs to use Tychonoff's theorem to show that the infinite product of compact spaces is compact), and topological reasons (the infinite product of locally compact spaces is not locally compact).
 Since we will only ever need Haar measure in finite dimensions, we dodge these issues by restricting to finite products.
 
@@ -51,23 +50,22 @@ Then there is a Haar measure $\mu$ on $G$.
 If $G$ is compact, then $\mu$ is unique.
 Otherwise, if $\nu$ is another Haar measure, then there is a $c > 0$ such that $\nu = c\mu$.
 \end{theorem}
-TODO: Prove Haar's theorem using the Riesz-Markov theorem.
+TODO:\@ Prove Haar's theorem using the Riesz-Markov theorem.
 
-Henceforth if $G$ is a group, we will omit reference to its Haar measure and Borel $\sigma$-algebra whenever possible, writing $dx$ instead of $d\mu(x)$ in integrals for example, and $L^1(G)$ to mean $L^1(G, \mu)$.
+Henceforth if $G$ is a group, we will omit reference to its Haar measure and Borel $\sigma$-algebra whenever possible, writing $dx$ instead of $d\mu(x)$ in integrals for example, and $L^{1}(G)$ to mean $L^{1}(G, \mu)$.
 Of course if $G$ is not compact then one could always rescale its Haar measure, but this is rarely important, so we might as well choose whatever normalization is convenient.
 
-If $G$ is compact, then since Haar measure is a probability measure, we can refer to the expected value of a function $f \in L^1(G)$.
+If $G$ is compact, then since Haar measure is a probability measure, we can refer to the expected value of a function $f \in L^{1}(G)$.
 \begin{definition}
-Let $\mu$ be a probability measure on a measurable space $X$, and $f \in L^1(X, \mu)$.
+Let $\mu$ be a probability measure on a measurable space $X$, and $f \in L^{1}(X, \mu)$.
 Define the \dfn{expected value} of $f$,
-$$Ef = \int_X f~d\mu.$$
+\[Ef = \int_{X} f~d\mu.\]
 In this case we may refer to $f$ as a \dfn{random variable} drawn from $X$, and refer to $\mu(E)$ as the \dfn{probability} of $E$ whenever $E \subseteq X$ is measurable.
 \end{definition}
 Though we will not treat probability theory in detail, it will be at times convenient to use the language of probability theory when thinking about compact abelian groups.
 
-\begin{exercise}
-\label{Haar product measure exercise}
-Prove Lemma \ref{Haar product measure}.
+\begin{exercise}\label{Haar product measure exercise}
+Prove Lemma~\ref{Haar product measure}.
 \end{exercise}
 
 \begin{exercise}
@@ -77,103 +75,99 @@ Compute the Radon-Nikodym derivative of $\nu$ with respect to $\mu$.
 
 \begin{exercise}
 Let $G$ be a compact abelian group with Haar measure $\mu$, $E \subseteq G$ a Borel set such that $\mu(E) > 0$.
-Show that for every $N \in \NN$ there are $g_1, \dots, g_N \in G$ such that
-$$\mu\left(\bigcup_{n=1}^N g_n + E\right) \geq 1 - (1 - \mu(E))^N.$$
-(Hint: what is the expected value of $\mu\left(\bigcup_{n=1}^N g_n + E\right)$?)
+Show that for every $N \in \NN$ there are $g_{1}, \dots, g_{N} \in G$ such that
+\[\mu\left(\bigcup_{n=1}^{N} g_{n} + E\right) \geq 1 - {(1 - \mu(E))}^{N}.\]
+(Hint: what is the expected value of $\mu\left(\bigcup_{n=1}^{N} g_{n} + E\right)$?)
 \end{exercise}
 
 \section{The Fourier transform}
 To motivate what follows, we first consider $\Torus$ and consider a smooth function $f: \Torus \to \CC$.
-Such a function is in $L^\infty$ since $\Torus$ is compact, thus in $L^2$ since $\Torus$ has finite measure.
+Such a function is in $L^{\infty}$ since $\Torus$ is compact, thus in $L^{2}$ since $\Torus$ has finite measure.
 To ease notation, we identify $\Torus$ with $[0, 1)$ and $f$ with a periodic function on $[0, 1]$.
 
 In applications, it is frequently useful to decompose $f$ into a linear combination of waves, namely
-\begin{equation}
-\label{fourier series}
-f(x) = \sum_{\xi=-\infty}^\infty \hat f(\xi) e^{2\pi ix\xi}.
+\begin{equation}\label{fourier series}
+f(x) = \sum_{\xi=-\infty}^{\infty} \hat{f}(\xi) e^{2\pi ix\xi}.
 \end{equation}
-For example, if the function $\hat f: \ZZ \to \CC$ has finite support, then $f$ really is just a linear combination of plane waves $e_\xi(x) = e^{2\pi i x\xi}$, which are extremely easy to work with in calculus since they are eigenfunctions of the derivative operator $u \mapsto u'$.
-On the other hand, the waves $e_\xi$ are an orthonormal basis of $L^2(\Torus)$; that is,
-$$\langle e_\xi, e_\eta\rangle = \int_\Torus e^{2\pi i x(\xi - \eta)} ~dx = \delta_\xi^\eta,$$
-so the representation (\ref{fourier series}) converges for the norm of $L^2(\Torus)$, and $\hat f$ exists and is unique for any $f \in L^2(\Torus)$.
-We can recover $\hat f$ from $f$ by taking the orthogonal projections
-\begin{equation}
-\label{fourier series 2}
-\hat f(\xi) = \langle f, e_\xi\rangle = \int_\Torus f(x) e^{-2\pi ix\xi} ~dx.
+For example, if the function $\hat{f}: \ZZ \to \CC$ has finite support, then $f$ really is just a linear combination of plane waves $e_{\xi}(x) = e^{2\pi i x\xi}$, which are extremely easy to work with in calculus since they are eigenfunctions of the derivative operator $u \mapsto u'$.
+On the other hand, the waves $e_{\xi}$ are an orthonormal basis of $L^{2}(\Torus)$; that is,
+\[\langle e_{\xi}, e_{\eta\rangle} = \int_{\Torus} e^{2\pi i x(\xi - \eta)} ~dx = \delta_{\xi}^{\eta},\]
+so the representation (\ref{fourier series}) converges for the norm of $L^{2}(\Torus)$, and $\hat{f}$ exists and is unique for any $f \in L^{2}(\Torus)$.
+We can recover $\hat{f}$ from $f$ by taking the orthogonal projections
+\begin{equation}\label{fourier series 2}
+\hat{f}(\xi) = \langle f, e_{\xi\rangle} = \int_{\Torus} f(x) e^{-2\pi ix\xi} ~dx.
 \end{equation}
 Putting together (\ref{fourier series}) and (\ref{fourier series 2}), we obtain the \dfn{Fourier inversion formula}
-\begin{equation}
-\label{fourier series 3}
-f(x) = \sum_{\xi = -\infty}^\infty \int_\Torus f(y) e^{2\pi i(x-y)}~dy
+\begin{equation}\label{fourier series 3}
+f(x) = \sum_{\xi = -\infty}^{\infty} \int_{\Torus} f(y) e^{2\pi i(x-y)}~dy
 \end{equation}
-which is valid for any $f \in L^2(\Torus)$. Though at first this just seems like a trick using the structure of $L^2(\Torus)$, it suggests some sort of ``duality" between $\Torus$ and $\ZZ$.
+which is valid for any $f \in L^{2}(\Torus)$. Though at first this just seems like a trick using the structure of $L^{2}(\Torus)$, it suggests some sort of ``duality'' between $\Torus$ and $\ZZ$.
 Moreover, these ideas work in much higher generality.
 
-Recall that if $G,H$ are abelian groups, a \dfn{morphism} $\psi: G \to H$ is a map $\psi$ such that for any $g_1, g_2 \in G$,
-\begin{equation}
-\label{morphism of groups}
-\psi(g_1 + g_2) = \psi(g_1) + \psi(g_2).
+Recall that if $G,H$ are abelian groups, a \dfn{morphism} $\psi: G \to H$ is a map $\psi$ such that for any $g_{1}, g_{2} \in G$,
+\begin{equation}\label{morphism of groups}
+\psi(g_{1} + g_{2}) = \psi(g_{1}) + \psi(g_{2}).
 \end{equation}
-By $\CC^*$ we mean the group of nonzero complex numbers under multiplication. Thus $\CC^*$ is a locally compact abelian group.
-We will write the group operation of $\CC^*$ multiplicatively, even though $\CC^*$ is abelian. Thus morphisms into $\CC^*$ satisfy the relation
-$$\psi(g_1 + g_2) = \psi(g_1)\psi(g_2)$$
+By $\CC^{*}$ we mean the group of nonzero complex numbers under multiplication. Thus $\CC^{*}$ is a locally compact abelian group.
+We will write the group operation of $\CC^{*}$ multiplicatively, even though $\CC^{*}$ is abelian. Thus morphisms into $\CC^{*}$ satisfy the relation
+\[\psi(g_{1} + g_{2}) = \psi(g_{1})\psi(g_{2})\]
 rather than (\ref{morphism of groups}).
-We let $U(1)$ denote the subgroup of $\CC^*$ consisting of numbers of absolute value $1$; so $U(1)$ is isomorphic to $\Torus$, but is written multiplicatively rather than additively.
+We let $U(1)$ denote the subgroup of $\CC^{*}$ consisting of numbers of absolute value $1$; so $U(1)$ is isomorphic to $\Torus$, but is written multiplicatively rather than additively.
 \begin{definition}
 Let $G$ be a locally compact abelian group.
 By a \dfn{character} of $G$ we mean a continuous morphism $G \to U(1)$.
 \end{definition}
-If $\xi_1, \xi_2$ are characters on a locally compact abelian group $G$, we define their sum
-$$(\xi_1 + \xi_2)(g) = \xi_1(g)\xi_2(g).$$
-It is straightforward to check that $\xi_1 + \xi_2$ is a character on $G$, and that $+$ defines the operation of an abelian group $\hat G$.
+If $\xi_{1}, \xi_{2}$ are characters on a locally compact abelian group $G$, we define their sum
+\[(\xi_{1} + \xi_{2})(g) = \xi_{1}(g)\xi_{2}(g).\]
+It is straightforward to check that $\xi_{1} + \xi_{2}$ is a character on $G$, and that $+$ defines the operation of an abelian group $\hat{G}$.
 
-We want to be able to do measure theory on $\hat G$, so we need to turn it into a locally compact abelian group.
-We recall that a sequence of continuous functions $f_n$ is said to converge uniformly provided that $f_n$ converges in $L^\infty$.
+We want to be able to do measure theory on $\hat{G}$, so we need to turn it into a locally compact abelian group.
+We recall that a sequence of continuous functions $f_{n}$ is said to converge uniformly provided that $f_{n}$ converges in $L^{\infty}$.
 \begin{definition}
-Let $\psi_n$ be a sequence of characters of a locally compact abelian group $G$.
-We say that $\psi_n$ \dfn{converges locally uniformly} to a character $\psi$ if for every compact set $K \subseteq G$, the restrictions $\psi_n|K$ converge to $\psi|K$ uniformly on $K$.
+Let $\psi_{n}$ be a sequence of characters of a locally compact abelian group $G$.
+We say that $\psi_{n}$ \dfn{converges locally uniformly} to a character $\psi$ if for every compact set $K \subseteq G$, the restrictions $\psi_{n}|K$ converge to $\psi|K$ uniformly on $K$.
 \end{definition}
-We now give $\hat G$ a suitable topology, by declaring that $\psi_n \to \psi$ in the topology of $\hat G$ iff $\psi_n \to \psi$ locally uniformly.
+We now give $\hat{G}$ a suitable topology, by declaring that $\psi_{n} \to \psi$ in the topology of $\hat{G}$ iff $\psi_{n} \to \psi$ locally uniformly.
 
 \begin{definition}
 Let $G$ be a locally compact abelian group.
-The \dfn{Pontryagin dual} $\hat G$ of $G$ is the locally compact abelian group of characters of $G$ under addition and locally uniform convergence.
+The \dfn{Pontryagin dual} $\hat{G}$ of $G$ is the locally compact abelian group of characters of $G$ under addition and locally uniform convergence.
 \end{definition}
 
-Later we will prove that $\widehat{\hat G} = G$. First, let us compute the Pontryagin duals of some familiar groups.
+Later we will prove that $\widehat{\hat{G}} = G$. First, let us compute the Pontryagin duals of some familiar groups.
 
 \begin{example}
-Let $G$ be a finite abelian group. We claim that $G$ is isomorphic to $\hat G$. To see this, we first appeal to the classification of finite abelian groups to write
-$$G \cong \frac{\ZZ}{n_1} \oplus \cdots \oplus \frac{\ZZ}{n_k}.$$
+Let $G$ be a finite abelian group. We claim that $G$ is isomorphic to $\hat{G}$. To see this, we first appeal to the classification of finite abelian groups to write
+\[G \cong \frac{\ZZ}{n_{1}} \oplus \cdots \oplus \frac{\ZZ}{n_{k}}.\]
 Here $\ZZ/n$ denotes the cyclic group of order $n$.
 It is a straightforward exercise in group theory to see that this implies that
-$$\hat G \cong \widehat{\frac{\ZZ}{n_1}} \oplus \cdots \oplus \widehat{\frac{\ZZ}{n_k}}$$
+\[\hat{G} \cong \widehat{\frac{\ZZ}{n_{1}}} \oplus \cdots \oplus \widehat{\frac{\ZZ}{n_{k}}}\]
 (indeed, it follows from the universal property of $\oplus$), so it suffices to check the claim when $G = \ZZ/n$.
 
 Let $g$ be the generator of $\ZZ/n$ and let $kg = g + \cdots + g$ ($k$ copies of $g$).
-A character $\xi: \ZZ/n \to \CC^*$ is determined by $\xi(g)$, and $1 = \xi(ng) = \xi(g)^n$ since $\ZZ/n$ is cyclic.
+A character $\xi: \ZZ/n \to \CC^{*}$ is determined by $\xi(g)$, and $1 = \xi(ng) = \xi{(g)}^{n}$ since $\ZZ/n$ is cyclic.
 Therefore $\xi(g)$ is an $n$th root of unity $e^{2\pi i\ell/n}$.
-If $\xi_j(g) = e^{2\pi i \ell_j/n}$, then $\xi_1(g) + \xi_2(g) = e^{2\pi i(\ell_1 + \ell_2)/n}$.
+If $\xi_{j}(g) = e^{2\pi i \ell_{j}/n}$, then $\xi_{1}(g) + \xi_{2}(g) = e^{2\pi i(\ell_{1} + \ell_{2})/n}$.
 Since $\xi \mapsto \xi(g)$ is an injective function between two sets of the same cardinality, it is a bijection.
-The map $\xi \mapsto \xi(g)$ therefore gives an isomorphism between $\widehat{\ZZ/n}$ and the group of $n$th roots of unity of $\CC^*$ under multiplication, the latter of which is isomorphic to $\ZZ/n$ since it is generated by $e^{2\pi i/n}$ and has $n$ elements.
+The map $\xi \mapsto \xi(g)$ therefore gives an isomorphism between $\widehat{\ZZ/n}$ and the group of $n$th roots of unity of $\CC^{*}$ under multiplication, the latter of which is isomorphic to $\ZZ/n$ since it is generated by $e^{2\pi i/n}$ and has $n$ elements.
 \end{example}
 
 \begin{example}
-TODO: Duality of $\Torus$ and $\ZZ$.
+TODO:\@ Duality of $\Torus$ and $\ZZ$.
 \end{example}
 
 We leave the following important duality result to the reader.
 \begin{theorem}
-The map $\eta: \RR \to \hat \RR$ defined by $\eta(\xi)(x) = e^{2\pi ix\xi}$ is an isomorphism.
+The map $\eta: \RR \to \hat{\RR}$ defined by $\eta(\xi)(x) = e^{2\pi ix\xi}$ is an isomorphism.
 \end{theorem}
 
 Motivated by the duality of $\Torus$ and $\ZZ$, we now define the Fourier transform, a generalization of the Fourier series to arbitrary locally compact abelian groups.
 \begin{definition}
-Let $G$ be a locally compact abelian group, and $f \in \ISF(G)$. The \dfn{Fourier transform} $\hat f$ of $f$ is defined by
-$$\hat f(\xi) = \int_G f(x) \xi(-x)~dx.$$
-We extend the Fourier transform to all of $L^2(G)$ by density.
+Let $G$ be a locally compact abelian group, and $f \in \ISF(G)$. The \dfn{Fourier transform} $\hat{f}$ of $f$ is defined by
+\[\hat{f}(\xi) = \int_{G} f(x) \xi(-x)~dx.\]
+We extend the Fourier transform to all of $L^{2}(G)$ by density.
 \end{definition}
-It is not obvious that the above definition makes sense. Certainly if $f \in \ISF(G)$ then the definition of $\hat f$ is uncontroversial, but why does it extend to $L^2(G)$?
+It is not obvious that the above definition makes sense. Certainly if $f \in \ISF(G)$ then the definition of $\hat{f}$ is uncontroversial, but why does it extend to $L^{2}(G)$?
 This happens because of the following theorem:
 \begin{theorem}[Plancherel]
 TODO:https://www.math.ucla.edu/~tao/247b.1.07w/notes9.pdf
@@ -183,55 +177,54 @@ need to prove Fourier inversion first
 
 \section{Pontryagin duality}
 
-\section{The Fourier transform on $\RR^d$}
+\section{The Fourier transform on $\RR^{d}$}
 
 blah blah
 
 \begin{exercise}
 If $\mu$ is a Borel probability measure on $\RR$, we can define its \dfn{Fourier transform} by
-$$\hat \mu(\xi) = \int_{-\infty}^\infty e^{-ix\xi} ~d\mu(x).$$
+\[\hat{\mu}(\xi) = \int_{-\infty}^{\infty} e^{-ix\xi} ~d\mu(x).\]
 Assume that $\mu$ is absolutely continuous, and its Radon-Nikodym derivative with respect to Lebesgue measure is denoted $\mu'$. Show that
-$$\mu'(x) = \frac{1}{2\pi} \int_{-\infty}^\infty e^{ix\xi} \hat \mu(\xi)~d\xi.$$
+\[\mu'(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{ix\xi} \hat{\mu}(\xi)~d\xi.\]
 (Hint: Let $\varphi$ be a suitably chosen Schwartz function and let $F(x) = \mu((-\infty, x])$ be the \dfn{cumulative distribution function} of $\mu$. Show that
-$$F(x) = \lim_{\varepsilon \to 0} \frac{1}{2\pi} \int_{-\infty}^x \int_{-\infty}^\infty e^{iy\xi} \varphi(\varepsilon^2 \xi^2) \hat \mu(\xi) ~d\xi ~dy$$
+\[F(x) = \lim_{\varepsilon \to 0} \frac{1}{2\pi} \int_{-\infty}^{x} \int_{-\infty}^{\infty} e^{iy\xi} \varphi(\varepsilon^{2} \xi^{2}) \hat{\mu}(\xi) ~d\xi ~dy\]
 and commute the limit with the iterated integral.)
 Conclude that you have given an alternative proof of the Radon-Nikodym theorem for Lebesgue measure.
 \end{exercise}
 
 \begin{exercise}[Hausdorff-Young inequality]
-Show that if $p^*$ is the H\"older dual to $p$ and $p \in [1, 2]$ then for every Schwartz function $f$,
-$$||\hat f||_{L^{p^*}(\RR^d)} \leq ||f||_{L^p(\RR^d)},$$
-so the Fourier transform can be extended to a linear map $L^p(\RR^d) \to L^{p^*}(\RR^d)$.
+Show that if $p^{*}$ is the H\"older dual to $p$ and $p \in [1, 2]$ then for every Schwartz function $f$,
+\[||\hat{f}||_{L^{p^{*}}(\RR^{d})} \leq ||f||_{L^{p}(\RR^{d})},\]
+so the Fourier transform can be extended to a linear map $L^{p}(\RR^{d}) \to L^{p^{*}}(\RR^{d})$.
 \end{exercise}
 
 \begin{exercise}[restriction estimates]
 Suppose that $p \in [1, 2]$ and $q \in [1, \infty]$.
-Let $\sigma$ denote Lebesgue measure on the unit sphere $S^{d-1}$ (defined in Example \ref{Lebesgue measure on sphere}).
+Let $\sigma$ denote Lebesgue measure on the unit sphere $S^{d-1}$ (defined in Exercise~\ref{Lebesgue measure on sphere}).
 Suppose that, for every Schwartz function $f$, the \dfn{restriction estimate}
-$$||\hat f||_{L^q(S^{d-1}, \sigma)} \lesssim ||f||_{L^p(\RR^d)}$$
+\[||\hat{f}||_{L^{q}(S^{d-1}, \sigma)} \lesssim ||f||_{L^{p}(\RR^{d})}\]
 holds.
-Show that for every $f \in L^p(\RR^d)$, the restriction $\hat f|S^{d-1}$ is defined for $\sigma$-almost every point of $S^{d-1}$.
+Show that for every $f \in L^{p}(\RR^{d})$, the restriction $\hat{f}|S^{d-1}$ is defined for $\sigma$-almost every point of $S^{d-1}$.
 Restriction estimates are an active area of research in harmonic analysis; the above restriction estimate is valid whenever $p = 2$ and $q \in [1, 4d/(3d+1)]$.
 \end{exercise}
 
-\begin{exercise}
-\label{general Sobolev space}
-Let $s \in \RR$. Define the \dfn{Sobolev measure} $\mu_s$ so that its Radon-Nikodym derivative with respect to Lebesgue measure is $(1 + |\xi|^s)^2$.
-Show that for any $s \in \NN$ and $u \in H^s(\RR^d)$ one has
-$$||u||_{H^s} \lesssim ||u||_{L^2(\mu_s)} \lesssim ||u||_{H^s}.$$
-So we define the \dfn{Sobolev norm} $H^s$, $s$ any real number, by setting $||u||_{H^s} = ||u||_{L^2(\mu_s)}$.
-This allows us to define the \dfn{Sobolev space} $H^s$ in general.
+\begin{exercise}\label{general Sobolev space}
+Let $s \in \RR$. Define the \dfn{Sobolev measure} $\mu_{s}$ so that its Radon-Nikodym derivative with respect to Lebesgue measure is ${(1 + |\xi|^{s})}^{2}$.
+Show that for any $s \in \NN$ and $u \in H^{s}(\RR^{d})$ one has
+\[||u||_{H^{s}} \lesssim ||u||_{L^{2}(\mu_{s})} \lesssim ||u||_{H^{s}}.\]
+So we define the \dfn{Sobolev norm} $H^{s}$, $s$ any real number, by setting $||u||_{H^{s}} = ||u||_{L^{2}(\mu_{s})}$.
+This allows us to define the \dfn{Sobolev space} $H^{s}$ in general.
 \end{exercise}
 
 \begin{exercise}
-This Exercise should be done after Exercise \ref{general Sobolev space}.
-Let $s \in \RR$. Show that there is an isomorphism $(H^s)^* \to H^{-s}$ -- so while we can think of $H^s$ as its own dual (since $H^s$ is a Hilbert space), we can also think of $H^{-s}$ and $H^s$ as dual spaces.
+This Exercise should be done after Exercise~\ref{general Sobolev space}.
+Let $s \in \RR$. Show that there is an isomorphism ${(H^{s})}^{*} \to H^{-s}$ --- so while we can think of $H^{s}$ as its own dual (since $H^{s}$ is a Hilbert space), we can also think of $H^{-s}$ and $H^{s}$ as dual spaces.
 \end{exercise}
 
 \begin{exercise}
-Let $a: \RR^2 \to \CC$ be a smooth function such that $a \in L^\infty$ and all partial derivatives of $a$ are in $L^\infty$.
+Let $a: \RR^{2} \to \CC$ be a smooth function such that $a \in L^{\infty}$ and all partial derivatives of $a$ are in $L^{\infty}$.
 Define the \dfn{pseudodifferential operator}
-$$Af(x) = \int_{-\infty}^\infty a(x, \xi) \hat f(\xi) e^{ix\xi}~d\xi.$$
+\[Af(x) = \int_{-\infty}^{\infty} a(x, \xi) \hat{f}(\xi) e^{ix\xi}~d\xi.\]
 We call $A$ the \dfn{Kohn-Nirenberg quantization} of $a$, and $a$ the \dfn{symbol} of $A$.
 Show that $Af$ exists whenever $f \in \Sch(\RR)$ and $A$ maps $\Sch(\RR)$ to itself.
 Show that the Kohn-Nirenberg quantization $a(x, \xi) = x$ satisfies $Af(x) = xf(x)$, and the Kohn-Nirenberg quantization of $a(x, \xi) = \xi$ satisfies $Af = f'$, up to a multiplicative constant.
@@ -241,34 +234,34 @@ Show that the Kohn-Nirenberg quantization $a(x, \xi) = x$ satisfies $Af(x) = xf(
 The following three sections are independent of each other. We include this section first because it is arguably the easiest of the three.
 Here we prove the uncertainty principle of Heisenberg, which says that one cannot know both the position and the momentum of a subatomic particle.
 
-In quantum mechanics, one typically models a particle $P$ with one degree of freedom by a Schwartz function $f$, its \dfn{wavefunction}, such that $||f||_{L^2} = 1$.
-If $A \subseteq \RR$ is Borel, the probability of measuring that $P$ is inside $A$ is $||f||_{L^2(A)}$.
-Moreover, the momentum of $P$ also has a wavefunction, given by $\hat f$; the probability of measure that the momentum of $P$ is inside $A$ is $||\hat f||_{L^2(A)}$.
+In quantum mechanics, one typically models a particle $P$ with one degree of freedom by a Schwartz function $f$, its \dfn{wavefunction}, such that $||f||_{L^{2}} = 1$.
+If $A \subseteq \RR$ is Borel, the probability of measuring that $P$ is inside $A$ is $||f||_{L^{2}(A)}$.
+Moreover, the momentum of $P$ also has a wavefunction, given by $\hat{f}$; the probability of measure that the momentum of $P$ is inside $A$ is $||\hat{f}||_{L^{2}(A)}$.
 
 We now introduce the \dfn{position} operator $Xf(x) = xfx$ and \dfn{momentum} operator $Df(x) = f'(x)/2\pi i$. By Lemma TODO, $D$ is the conjugation of $X$ by the Fourier transform, as one might expect. Notice that $X,D$ both preserve Schwartz space.
 
 Now if we have two operators $A,B$ on Schwartz space, we can introduce their \dfn{commutator} $[A,B] = AB - BA$. The commutator measures how badly $A,B$ fail to commute.
-In the case of position and momentum, the answer is ``quite badly".
+In the case of position and momentum, the answer is ``quite badly''.
 
 \begin{theorem}[von Neumann's canonical commutation relations]
 One has
-$$[X, D] = -\frac{1}{2\pi i}.$$
+\[[X, D] = -\frac{1}{2\pi i}.\]
 \end{theorem}
 This can be easily verified by the reader using the product rule for differentiation.
 
 We now recall that the expected value of a random variable is its mean value. We leave it as an exercise to check that the expected value of the position of a particle with wavefunction $f$ is
-$$\int_{-\infty}^\infty x|f(x)|^2~dx.$$
+\[\int_{-\infty}^{\infty} x|f(x)|^{2}~dx.\]
 Similarly,
-$$\int_{-\infty}^\infty \xi|\hat f(\xi)|^2~d\xi$$
+\[\int_{-\infty}^{\infty} \xi|\hat{f}(\xi)|^{2}~d\xi\]
 is the expected value of the momentum.
-In statistics, one defines the variance of a random variable $A$ to be the difference between the expected value of $A^2$ and the expected value of $A$, squared.
-This is a measure of how far a ``typical" measurement will deviate from the expected value.
-TODO: Move to probability ch?
+In statistics, one defines the variance of a random variable $A$ to be the difference between the expected value of $A^{2}$ and the expected value of $A$, squared.
+This is a measure of how far a ``typical'' measurement will deviate from the expected value.
+TODO:\@ Move to probability ch?
 
-TODO: Heisenberg
+TODO:\@ Heisenberg
 
 \section{Applications to PDE}
-TODO: Elliptic equation have solutions
+TODO:\@ Elliptic equation have solutions
 
 \section{Applications to number theory}
 In this section we use the theory that we have developed thus far to prove the famous functional equation for the Riemann zeta function.
@@ -278,52 +271,50 @@ However, the author confesses complete ignorance of such matters, and refers the
 We start by recalling the basic definitions from number theory.
 \begin{definition}
 The \dfn{Riemann zeta function} is the function
-$$\zeta(s) = \sum_{n=1}^\infty n^{-s},$$
+\[\zeta(s) = \sum_{n=1}^{\infty} n^{-s},\]
 defined when $\Re s > 1$.
 \end{definition}
 Then $\zeta$ is holomorphic in the half-plane $\Omega = \{s \in \CC: \Re s > 1\}$.
-Indeed, the summands $n^{-s}$ are holomorphic in $s$ and the partial sums converge locally uniformly in $\Omega$ (that is, converge in $L^\infty(K)$ for any compact $K \subset \Omega$), and the locally uniform limit of holomorphic functions is holomorphic (TODO:Cite a complex analysis book).
+Indeed, the summands $n^{-s}$ are holomorphic in $s$ and the partial sums converge locally uniformly in $\Omega$ (that is, converge in $L^{\infty}(K)$ for any compact $K \subset \Omega$), and the locally uniform limit of holomorphic functions is holomorphic (TODO:Cite a complex analysis book).
 This function is interesting to number theorists because of the following theorem.
 
 \begin{theorem}[Euler's product formula]
 For every $s \in \Omega$,
-$$\zeta(s) = \prod_p \frac{1}{1 - p^{-s}},$$
+\[\zeta(s) = \prod_{p}  \frac{1}{1 - p^{-s}},\]
 where the product ranges over all prime numbers $p$.
 \end{theorem}
 \begin{proof}
 We induct on the primes. First,
-$$\frac{1}{2^s} \zeta(s) = \sum_{n \equiv 0 \mod 2} n^{-s}$$
+\[\frac{1}{2^{s}} \zeta(s) = \sum_{n \equiv 0 \mod 2} n^{-s}\]
 so
-$$\zeta(s)\left(1 - \frac{1}{2^s}\right) = \sum_{n \not \equiv 0 \mod 2} n^{-s}.$$
+\[\zeta(s)\left(1 - \frac{1}{2^{s}}\right) = \sum_{n \not \equiv 0 \mod 2} n^{-s}.\]
 Now suppose that $q$ is a prime and
-\begin{equation}
-\label{partial euler product}
-\zeta(s) \prod_p 1 - \frac{1}{p^s} = \sum_n n^{-s}
+\begin{equation}\label{partial euler product}
+\zeta(s) \prod_{p}  1 - \frac{1}{p^{s}} = \sum_{n} n^{-s}
 \end{equation}
 where the product is taken over all primes $p < q$, and the sum is taken over all $n$ such that for each prime $p < q$, $n \not \equiv 0 \mod p$.
 Then
-$$\frac{1}{q^s} \zeta(s) \prod_p 1 - \frac{1}{p^s} = \sum_n n^{-s}$$
+\[\frac{1}{q^{s}} \zeta(s) \prod_{p}  1 - \frac{1}{p^{s}} = \sum_{n} n^{-s}\]
 where the product is again taken over all primes $p < q$ and the sum is taken over all $n$ such that $n \equiv 0 \mod q$ and for each prime $p < q$, $n \not \equiv 0 \mod p$.
 Therefore (\ref{partial euler product}) holds when the product is taken over all primes $p \leq q$ and the sum is taken over all $n$ such that for every $p \leq q$, $n \not \equiv 0 \mod p$.
 This completes the induction.
 Taking $q \to \infty$ in (\ref{partial euler product}) we see that
-$$\zeta(s) \prod_p 1 - \frac{1}{p^s} = 1$$
-where the product is taken over all primes $p$ and the infinite product converges by a monotone convergence argument (since $\sum_n n^{-s}$, the sum taken over all natural numbers $n$, converges). Indeed, $1 \not \equiv 0 \mod p$ for any prime $p$, but any $n \geq 2$ eventually divides some prime.
+\[\zeta(s) \prod_{p}  1 - \frac{1}{p^{s}} = 1\]
+where the product is taken over all primes $p$ and the infinite product converges by a monotone convergence argument (since $\sum_{n} n^{-s}$, the sum taken over all natural numbers $n$, converges). Indeed, $1 \not \equiv 0 \mod p$ for any prime $p$, but any $n \geq 2$ eventually divides some prime.
 The claim now follows.
 \end{proof}
 
 Now recall that the \dfn{gamma function} is the function
-$$\Gamma(z) = \int_0^\infty x^{z-1} e^{-x} ~dx$$
+\[\Gamma(z) = \int_{0}^{\infty} x^{z-1} e^{-x} ~dx\]
 which converges if $\Re z > 0$.
 \begin{definition}
 Define the \dfn{Riemann xi function}
-$$\xi(s) = \pi^{-s/2} \Gamma(s/2) \zeta(s).$$
+\[\xi(s) = \pi^{-s/2} \Gamma(s/2) \zeta(s).\]
 \end{definition}
 
 \begin{theorem}[Riemann's functional equation]
 For any $s \in \Omega$,
-\begin{equation}
-\label{functional equation}
+\begin{equation}\label{functional equation}
 \xi(s) = \xi(1-s).
 \end{equation}
 Therefore $\xi(s)$, and hence $\zeta(s)$, can be defined for any $s \neq 1$, and $\zeta$ extends to a holomorphic function on $\CC \setminus \{1\}$.
@@ -336,51 +327,50 @@ We prove (\ref{functional equation}) later in this section; the holomorphy claim
 First we relate (\ref{functional equation}) to harmonic analysis.
 
 We shall recall some algebraic machinery.
-The trivial group is denoted $0$; for any group $G$, there are unique morphisms $0 \to G$ and $G \to 0$, namely the trivial morphism, which we leave unlabeled when clear from context.
+The trivial group is denoted $0$; for any group $G$, there are unique morphisms $0 \to G$ and $G \to 0$, namely the trivial morphism, which we leave nlabeled when clear from context.
 We let $0$ denote the trivial morphism between any two groups when we do need to specify it.
 
 A \dfn{short exact sequence} of abelian groups is a commutative diagram
-$$\begin{tikzcd}
+\[\begin{tikzcd}
 0 \arrow[r] & A \arrow[r,"\alpha"] & B \arrow[r,"\beta"] & C \arrow[r] & 0
-\end{tikzcd}$$
+\end{tikzcd}
+\]
 where $A,B,C$ are abelian groups, all the arrows are morphisms, and the kernel of any arrow is the image of the arrow before it.
 This is equivalent to requiring that $\alpha$ is injective, $\beta$ is surjective, and the image of $\alpha$ is the kernel of $\beta$, thus for any $b \in B$, $\beta(b) = 0$ iff there is an $a \in A$ with $b = \alpha(a)$.
 Whenever $B$ is a subgroup of $A$, we get a short exact sequence
-\begin{equation}
-\label{quotient SES}
+\begin{equation}\label{quotient SES}
 \begin{tikzcd}
 0 \arrow[r] & B \arrow[r,"\iota"] & A \arrow[r,"q"] & \frac{A}{B} \arrow[r] & 0
 \end{tikzcd}
 \end{equation}
 where $\iota$ is the inclusion map $\iota(b) =b$ and $q$ is the quotient map.
 
-If $\alpha: A \to B$ is a continuous morphism between locally compact abelian groups, then we can define its Pontraygin dual $\hat \alpha: \hat B \to \hat A$ by
-$$\hat \alpha(\xi) = \xi \circ \alpha.$$
+If $\alpha: A \to B$ is a continuous morphism between locally compact abelian groups, then we can define its Pontraygin dual $\hat{\alpha}: \hat{B} \to \hat{A}$ by
+\[\hat{\alpha}(\xi) = \xi \circ \alpha.\]
 Note that this is not the same as taking the Fourier transform of $\alpha$; we will always use Roman letters for functions and Greek letters for morphisms, to avoid confusion.
-If $B \subseteq A$, and $\iota: B \to A$ is the inclusion morphism $\iota(b) = b$, then $\hat \iota(\xi) = \xi \circ \iota = \xi|B$, thus $\hat \iota$ is the restriction map $\hat A \to \hat B$.
+If $B \subseteq A$, and $\iota: B \to A$ is the inclusion morphism $\iota(b) = b$, then $\hat{\iota}(\xi) = \xi \circ \iota = \xi|B$, thus $\hat{\iota}$ is the restriction map $\hat{A} \to \hat{B}$.
 
-\begin{theorem}
-\label{duality is exact}
+\begin{theorem}\label{duality is exact}
 Pontraygin duality is \dfn{exact} in the sense that whenever one has a diagram of locally compact abelian groups and continuous morphisms between them
-$$\begin{tikzcd}
+\[\begin{tikzcd}
 A \arrow[r,"\alpha"] & B \arrow[r, "\beta"] & C
 \end{tikzcd}
-$$
-such that the image of $\alpha$ is the kernel of $\beta$, then the image of $\hat \beta$ is the kernel of $\hat \alpha$.
+\]
+such that the image of $\alpha$ is the kernel of $\beta$, then the image of $\hat{\beta}$ is the kernel of $\hat{\alpha}$.
 \end{theorem}
 \begin{proof}
-Let $H = \hat \beta(\hat C)$. Then $\hat \beta \circ \hat \alpha = \widehat{\beta \circ \alpha} = \hat 0 = 0$. Therefore $H \subseteq \ker \hat \alpha$.
-Applying the Pontraygin duality theorem, we see that if $H \subset \ker \hat \alpha$ then $\widehat{\ker \hat \alpha} = \alpha(A)$ is a proper subgroup of $\hat H = \ker \beta$, which is impossible.
+Let $H = \hat{\beta}(\hat{C})$. Then $\hat{\beta} \circ \hat{\alpha} = \widehat{\beta \circ \alpha} = \hat 0 = 0$. Therefore $H \subseteq \ker \hat{\alpha}$.
+Applying the Pontraygin duality theorem, we see that if $H \subset \ker \hat{\alpha}$ then $\widehat{\ker \hat{\alpha}} = \alpha(A)$ is a proper subgroup of $\hat{H} = \ker \beta$, which is impossible.
 \end{proof}
 
-\begin{corollary}
-\label{duality is exact 2}
+\begin{corollary}\label{duality is exact 2}
 Let $A$ be a locally compact abelian group, $B$ a closed subgroup of $A$.
 Then the Pontraygin dual of (\ref{quotient SES}),
-$$
+\[
 \begin{tikzcd}
-0 \arrow[r] & \widehat{\frac{A}{B}} \arrow[r,"\hat q"] & \hat A \arrow[r,"\hat \iota"] & \hat B \arrow[r] & 0,
-\end{tikzcd}$$
+0 \arrow[r] & \widehat{\frac{A}{B}} \arrow[r,"\hat{q}"] & \hat{A} \arrow[r,"\hat{\iota}"] & \hat{B} \arrow[r] & 0,
+\end{tikzcd}
+\]
 is a short exact sequence of locally compact abelian groups.
 \end{corollary}
 \begin{proof}
@@ -390,89 +380,84 @@ The reader can check that since $B$ is closed, all the morphisms are continuous 
 
 \begin{theorem}[Poisson summation]
 Let $B$ be a closed subgroup of a locally compact abelian group $A$.
-If $f \in L^1(A)$ let
-$$f^B(x + B) = \int_B f(x + y)~dy.$$
-Then for any $\xi \in \widehat{A/B}$, $\widehat{f^B}(\xi) = \hat f([\xi])$
+If $f \in L^{1}(A)$ let
+\[f^{B}(x + B) = \int_{B} f(x + y)~dy.\]
+Then for any $\xi \in \widehat{A/B}$, $\widehat{f^{B}}(\xi) = \hat{f}([\xi])$
 where $[\xi](x) = \xi(x + B)$ for any $x \in A$.
 
-If $f^B \in L^1(\widehat{A/B})$, then for almost all $x \in G$
-\begin{equation}
-\label{abstract poisson summation}
-\int_B f(x + y)~dy = \int_{\widehat{A/B}} \hat f([\xi]) [\xi](x) ~d\xi.
+If $f^{B} \in L^{1}(\widehat{A/B})$, then for almost all $x \in G$
+\begin{equation}\label{abstract poisson summation}
+\int_{B} f(x + y)~dy = \int_{\widehat{A/B}} \hat{f}([\xi]) [\xi](x) ~d\xi.
 \end{equation}
-If $f^B$ is continuous and everywhere defined, then (\ref{abstract poisson summation}) is valid for every $x \in G$.
+If $f^{B}$ is continuous and everywhere defined, then (\ref{abstract poisson summation}) is valid for every $x \in G$.
 \end{theorem}
 \begin{proof}
-If $\xi \in \widehat{A/B}$ then $\xi|B = 0$. Indeed, $\xi|B = \hat \iota(\xi) = \hat \iota(\hat q(B)) = 0$, by Corollary \ref{duality is exact 2}.
+If $\xi \in \widehat{A/B}$ then $\xi|B = 0$. Indeed, $\xi|B = \hat{\iota}(\xi) = \hat{\iota}(\hat{q}(B)) = 0$, by Corollary~\ref{duality is exact 2}.
 Therefore $\xi(x + y) = \xi(x)$ for any $(x, y) \in A \times B$.
 So
-\begin{align*}\widehat{f^B}(\xi) &= \int_{A/B} f^B(x + B) \overline{\xi(x)}~d(x + B)\\& = \iint_{A/B \times B} f(x + y) \overline{\xi(x + y)}~dy~d(x+B) \\&= \int_A f(x)\overline{[\xi](x) + B}~dx = \hat f([\xi]).\end{align*}
+\begin{align*}\widehat{f^{B}}(\xi) &= \int_{A/B} f^{B}(x + B) \overline{\xi(x)}~d(x + B)\\& = \iint_{A/B \times B} f(x + y) \overline{\xi(x + y)}~dy~d(x+B) \\&= \int_{A} f(x)\overline{[\xi](x) + B}~dx = \hat{f}([\xi]).\end{align*}
 
-Now if $f^B \in L^1(\widehat{A/B})$, then by the Fourier inversion formula,
-$$f^B(x + B) = \widehat{\hat f|\widehat{A/B}}(-x + B) = \int_{\widehat{A/B}} \hat f([\xi]) \overline{[\xi](x)}~d\xi$$
+Now if $f^{B} \in L^{1}(\widehat{A/B})$, then by the Fourier inversion formula,
+\[f^{B}(x + B) = \widehat{\hat{f}|\widehat{A/B}}(-x + B) = \int_{\widehat{A/B}} \hat{f}([\xi]) \overline{[\xi](x)}~d\xi\]
 almost everywhere, and everywhere under the necessary hypotheses.
-Substituting the definition of $f^B$ in the above equation we obtain (\ref{abstract poisson summation})
+Substituting the definition of $f^{B}$ in the above equation we obtain (\ref{abstract poisson summation})
 \end{proof}
 
-\begin{corollary}[Poisson summation on $\RR$]
-\label{poisson summation on R}
+\begin{corollary}[Poisson summation on $\RR$]\label{poisson summation on R}
 Let $f$ be a Schwartz function on $\RR$. Then for every $x \in \RR$,
-\begin{equation}
-\label{poisson summation on R 2}
-\sum_{k=-\infty}^\infty f(x + k) = \sum_{\xi = -\infty}^\infty \hat f(\xi) e^{-2\pi ix\xi}.
+\begin{equation}\label{poisson summation on R 2}
+\sum_{k=-\infty}^{\infty} f(x + k) = \sum_{\xi = -\infty}^{\infty} \hat{f}(\xi) e^{-2\pi ix\xi}.
 \end{equation}
 \end{corollary}
 \begin{proof}
 Plugging $\RR$ and $\ZZ$ into (\ref{quotient SES}) we obtain a short exact sequence
-$$\begin{tikzcd}
+\[\begin{tikzcd}
 0 \arrow[r] & \ZZ \arrow[r] & \RR \arrow[r] & \Torus \arrow[r] & 0.
-\end{tikzcd}$$
+\end{tikzcd}
+\]
 Dualizing, we obtain a bijection $\ZZ \to \widehat{\Torus} = \ZZ$.
-Since $f$ is Schwartz, $f \in L^1(\RR)$ and $\hat f$ is Schwartz, so that $\hat f|\ZZ \in L^1(\ZZ)$.
+Since $f$ is Schwartz, $f \in L^{1}(\RR)$ and $\hat{f}$ is Schwartz, so that $\hat{f}|\ZZ \in L^{1}(\ZZ)$.
 Then plugging in $f$ into (\ref{abstract poisson summation}) we obtain (\ref{poisson summation on R 2}).
 \end{proof}
 
 \begin{corollary}
 Let $f$ be a Schwartz function on $\RR$. Then
-\begin{equation}
-\label{poisson summation on R simple}
-\sum_{k=-\infty}^\infty f(k) = \sum_{\xi = -\infty}^\infty \hat f(\xi).
+\begin{equation}\label{poisson summation on R simple}
+\sum_{k=-\infty}^{\infty} f(k) = \sum_{\xi = -\infty}^{\infty} \hat{f}(\xi).
 \end{equation}
 \end{corollary}
 
 \begin{definition}
 Define, for $\Re z > 0$,
-$$\Theta(z) = \sum_{k=-\infty}^\infty e^{-z\pi k^2},$$
+\[\Theta(z) = \sum_{k=-\infty}^{\infty} e^{-z\pi k^{2}},\]
 the \dfn{Jacobi theta function} of one variable.
 \end{definition}
 
-\begin{lemma}
-\label{functional equation of the theta function}
+\begin{lemma}\label{functional equation of the theta function}
 For every $\Re z > 0$,
-$$\sqrt z \Theta(z) = \Theta(z^{-1}).$$
+\[\sqrt z \Theta(z) = \Theta(z^{-1}).\]
 \end{lemma}
 \begin{proof}
-By uniqueness of analytic continuation, a theorem of complex analysis, it suffices to check when $\Im z = 0$. Let $f_z(x) = e^{-z\pi x^2}$. Then $\hat f_1 = f_1$ by Lemma TODO, so by Lemma TODO,
-$$\sqrt z \hat f_z = f_{1/z}.$$
-Moreover, $f_z$ is Schwartz, so the claim now follows by applying (\ref{poisson summation on R simple}).
+By uniqueness of analytic continuation, a theorem of complex analysis, it suffices to check when $\Im z = 0$. Let $f_{z}(x) = e^{-z\pi x^{2}}$. Then $\hat{f}_{1} = f_{1}$ by Lemma TODO, so by Lemma TODO,
+\[\sqrt z \hat{f}_{z} = f_{1/z}.\]
+Moreover, $f_{z}$ is Schwartz, so the claim now follows by applying (\ref{poisson summation on R simple}).
 \end{proof}
 
 \begin{proof}[Proof of (\ref{functional equation})]
 Note that $dt/t$ is the Haar measure of $\RR^+$, the positive real numbers under multiplication. One has
-$$\xi(s) = \sum_{n=1}^\infty \int_0^\infty n^{-s} t^{s/2} \pi^{-s/2} e^{-t}~\frac{dt}{t} = \sum_{n=1}^\infty \int_0^\infty \left(\frac{t}{n^2\pi}\right)^{s/2}e^{-t}~\frac{dt}{t}.$$
+\[\xi(s) = \sum_{n=1}^{\infty} \int_{0}^{\infty} n^{-s} t^{s/2} \pi^{-s/2} e^{-t}~\frac{dt}{t} = \sum_{n=1}^{\infty} \int_{0}^{\infty} {\left(\frac{t}{n^{2}\pi}\right)}^{s/2}e^{-t}~\frac{dt}{t}.\]
 Simplifying, we see that
-$$\xi(s) = \int_0^\infty t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} = \left[\int_0^1 + \int_1^\infty \right]t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t}.$$
+\[\xi(s) = \int_{0}^{\infty} t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} = \left[\int_{0}^{1} + \int_{1}^{\infty} \right]t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t}.\]
 Now $\Theta - 1$ is Schwartz, so the integral over $[1, \infty]$ converges locally uniformly in $s$, hence to an entire function in $s$.
-Applying the transform $t \mapsto 1/t$, which preserves the Haar measure of $\RR^+$, and using Lemma \ref{functional equation of the theta function},
-$$\int_0^1 t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} = \int_1^\infty t^{-s/2} \frac{\sqrt t \Theta(t) - 1}{2}~\frac{dt}{t}$$
+Applying the transform $t \mapsto 1/t$, which preserves the Haar measure of $\RR^+$, and using Lemma~\ref{functional equation of the theta function},
+\[\int_{0}^{1} t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} = \int_{1}^{\infty} t^{-s/2} \frac{\sqrt t \Theta(t) - 1}{2}~\frac{dt}{t}\]
 thus
-$$\xi(s) = \int_1^\infty t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} + \int_1^\infty t^{(1-s)/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} + \frac{1}{2} \left[\int_1^\infty t^{(1-s)/2} \frac{dt}{t} - \int_1^\infty t^{-s/2}\frac{dt}{t} \right].$$
+\[\xi(s) = \int_{1}^{\infty} t^{s/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} + \int_{1}^{\infty} t^{(1-s)/2} \frac{\Theta(t) - 1}{2}~\frac{dt}{t} + \frac{1}{2} \left[\int_{1}^{\infty} t^{(1-s)/2} \frac{dt}{t} - \int_{1}^{\infty} t^{-s/2}\frac{dt}{t} \right].\]
 But
-$$-\frac{1}{2} \left[\int_1^\infty t^{(1-s)/2} \frac{dt}{t} - \int_1^\infty t^{-s/2}\frac{dt}{t} \right] = \frac{1}{s} + \frac{1}{1-s}.$$
+\[-\frac{1}{2} \left[\int_{1}^{\infty} t^{(1-s)/2} \frac{dt}{t} - \int_{1}^{\infty} t^{-s/2}\frac{dt}{t} \right] = \frac{1}{s} + \frac{1}{1-s}.\]
 Therefore
-\begin{equation}
-\label{partial functional equation}
-\xi(s) = \int_1^\infty t^{s/2} + t^{(1-s)/2}\frac{\Theta(t) - 1}{2} ~\frac{dt}{t} - \left(\frac{1}{s} + \frac{1}{1-s}\right).
+\begin{equation}\label{partial functional equation}
+\xi(s) = \int_{1}^{\infty} t^{s/2} + t^{(1-s)/2}\frac{\Theta(t) - 1}{2} ~\frac{dt}{t} - \left(\frac{1}{s} + \frac{1}{1-s}\right).
 \end{equation}
 The right-hand side of (\ref{partial functional equation}) does not change when one replaces $s$ with $1-s$, thus $\xi(s) = \xi(1-s)$.
 \end{proof}
