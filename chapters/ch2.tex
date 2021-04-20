@@ -25,7 +25,7 @@ So any two Polish spaces, when viewed as measurable spaces, are the same!
 \begin{definition}
 Let $(X, \Sigma, \mu)$ be a measured space, $(Y, \Gamma)$ a measurable space, and $f: X \to Y$ a measurable map.
 We define $f_*(\mu)$ on $(Y, \Gamma)$ by
-$$f_*(\mu)(E) = \mu(f^{-1}(E))$$
+\[f_*(\mu)(E) = \mu(f^{-1}(E))\]
 and call $f_*(\mu)$ the \dfn{pushforward measure} of $\mu$ by $f$.
 \end{definition}
 
@@ -35,7 +35,7 @@ Let $\Torus$ be the circle, viewed for now as the set $\{z \in \CC: |z| = 1\}$.
 Then $\Torus$ has its Borel $\sigma$-algebra $\Gamma$.
 Let $\Sigma$ be the Borel $\Sigma$-algebra of $\RR$ and $\mu$ the Lebesgue measure restricted to $\Sigma$.
 Then we have a continuous map $f: [0, 1] \to \Torus$ defined by
-$$f(x) = e^{2\pi ix}.$$
+\[f(x) = e^{2\pi ix}.\]
 Every continuous map between Borel measurable spaces is measurable, so $f$ is.
 The pushforward measure $\nu = f_*(\mu)$ is known as the \dfn{Lebesgue measure} on $\Torus$.
 The diligent reader will check that $\nu$ agrees with the notion of arc length defined in multivariable calculus (Exercise \ref{arc length exercise}).
@@ -44,7 +44,7 @@ The diligent reader will check that $\nu$ agrees with the notion of arc length d
 \begin{definition}
 Let $(X, \mu)$ and $(Y, \nu)$ be measured spaces.
 A \dfn{measure-preserving map} is a measurable map $f: X \to Y$ such that
-$$\nu = f_*(\mu).$$
+\[\nu = f_*(\mu).\]
 If $f$ is a measurable isomorphism, we call $f$ a \dfn{measure-preserving isomorphism}.
 \end{definition}
 
@@ -100,14 +100,14 @@ If $(x_n)$ is a sequence in $B$, then (\ref{banach space series}) is the definit
 \begin{definition}
 Let $\Sigma$ be a $\sigma$-ring and $B$ a Banach space.
 A \dfn{vector-valued measure} on $\Sigma$, or simply a \dfn{measure}, is a function $\mu: \Sigma \to B$ such that whenever $(E_n)$ are countably many disjoint sets in $\Sigma$,
-$$\mu\left(\bigcup_n E_n\right) = \sum_n \mu(E_n).$$
+\[\mu\left(\bigcup_n E_n\right) = \sum_n \mu(E_n).\]
 \end{definition}
 
 \begin{example}
 The most important examples of vector-valued measures will be of the following form.
 Let $\nu$ be a positive measure on a measurable space $X$, and let $f: X \to B$ be an ``integrable function".
 We will get back to what this means later -- but, taking the definition of integration as a black box, set
-$$\mu(E) = \int_E f(x) ~d\nu(x).$$
+\[\mu(E) = \int_E f(x) ~d\nu(x).\]
 Then $\mu$ is a vector-valued measure, and its ``derivative" is $f$.
 This will be the setting in which we generalize the fundamental theorem of calculus.
 \end{example}
@@ -118,7 +118,7 @@ Frequently, positive measures are easier to work with than vector-valued measure
 
 \begin{definition}
 Let $\mu$ be a measure. The \dfn{total variation measure} $|\mu|$ of $\mu$ is defined by
-$$|\mu|(E) = \sup_{E_1, \dots, E_n} \sum_{i=1}^n ||\mu(E_i)||_B$$
+\[|\mu|(E) = \sup_{E_1, \dots, E_n} \sum_{i=1}^n ||\mu(E_i)||_B\]
 where the supremum ranges over finite sequences $E_1, \dots, E_n$ of disjoint measurable sets such that $E = \bigcup_i E_i$.
 \end{definition}
 
@@ -130,10 +130,10 @@ Let $\mu$ be a measure. Then $|\mu|$ is nonnegative. If $E \subseteq F$ are meas
 
 To see that $|\mu|$ is $\sigma$-additive, suppose that $F,G$ are disjoint measurable sets, $E = F \cup G$.
 Write $F = \bigcup_{i \leq m} F_i$ and $G = \bigcup_{j \leq n} G_j$ where the $F_i,G_j$ are all disjoint; then
-$$|\mu|(E) \geq \sum_{i=1}^m ||\mu(F_i)||_B + \sum_{j=1}^n ||\mu(G_j)||_B.$$
+\[|\mu|(E) \geq \sum_{i=1}^m ||\mu(F_i)||_B + \sum_{j=1}^n ||\mu(G_j)||_B.\]
 Thus $|\mu|(E) \geq |\mu|(F) + |\mu|(G)$, so by induction if $E = \bigcup_{i \leq m} E_i$ where the $E_i$ are disjoint, then $|\mu|(E) \geq \sum_{i \leq m} |\mu|(E_i)$.
 Using the monotonicity, it follows that if $(E_i)$ is a disjoint countable sequence of sets and $E = \bigcup_i E_i$, then
-$$|\mu|(E) \geq \sum_{i=1}^\infty |\mu|(E_i).$$
+\[|\mu|(E) \geq \sum_{i=1}^\infty |\mu|(E_i).\]
 
 Conversely, suppose that $E = \bigcup_j E_j = \bigcup_{i\leq n} F_i$ where $(E_j)$ is a disjoint countable sequence and $(F_i)$ is a disjoint finite sequence. Then
 \begin{align*}
@@ -146,11 +146,11 @@ Here we used the fact that $E_j = \bigcup_{i \leq n} F_i \cap E_j$. It follows t
 \begin{theorem}[triangle inequality and reverse triangle inequality]
 \label{reverse triangle inequality}
 Let $\mu,\nu$ be measures on $\Sigma$ with values in $B$. Then $|\mu + \nu| \leq |\mu| + |\nu|$ and
-$$||\mu|(E) - |\nu|(E)| \leq |\mu - \nu|(E).$$
+\[||\mu|(E) - |\nu|(E)| \leq |\mu - \nu|(E).\]
 \end{theorem}
 \begin{proof}
 If $E = \bigcup_{i \leq n} E_i$, the $E_i$ disjoint, then
-$$\sum_{i=1}^n ||(\mu + \nu)(E_i)||_B \leq \sum_{i=1}^n ||\mu(E_i)||_B + ||\nu(E_i)||_B \leq |\mu|(E) + |\nu|(E)$$
+\[\sum_{i=1}^n ||(\mu + \nu)(E_i)||_B \leq \sum_{i=1}^n ||\mu(E_i)||_B + ||\nu(E_i)||_B \leq |\mu|(E) + |\nu|(E)\]
 which implies the two desired inequalities.
 \end{proof}
 
@@ -215,9 +215,9 @@ A set $\Sigma_0 \subseteq \Sigma$ of events is said to be \dfn{mutually exclusiv
 
 \begin{subsec}
 The $\sigma$-additivity of the measure $P$ says that if a countable set $\Sigma_0$ of events is mutually exclusive, its disjunction $A$ satisfies
-$$P(A) = \sum_{B \in \Sigma_0} P(B),$$
+\[P(A) = \sum_{B \in \Sigma_0} P(B),\]
 thus for example we have the \dfn{inclusion-exclusion formula}
-$$P(E \cup F) = P(E) + P(F) - P(E \cup F)$$
+\[P(E \cup F) = P(E) + P(F) - P(E \cup F)\]
 valid for any two events $E,F$ familiar from elementary probability theory.
 \end{subsec}
 
@@ -255,7 +255,7 @@ If $Y$ is another random variable and $\mu_X = \mu_Y$, we say that $X,Y$ are \df
 
 \begin{subsec}
 Unraveling the definitions, if $A \subseteq E$ is a measurable set,
-$$\mu_X(A) = P(X \in A) = P(\{\omega \in \Omega: X(\omega) \in A\}).$$
+\[\mu_X(A) = P(X \in A) = P(\{\omega \in \Omega: X(\omega) \in A\}).\]
 For example, if $E = \RR$ then $\mu_X([x, \infty))$ is the probability that $X \geq x$.
 We think of two identically distributed random variables as being isomorphic, but not the same.
 \end{subsec}
@@ -271,7 +271,7 @@ We can write this in a more symmetrical form, which also avoids the issue of div
 Let $(\Omega, \Sigma, P)$ be a probability space and $(E, \Gamma)$ a measurable space.
 
 Countably many events $A_n \in \Sigma$ are said to be \dfn{independent} if
-$$P\left(\bigcap_n A_n\right) = \prod_n P(A_n).$$
+\[P\left(\bigcap_n A_n\right) = \prod_n P(A_n).\]
 Countably many $\sigma$-algebras $\mathcal A_n \subseteq \Sigma$ are said to be \dfn{independent} if for every $A_n \in \mathcal A_n$, the events $A_n$ are independent.
 Countably many random variables $X_n$ of type $E$ are said to be \dfn{independent} if the pullback $\sigma$-algebras $X_n^*\Gamma$ are independent.
 
@@ -293,7 +293,7 @@ So the $X_n$ are iid.
 
 \begin{exercise}
 Verify the inclusion-exclusion formula
-$$P\left(\bigcup_{i=1}^n A_i\right) = \sum_{k=1}^n (-1)^{k+1} \sum{1 \leq i_1 < \cdots < i_k \leq n} P\left(\bigcap_{j=1}^k A_{i_j}\right)$$
+\[P\left(\bigcup_{i=1}^n A_i\right) = \sum_{k=1}^n (-1)^{k+1} \sum{1 \leq i_1 < \cdots < i_k \leq n} P\left(\bigcap_{j=1}^k A_{i_j}\right)\]
 valid for any events $A_1, \dots, A_n$.
 \end{exercise}
 
@@ -380,14 +380,14 @@ Then $P(A^\flat) = 0$.
 \end{theorem}
 \begin{proof}
 We first note that
-$$A^\flat = A \setminus \bigcup_{n \in \NN} f^n(A)$$
+\[A^\flat = A \setminus \bigcup_{n \in \NN} f^n(A)\]
 which is measurable since each of the $f^n(A)$ are.
 
 If $m > n$, then $f^n(A^\flat) \cap f^m(A^\flat)$ is empty: if $x \in f^m(A^\flat)$, so that $f^{-m}(x) \in A^\flat$, then by definition of $A^\flat$,
-$$f^{-n}(x) = f^{m-n}(f^{-m}(x)) \notin A.$$
+\[f^{-n}(x) = f^{m-n}(f^{-m}(x)) \notin A.\]
 
 Therefore, for any $N \in \NN$,
-$$P(A^\flat) = \frac{1}{N} \sum_{n=1}^N P(f^m(A^\flat)) = \frac{1}{N} P\left(\bigcup_{n=1}^N f^m(A^\flat)\right) \leq \frac{1}{N} P(X) = \frac{1}{N}.$$
+\[P(A^\flat) = \frac{1}{N} \sum_{n=1}^N P(f^m(A^\flat)) = \frac{1}{N} P\left(\bigcup_{n=1}^N f^m(A^\flat)\right) \leq \frac{1}{N} P(X) = \frac{1}{N}.\]
 So $P(A^\flat) = 0$.
 \end{proof}
 
@@ -396,7 +396,7 @@ Let us explain to the reader who is familiar with thermodynamics how to interpre
 
 Let $X$ be the set of microstates that the universe can be in and let us assume for simplicity that $X$ is finite.
 Let $P$ be the normalized counting measure, so that
-$$P(A) = \frac{\card A}{\card X}$$
+\[P(A) = \frac{\card A}{\card X}\]
 and $\Sigma = 2^X$.
 Thus $P(A)$ represents the probability of drawing a partiular microstate uniformly at random.
 

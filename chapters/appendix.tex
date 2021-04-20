@@ -15,9 +15,9 @@ A \dfn{seminormed space} is a vector space $V$ equipped with a function
 \begin{align*}V &\to [0, \infty)\\
 v &\mapsto ||v||,\end{align*}
 known as a \dfn{seminorm}, such that for any $v, w \in V$ and $c$ a scalar,
-$$||v + w|| \leq ||v|| + ||w||,$$
+\[||v + w|| \leq ||v|| + ||w||,\]
 the \dfn{triangle inequality}, and
-$$||cv|| = |c|\cdot||v||.$$
+\[||cv|| = |c|\cdot||v||.\]
 The quantity $||v||$ is called the \dfn{length} of $v$.
 
 A \dfn{normed space} is a seminormed space $V$ such that the only $v \in V$ such that $||v|| = 0$ is $v = 0$.
@@ -32,23 +32,23 @@ However, we will have no use for this.
 \begin{example}
 The most important example of a normed space has as its base space $\RR^d$.
 We define
-$$||(x_1, \dots, x_d)||_2^2 = \sum_{i=1}^d |x_i|^2,$$
+\[||(x_1, \dots, x_d)||_2^2 = \sum_{i=1}^d |x_i|^2,\]
 thus $||\cdot||_2$ is the \dfn{Euclidean norm} on $\RR^d$.
 Then the triangle inequality is just the usual triangle inequality for Euclidean geometry.
 \end{example}
 
 \begin{example}
 We can define several other norms on $\RR^d$, closely related to the Euclidean norm $||\cdot||_2$. First we let
-$$||(x_1, \dots, x_d)||_\infty = \max_{i=1}^d |x_i|.$$
+\[||(x_1, \dots, x_d)||_\infty = \max_{i=1}^d |x_i|.\]
 We then define, for any $p \in [1, \infty),$
-$$||(x_1, \dots, x_d)||_p^p = \sum_{i=1}^d |x_i|^p.$$
+\[||(x_1, \dots, x_d)||_p^p = \sum_{i=1}^d |x_i|^p.\]
 Thus when $p = 2$ we recover the Euclidean norm, when $p = 1$ we recover the ``sum norm" $||(x_1, \dots, x_d)||_1 = \sum_i |x_i|$, and in the limit $p \to \infty$ we obtain the $||\cdot||_\infty$ norm.
 \end{example}
 
 \begin{subsec}
 A normed space is a metric space in a natural way, namely the distance between two vectors $v,w$ is defined to be $||v - w||$.
 Thus we have access to the usual notion of sequences, convergence, etc. for normed spaces; so the equation
-$$\lim_{n \to \infty} v_n = w$$
+\[\lim_{n \to \infty} v_n = w\]
 means that for every $\varepsilon > 0$ there is an $N$ such that for every $n \geq N$, $||v_n - w|| < \varepsilon$.
 Similarly a sequence of $v_n$ is Cauchy if for every $\varepsilon > 0$ there is an $N$ such that for every $n, n' \geq N$, $||v_n, v_{n'}|| < \varepsilon$.
 \end{subsec}
@@ -56,7 +56,7 @@ Similarly a sequence of $v_n$ is Cauchy if for every $\varepsilon > 0$ there is 
 \begin{subsec}
 The notion of convergence makes sense in seminormed spaces, but it is no longer true that the limit of a sequence need be unique.
 In fact, consider the seminorm on $\RR^2$ defined by
-$$||(x, y)|| = |x|.$$
+\[||(x, y)|| = |x|.\]
 Let $(x_n, y_n)_n$ be a sequence in $\RR^2$ and $x \in \RR$. Then for every $\lim_n x_n = x$, then for every $y \in \RR$, $\lim_n (x_n, y_n) = (x, y)$.
 In the language of point-set topology, seminormed spaces are not Hausdorff (nor do they even satisfy Axiom $T_0$).
 We fix the lack of Hausdorffness by observing that it is always possible to turn a seminormed space into a normed space.
@@ -96,7 +96,7 @@ The kernel is a subspace of $V$, so we can take the quotient space $V/\ker V$ an
 \end{equation}
 (so the composite of any two arrows in the diagram (\ref{normification exact}) is the zero map, $\pi$ is the natural projection of $V$ onto $V/\ker V$, and $\ker V$ is the kernel of $\pi$).
 We define a norm on $V/\ker V$ by
-$$||\pi(v)|| = ||v||.$$
+\[||\pi(v)|| = ||v||.\]
 We define the normalization of $V$ to be $V/\ker V$.
 
 To check the universal property, let $T: V \to W$ be a linear map into a normed space $W$ such that $||Tv|| = ||v||$.
@@ -106,15 +106,15 @@ Thus we may define $T'(\pi(v)) = Tv$; this is well-defined because if $\pi(v) = 
 
 \begin{lemma}[reverse triangle inequality]
 For every $v, w$ in a normed space,
-$$|||v|| - ||w||| \leq ||v - w||.$$
+\[|||v|| - ||w||| \leq ||v - w||.\]
 \end{lemma}
 \begin{proof}
 One has
-$$||v|| = ||v + w - w|| \leq ||v - w|| + ||w||$$
+\[||v|| = ||v + w - w|| \leq ||v - w|| + ||w||\]
 so
-$$||v|| - ||w|| \leq ||v - w||.$$
+\[||v|| - ||w|| \leq ||v - w||.\]
 Similarly,
-$$||w|| - ||v|| \leq ||v - w||.$$
+\[||w|| - ||v|| \leq ||v - w||.\]
 But $\max(||v|| - ||w||, ||w|| - ||v||) = |||v|| - ||w|||$.
 \end{proof}
 
@@ -126,7 +126,7 @@ However, this property is not true for normed spaces, as the following example w
 \begin{example}
 Let $C[0, 1]$ denote the vector space of continuous functions $[0, 1] \to \CC$.
 We turn $C[0, 1]$ into a normed space by introducing a Euclidean-type norm,
-$$||f||_2^2 = \int_0^1 |f(x)|^2 ~dx.$$
+\[||f||_2^2 = \int_0^1 |f(x)|^2 ~dx.\]
 It is easy to check that $||f||_2$ is a seminorm, and to see that it is a norm, note that if $\int_0^1 |g| = 0$, then for every $\varepsilon > 0$ there is a partition of $[0, 1]$ into intervals $I_1, \dots, I_n$ such that for every $i$, the length of $I_i$ is $<\varepsilon$ and the midpoint $I_i^*$ of $I_i$ satisfies $|g(I_i^*)| < \varepsilon$.
 Thus the set of points $x$ such that $|g(x)| < \varepsilon$ is $\varepsilon$-dense (i.e. for every $y$ there is an $x$ such that $|x - y| < \varepsilon$ and $|g(x)| < \varepsilon$).
 Taking $\varepsilon \to 0$ we see that the set of points $x$ such that $g(x) = 0$ is dense (i.e. for every $\delta > 0$ and every $y$ we can find an $x$ with $|x - y| < \delta$ and $g(y) = 0$).
@@ -140,20 +140,20 @@ n(x - 1/2 - 1/n), &1/2 - 1/n \leq x \leq 1/2 + 1/n\\
 \end{cases}.$$
 TODO: Draw a picture
 To see that $(f_n)_n$ is Cauchy, note that if $m > n$ then
-$$||f_n - f_m||_2^2 = \int_{1/2-1/n}^{1/2+1/n} (m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))^2~dx$$
+\[||f_n - f_m||_2^2 = \int_{1/2-1/n}^{1/2+1/n} (m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))^2~dx\]
 and the integrand satisfies
-$$(m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))^2 \leq 8.$$
+\[(m(x - 1/2 - 1/m) - n(x - 1/2 - 1/n))^2 \leq 8.\]
 Thus
-$$||f_n - f_m||_2^2 \leq \int_{1/2-1/n}^{1/2+1/n} 8~dx = \frac{16}{n}.$$
+\[||f_n - f_m||_2^2 \leq \int_{1/2-1/n}^{1/2+1/n} 8~dx = \frac{16}{n}.\]
 Therefore
-$$||f_n - f_m||_2 \leq \frac{4}{\sqrt n} \to 0$$
+\[||f_n - f_m||_2 \leq \frac{4}{\sqrt n} \to 0\]
 as $n \to \infty$. However, it is not too hard to check that if
 $$f(x) = \begin{cases}
 0, x \leq 1/2\\
 1, x > 1/2
 \end{cases}$$
 then
-$$\lim_{n \to \infty} ||f_n - f||_2 = 0;$$
+\[\lim_{n \to \infty} ||f_n - f||_2 = 0;\]
 yet $f$ is not continuous, and $||\cdot||_2$ is a norm, so $f_n$ cannot converge to any continuous function.
 \end{example}
 
@@ -173,9 +173,9 @@ The advantage of working in Banach spaces rather than general normed spaces is t
 \sum_{n=1}^\infty x_n = \lim_{N \to \infty} \sum_{n=1}^N x_n
 \end{equation}
 whenever the limit on the right-hand side of (\ref{banach space series}) makes sense; thus, $y = \sum_n x_n$ if for every $\varepsilon > 0$, there is an $N$ such that
-$$\left|\left|y - \sum_{n=1}^N x_n\right|\right| < \varepsilon.$$
+\[\left|\left|y - \sum_{n=1}^N x_n\right|\right| < \varepsilon.\]
 In fact, the right-hand side of (\ref{banach space series}) makes sense as long as the partial sums are Cauchy; thus, for every $\varepsilon > 0$, there is an $N$ such that
-$$\left|\left|\sum_{n=N}^\infty x_n\right|\right| < \varepsilon.$$
+\[\left|\left|\sum_{n=N}^\infty x_n\right|\right| < \varepsilon.\]
 By the triangle inequality, it in fact suffices to show that for every $\varepsilon > 0$ there is an $N$ such that
 \begin{equation}
 \label{absolute convergence}
@@ -210,22 +210,22 @@ commutes.
 To do this, let $V$ be a normed space and let $\Cau (V)$ be the vector space of all Cauchy sequences in $V$.
 (We let $x$ denote a Cauchy sequence $(x_n)_n$.)
 Then $\Cau (V)$ is a seminormed space, where
-$$||x|| = \lim_{n \to \infty} ||x_n||.$$
+\[||x|| = \lim_{n \to \infty} ||x_n||.\]
 (To see that the limit exists, note that if $x$ is a Cauchy sequence then $n \mapsto ||x_n||$ is a Cauchy sequence in $\RR$, so it converges.)
 Let $W$ be the normalization of $\Cau (V)$ and $\pi: \Cau (V) \to W$ the natural projection.
 
 We claim that $W$ is the completion of $V$.
 First, $W$ is a Banach space, because if $x \in \Cau (W)$, then we can choose $\widetilde x \in \Cau (\Cau (V))$ such that for every $n$,
-$$\pi(\widetilde x_n) = x_n.$$
+\[\pi(\widetilde x_n) = x_n.\]
 Now $\widetilde x_n$ is a Cauchy sequence, say $(\widetilde x_{n,m})_m$. If we replace $\widetilde x_n$ with a subsequence (in $m$) of $\widetilde x_n$, $\pi(\widetilde x_n)$ will not change.
 Thus we might as well assume that for any two $m,m'$,
-$$||\widetilde x_{n,m} - \widetilde x_{n,m'}|| < \frac{1}{n}.$$
+\[||\widetilde x_{n,m} - \widetilde x_{n,m'}|| < \frac{1}{n}.\]
 Now let
-$$\widetilde y_n = \widetilde x_{n,n}.$$
+\[\widetilde y_n = \widetilde x_{n,n}.\]
 We want $x_n \to \pi(\widetilde y)$ but it's not obvious that $\widetilde y$ is a Cauchy sequence.
 
 Let $\varepsilon > 0$, so there is an $N > \varepsilon^{-1}$ such that for every $n, n' \geq N$,
-$$||x_n - x_{n'}|| < \varepsilon$$
+\[||x_n - x_{n'}|| < \varepsilon\]
 and for any $j$,
 \begin{align*}
   ||\widetilde y_n - \widetilde y_{n'}|| &= ||\widetilde x_{n,n} - \widetilde x_{n',n'}||\\
@@ -234,18 +234,18 @@ and for any $j$,
   &< 2\varepsilon + ||\widetilde x_{n,j} - \widetilde x_{n',j}||.
 \end{align*}
 But
-$$\lim_{j \to \infty} ||\widetilde x_{n,j} - \widetilde x_{n',j}|| = 0$$
+\[\lim_{j \to \infty} ||\widetilde x_{n,j} - \widetilde x_{n',j}|| = 0\]
 and since $j$ was large enough we can take $||\widetilde x_{n,j} - \widetilde x_{n',j}|| < \varepsilon$. Then
-$$||\widetilde y_n - \widetilde y_{n'}|| \lesssim \varepsilon.$$
+\[||\widetilde y_n - \widetilde y_{n'}|| \lesssim \varepsilon.\]
 Therefore $\widetilde y \in \Cau (V)$, and we can define
-$$y = \pi(\widetilde y).$$
+\[y = \pi(\widetilde y).\]
 
 We similarly choose $N > \varepsilon^{-1}$ such that for every $n, n' \geq N$,
-$$||\widetilde y_n - \widetilde y_{n'}|| < \varepsilon.$$
+\[||\widetilde y_n - \widetilde y_{n'}|| < \varepsilon.\]
 Then
-$$||\widetilde x_{n',n} - \widetilde y_n|| \leq ||\widetilde x_{n',n} - \widetilde x_{n',n'}|| + ||\widetilde y_{n'} - \widetilde y_n|| \lesssim \varepsilon.$$
+\[||\widetilde x_{n',n} - \widetilde y_n|| \leq ||\widetilde x_{n',n} - \widetilde x_{n',n'}|| + ||\widetilde y_{n'} - \widetilde y_n|| \lesssim \varepsilon.\]
 But
-$$\lim_{m \to \infty} ||\widetilde x_{n,m} - \widetilde y_m|| = ||x_n - y||$$
+\[\lim_{m \to \infty} ||\widetilde x_{n,m} - \widetilde y_m|| = ||x_n - y||\]
 so $\lim_n x_n = y$.
 
 We can define
@@ -257,7 +257,7 @@ Clearly the limit of the Cauchy sequence on the right-hand side of (\ref{inclusi
 
 To see that $\iota(V)$ is dense in $W$, let $x \in W$ and choose $\widetilde x \in \Cau (V)$ with $\pi(\widetilde x) = x$.
 Now $\widetilde x$ is a Cauchy sequence in $V$, so let
-$$y_n = \iota(\widetilde x_n);$$
+\[y_n = \iota(\widetilde x_n);\]
 then $y \in \Cau (W)$, and the reader can check that $\lim_n y_n = x$.
 
 To check the universal property, let $T: V \to X$ be a linear map of $V$ into a Banach space $X$ such that $||Tv|| = ||v||$.
@@ -270,7 +270,7 @@ Since the completion is defined by a universal property, it is unique.
 \begin{definition}
 \label{bounded linear map}
 Let $T: V\to W$ be a linear map between normed spaces. We say that $T$ is a \dfn{bounded linear map} if there is a $C>0$ such that for every $v \in V$,
-$$||Tv|| \leq C||v||.$$
+\[||Tv|| \leq C||v||.\]
 The infima of all choices of $C$ is called the \dfn{operator norm} of $T$, denoted $||T||$.
 We denote by $B(V \to W)$ the space of bounded linear maps.
 \end{definition}
@@ -294,15 +294,15 @@ Define $Tx = \lim_n Tx_n$.
 We let $||T||_V$ denote the operator norm of $T$ with domain $V$ and $||T||_X$ with domain $X$.
 
 To see that this is well-defined, suppose that $\lim_n x_n' = x$ as well. Then
-$$\lim_{n \to \infty} ||Tx_n - Tx_n'|| \leq \lim_{n \to \infty} ||T||_V \cdot||x_n - x_n'|| = 0$$
+\[\lim_{n \to \infty} ||Tx_n - Tx_n'|| \leq \lim_{n \to \infty} ||T||_V \cdot||x_n - x_n'|| = 0\]
 since $x_n \to x$ and $x_n' \to x$.
 Thus $Tx$ does not depend on the choice of Cauchy sequence which approximates $x$.
 Similarly,
-$$||Tx|| = \lim_{n \to \infty} ||Tx_n|| \leq \lim_{n \to \infty} ||T||_V \cdot||x_n|| = ||T||_V ||x_n||.$$
+\[||Tx|| = \lim_{n \to \infty} ||Tx_n|| \leq \lim_{n \to \infty} ||T||_V \cdot||x_n|| = ||T||_V ||x_n||.\]
 Thus $||T||_X \leq ||T||_V$, but $V$ is a subspace of $X$ so clearly $||T||_V \leq ||T||_X$.
 
 To check that $T$ is linear on $X$, note that $T$ is continuous and hence can be commuted with limits. This means that
-$$T(x + y) = \lim_{n \to \infty} T(x_n + y_n) = \lim_{n \to \infty} Tx_n + Ty_n = Tx + Ty$$
+\[T(x + y) = \lim_{n \to \infty} T(x_n + y_n) = \lim_{n \to \infty} Tx_n + Ty_n = Tx + Ty\]
 where $(x_n)_n$ and $(y_n)_n$ are appropriately chosen Cauchy sequences.
 The proof that $T(cx) = cTx$ is similar.
 \end{proof}
@@ -324,7 +324,7 @@ In particular any finite-dimensional space is separable. Moreover, most spaces t
 \begin{example}
 \label{nonseparable space}
 Let $X$ be the space of all bounded functions $\CC \to \CC$, where
-$$||f - g|| = \sup_{z \in \CC}|f(z) - g(z)|.$$
+\[||f - g|| = \sup_{z \in \CC}|f(z) - g(z)|.\]
 Then $X$ is not separable. In fact, if $z \in \CC$, let $1_z(z) = 1$ and $1_z(w) = 0$ if $w \neq z$.
 Then $Y=\{1_z: z \in \CC\}$ is an uncountable subset of $X$ such that for every $z_1 \neq z_2$, $||1_{z_1} - 1_{z_2}|| =1$.
 So $Y$ is discrete and uncountable, and hence cannot be separable.
@@ -1113,7 +1113,7 @@ Then $U(1/2)^c$ is closed and so by Axiom $T^4$ we can find $U(1/4)$ open such t
 Similarly we can find $U(3/4)$ open such that $\overline{V(1/2)}$ is contained in the interior of $U(3/4)$.
 Repeating this process we define $U(p/2^n)$ for every $0 < p < 2^n$, $n \in \NN$, such that $\overline{U(s)} \subseteq U(r)$.
 Now set
-$$f(x) = \inf_{x \in U(r)} r$$
+\[f(x) = \inf_{x \in U(r)} r\]
 if such an $r$ exists, otherwise $f(x) = 1$.
 Since $\{p/2^n: 0 < p < 2^n, n \in \NN\}$ is dense in $[0, 1]$, one can check that $f$ is continuous, so $f$ is as desired.
 

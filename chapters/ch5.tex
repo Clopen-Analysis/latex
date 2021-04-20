@@ -18,16 +18,16 @@ The conditional expectation of $X$ on $\mathcal F$, by definition, will be a ran
 \begin{definition}
 Let $(\Omega, \Sigma, P)$ be a probability space, $\mathcal F \subseteq \Sigma$ a $\sigma$-algebra, and $X \in L^1(\Omega \to \RR)$ a random variable.
 The \dfn{conditional expectation} of $X$ given $\mathcal F$ is a measurable function
-$$E(X|\mathcal F): (\Omega, \mathcal F) \to \RR$$
+\[E(X|\mathcal F): (\Omega, \mathcal F) \to \RR\]
 such that
-$$E(1_A E(X|\mathcal F)) = E(1_A X)$$
+\[E(1_A E(X|\mathcal F)) = E(1_A X)\]
 whenever $A \in \mathcal F$.
 \end{definition}
 
 \begin{example}
 A \dfn{measurable partition} of $\Omega$ is a set of mutually exclusive events $A_i$ such that $\bigcup_i A_i = \Omega$.
 If $(A_i)$ is a measurable partition and $\mathcal F$ is the smallest $\sigma$-algebra containing every $A_i$, then $E(X|\mathcal F)$ is constant on each $A_i$, namely
-$$E(X|\mathcal F)|A_i = E(1_{A_i} X)$$
+\[E(X|\mathcal F)|A_i = E(1_{A_i} X)\]
 is the mean of $X$ on $A_i$.
 \end{example}
 
@@ -37,25 +37,25 @@ The conditional expectation $E(X|\mathcal F)$ is well-defined in the sense that 
 \end{corollary}
 \begin{proof}
 Let $\mu$ be the measure
-$$\mu(A) = E(1_A X)$$
+\[\mu(A) = E(1_A X)\]
 defined for $A \in \mathcal F$.
 Then $\mu$ is absolutely continuous with respect to $P$, so it has a Radon-Nikodym derivative; we set
-$$E(X|\mathcal F) = \frac{d\mu}{dP}.$$
+\[E(X|\mathcal F) = \frac{d\mu}{dP}.\]
 Then
-$$E(1_A E(X|\mathcal F)) = \int_A \frac{d\mu}{dP} ~dP = \int_A ~d\mu = \mu(A) = E(1_A X)$$
+\[E(1_A E(X|\mathcal F)) = \int_A \frac{d\mu}{dP} ~dP = \int_A ~d\mu = \mu(A) = E(1_A X)\]
 as desired.
 
 For the uniqueness, assume $Y$ is also a conditional expectation and let $A$ be the event that $Y \neq E(X|\mathcal F)$.
 Then $A \in \mathcal F$ so
-$$E(1_A|Y - E(X|\mathcal F)|) = E(1_A|X - X|) = 0.$$
+\[E(1_A|Y - E(X|\mathcal F)|) = E(1_A|X - X|) = 0.\]
 But $|Y - E(X|\mathcal F)| > 0$ on $A$ so this implies $E(1_A) = 0$, thus $A$ is almost surely false.
 \end{proof}
 
 \begin{exercise}
 Let $X \in L^1$ be a random variable and $\mathcal F$ a $\sigma$-algebra. Show that if the pullback $\sigma$-algebra induced by $X$ is independent of $\mathcal F$ then
-$$E(X|\mathcal F) = E(X).$$
+\[E(X|\mathcal F) = E(X).\]
 Show that
-$$E(E(X|\mathcal F)) = E(X).$$
+\[E(E(X|\mathcal F)) = E(X).\]
 Show that if $X$ is $\mathcal F$-measurable then $E(X|\mathcal F) = X$.
 \end{exercise}
 
@@ -74,12 +74,12 @@ If $B$ is a ball, say $B = B(x, r)$, we let $kB$ denote the \dfn{dilated ball} $
 \end{definition}
 \begin{lemma}
 Let $X$ be a metric space and let $\mathcal B$ be a finite set of balls in $X$. Then there is a subset $\mathcal B_0$ of $\mathcal B$ consisting of disjoint balls such that
-$$\bigcup_{B \in \mathcal B} B \subseteq \bigcup_{B_0 \in \mathcal B_0} 3B_0.$$
+\[\bigcup_{B \in \mathcal B} B \subseteq \bigcup_{B_0 \in \mathcal B_0} 3B_0.\]
 \end{lemma}
 TODO prove me
 \begin{theorem}[Vitali's covering lemma]
 Let $X$ be a separable metric space and let $\mathcal B$ be a set of balls in $X$. Let
-$$R(\mathcal B) = \sup_{B(x, r) \in \mathcal B} r$$
+\[R(\mathcal B) = \sup_{B(x, r) \in \mathcal B} r\]
 be the supremum of radii of the balls in $\mathcal B$. If $R(\mathcal B) < \infty$ then for every $\varepsilon > 0$ there is a countable subset $\mathcal B_0(\varepsilon)$ of $\mathcal B$ consisting of disjoint balls such that
 \begin{equation}
 \label{Vitali formula}
@@ -102,7 +102,7 @@ You will need to use some kind of set-theoretic machinery to pull this off.
 
 \begin{theorem}[weaktype Hardy-Littlewood maximal inequality]
 Let $d \geq 1$ and $f \in L^1(\RR^d)$. Let $\mu$ denote Lebesgue measure. Then for every $\lambda > 0$,
-$$\mu(\{Mf > \lambda\}) \leq 3^d \frac{||f||_{L^1(\RR^d)}}{\lambda}.$$
+\[\mu(\{Mf > \lambda\}) \leq 3^d \frac{||f||_{L^1(\RR^d)}}{\lambda}.\]
 \end{theorem}
 TODO prove me
 
