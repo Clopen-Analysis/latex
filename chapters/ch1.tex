@@ -316,6 +316,13 @@ Clearly any continuous function is left-continuous.
 One can also define right-continuous functions by ignoring the behavior of $f$ to the left of $x$ instead.
 \end{subsec}
 
+\begin{figure}
+\label{Heaviside figure}
+\caption{The Heaviside function (in blue) and an approximation to its derivative (in green).
+As the approximation improves, it converges to $0$ everywhere except at the origin, where it blows up.}
+\centering \includegraphics[width=0.5\textwidth]{graphics/heaviside}
+\end{figure}
+
 \begin{example}
 The \dfn{Heaviside step function}\footnote{Named after Oliver Heaviside (1850--1925), an engineer who introduced an early version of the ``distributional calculus'' used to solve differential equations. Mathematicians did not consider the distributional calculus rigorous until the 1950s, however.}
 \[H(x) = \begin{cases}
@@ -327,7 +334,7 @@ Clearly the derivative $H'(x)$ exists if $x \neq 0$, and in that case $H'(x) = 0
 We want to say that $H'(0) = \infty$ in some suitable sense, and in fact that for any $\varepsilon > 0$,
 \[\int_{-\infty}^{\infty} H'(x)~dx = \int_{-\varepsilon}^{\varepsilon} H'(x)~dx = 1.\]
 Of course we can't do that, because the limit that would define $H'(0)$ does not exist.
-TODO:\@ Draw a picture.
+See Figure \ref{Heaviside figure}.
 \end{example}
 
 \begin{definition}
@@ -922,23 +929,32 @@ For example, every countable set is the same as the empty set.
 One can give a different construction of the Lebesgue measure if one is \emph{only} interested in equivalence classes of measurable sets, rather than measurable sets themselves; see Exercises~\ref{physical lebesgue measure 1} through~\ref{physical lebesgue measure 3}.
 \end{subsec}
 
+\begin{figure}
+\label{Cantor set figure}
+\caption{The sets $C_{0}, \dots, C_{4}$ used in the construction of the Cantor set.}
+\centering \includegraphics[width=0.5\textwidth]{graphics/CantorSet}
+\end{figure}
+
 \begin{subsec}
 Let us now construct a useful example of an uncountable, null compact set, known as the \dfn{standard Cantor set}.
 This set will frequently be useful as an example, and will be treated at length in the exercises.
 
-Let $C_{0} = [0, 1]$, and given $C_{n}$ a finite union of closed intervals, let $C_{n+1}$ consist of $C_{n}$ with the open middle-thirds of each interval in $C_{n}$ removed. TODO:\@ Draw a picture.
+Let $C_{0} = [0, 1]$, and given $C_{n}$ a finite union of closed intervals, let $C_{n+1}$ consist of $C_{n}$ with the open middle-thirds of each interval in $C_{n}$ removed.
+See Figure \ref{Cantor set figure}.
 Let $C$, the standard Cantor set, be defined by $C = \bigcap_{n} C_{n}$.
 \end{subsec}
 
 \begin{subsec}
 It is often convenient to view the Cantor set in the following way. Let $2$ be a shorthand for the set $\{0, 1\}$.
 Let $2^{\omega}$ denote the space of sequences in $2$, thus $2^{\omega}$ is the set of all functions $\NN \to \{0, 1\}$.
+
 For each $x \in 2^{\omega}$, we obtain a point $f(x) \in C$ in the following way.
 Assume that $D_{n-1}$ is one of the closed intervals obtained in stage $n-1$ of the Cantor set construction, thus $D_{n-1}$ is an interval in $C_{n-1}$.
 If $x_{n} = 0$, let $D_{n}$ be the left closed interval in $D_{n-1}$, and otherwise let $D_{n}$ be the right closed interval.
 Then $D_{n} \subseteq D_{n-1} \cap C_{n}$.
 The intersection of closed nonempty intervals is a closed nonempty interval, so we obtain such an interval $D \subseteq C$.
 But a consequence of Exercise~\ref{Cantor set props} is that the Cantor set contains no nontrivial intervals, so $D$ consists of a single point $f(x)$.
+
 The map $f$ is injective since if $f(x) = f(y)$ then, at the $n$th stage of the Cantor set construction, both $x$ and $y$ agreed on which subinterval to pass to, thus $x = y$.
 It is surjective since every point $p \in C$ must be in some interval $D_{n}$ at stage $n$, and if $D_{n}$ is the left interval of $D_{n-1}$ then we can set $x = 0$, and otherwise set $x = 1$; then $f(x) = p$.
 One can similarly interpret the Cantor set as the set of all paths through the full infinite binary tree.

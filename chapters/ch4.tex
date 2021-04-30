@@ -74,9 +74,17 @@ where the $\sup$ is taken over all $x$ on the set on which $f_{n}' \to f$ unifor
 The space $\mathcal L^{\infty}$ is defined to be the space of all versions of all elements of $L^{\infty}$, and on $\mathcal L^{\infty}$, $||\cdot||_{\infty}$ is a seminorm. Its normalization is $L^{\infty}$.
 \end{subsec}
 
+\begin{figure}
+\label{Lp comparison figure}
+\caption{The blue function is large in $L^1$ but small in $L^\infty$, since it is wide but shallow.
+The green function, meanwhile, is large in $L^\infty$ but small in $L^1$, since it is tall but slender.}
+\centering \includegraphics[width=0.5\textwidth]{graphics/lp_comparison}
+\end{figure}
+
 \begin{subsec}
 It is worth contrasting the norms $L^{1}$ and $L^{\infty}$. $L^{1}$ only cares about the ``area under the graph''; a function $f$ whose graph is a narrow but very tall spike is tiny in $L^{1}$. Meanwhile $L^{\infty}$ only cares about ``height of the graph''; that same function $f$ would have an enormous $L^{\infty}$ norm.
-On the other hand, a function which is very wide but shallow would be tiny in $L^{\infty}$ but huge in $L^{1}$. TODO:\@ Draw a picture.
+On the other hand, a function which is very wide but shallow would be tiny in $L^{\infty}$ but huge in $L^{1}$.
+See Figure \ref{Lp comparison figure}.
 Later we will define $L^{p}$ norms which serve as a ``weighted average'' between the two extremes.
 \end{subsec}
 
@@ -130,8 +138,14 @@ and there is nothing to prove. Otherwise, $|\mu|(E) = \lim_{n} |\mu|(E_{n}) \geq
 proving the claim.
 \end{proof}
 
+\begin{figure}
+\label{continuous function figure}
+\caption{A typical continuous function on the compact set $[0, 1]$. Both the $L^1$ and $L^\infty$ norms are finite (and, in fact, are less than $36$).}
+\centering \includegraphics[width=0.5\textwidth]{graphics/typical_continuous}
+\end{figure}
+
 \begin{subsec}
-Let us now show that for Radon measures, and in particular Lebesgue measure, continuous functions are integrable on compact sets.
+Let us now show that for Radon measures, and in particular Lebesgue measure, continuous functions are integrable on compact sets, as in Figure \ref{continuous function figure}.
 If the reader is unfamiliar with locally compact Hausdorff spaces, they may as usual take $X = \RR^{d}$ and $\mu$ Lebesgue measure.
 \end{subsec}
 

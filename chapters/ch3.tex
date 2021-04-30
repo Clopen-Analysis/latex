@@ -402,15 +402,19 @@ Therefore $f$ is almost separably valued. Then Lemma~\ref{Newberger lemma 1} imp
 which implies that $f^{-1}(U)$ is a countable union of countable unions of countable intersections of measurable sets, hence is measurable.
 \end{proof}
 
+\begin{figure}
+\label{Gauss convergence}
+\caption{A sequence of Gaussian cdfs (Example \ref{Gaussian CDF}), $f_n$, converging almost everywhere to the discontinuous Heaviside function. Here $f_1$ has a blue plot, $f_2$ has a green plot, $f_3$ has a red plot, and $f_4$ has an orange plot.}
+\centering \includegraphics[width=0.5\textwidth]{graphics/gauss_cdfs}
+\end{figure}
+
 \begin{subsec}\label{all functions are measurable}
 Let $\RR$ be equipped with its usual Lebesgue measure (or really any Borel measure $\mu$ on any space with a countable dense subset, such that for every countable set $Z$, $\mu(Z) = 0$).
 Then any continuous function $\RR \to B$ pulls back open sets to open (hence Borel) sets and has separable image (since the image of $\QQ$ is dense in the image of $\RR$), hence is measurable by Theorem~\ref{characterization of measurable functions}.
 Any pointwise limit of continuous functions is also measurable; for example any function with only a discrete set of discontinuities, or with only jump discontinuities.
 A monotone function has only jump discontinuities, so is measurable. A similar argument applies for any left-continuous or right-continuous function.
 And of course, we can modify any of the above functions on a countable set (or any null set!) to get another measurable function.
-See Exercise~\ref{all functions are measurable exer}.
-
-TODO:\@ Draw a picture of continous functions converging to a finitely disct function or a function with jump disc.
+See Exercise~\ref{all functions are measurable exer} and Figure~\ref{Gauss convergence}.
 \end{subsec}
 
 \begin{example}\label{nonseparable function}
@@ -487,10 +491,17 @@ Now, by analogy with the notion of a property holding ``almost everywhere'' (eve
 A sequence of functions $f_{n}: X \to B$ \dfn{converges nearly uniformly} to a function $f: X \to B$ if for every $\varepsilon > 0$ there is a set $E_{\varepsilon}$ such that $|\mu|(X \setminus E_{\varepsilon}) < \varepsilon$ and $f_{n} \to f$ uniformly on $E_{\varepsilon}$.
 \end{definition}
 
+\begin{figure}
+\label{nearly uniform figure}
+\caption{The sequence of functions $f_n(x) = x^n$ defined on $[0, 1]$ converges nearly uniformly, and hence almost everywhere, to $0$. Here $f_1$ is blue, $f_2$ is green, $f_4$ is red, and $f_8$ is orange. The defect near $1$ implies that they do not converge uniformly.}
+\centering \includegraphics[width=0.5\textwidth]{graphics/nearly_uniform}
+\end{figure}
+
 \begin{subsec}
 Thus $f_{n} \to f$ nearly uniformly iff for every $\varepsilon > 0$ there is a $E$ such that for every $\delta > 0$ there is an a $N$ such that $|\mu|(E) < \varepsilon$ and for every $n > N$, $\sup_{E} ||f_{n} - f||_{B} < \delta$.
 Clearly a sequence which converges nearly uniformly converges almost pointwise; indeed, the sets $E_{\varepsilon}$ where the sequence fails to converge uniformly have a null intersection $E$, and if the sequence fails to converge pointwise at a point $x$, then $x \in E$.
 In particular, the nearly uniform limit of a sequence of measurable functions is measurable.
+See Figure \ref{nearly uniform figure} for an example of nearly uniform convergence which is not uniform.
 \end{subsec}
 
 \begin{lemma}
