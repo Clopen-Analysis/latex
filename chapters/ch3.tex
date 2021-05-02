@@ -417,34 +417,16 @@ And of course, we can modify any of the above functions on a countable set (or a
 See Exercise~\ref{all functions are measurable exer} and Figure~\ref{Gauss convergence}.
 \end{subsec}
 
+\begin{subsec}
+Which almost separably valued functions are nonmeasurable?
+If $A \subseteq X$ is a nonmeasurable set then $1_{A}$ pulls back the Borel set $\{1\}$ to the nonmeasurable set $A$, so that $1_{A}$ is nonmeasurable.
+An example of a nonmeasurable set is Vitali's set (Theorem~\ref{Vitali's set}).
+\end{subsec}
+
 \begin{example}\label{nonseparable function}
 An example of a function which is not almost separably valued is given by Example~\ref{nonseparable space}.
 Let $\delta$ be as in that example and let $f(x) = \delta_{x}$. Then for any uncountable $Y \subseteq \RR$, $f(Y)$ is an uncountable discrete set, so removing a null set cannot possibly help us here.
 \end{example}
-
-\begin{example}[Vitali's set]\label{Vitali set}
-Recall that we defined Lebesgue measure on $\Torus$, $\mu$, in Example~\ref{lebesgue measure torus}.
-If we rotate $\Torus$ by an angle $\theta$, then the rotation preserves $\mu$; that is, if $A \subseteq \Torus$ is measurable, and $A + \theta = \{e^{i(\varphi+\theta)}: e^{i\varphi} \in A\}$, then $\mu(A) = \mu(A + \theta)$.
-The group $\QQ$ of rational numbers under addition acts on $A$ by rotation: if $q \in \QQ$, define a map $e^{i\theta} \mapsto e^{i(\theta + 2\pi q)}$ from the circle to itself.
-
-Let $\mathcal O$ be the set of all orbits of the action of $\QQ$; that is, elements of $\mathcal O$ are sets
-\[\{e^{i(\varphi+2\pi q)}: q \in \QQ\}.\]
-Each orbit is countable since it is indexed by $\QQ$, yet $\Torus$ is uncountable, so $\mathcal O$ must be uncountable.
-Now the axiom of choice~\ref{axiom of choice} implies that there is a set $X \subset \Torus$ which contains exactly one element from each orbit in $\mathcal O$.
-Suppose that $X$ is measurable. Then $\bigcup_{q \in \QQ} X + q = \Torus$ and the union is disjoint, so
-\[1 = \mu(\Torus) = \sum_{q \in \QQ} \mu(X +  q) = \sum_{q \in \QQ} \mu(X),\]
-so $\mu(X) > 0$ (so that it sums to $1$) yet $\mu(X) = 0$ (since the sum of infinitely many copies of any nonzero number is infinite and hence $> 1$), a contradiction.
-
-Therefore $X$ is nonmeasurable, and so is its indicator function $1_{X}$.
-\end{example}
-
-\begin{subsec}
-But should you, dear reader, worry about nonmeasurable functions?
-Example~\ref{all functions are measurable} shows that functions that appear in mainstream analysis, algebra, or number theory are measurable.
-Example~\ref{nonseparable function} does suggest that in deeply infinitary parts of functional analysis, one may have to worry about functions which are not separably valued, and Vitali's set shows that in logic, where the axiom of choice (and its evil friends such as the axiom of power set and the axiom schema of replacement) is of import, nonmeasurable sets may emerge.
-But there exist models of set theory~\cite{Solovay1970} with certain axioms weakened where Vitali's construction fails and every almost separably valued function is measurable, and someone with a more constructivist bent may conclude from that theorem that indeed every function is measurable in ``reality'' (whatever that means).
-Strichartz~\cite[Chapter 1]{strichartz2003guide} summarized these observations by remarking that ``wise-guys who like using the axiom of choice will have to worry about \dots wolves under the bed, etc.''
-\end{subsec}
 
 \begin{exercise}\label{all functions are measurable exer}
 Prove the assertions in Example~\ref{all functions are measurable}.

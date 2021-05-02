@@ -832,8 +832,7 @@ One form of the Stone-Weierstrass theorem is the statement that for every contin
 Surprisingly, this deterministic statement has a simple probabilistic proof, which we now outline.
 
 Fix $x \in [0, 1]$.
-Show that there is a probability space $(\Omega, P)$ which admits iid random variables $X_{j}$ with $P(X_{j} = 1) = x$ and $P(X_{j} = 0) = 1 - x$.
-(Hint: One constructive way to do this is to say that $\Omega$ is the Cantor set $\prod_{j} \{0, 1\}$.)
+Show that there is a probability measure $P$ on the Cantor set $\Omega$ which admits iid random variables $X_{j}$ with $P(X_{j} = 1) = x$ and $P(X_{j} = 0) = 1 - x$.
 
 Let $\overline X_{n} = \sum_{j \leq n} X_{j}/n$ be the average of the first $n$ random variables $X_{j}$ and show that $B_{n}(x) = E(f(\overline X_{n}))$ is a polynomial in $x$.
 For every $\varepsilon > 0$ there is a $\delta > 0$, which does not depend on $x$, such that $|x - y| < \delta$ implies $|f(x) - f(y)| < \varepsilon$.
@@ -841,4 +840,13 @@ Conclude that
 \[|B_{n}(x) - f(x)| \lesssim \varepsilon + P(|\overline X_{n} - x| > \delta)\]
 where the constant is allowed to depend on $f$ but not $x$.
 Use Chebyshev's inequality, Exercise~\ref{Chebyshev}, to conclude the proof.
+\end{exercise}
+
+\begin{exercise}[Sierpiński -- for those who know set theory]
+Recall that a \dfn{well-ordering} of $\RR$ is a bijection $\RR \to \kappa$ where $\kappa$ is a cardinal (Definition~\ref{cardinalDefinition}).
+According to the axiom of choice, there is a well-ordering $F$ of $\RR$ (Theorem~\ref{well-ordering theorem}); let us write $x \prec y$ if $F(x) < F(y)$.
+Let $A = \{(x, y) \in \RR^2: y \prec x\}$, and let $S_x = \{y \in \RR: y \prec x\}$.
+
+Show that there exists $x \in \RR$ such that $S_x$ is not null; let $x^*$ be the $\prec$-least such $x$.
+Show that $A \cap (S_{x^*} \times S_{x^*})$ is nonmeasurable; conclude that $A$ is nonmeasurable.
 \end{exercise}

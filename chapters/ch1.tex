@@ -164,29 +164,12 @@ But it is not so obvious how to check whether a subset of $\RR^{d}$ is Borel.
 Certainly any set you will ever ``naturally'' encounter is Borel, but not every subset of $\RR^{d}$ is Borel.
 \end{subsec}
 
-\begin{lemma}\label{Borel sigma algebra}
+\begin{theorem}\label{Borel sigma algebra}
 There exists a subset of $\RR^{d}$ which is not Borel.
 In fact, the set of Borel subsets of $\RR^{d}$ has strictly lower cardinality than the set of all subsets of $\RR^{d}$.
-\end{lemma}
-\begin{proof}[Proof (omit on first reading)]
-Let $\Sigma_{1} = \mathcal T$ be the topology of $\RR^{d}$.
-Given $\Sigma_{\alpha}$, $\alpha$ a countable ordinal (see Definition~\ref{ordinal dfn}), let $\Pi_{\alpha}$ be the set of all complements of elements of $\Sigma_{\alpha}$.
-Let $\Sigma_{\alpha+1}$ be the set of countable unions of elements of $\Pi_{\alpha}$.
-If $\beta < \omega_{1}$ is not equal to $\alpha+1$ for any $\alpha$, let $\Sigma_{\beta} = \bigcup_{\alpha < \beta} \Sigma_{\alpha}$.
-Therefore $\Sigma_{\alpha}$ and $\Pi_{\alpha}$ are defined for all $\alpha < \omega_{1}$ by transfinite recursion (see the remarks after Theorem~\ref{transfinite induction}).
-We note that $\Sigma_{0}$ has cardinality $\beth_{1}$ by Theorem~\ref{cardinality of topology}.
-
-Now the mapping $A \mapsto A^{c}$ is a bijection $\Sigma_{\alpha} \to \Pi_{\alpha}$.
-Moreover if $\Pi_{\alpha}$ has cardinality $\beth_{1}$ (see Definition~\ref{beth dfn}) then so does $\Sigma_{\alpha+1}$, since each element of $\Sigma_{\alpha+1}$ can be expressed in terms of a countable number of elements of $\Pi_{\alpha}$, and $\beth_{1} \times \beth_{1} \times \cdots$ has cardinality $\beth_{1}$ by Theorem~\ref{cardinal arithmetic trivial}.
-Finally if $\beta$ is a countable limit ordinal and for every $\alpha < \beta$, $\Sigma_{\alpha}$ is countable, then $\Sigma_{\beta}$ is a countable union of sets of cardinality $\beth_{1}$, hence has cardinality $\beth_{1}$ by Theorem~\ref{cardinal arithmetic trivial}.
-It follows by induction that for every countable ordinal $\alpha$, $\Sigma_{\alpha}$ has cardinality $\beth_{1}$.
-
-Now every Borel set is in $\Sigma_{\alpha}$ for some $\alpha$, since it was obtained by applying countable union and complement countably many times to an open set, and thus is in $\Sigma_{\omega_{1}} = \bigcup_{\alpha < \omega_{1}} \Sigma_{\alpha}$.
-But $\Sigma_{\omega_{1}}$ is a union of $\aleph_{1}$ many sets of cardinality $\beth_{1}$, so has cardinality $\beth_{1}$ by Theorem~\ref{cardinal arithmetic trivial},
-since $\aleph_{1} \leq \beth_{1}$ (which follows by Zermelo's well-ordering Theorem~\ref{well-ordering theorem}).
-Therefore $\Sigma_{\omega_{1}}$ is the set of all Borel sets, and has cardinality $\beth_{1}$.
-
-But $\Sigma_{\omega_{1}}$ is a subset of the power set $2^{\RR}$, which has cardinality $\beth_{2}$. Thus there is an element of $2^{\RR}$ which is not Borel.
+\end{theorem}
+\begin{proof}
+We defer the proof to a later stage -- namely, Theorem~\ref{Borel not Lebesgue}.
 \end{proof}
 
 \begin{exercise}

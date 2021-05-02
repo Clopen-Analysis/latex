@@ -364,7 +364,7 @@ Show that two random variables are isomorphic iff they are identically distribut
 \end{exercise}
 
 \section{Ergodic systems}
-This section is used nowhere else in this book, except in some exercises; it is meant to showcase an application.
+This section is used nowhere else in this book, except in some exercises and the following section; it is meant to showcase an application.
 
 Measure-preserving maps from a measured space to itself are important in probability and thermodynamics; their study is known as \dfn{ergodic theory}.
 
@@ -398,11 +398,19 @@ Though $X$ is initially in an orderly state, the ergodicity of the system means 
 This is illustrated mathematically by the following example.
 \end{subsec}
 
+\begin{figure}
+\label{irrationalRotationFig}
+\caption{The first $300$ points of the orbit of $0$ of an irrational rotation with $\theta \approx 0.81803$. The lighter points are farther along the orbit. The whole orbit is dense in $\Torus$.}
+\centering \includegraphics[width=0.5\textwidth]{graphics/irrationalRotationFig}
+\end{figure}
+
 \begin{example}
+\label{irrationalRotation}
 One ergodic system is known as the \dfn{irrational rotation}.
-Let $\theta \in [0, 2\pi]$ and suppose that $\theta/\pi$ is irrational.
+Let $\theta \in [0, 2\pi]$ and suppose that $\theta/2\pi$ is irrational.
 Then the map $f(z) = e^{i\theta}z$ on the circle $\Torus$, which rotates the circle by $\theta$, defines an ergodic system $(\Torus, \mu, f)$, where $\mu$ is Lebesgue measure.
 The reader who is familiar with some Fourier analysis may show this in Exercise~\ref{irrational rotation exercise}.
+See Figure~\ref{irrationalRotationFig}. We will study irrational rotations further in Section~\ref{nonmeasurable sets}.
 \end{example}
 
 \begin{subsec}
@@ -458,4 +466,194 @@ Show that Poincar\'e recurrence fails for infinite measure spaces by giving a co
 \begin{exercise}\label{irrational rotation exercise}
 Show that the irrational rotation with Lebesgue measure forms an ergodic system.
 (Hint: Let $A$ be a subset of the circle which the irrational rotation sends into itself. Consider the Fourier series of $1_{A}$. You are allowed to assume basic facts about Fourier series.)
+\end{exercise}
+
+\section{Nonmeasurable sets}
+\label{nonmeasurable sets}
+A $\sigma$-algebra has very strong closure properties: one needs to use some kind of operation that involves working with uncountably many sets at once to escape it.
+As a consequence, every subset of $\RR$ that we have encountered is at least Lebesgue measurable, and we have not even managed to complete the proof that there is a subset of $\RR$ which is not Borel (Theorem~\ref{Borel sigma algebra}).
+Lebesgue certainly hoped, but was unable to prove, that every subset of $\RR$ is Lebesgue measurable.
+However, Vitali showed that this is false. In this section we will first prove Vitali's theorem, and then prove that there is a Lebesgue measurable set that is not Borel.
+Since we will need some nontrivial facts from set theory, this section is optional and not used anywhere.
+
+\begin{subsec}
+We first observe that to show that there is a subset of $\RR$ which is not measurable, it suffices to do so with $\RR$ replaced by $\Torus$.
+Indeed, the map $F(\theta) = e^{i\theta}$ is a measure-preserving isomorphism $F: [0, 2\pi) \to \Torus$, so if $A \subseteq \Torus$ is nonmeasurable, then $F^{-1}(A)$ is nonmeasurable as well.
+\end{subsec}
+
+\begin{subsec}
+Let us recall some algebra.
+If $G$ is a group and $X$ is a set, an action of $G$ on $X$ is a rule by which every $g \in G$ induces a bijection $T_g: X \to X$ which is functorial in the sense that if $h \in G$, then $T_{gh} = T_gT_h$.
+Equivalently, an action of $G$ on $X$ is a morphism of groups $G \to X!$ where $X!$ is the group of all bijections $X \to X$.
+If $x \in X$, the set $\{T_g(x): g \in G\}$ is known as the \dfn{orbit} of $x$.
+Then we get a surjective map
+\begin{align*}
+S_x: G &\to \{T_g(x): g \in G\}\\
+g &\mapsto T_g(x).
+\end{align*}
+If every such map $S_x$ is a bijection, then we say that the action is a \dfn{free action}.
+\end{subsec}
+
+\begin{subsec}
+Now recall the irrational rotation, Example \ref{irrationalRotation}.
+If $\theta \in [0, 2\pi]$ is an angle and $\theta/2\pi$ is irrational, then we obtain a measure-preserving system $T: \Torus \to \Torus$, known as an irrational rotation, which acts by rotating $\Torus$ by $\theta$.
+If $n \in \ZZ$, then $T^n$ acts by rotating $\Torus$ by $n\theta$.
+That is, we get a group action of $\ZZ$ on $\Torus$ where $n \in \ZZ$ rotates $\Torus$ by $n\theta$.
+\end{subsec}
+
+\begin{lemma}
+Every irrational rotation $\ZZ \to \Torus!$ is a free measure-preserving action.
+\end{lemma}
+\begin{proof}
+Clearly the irrational rotation is measure-preserving, since it is a rotation and Lebesgue measure on $\Torus$ is rotation-invariant.
+So we just need to show that it is free.
+If not, there is $x \in \Torus$ and $q_1, q_2 \in \ZZ$ such that $T^{q_1}(x) = T^{q_2}(x)$.
+Setting $q = q_2 - q_1$ we conclude $T^q(x) = x$.
+In other words,
+$$x + q\theta \equiv x \mod 2\pi.$$
+Thus there is $N \in \ZZ$ such that $q\theta = 2\pi N$, or in other words $\theta/2\pi = N/q \in \QQ$, even though $\theta/2\pi$ is irrational.
+\end{proof}
+
+\begin{theorem}[Vitali]\label{Vitali's set}
+There is a subset of $\Torus$ which is not measurable.
+\end{theorem}
+\begin{proof}
+Choose an irrational rotation $\ZZ \to \Torus!$, let $\mathcal O$ be the set of all orbits thereof, and let $\mu$ be Lebesgue measure on $\Torus$.
+Since the irrational rotation is free and $\ZZ$ is countably infinite, every element of $\mathcal O$ must also be countably infinite.
+Since $\Torus$ is uncountable, $\mathcal O$ must be uncountable.
+The axiom of choice, Axiom~\ref{axiom of choice}, implies that there is a set $X \subset \Torus$ which contains exactly one element from each orbit in $\mathcal O$.
+Suppose that $X$ is measurable. Then $\bigcup_{q \in \ZZ} X + q = \Torus$ and the union is disjoint, so
+\[1 = \mu(\Torus) = \sum_{q \in \ZZ} \mu(X + q\theta) = \sum_{q \in \ZZ} \mu(X),\]
+since the irrational rotation is measure-preserving, so $\mu(X) > 0$ (so that it sums to $1$) yet $\mu(X) = 0$ (since the sum of infinitely many copies of any nonzero number is infinite and hence $> 1$), a contradiction.
+\end{proof}
+
+\begin{subsec}
+Though the existence of Vitali's set may feel paradoxical, and somewhat hurts the effectiveness of $\RR^3$ as a model of ``space", it is rarely worth worrying oneself over.
+Owing to the use of the axiom of choice, it is essentially impossible that a nonlogician will encounter something like Vitali's set in practice.
+In fact, we will see (see the remarks at~\ref{all functions are measurable}) that virtually all sets which appear in mainstream analysis, algebra, or number theory are measurable.
+
+On the other hand, Vitali's set shows that in logic, where the axiom of choice (and its friends such as the axiom of power set and the axiom schema of replacement) is of import, nonmeasurable sets may emerge.
+But there exist models of set theory due to Solovay~\cite{Solovay1970} with certain axioms weakened where Vitali's construction fails and every subset of $\RR$ is measurable, and someone with a more constructivist bent may conclude from that theorem that indeed every set is measurable in ``reality'' (whatever that means).
+Strichartz~\cite[Chapter 1]{strichartz2003guide} summarized these observations by remarking that ``wise-guys who like using the axiom of choice will have to worry about \dots wolves under the bed, etc.''
+\end{subsec}
+
+\begin{subsec}
+Now let us begin the proof of Theorem~\ref{Borel sigma algebra}.
+To do this, we need the notion of ``Borel complexity."
+The reader should review the notion of an ordinal (see Definition~\ref{ordinal dfn}) before reading this proof.
+\end{subsec}
+
+\begin{definition}
+Let $\Sigma_{1} = \mathcal T$ be the topology of $\RR$.
+Given $\Sigma_{\alpha}$, $\alpha$ a countable ordinal, let $\Pi_{\alpha}$ be the set of all complements of elements of $\Sigma_{\alpha}$.
+Let $\Sigma_{\alpha+1}$ be the set of countable unions of elements of $\Pi_{\alpha}$.
+If $\beta < \omega_{1}$ is not equal to $\alpha+1$ for any $\alpha$, let $\Sigma_{\beta} = \bigcup_{\alpha < \beta} \Sigma_{\alpha}$.
+
+If $A \subseteq \RR$ is a Borel set and $\Sigma_{\alpha}$ or $\Pi_{\alpha}$ is the smallest set in the above construction such that $A \in \Sigma_{\alpha}$ or $A \in \Pi_{\alpha}$, we say that $A$ has \dfn{Borel complexity} $\Sigma_{\alpha}$ or $\Pi_{\alpha}$.
+\end{definition}
+
+\begin{subsec}
+By transfinite recursion (Theorem~\ref{transfinite induction}), for every countable ordinal $\alpha$, $\Sigma_{\alpha}$ and $\Pi_{\alpha}$ are well-defined.
+Every open set has Borel complexity $\Sigma_{1}$ and every closed set has Borel complexity $\Pi_{1}$.
+\end{subsec}
+
+\begin{subsec}
+Recall (Definition~\ref{beth dfn}) that $\beth_{1}$ is the cardinality of $\RR$, which is well-defined by Theorem~\ref{well-ordering theorem}; meanwhile $\beth_{2}$ is the cardinality of the set of all subsets of $\RR$.
+\end{subsec}
+
+\begin{lemma}
+Every Borel set has a well-defined Borel complexity.
+\end{lemma}
+\begin{proof}
+The set $A$ was obtained by applying countable union and complement countably many times to an open set, and thus is in $\Sigma_{\omega_{1}} = \bigcup_{\alpha < \omega_{1}} \Sigma_{\alpha}$.
+\end{proof}
+
+\begin{lemma}
+If $\alpha$ is a countable ordinal, then
+$$\card \Sigma_{\alpha} = \card \Pi_{\alpha} = \beth_{1}.$$
+\end{lemma}
+\begin{proof}
+We proceed by transfinite induction.
+By Theorem~\ref{cardinality of topology}, $\Sigma_{0}$ has cardinality $\beth_{1}$.
+The mapping $A \mapsto A^{c}$ is a bijection $\Sigma_{\alpha} \to \Pi_{\alpha}$.
+
+If $\Pi_{\alpha}$ has cardinality $\beth_{1}$ then so does $\Sigma_{\alpha+1}$, since each element of $\Sigma_{\alpha+1}$ can be expressed in terms of a countable number of elements of $\Pi_{\alpha}$, and $\beth_{1} \times \beth_{1} \times \cdots$ has cardinality $\beth_{1}$ by Theorem~\ref{cardinal arithmetic trivial}.
+
+Finally if $\beta$ is a countable limit ordinal and for every $\alpha < \beta$, $\Sigma_{\alpha}$ is countable, then $\Sigma_{\beta}$ is a countable union of sets of cardinality $\beth_{1}$, hence has cardinality $\beth_{1}$ by Theorem~\ref{cardinal arithmetic trivial}.
+It follows by induction that for every countable ordinal $\alpha$, $\Sigma_{\alpha}$ has cardinality $\beth_{1}$.
+\end{proof}
+
+\begin{theorem}[Theorem~\ref{Borel sigma algebra}, redux]\label{Borel not Lebesgue}
+The Borel $\sigma$-algebra of $\RR$ has cardinality $\beth_{1}$, which is strictly less than the cardinality $\beth_{2}$ of the Lebesgue $\sigma$-algebra.
+In particular, there is a Lebesgue measurable set which is not Borel.
+\end{theorem}
+\begin{proof}
+Let $\Sigma$ be the Borel $\sigma$-algebra. Then
+$$\Sigma = \bigcup_{\alpha} \Sigma_{\alpha}.$$
+The set of all countable ordinals has cardinality $\aleph_{1}$, and $\aleph_{1} \leq \beth_{1}$ (by Theorem~\ref{well-ordering theorem} and the fact that $\beth_{1}$ is uncountable).
+So
+$$\card \Sigma = \aleph_{1} \cdot \beth_{1} = \beth_{1}$$
+by Theorem~\ref{cardinal arithmetic trivial}.
+
+On the other hand, the Lebesgue $\sigma$-algebra contains every null set, and in particular contains every subset of a null Cantor set.
+A Cantor set has cardinality $\beth_{1}$, so its power set has cardinality $\beth_{2}$.
+By Cantor's diagonal argument, $\beth_{1} < \beth_{2}$.
+Since there are more Lebesgue measurable sets than Borel sets, there must a Lebesgue measurable set which is not Borel.
+\end{proof}
+
+\begin{subsec}
+Lebesgue falsely claimed~\cite{Lebesgue1905} that the continuous image of a Borel set is Borel.
+In fact, Souslin~\cite{Souslin1917} showed that there exists a \dfn{projective set} -- a set which can be obtained from Borel sets by taking continuous images and complements finitely many times -- which is not Borel.
+For a discussion of the history of Lebesgue's blunder see MathOverflow~\cite{MO34142}.
+\end{subsec}
+
+\begin{subsec}
+One may reasonably ask if every projective set is Lebesgue measurable.
+To discuss this, we need the notion of a \dfn{Gale-Stewart game}, which is just a set $A \subseteq [0, 1]$.
+The set defines a game in which the players, Alice and Bob, take turns choosing digits; Alice picks first.
+After countably many rounds, the players have given a real number $x \in [0, 1]$.
+Alice wins iff $x \in A$, and otherwise Bob wins.
+
+We say that \dfn{Alice has a winning strategy} if there is a digit $x_1$ such that no matter what digit $x_2$ Bob picks, Alice can pick a digit $x_3$ such that no matter what digit $x_4$ Bob picks, and so on, Alice will win.
+We say that \dfn{Bob has a winning strategy} if for every digit $x_1$ that Alice picks, there is a digit $x_2$ that Bob can pick such that no matter what digit $x_3$ that Alice picks, there is a digit $x_4$ that Bob can pick, and so on, Bob will win.
+If either Alice or Bob have a winning strategy, we say that the Gale-Stewart game $A$ is a \dfn{determined set}.
+
+The theorem of \dfn{projective determinacy}~\cite{SteelMartin10.2307/1990913} says that every projective set is determined.
+On the other hand, as the curious reader may prove in the exercises, every determined set is Lebesgue measurable.
+There is just one caveat, however: the theorem of projective determinacy was proven using axioms that are far stronger than the usual axioms of set theory.
+\end{subsec}
+
+\begin{exercise}
+Let $A \subseteq \RR$ be a measurable set.
+Show that either $A$ is null, or $A$ has a nonmeasurable subset.
+\end{exercise}
+
+\begin{exercise}[\cite{pugh2013real}]
+Show that the continuous (or even smooth, if you are brave) image of a Lebesgue measurable set may not be measurable.
+(Hint: Let $C$ be a null Cantor set and $F$ be a ``fat" Cantor set, so $F$ has positive Lebesgue measure.
+Send a null subset $C$ to a nonmeasurable subset of $F$.)
+\end{exercise}
+
+\begin{exercise}
+Show that for every Lebesgue measurable set $E \subseteq \RR$ there is a set $F$ of complexity $\Pi_2$ and a set $D$ of complexity $\Sigma_2$ such that
+$$D \subseteq E \subseteq F$$
+and $F \setminus D$ is null. (Hint: Lebesgue measure is a Radon measure.)
+\end{exercise}
+
+\begin{exercise}[Gale-Stewart]
+Prove that every open subset of $[0, 1]$ is determined.
+\end{exercise}
+
+\begin{exercise}
+Assume that $S$ is a determined set such that every measurable subset of $S$ is null.
+Show that $S$ is null, and therefore measurable.
+Conclude that every determined set is measurable, and in particular that Vitali's set is not determined.
+\end{exercise}
+
+\begin{exercise}[Zermelo]
+The game of chess consists of two players, White and Black.
+White is more likely to win than Black if both players are equally skilled.
+So consider chess, modified so that if there is a draw, then Black automatically wins.
+Show that chess can be viewed as a Gale-Stewart game, and in fact chess is determined.
+If you do not know the rules of chess, you may use without proof that on any turn, there are only finitely many moves that a player can make, and there exists a natural number $N$ such that any game of length $N$ is a draw.
 \end{exercise}

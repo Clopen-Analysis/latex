@@ -482,10 +482,11 @@ However, it is not obvious (and in fact, may even be false) that there is an inf
 \end{subsec}
 
 \begin{axiom}[infinity]
-There exists a set $x$, usually denoted $\NN$, such that $\emptyset \in x$ and for all sets $y \in x$, $\{y \cup \{y\}\} \in \NN$.
+There exists a set $x$ such that $\emptyset \in x$ and for all sets $y \in x$, $\{y \cup \{y\}\} \in x$.
 \end{axiom}
 
 \begin{subsec}
+Let $\NN$ be the \emph{smallest} set which is furnished by the axiom of infinity.
 From $\NN$ we may construct $\ZZ$, $\QQ$, and other familiar countable objects.
 \end{subsec}
 
@@ -591,7 +592,7 @@ The set of all countable ordinals is an uncountable ordinal (in fact, the smalle
 If $X$ is a set of ordinals, then $X$ has a least element; this is similar to the fact that every set of natural numbers has a least element.
 \end{subsec}
 
-\begin{definition}
+\begin{definition}\label{cardinalDefinition}
 An ordinal $\kappa$ is a \dfn{cardinal} if $\kappa$ is the least element of $\{\alpha: \alpha \cong \kappa\}$.
 \end{definition}
 
@@ -925,7 +926,7 @@ A \dfn{net} in $X$, indexed by $\PP$, is a function $\PP \to X$. If $x$ is a net
 A \dfn{sequence} is a net indexed by $\NN$.
 \end{definition}
 
-\begin{definition}
+\begin{definition}\label{convergence of nets}
 Let $\PP$ be a directed set and $X$ a topological space. Let $x$ be a net in $X$ indexed by $\PP$. Let $x^{*} \in X$.
 We say that $x^{*}$ is the \dfn{limit} of $x$ if for every neighborhood $U$ of $x$, there is an $\alpha \in \PP$ such that for every $\beta \geq \alpha$, $x_{\beta} \in U$.
 In this case we write $\lim_{\gamma} x_{\gamma} = x^{*}$ or $x_{\gamma} \to x^{*}$ if it is clear from context that $\gamma$ is a dummy variable.
