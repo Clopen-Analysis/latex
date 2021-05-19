@@ -1,11 +1,11 @@
 
-\chapter{More on measures}
-In this chapter we discuss vector-valeud measures and the relationships between measured spaces.
-These turn out to be especially useful in applications, including probability theory, so we introduce the languages of probability theory and ergodic theory in this chapter as well.
+\chapter{Examples and applications}
+Most of this chapter is optional; sometimes the first two sections will be useful in later chapters, but the later sections will only be used in motivational sections, exercises, and examples.
+The point here is to bring the level of abstraction down and show what one can do with all the machinery that we built up last chapter.
 
 \section{Measurable maps}
 In topology, a continuous map is one that pulls back open sets to open sets.
-Here we have no open sets to work with --- only measurable spaces --- but this turns out to be exactly what we want.
+Here we have no open sets to work with --- only measurable sets --- but this turns out to be exactly what we want.
 
 \begin{definition}
 Let $(X, \Sigma)$ and $(Y, \Gamma)$ be measurable spaces.
@@ -83,122 +83,6 @@ Let $F: X \to Y$ be a map, $\Gamma$ a $\sigma$-algebra on $Y$.
 Show that $F^{*}\Gamma$ is a $\sigma$-algebra on $X$ and $F: (X, F^{*}\Gamma) \to (Y, \Gamma)$ is measurable.
 Conversely, show that $F^{*}\Gamma$ is the intersection of all $\sigma$-algebras $\Sigma$ on $X$ such that $F: (X, \Sigma) \to (Y, \Gamma)$ is measurable.
 \end{exercise}
-
-\section{Hausdorff measures}
-At this point we have defined Stieltjes measures.
-In particular, we defined the Lebesgue measure and the Dirac measure.
-Let us treat some more measures.
-
-TODO:\@ Hausdorff measures
-
-
-\begin{example}\label{Lebesgue measure on sphere}
-An important example of Hausdorff measure is the $d-1$-dimensional Hausdorff measure in $\RR^{d}$.
-When restricted to the unit sphere
-\[S^{d - 1} = \{x \in \RR^{d}: |x| = 1\},\]
-and normalized so that the total measure of the sphere is $1$, the Hausdorff measure is called the \dfn{spherical Lebesgue measure}, denoted $\sigma_{d - 1}$.
-The spherical Lebesgue measure is especially important because, once integration has been defined, we will have
-\[\int_{\RR^{d}} f(x) ~dx = \int_{0}^{\infty} \int_{S^{d - 1}} f(r\omega) r^{d - 1}~d\sigma_{d - 1}(\omega) ~dr,\]
-which is a generalization of the classical formula
-\[\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x, y) ~dx ~dy = \int_{0}^{\infty} \int_{0}^{2\pi} f(r \cos \theta, r \sin \theta) r~d\theta ~dr\]
-for integration in polar coordinates. Here $r^{d - 1} d\sigma_{d - 1}(\omega)$ plays the role of $r~d\theta$.
-\end{example}
-
-
-
-\section{Measures on compact matrix groups}
-
-
-\section{Vector-valued measures}
-Recall that by definition, a measure $\mu$ is a $\sigma$-additive function $\mu: \Sigma \to (-\infty, \infty]$, where $\Sigma$ is a $\sigma$-algebra.
-However, the definition of $\sigma$-additive function makes sense even if $(-\infty, \infty]$ is replaced by a more general codomain, and we will have use for this when we integrate functions in more general codomains than the real numbers.
-
-\begin{subsec}
-Let $B$ be a Banach space, as discussed in Appendix~\ref{Banach space appendix}.
-If the reader is unfamiliar with Banach spaces, they can take $B = \CC^{d}$ and not lose any insight.
-If $(x_{n})$ is a sequence in $B$, then (\ref{banach space series}) is the definition of the infinite sum $\sum_{n} x_{n}$.
-\end{subsec}
-
-\begin{definition}
-Let $\Sigma$ be a $\sigma$-ring and $B$ a Banach space.
-A \dfn{vector-valued measure} on $\Sigma$, or simply a \dfn{measure}, is a function $\mu: \Sigma \to B$ such that whenever $(E_{n})$ are countably many disjoint sets in $\Sigma$,
-\[\mu\left(\bigcup_{n} E_{n}\right) = \sum_{n} \mu(E_{n}).\]
-\end{definition}
-
-\begin{example}
-The most important examples of vector-valued measures will be of the following form.
-Let $\nu$ be a positive measure on a measurable space $X$, and let $f: X \to B$ be an ``integrable function''.
-We will get back to what this means later --- but, taking the definition of integration as a black box, set
-\[\mu(E) = \int_{E} f(x) ~d\nu(x).\]
-Then $\mu$ is a vector-valued measure, and its ``derivative'' is $f$.
-This will be the setting in which we generalize the fundamental theorem of calculus.
-\end{example}
-
-\begin{subsec}
-Frequently, positive measures are easier to work with than vector-valued measures, so we will mainly spend this section developing tools to convert problems about vector-valued measures into problems about positive measures.
-\end{subsec}
-
-\begin{definition}
-Let $\mu$ be a measure. The \dfn{total variation measure} $|\mu|$ of $\mu$ is defined by
-\[|\mu|(E) = \sup_{E_{1}, \dots, E_{n}} \sum_{i=1}^{n} ||\mu(E_{i})||_{B}\]
-where the supremum ranges over finite sequences $E_{1}, \dots, E_{n}$ of disjoint measurable sets such that $E = \bigcup_{i} E_{i}$.
-\end{definition}
-
-\begin{theorem}
-Every total variation measure is a positive measure.
-\end{theorem}
-\begin{proof}
-Let $\mu$ be a measure. Then $|\mu|$ is nonnegative. If $E \subseteq F$ are measurable sets, write $F = E \cup (F \setminus E)$ to see that $|\mu|(E) \leq |\mu|(F)$.
-
-To see that $|\mu|$ is $\sigma$-additive, suppose that $F,G$ are disjoint measurable sets, $E = F \cup G$.
-Write $F = \bigcup_{i \leq m} F_{i}$ and $G = \bigcup_{j \leq n} G_{j}$ where the $F_{i},G_{j}$ are all disjoint; then
-\[|\mu|(E) \geq \sum_{i=1}^{m} ||\mu(F_{i})||_{B} + \sum_{j=1}^{n} ||\mu(G_{j})||_{B}.\]
-Thus $|\mu|(E) \geq |\mu|(F) + |\mu|(G)$, so by induction if $E = \bigcup_{i \leq m} E_{i}$ where the $E_{i}$ are disjoint, then $|\mu|(E) \geq \sum_{i \leq m} |\mu|(E_{i})$.
-Using the monotonicity, it follows that if $(E_{i})$ is a disjoint countable sequence of sets and $E = \bigcup_{i} E_{i}$, then
-\[|\mu|(E) \geq \sum_{i=1}^{\infty} |\mu|(E_{i}).\]
-
-Conversely, suppose that $E = \bigcup_{j} E_{j} = \bigcup_{i\leq n} F_{i}$ where $(E_{j})$ is a disjoint countable sequence and $(F_{i})$ is a disjoint finite sequence. Then
-\begin{align*}
-\sum_{i=1}^{n} ||\mu(F_{i})||_{B} &= \sum_{i=1}^{n} \left|\left|\mu\left(\bigcup_{j=1}^{\infty} \left(F_{i} \cap E_{j}\right)\right)\right|\right|_{B} \leq \sum_{i=1}^{n} \sum_{j=1}^{\infty} ||\mu(F_{i} \cap E_{j})||_{B} \\
-&= \sum_{j=1}^{\infty} \sum_{i=1}^{n} ||\mu(F_{i} \cap E_{j})||_{B} \leq \sum_{j=1}^{\infty} |\mu|(E_{j}).
-\end{align*}
-Here we used the fact that $E_{j} = \bigcup_{i \leq n} F_{i} \cap E_{j}$. It follows that $|\mu|(E) \leq \sum_{i=1}^{\infty} |\mu|(E_{i})$.
-\end{proof}
-
-\begin{theorem}[triangle inequality and reverse triangle inequality]\label{reverse triangle inequality}
-Let $\mu,\nu$ be measures on $\Sigma$ with values in $B$. Then $|\mu + \nu| \leq |\mu| + |\nu|$ and
-\[||\mu|(E) - |\nu|(E)| \leq |\mu - \nu|(E).\]
-\end{theorem}
-\begin{proof}
-If $E = \bigcup_{i \leq n} E_{i}$, the $E_{i}$ disjoint, then
-\[\sum_{i=1}^{n} ||(\mu + \nu)(E_{i})||_{B} \leq \sum_{i=1}^{n} ||\mu(E_{i})||_{B} + ||\nu(E_{i})||_{B} \leq |\mu|(E) + |\nu|(E)\]
-which implies the two desired inequalities.
-\end{proof}
-
-\begin{subsec}
-Let $\mu$ be a vector-valued measure.
-The total variation measure $|\mu|$ can be viewed as the positive measure that ``best dominates'' $||\mu||_{B}$ in the sense that for every measurable set $E$, $|\mu(E)| \geq ||\mu(E)||_{B}$.
-On the other hand, if $\mu$ is already a positive measure, then the definition of the total variation measure $|\mu|$ still makes sense, and additivity of $\mu$ implies that $\mu = |\mu|$.
-Thus we can use total variation to extend definitions of measures to this more general setting.
-\end{subsec}
-
-\begin{definition}
-A vector-valued measure $\mu$ is \dfn{$\sigma$-finite} if $|\mu|$ is $\sigma$-finite.
-A set $E$ is \dfn{$\mu$-null} if $E$ is $|\mu|(E)$-null.
-The measure $\mu$ is a \dfn{complete measure} if every $\mu$-null set is complete.
-The \dfn{completion} of $\mu$ is the vector-valued measure obtained by extending the domain of $\mu$ to contain all $\mu$-null sets.
-\end{definition}
-
-\begin{exercise}
-Show that the completion of a vector-valued measure is well-defined.
-That is, if $(X, \Gamma)$ is a measurable space and $\mu$ is a vector-valued measure on $\Gamma$, then show that there is a $\sigma$-algebra $\Sigma$ on $X$ which contains every measurable set and every $\mu$-null set, such that $(X, \Sigma, \mu)$ is a complete measured space.
-\end{exercise}
-
-\begin{exercise}
-Give an example of a vector-valued measured space $(X, \mu)$ such that $\mu(X) = 0$, but $|\mu|$ is not identically zero.
-Thus, explain why we cannot define a $\mu$-null set to simply be a set $E$ such that $\mu(E) = 0$.
-\end{exercise}
-
 
 \section{Probability}
 In 1933, Andrey Kolmogorov put probability theory --- which was long viewed as not part of rigorous mathematics --- on a sound footing by establishing three axioms that probability theory ought to satisfy.
@@ -281,14 +165,12 @@ For example, if $E = \RR$ then $\mu_{X}([x, \infty))$ is the probability that $X
 We think of two identically distributed random variables as being isomorphic, but not the same.
 \end{subsec}
 
-\begin{figure}
-\label{bell curve figure}
-\caption{A Gaussian cdf (in blue) and its derivative, the familiar ``bell curve" from elementary statistics (in green).}
+\begin{figure}\label{bell curve figure}
+\caption{A Gaussian cdf (in blue) and its derivative, the familiar ``bell curve'' from elementary statistics (in green).}
 \centering \includegraphics[width=0.5\textwidth]{graphics/bell_curve}
 \end{figure}
 
-\begin{example}
-\label{Gaussian CDF}
+\begin{example}\label{Gaussian CDF}
 An especially important and familiar distribution is the \dfn{Gaussian measure} $N(0, 1)$ on $\RR$, which is the Stieltjes measure defined by the \dfn{Gaussian cumulative distribution function} (or \dfn{Gaussian cdf})
 \[f(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} \exp\left(-\frac{y^{2}}{2}\right) ~dy.\]
 In other words, the measure of $[\alpha, \beta)$ is by definition $f(\beta) - f(\alpha)$.
@@ -296,7 +178,7 @@ Here the factor of $1/\sqrt{2\pi}$ is to ensure that $N(0, 1)$ is actually a pro
 A random variable with distribution $N(0, 1)$ is said to be a \dfn{standard-normally distributed} random variable. More generally, one defines $N(\mu, \sigma^{2})$ to be the Stieltjes measure defined by the cumulative distribution function
 \[x \mapsto \frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^{x} \exp\left(-\frac{1}{2}{\left(\frac{y - \mu}{\sigma}\right)}^{2}\right) ~dy,\]
 and a random variable with distribution $N(\mu, \sigma^{2})$ is said to be \dfn{normally distributed} with mean $\mu$ and standard deviation $\sigma$.
-See Figure \ref{bell curve figure}.
+See Figure~\ref{bell curve figure}.
 \end{example}
 
 \begin{subsec}
@@ -363,6 +245,139 @@ Show that random variables $\Omega \to E$ and morphisms between them, modulo the
 Show that two random variables are isomorphic iff they are identically distributed.
 \end{exercise}
 
+
+
+\section{Hausdorff measures}
+At this point we have defined Stieltjes measures.
+In particular, we defined the Lebesgue measure and the Dirac measure.
+Let us treat some more measures. This section is optional, as it is only used in some examples; one could, at least in principle, take the spherical Lebesgue measure as a black box.
+
+Our first motivation for this section comes from the Cantor set $C$.
+In some ways, $C$ is quite large, since it is uncountable. But Lebesgue measure does not recognize this; it only recognizes that $C$ is a null set, and so according to Lebesgue measure, $C$ is no larger than the empty set!
+
+But Lebesgue measure is hardly the only measure guilty of this. The area of a circle, or the volume of a plane, are both zero -- but when we pass to a lower-dimensional measure, namely the arc length of a circle, or the area of a plane, suddenly we can tell the difference between them and the empty set.
+This suggests that the problem with the Cantor set is that it is in some sense lower-dimensional than the line, which is one-dimensional.
+
+\begin{subsec}
+Recall that Lebesgue measure $\mu$ is outer regular, so it satisfies, for every Borel set $E$,
+$$\mu(E) = \inf\left\{\sum_{n=1}^\infty \mu(U_n): \mu(U_{n})~\text{open},~E \subseteq \bigcup_{n=1}^\infty U_{n}\right\}.$$
+Since every open subset of $\RR$ can be written as a countable union of open intervals $(\alpha, \beta)$, and the Lebesgue measure of an open interval $(\alpha, \beta)$ satisfies $\mu((\alpha, \beta)) = \beta - \alpha = \sup_{\alpha < x,y < \beta} |x - y|$, this is nothing more than
+\begin{equation}
+\label{motivating Hausdorff}
+\mu(E) = \inf\left\{\sum_{n=1}^\infty \diam U_{n}: U_{n}~\text{open},~E \subseteq \bigcup_{n=1}^\infty U_{n}\right\}
+\end{equation}
+where the \dfn{diameter} of an open set $U$ is defined by $\diam U = \sup_{x,y \in U} |x - y|$.
+
+Now, recall some high school geometry: the volume of a $d$-dimensional ball $U$ is proportional to $(\diam U)^{d}$.
+This suggests that if we want to know the $d$-dimensional measure of a set, we need to replace $\diam U_{n}$ with $(\diam U_{n})^{d}$ in (\ref{motivating Hausdorff}).
+\end{subsec}
+
+\begin{definition}
+The \dfn{$d$-dimensional Hausdorff outer measure} is defined on sets $E \subseteq \RR^k$ by
+$$\mathcal H^d(E) = \inf\left\{\sum_{n=1}^\infty (\diam U_{n})^d: U_{n}~\text{open},~E \subseteq \bigcup_{n=1}^\infty U_{n}\right\}.$$
+The \dfn{$d$-dimensional Hausdorff measure}, also denoted $\mathcal H^d$, is the restriction of $\mathcal H^d$ to $\mathcal H^d$-measurable sets.
+\end{definition}
+
+\begin{subsec}
+We now check that Hausdorff measure is well-defined.
+First, according to Exercise~\ref{Hausdorff is outer measure}, $\mathcal H^d$ is an outer measure.
+Thus, by Carathéodory's theorem, the $\mathcal H^d$-measurable sets -- that is, those sets which cleanly divide every subset of $\RR^k$ with respect to $\mathcal H^d$ -- form a $\sigma$-algebra $\Sigma$ and $\mathcal H^d|\Sigma$ is honestly a measure.
+However, this is not a priori very useful.
+After all, $\Sigma$ could be the trivial $\sigma$-algebra!
+We will need to show that $\Sigma$ contains the Borel sets in order for $\mathcal H^d$ to be useful.
+In order to do so, we will need some general facts about outer measures on metric spaces.
+If the reader is uncomfortable with metric spaces, they can take $X = \RR^d$ and $d(x, y) = |x - y|$ and not miss out on any of the key ideas here.
+\end{subsec}
+
+\begin{definition}
+Let $(X, d)$ be a metric space.
+If $A, B$ are nonempty subsets of $X$, we say that $A,B$ are \dfn{separated} if there is $\varepsilon > 0$ such that for all $x \in A$, $y \in B$, $d(x, y) \geq \varepsilon$.
+\end{definition}
+
+\begin{example}
+In any metric space $X$, if $A,B \subseteq X$ and $A \cap B$ is nonempty, then $A,B$ are nonseparated, since we can let $x \in A \cap B$ and then $d(x, x) = 0 < \varepsilon$.
+As subsets of $\RR$, $(-1, 0)$ and $(0, 1)$ are nonseparated, since for every $\varepsilon > 0$ we can find points in both such sets which are arbitrarily close to $0$ (and hence to each other).
+Meanwhile, $(-1, 0)$ and $(1, 2)$ are separated with $\varepsilon = 1$.
+\end{example}
+
+\begin{definition}
+A \dfn{metric outer measure} on a metric space $X$ is an outer measure $\omega$ on $X$ such that for every pair of separated sets $A,B$,
+$$\omega(A \cup B) = \omega(A) + \omega(B).$$
+\end{definition}
+
+\begin{lemma}\label{metric outer measures are Borel}
+Let $\omega$ be a metric outer measure on $\RR^k$. Then every Borel subset of $\RR^k$ is $\omega$-measurable.
+\end{lemma}
+\begin{proof}
+It suffices to show that for every closed subset $K$ of $\RR^k$ and every set $A \subseteq \RR^k$, $K$ cleanly divides $A$, thus
+$$\omega(A \cap K) + \omega(A \setminus K) \leq \omega(A).$$
+This is clear unless $\omega(A) < \infty$.
+TODO https://www.math.purdue.edu/~torresm/lecture-notes/lebesgue-theory/lebesgue-lecture5.pdf
+\end{proof}
+
+\begin{theorem}
+Hausdorff outer measure is a metric outer measure, and Hausdorff measure is a Borel measure.
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{metric outer measures are Borel}, we just need to show that $\mathcal H^d$ is a metric outer measure.
+Let $A,B$ be separated subsets of $\RR^k$.
+
+We claim there are separated open sets $U,V$ such that $A \subseteq U$, $B \subseteq V$.
+Indeed, there is $\varepsilon > 0$ such that $d(x, y) > \varepsilon$ if $x \in A$ and $y \in B$.
+Let $U$ be the union of all balls $B(x, \varepsilon/3)$, $x \in A$; let $V$ be the union of all balls $B(y, \varepsilon/3)$, $y \in B$.
+If $U,V$ are not $\varepsilon/3$-separated, then there exist $x \in U$ and $y \in V$ with $d(x, y) < \varepsilon/3$, and by definition of $U,V$ there are $x' \in A$, $y' \in B$ with $d(x, x') < \varepsilon/3$ and $d(y, y') < \varepsilon/3$.
+So
+$$d(x', y') \leq d(x, x') + d(x, y) + d(x', y') < \varepsilon,$$
+which is a contradiction since $A,B$ are $\varepsilon$-separated. TODO: Draw a picture.
+
+Now let $\mathcal W$ be a countable open cover of $A \cup B$.
+TODO: Refine $\mathcal W$ using $U,V$. Draw a picture to show why refining reduces diameter.
+
+Since $\mathcal W$ was arbitrary,
+$$\mathcal H^d(A) + \mathcal H^d(B) \leq \mathcal H^d(A \cup B).$$
+The converse inequality is clearly true by $\sigma$-subadditivity of $\mathcal H^d$, so $\mathcal H^d(A) + \mathcal H^d(B) = \mathcal H^d(A \cup B)$.
+Therefore $\mathcal H^d$ is a metric outer measure.
+\end{proof}
+
+\begin{theorem}[axioms of Hausdorff measure]
+Hausdorff measure $\mathcal H^d$ on $\RR^k$ is translation-invariant.
+Furthermore, if $d$ is an integer, then $[0, 1]^d \times \{0\}^{k - d}$ has measure $2^d/\alpha_d$, where $\alpha_d$ is the volume of the unit ball in $\RR^d$.
+\end{theorem}
+\begin{proof}
+TODO
+\end{proof}
+
+TODO: $d$-cells
+
+TODO: Hausdorff dimension
+
+\begin{example}\label{Lebesgue measure on sphere}
+An important example of Hausdorff measure is the $d-1$-dimensional Hausdorff measure in $\RR^{d}$.
+When restricted to the unit sphere
+\[S^{d - 1} = \{x \in \RR^{d}: |x| = 1\},\]
+and normalized so that the total measure of the sphere is $1$, the Hausdorff measure is called the \dfn{spherical Lebesgue measure}, denoted $\sigma_{d - 1}$.
+The spherical Lebesgue measure is especially important because, once integration has been defined, we will have
+\[\int_{\RR^{d}} f(x) ~dx = \int_{0}^{\infty} \int_{S^{d - 1}} f(r\omega) r^{d - 1}~d\sigma_{d - 1}(\omega) ~dr,\]
+which is a generalization of the classical formula
+\[\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x, y) ~dx ~dy = \int_{0}^{\infty} \int_{0}^{2\pi} f(r \cos \theta, r \sin \theta) r~d\theta ~dr\]
+for integration in polar coordinates. Here $r^{d - 1} d\sigma_{d - 1}(\omega)$ plays the role of $r~d\theta$.
+\end{example}
+
+TODO: Cantor sets
+
+TODO: Sierpinski's carpet
+
+TODO: Kakeya needle conjecture
+
+\begin{exercise}\label{Hausdorff is outer measure}
+Show that $\mathcal H^d$ is an outer measure.
+\end{exercise}
+
+\begin{exercise}
+Show that in any metric space, if $A, B$ are nonempty compact sets then $A \cap B$ is empty iff $A,B$ are separated.
+\end{exercise}
+
+
 \section{Ergodic systems}
 This section is used nowhere else in this book, except in some exercises and the following section; it is meant to showcase an application.
 
@@ -398,14 +413,12 @@ Though $X$ is initially in an orderly state, the ergodicity of the system means 
 This is illustrated mathematically by the following example.
 \end{subsec}
 
-\begin{figure}
-\label{irrationalRotationFig}
+\begin{figure}\label{irrationalRotationFig}
 \caption{The first $300$ points of the orbit of $0$ of an irrational rotation with $\theta \approx 0.81803$. The lighter points are farther along the orbit. The whole orbit is dense in $\Torus$.}
 \centering \includegraphics[width=0.5\textwidth]{graphics/irrationalRotationFig}
 \end{figure}
 
-\begin{example}
-\label{irrationalRotation}
+\begin{example}\label{irrationalRotation}
 One ergodic system is known as the \dfn{irrational rotation}.
 Let $\theta \in [0, 2\pi]$ and suppose that $\theta/2\pi$ is irrational.
 Then the map $f(z) = e^{i\theta}z$ on the circle $\Torus$, which rotates the circle by $\theta$, defines an ergodic system $(\Torus, \mu, f)$, where $\mu$ is Lebesgue measure.
@@ -468,8 +481,7 @@ Show that the irrational rotation with Lebesgue measure forms an ergodic system.
 (Hint: Let $A$ be a subset of the circle which the irrational rotation sends into itself. Consider the Fourier series of $1_{A}$. You are allowed to assume basic facts about Fourier series.)
 \end{exercise}
 
-\section{Nonmeasurable sets}
-\label{nonmeasurable sets}
+\section{Nonmeasurable sets and infinite games}\label{nonmeasurable sets}
 A $\sigma$-algebra has very strong closure properties: one needs to use some kind of operation that involves working with uncountably many sets at once to escape it.
 As a consequence, every subset of $\RR$ that we have encountered is at least Lebesgue measurable, and we have not even managed to complete the proof that there is a subset of $\RR$ which is not Borel (Theorem~\ref{Borel sigma algebra}).
 Lebesgue certainly hoped, but was unable to prove, that every subset of $\RR$ is Lebesgue measurable.
@@ -495,7 +507,7 @@ If every such map $S_x$ is a bijection, then we say that the action is a \dfn{fr
 \end{subsec}
 
 \begin{subsec}
-Now recall the irrational rotation, Example \ref{irrationalRotation}.
+Now recall the irrational rotation, Example~\ref{irrationalRotation}.
 If $\theta \in [0, 2\pi]$ is an angle and $\theta/2\pi$ is irrational, then we obtain a measure-preserving system $T: \Torus \to \Torus$, known as an irrational rotation, which acts by rotating $\Torus$ by $\theta$.
 If $n \in \ZZ$, then $T^n$ acts by rotating $\Torus$ by $n\theta$.
 That is, we get a group action of $\ZZ$ on $\Torus$ where $n \in \ZZ$ rotates $\Torus$ by $n\theta$.
@@ -550,6 +562,7 @@ Let $\Sigma_{\alpha+1}$ be the set of countable unions of elements of $\Pi_{\alp
 If $\beta < \omega_{1}$ is not equal to $\alpha+1$ for any $\alpha$, let $\Sigma_{\beta} = \bigcup_{\alpha < \beta} \Sigma_{\alpha}$.
 
 If $A \subseteq \RR$ is a Borel set and $\Sigma_{\alpha}$ or $\Pi_{\alpha}$ is the smallest set in the above construction such that $A \in \Sigma_{\alpha}$ or $A \in \Pi_{\alpha}$, we say that $A$ has \dfn{Borel complexity} $\Sigma_{\alpha}$ or $\Pi_{\alpha}$.
+The set $\{\Sigma_{\alpha}, \Pi_{\alpha}\}_{\alpha}$ of all Borel complexity classes is called the \dfn{Borel hierarchy}.
 \end{definition}
 
 \begin{subsec}
@@ -558,7 +571,13 @@ Every open set has Borel complexity $\Sigma_{1}$ and every closed set has Borel 
 \end{subsec}
 
 \begin{subsec}
-Recall (Definition~\ref{beth dfn}) that $\beth_{1}$ is the cardinality of $\RR$, which is well-defined by Theorem~\ref{well-ordering theorem}; meanwhile $\beth_{2}$ is the cardinality of the set of all subsets of $\RR$.
+Here is a diagram of the first few stages of the Borel hierarchy:
+$$\begin{tikzcd}
+\Pi_{1} \arrow[drdr,dashed,blue] && \Pi_{2} \arrow[drdr,dashed,blue] && \Pi_{3} \arrow[drdr,dashed,blue] && \cdots\\\\
+\Sigma_{1} \arrow[urur,dotted,red] && \Sigma_{2} \arrow[urur,dotted,red] && \Sigma_{3} \arrow[urur,dotted,red] && \cdots
+\end{tikzcd}$$
+The dashed blue arrows indicate taking countable intersections, while the dotted red arrows indicate taking countable unions.
+At every stage, $\Pi_{\alpha}$ consists of the complements of elements of $\Sigma_{\alpha}$.
 \end{subsec}
 
 \begin{lemma}
@@ -567,6 +586,14 @@ Every Borel set has a well-defined Borel complexity.
 \begin{proof}
 The set $A$ was obtained by applying countable union and complement countably many times to an open set, and thus is in $\Sigma_{\omega_{1}} = \bigcup_{\alpha < \omega_{1}} \Sigma_{\alpha}$.
 \end{proof}
+
+\begin{subsec}
+One may wonder if there are sets of Borel complexity $\Sigma_{\alpha}$ for every countable ordinal $\alpha$. In fact, there are; see \cite[Corollary 2.38]{Marker2002}.
+\end{subsec}
+
+\begin{subsec}
+Recall (Definition~\ref{beth dfn}) that $\beth_{1}$ is the cardinality of $\RR$, which is well-defined by Theorem~\ref{well-ordering theorem}; meanwhile $\beth_{2}$ is the cardinality of the set of all subsets of $\RR$.
+\end{subsec}
 
 \begin{lemma}
 If $\alpha$ is a countable ordinal, then
@@ -613,14 +640,25 @@ To discuss this, we need the notion of a \dfn{Gale-Stewart game}, which is just 
 The set defines a game in which the players, Alice and Bob, take turns choosing digits; Alice picks first.
 After countably many rounds, the players have given a real number $x \in [0, 1]$.
 Alice wins iff $x \in A$, and otherwise Bob wins.
+\end{subsec}
 
-We say that \dfn{Alice has a winning strategy} if there is a digit $x_1$ such that no matter what digit $x_2$ Bob picks, Alice can pick a digit $x_3$ such that no matter what digit $x_4$ Bob picks, and so on, Alice will win.
-We say that \dfn{Bob has a winning strategy} if for every digit $x_1$ that Alice picks, there is a digit $x_2$ that Bob can pick such that no matter what digit $x_3$ that Alice picks, there is a digit $x_4$ that Bob can pick, and so on, Bob will win.
-If either Alice or Bob have a winning strategy, we say that the Gale-Stewart game $A$ is a \dfn{determined set}.
+\begin{definition}
+Let $A \subseteq [0, 1]$ be a Gale-Stewart game. Then:
+\begin{enumerate}
+\item We say that \dfn{Alice has a winning strategy} for $A$ if there is a digit $x_1$ which Alice can pick such that no matter what digit $x_2$ Bob picks, Alice can pick a digit $x_3$ such that no matter what digit $x_4$ Bob picks, and so on, Alice will win in the sense that $0.x_1x_2x_3x_4\dots \in A$.
+\item We say that \dfn{Bob has a winning strategy} for $A$ if for every digit $x_1$ that Alice picks, there is a digit $x_2$ that Bob can pick such that no matter what digit $x_3$ that Alice picks, there is a digit $x_4$ that Bob can pick, and so on, Bob will win in the sense that $0.x_1x_2x_3x_4\dots \notin A$.
+\item If either Alice or Bob have a winning strategy, we say that $A$ is a \dfn{determined game}.
+\end{enumerate}
+\end{definition}
 
-The theorem of \dfn{projective determinacy}~\cite{SteelMartin10.2307/1990913} says that every projective set is determined.
-On the other hand, as the curious reader may prove in the exercises, every determined set is Lebesgue measurable.
-There is just one caveat, however: the theorem of projective determinacy was proven using axioms that are far stronger than the usual axioms of set theory.
+\begin{theorem}[Martin-Steel projective determinancy theorem~\cite{SteelMartin10.2307/1990913}]
+Every projective set is determined.
+\end{theorem}
+
+\begin{subsec}
+Every determined game is Lebesgue measurable; see Exercise~\ref{determined games are measurable}.
+So, if we believe the projective determinacy theorem, every projective set is measurable.
+However, there is just one catch: Martin and Steel needed to use axioms for set theory much stronger than the usual axioms for set theory discussed in Section~\ref{axioms of set theory} to prove their theorem, and this is optimal in the sense that a weaker set of axioms for set theory cannot prove the projective determinacy theorem.
 \end{subsec}
 
 \begin{exercise}
@@ -644,16 +682,16 @@ and $F \setminus D$ is null. (Hint: Lebesgue measure is a Radon measure.)
 Prove that every open subset of $[0, 1]$ is determined.
 \end{exercise}
 
-\begin{exercise}
-Assume that $S$ is a determined set such that every measurable subset of $S$ is null.
-Show that $S$ is null, and therefore measurable.
-Conclude that every determined set is measurable, and in particular that Vitali's set is not determined.
+\begin{exercise}\label{determined games are measurable}
+Assume that $A$ is a determined game such that every measurable subset of $A$ is null.
+Show that $A$ is null, and therefore measurable.
+Conclude that every determined game is measurable, and in particular that Vitali's set is not determined.
 \end{exercise}
 
 \begin{exercise}[Zermelo]
 The game of chess consists of two players, White and Black.
 White is more likely to win than Black if both players are equally skilled.
 So consider chess, modified so that if there is a draw, then Black automatically wins.
-Show that chess can be viewed as a Gale-Stewart game, and in fact chess is determined.
-If you do not know the rules of chess, you may use without proof that on any turn, there are only finitely many moves that a player can make, and there exists a natural number $N$ such that any game of length $N$ is a draw.
+Assume that there is $N$ such that every game of chess is at most $N$ turns long (this is a nice exercise in recreational mathematics if one knows the rules of chess), and at every turn, White and Black have at most $N$ valid moves.
+Show that chess can be viewed as a Gale-Stewart game $A$, and that $A$ is determined.
 \end{exercise}

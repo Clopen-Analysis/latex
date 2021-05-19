@@ -1,4 +1,4 @@
-\chapter{Constructing the Lebesgue measure}\label{ch:ch1}\label{measureChapter}
+\chapter{Constructing measures}\label{ch:ch1}\label{measureChapter}
 A measure is a rule by which we assign ``size'' to certain sets.
 The notion of a measure generalizes a handful of familiar notions, which we now review.
 \begin{example}\label{examples of measures}
@@ -9,48 +9,57 @@ $\mu$ on boxes $[a_{1}, b_{1}] \times \cdots \times [a_{d}, b_{d}] \subseteq \RR
 \[\mu([a_{1}, b_{1}] \times \cdots \times [a_{d}, b_{d}]) = (b_{1} - a_{1})(b_{2} - a_{2})\cdots(b_{d} - a_{d}).\]
 When $d = 1$ this is just the familiar notion of the length of a line segment; when $d = 2$ this is the area of a rectangle; when $d = 3$ this is the volume of a rectangular prism.
 
-In probability theory, one is concerned with sets of ``outcomes''; the sets are known as ``events''. Given an event $E$ in a sample space $X$, we define $\mu(E)$ to be the probability that $\mu$ occurs. Thus $\mu(X) = 1$.
+In probability theory, one is concerned with sets of ``outcomes'', or possible states that the world could be in.
+The sets are known as ``events''.
+Given an event $E$ in a sample space $X$, we define $\mu(E)$ to be the probability that the state that the world is in lies in $E$. Thus $\mu(X) = 1$.
 \end{example}
 
-\begin{subsec}
-In all of the above examples, $\mu$ has the property that if $Y_{1}, \dots, Y_{n}$ is a collection of disjoint sets (thus $Y_{i} \cap Y_{j} = \emptyset$ whenever $i \neq j$), then
-\[\mu\bigcup_{i} Y_{i} = \sum_{i} \mu(Y_{i}).\]
-In fact this can be made to be true not just for finite, but countable, collections of disjoint sets.
-So it will be natural to require that the domain of our measure $\mu$ be closed under taking countable unions.
-\end{subsec}
-
 \section{Algebras of sets}
-Encouraged by the introduction, we study sets $R$, whose elements are sets, such that $R$ is closed under operations similar to countable union.
-This will seem obnoxious and abstract at first, but I ask for your patience; it won't take long to get through this section.
-
-\begin{definition}
-By a \dfn{ring} $R$ we mean a nonempty set, whose elements are sets, such that if $X, Y \in R$ then the union $X \cup Y$ and set difference $X \setminus Y$ are both in $R$.
-\end{definition}
+A measure, remember, is going to be a rule that assigns a size to certain sets.
+In other words it will be a function
+$$\mu: \Sigma \to [0, \infty]$$
+where $\Sigma$ is a set whose elements are subsets of a fixed set $X$.
+The first thing we need to do is determine what algebraic properties $\Sigma$ should have.
 
 \begin{subsec}
-Let $R$ be a ring.
-One easily checks that if $X_{1}, \dots, X_{n} \in R$ then $X_{1} \cup \cdots \cup X_{n} \in R$ and $X_{1} \cap \cdots \cap X_{n} \in R$ (this follows by induction, because $X \cap Y = X \setminus (X \setminus Y)$).
-Moreover, since $R$ is nonempty, say $X \in R$, $X \setminus X \in R$, so $R$ contains the empty set.
+To motivate the definition of $\Sigma$, we look to probability theory, using the terminology of Example \ref{examples of measures}.
+Recall that in probability theory, elements of $X$ are outcomes, or states that the world could be in; suppose that the world is actually in state $x$.
+An observer, Alice, might not have enough information to deduce that the world is in state $x$, but given an event $E \subseteq X$, Alice might be able to deduce whether $x \in E$.
+
+Let $\Sigma$ be the set of events $E$ such that Alice knows whether $E \ni x$.
+Since \emph{every} outcome is in $X$, $X \in \Sigma$.
+Now suppose that $Y, Z \in \Sigma$. Then Alice knows whether $x \in Y,x \in Z$, so she also knows whether $x \in Y \setminus Z$.\footnote{If Alice knows that $x \in Z$, then she knows that $x \notin Y \setminus Z$. Otherwise, she knows that $x \notin Z$, so $x \in Y \setminus Z$ iff $x \in Y$, and Alice knows that $x \in Y$.}
+Furthermore, if $Y_1, Y_2, \dots$ is a countable sequence of events, then $x$ lies in their union $\bigcup_n Y_n$ iff there is $n \in \NN$ such that $x \in Y_n$; so if $Y_1, Y_2, \dots \in \Sigma$ then Alice can deduce whether $x \in \bigcup_n Y_n$, thus $\bigcup_n Y_n \in \Sigma$.
+
+Thus, a set $\Sigma \ni X$ of subsets of $X$ which is closed under countable union and complement represents the information that an observer has.
+Such sets $\Sigma$ are so important that we give them a special name, as follows.
 \end{subsec}
 
 \begin{definition}
-Let $X$ be a set. By an \dfn{algebra} in $X$ we mean a ring such that $X \in R$ and for every $Y \in R$, $Y \subseteq X$.
-\end{definition}
-
-\begin{definition}
-By a \dfn{$\sigma$-ring}\footnote{Here $\sigma$ should be thought of as meaning ``countable''.} $R$ we mean a ring which is closed under countable unions, thus for every sequence ${(X_{n})}_{n}$ of sets in $R$, $\bigcup_{n} X_{n} \in R$.
-
-We define a \dfn{$\sigma$-algebra} in a set $X$ to be a $\sigma$-ring which is an algebra in $X$.
+A \dfn{$\sigma$-algebra}\footnote{Here $\sigma$ should be thought of as meaning ``countable'', referring to the closure under countable unions.} in a set $X$ is a set $\Sigma$, whose elements are subsets of $X$, such that:
+\begin{enumerate}
+\item $X \in \Sigma$.
+\item If $Y, Z \in \Sigma$ then $Y \setminus Z \in \Sigma$.
+\item If $Y_1, Y_2, \dots$ is a countable sequence of sets in $\Sigma$ then $\bigcup_n Y_n$ is in $\Sigma$.
+\end{enumerate}
 \end{definition}
 
 \begin{subsec}
-Let $R$ be a $\sigma$-ring.
-In proofs it will frequently be useful to replace sequences of sets in $R$ with sequences of disjoint sets, without leaving $R$.
+$\sigma$-algebras have strong closure properties. For example, if $\Sigma$ is a $\sigma$-algebra, then $\emptyset = X \setminus X \in \Sigma$ (Alice knows that an event which is impossible did not happen).
+Furthermore, if $Y \in \Sigma$, then $Y^c = X \setminus Y \in \Sigma$ (if Alice knows whether an event $Y$ happened, then she also knows whether the event ``$Y$ did not happen" happened).
+So if $Y_1, Y_2, \dots \in \Sigma$, then
+$$\bigcap_n Y_n = \left(\bigcup_n Y_n^c\right)^c \in \Sigma$$
+(if Alice knows whether $Y_1, Y_2, \dots$ happened, then she knows whether $Y_1$ happened and $Y_2$ happened and $Y_3$ happened and etc.)
+\end{subsec}
+
+\begin{subsec}
+Let $\Sigma$ be a $\sigma$-algebra.
+In proofs it will frequently be useful to replace sequences of sets in $\Sigma$ with sequences of disjoint sets, without leaving $\Sigma$.
 The below lemma allows us to accomplish this.
 \end{subsec}
 
 \begin{lemma}
-Let $\Sigma$ be a $\sigma$-ring.
+Let $\Sigma$ be a $\sigma$-algebra.
 Let ${(E_{n})}_{n}$ be a sequence of sets in $\Sigma$. Then there is a sequence of disjoint sets ${(F_{n})}_{n}$ in $\Sigma$ such that $F_{n} \subseteq E_{n}$ and
 \[\bigcup_{n=1}^{\infty} E_{n} = \bigcup_{n=1}^{\infty} F_{n}.\]
 \end{lemma}
@@ -60,36 +69,14 @@ Let $F_{1} = E_{1}$ and for $n \geq 2$,
 Then clearly the $F_{n}$ are disjoint and have the same union as the $E_{n}$.
 \end{proof}
 
-\begin{exercise}
-Let $X$ be a set.
-Show that the power set $2^{X}$ --- that is, the set of all subsets of $X$ --- is a $\sigma$-algebra, as is $\{\emptyset, X\}$.
-\end{exercise}
-
-\begin{exercise}
-Let $R$ be the set of bounded subsets of $\RR$.
-Show that $R$ is a ring, but neither an algebra in $\RR$ nor a $\sigma$-ring.
-\end{exercise}
-
-\begin{exercise}
-Recall the algebraic definition of a ring: a set equipped with an addition and a multiplication satisfying certain axioms.
-Show that every ring (in our sense) is an algebraic ring, where addition and multiplication are replaced by symmetric difference and intersection, respectively.
-\end{exercise}
-
-\begin{exercise}
-Let $\Sigma$ be an infinite $\sigma$-ring. Show that $\Sigma$ has cardinality at least that of $2^{\NN}$, the power set of the natural numbers.
-(Hint: let $\Sigma_{0} = \Sigma$. Choose $X_{n} \in \Sigma_{n}$ appropriately and let $\Sigma_{n+1} = \{Y \in \Sigma_{n}: X \cap Y = \emptyset\}$. If done correctly, you should be able to find an injective function $F: 2^{\NN} \to \Sigma$ such that $F(\{n\}) = X_{n}$).
-\end{exercise}
-
-\section{The Borel $\sigma$-algebra}
-We now consider certain $\sigma$-algebras that are built up by a process similar to the notion of ``generators and relations'' from algebra.
-
 \begin{lemma}\label{intersection of rings is ring}
-The intersection of a nonempty set of rings (resp. $\sigma$-rings, algebras, or $\sigma$-algebras) is a ring (resp. $\sigma$-ring, etc.)
+The intersection of a nonempty set of $\sigma$-algebras is a $\sigma$-algebra.
 \end{lemma}
 \begin{proof}
-We prove this for a set of rings (the other cases are similar). Let $\mathcal R$ be a set of rings and let $R$ be its intersection.
-If $X, Y \in R$ then for every $S \in \mathcal R$, $X, Y \in S$ so $X \cup Y \in S$ and $X \setminus Y \in S$.
-Therefore $X \cup Y, X \setminus Y \in R$.
+Let $\mathcal R$ be a set of $\sigma$-algebras and let $\Sigma$ be its intersection.
+Since $X \in \Gamma$ for every $\Gamma \in \mathcal R$, $X \in \Sigma$.
+If $Y_1, Y_2, \dots \in \Sigma$, then $Y_1, Y_2, \dots \in \Gamma$ for every $\Gamma$, so $Y = \bigcup_n Y_n \in \Gamma$ for every $\Gamma$, so $Y \in \Sigma$.
+A similar argument works for closure under complements.
 \end{proof}
 
 \begin{subsec}
@@ -97,15 +84,13 @@ Whenever we refer to a ``smallest'' set $X$ with a property $P$, we mean that fo
 \end{subsec}
 
 \begin{lemma}
-If $\mathcal C$ is a set of sets, there is a smallest ($\sigma$)-ring containing $\mathcal C$. If in fact $\mathcal C$ is a collection of subsets of a set $X$, there is a smallest ($\sigma$)-algebra containing $\mathcal C$.
+If $\mathcal C$ is a set of subsets of a set $X$, there is a smallest $\sigma$-algebra containing $\mathcal C$.
 \end{lemma}
 \begin{proof}
-In the case of a ($\sigma$)-ring, let $X$ be the union of all elements of $\mathcal C$.
-We now prove this claim for the case of a ring; the other cases are similar.
+The power set $2^{X} = \{Y: Y \subseteq X\}$ is a $\sigma$-algebra (see Exercise \ref{trivial sigma algebras}) such that for every $\Sigma \in \mathcal C$, $\Sigma \subseteq 2^{X}$.
+Let $\mathcal R$ be the set of all $\sigma$-algebras $\Gamma$ such that for every $\Sigma \in \mathcal C$, $\Sigma \subseteq \Gamma$; since $2^{X} \in \mathcal R$, $\mathcal R$ is nonempty, and since $\mathcal R \subseteq 2^{2^{X}}$, $\mathcal R$ is a set\footnote{as opposed to a proper class, like the set of all sets is}.
 
-The power set $2^{X} = \{Y: Y \subseteq X\}$ is clearly a ring which contains every element of $\mathcal C$.
-Let $\mathcal R$ be the set of all rings that contain every element of $\mathcal C$; since $2^{X} \in \mathcal R$, $\mathcal R$ is nonempty.
-By Lemma~\ref{intersection of rings is ring}, the intersection $R$ of $\mathcal R$ is a ring.
+By Lemma~\ref{intersection of rings is ring}, the intersection $R$ of $\mathcal R$ is a $\sigma$-algebra.
 But for every $C \in \mathcal C$, $C \in R$ since $C$ is in every element of $\mathcal R$.
 Therefore $R$ contains $\mathcal C$.
 \end{proof}
@@ -173,6 +158,25 @@ We defer the proof to a later stage -- namely, Theorem~\ref{Borel not Lebesgue}.
 \end{proof}
 
 \begin{exercise}
+Interpret all of the theorems in this section in terms of knowledge that Alice may have.
+\end{exercise}
+
+\begin{exercise}\label{trivial sigma algebras}
+Let $X$ be a set.
+Show that the power set $2^{X}$ --- that is, the set of all subsets of $X$ --- is a $\sigma$-algebra, as is $\{\emptyset, X\}$.
+\end{exercise}
+
+\begin{exercise}\label{sigma algebras are rings}
+Recall from your algebra class the definition of a ring: a set equipped with an addition and a multiplication satisfying certain axioms.
+Show that every $\sigma$-algebra is a ring, where addition and multiplication are replaced by symmetric difference and intersection, respectively.
+\end{exercise}
+
+\begin{exercise}
+Let $\Sigma$ be an infinite $\sigma$-algebra. Show that $\Sigma$ has cardinality at least that of $2^{\NN}$, the power set of the natural numbers.
+(Hint: let $\Sigma_{0} = \Sigma$. Choose $X_{n} \in \Sigma_{n}$ appropriately and let $\Sigma_{n+1} = \{Y \in \Sigma_{n}: X_{n} \cap Y = \emptyset\}$. If done correctly, you should be able to find an injective function $F: 2^{\NN} \to \Sigma$ such that $F(\{n\}) = X_{n}$).
+\end{exercise}
+
+\begin{exercise}\label{generators of Borel}
 Show that the set of half-open intervals $[a, b)$ generates the Borel $\sigma$-algebra of $\RR$.
 \end{exercise}
 
@@ -286,9 +290,9 @@ Thus $\mu(E_{n}) = \infty$, but $E_{n}$ does not contain any of $1, \dots, n - 1
 \end{example}
 
 \begin{subsec}
-We now introduce an important class of $\sigma$-additive functions defined for certain subsets of $\RR$, known as Stieltjes premeasures\footnote{Named after Thomas Stieltjes (1856--1894), who introduced the Riemann-Stieltjes integral, a weighted version of the Riemann integral that inspired the notion of a Stieltjes premeasure.}.
-Eventually we will modify their definition so that they are defined for every Borel subset of $\RR$.
-Since the Borel sets form a $\sigma$-algebra, this will define a measure on the Borel sets, known as a Stieltjes measure.
+We now introduce an important class of $\sigma$-additive functions defined on half-open intervals in $\RR$, known as Stieltjes premeasures\footnote{Named after Thomas Stieltjes (1856--1894), who introduced the Riemann-Stieltjes integral, a weighted version of the Riemann integral that inspired the notion of a Stieltjes premeasure.}.
+The idea is that, while the Borel $\sigma$-algebra $\mathcal B$ is huge, and we have no hope of defining a measure on each Borel set separately -- it's just way too much information! -- we can think of the half-open intervals as ``generators" for the algebra $\mathcal B$, and so every Stieltjes will extend uniquely to a measure on $\mathcal B$.
+The analogy here is to linear algebra: one does not define a linear map $T: V \to W$ by what it does to each individual element of $V$, but only to a basis of $V$.
 \end{subsec}
 
 \begin{subsec}
@@ -424,7 +428,7 @@ Show that a nondecreasing function on $\RR$ can only be discontinuous on a count
 \end{exercise}
 
 \begin{exercise}
-Let $\Sigma$ be a $\sigma$-ring, and let $\mu: \Sigma \to B$ be a function such that whenever $A_{1} \subseteq A_{2} \subseteq A_{3} \subseteq \cdots$,
+Let $\Sigma$ be a $\sigma$-algebra, and let $\mu: \Sigma \to B$ be a function such that whenever $A_{1} \subseteq A_{2} \subseteq A_{3} \subseteq \cdots$,
 \[\lim_{n \to \infty} \mu(A_{n}) = \mu\left(\bigcup_{n=1}^{\infty} A_{n}\right).\]
 Show that if $\mu$ is \dfn{additive} (that is, if $A \cap B = \emptyset$, then $\mu(A \cup B) = \mu(A) + \mu(B)$), then $\mu$ is $\sigma$-additive.
 \end{exercise}
@@ -439,10 +443,11 @@ Encouraged by the previous section, we now define premeasures in general.
 Our goal is to define a $\sigma$-additive function that can be extended to a measure in a unique way; thus, to define a measure, it will suffice to define a premeasure.
 
 \begin{definition}
-A set of sets $P$ is said to be a \dfn{semiring} if $\emptyset \in P$ and for every $E, F \in P$:
+A nonempty set $P$ of subsets of a set $X$ is said to be a \dfn{semiring}\footnote{The terminology is inspired by Exercise \ref{sigma algebras are rings}.} in $X$ if
 \begin{enumerate}
-\item $E \cap F \in P$.
-\item There are $G_{1}, \dots, G_{m}$ disjoint such that
+\item For every $E, F \in P$, $E \cap F \in P$\footnote{A nonempty set of subsets of $X$ satisfying just this first condition is sometimes called a \dfn{$\pi$-system}, especially in probability theory.},
+\item There are countably many sets $E_{1}, E_{2}, \dots \in P$ such that $\bigcup_{n} E_{n} = X$, and
+\item For every $E, F \in P$, there are $G_{1}, \dots, G_{m}$ disjoint such that
 \[E \setminus F = \bigcup_{n=1}^{m} G_{n}.\]
 \end{enumerate}
 A $\sigma$-additive function $P \to [0, \infty]$ which is not identically $\infty$ is called a \dfn{premeasure}.
@@ -513,76 +518,77 @@ which was to be shown.
 \end{proof}
 
 \begin{subsec}
-Because premeasures are $\sigma$-subadditive, it would be natural to extend them to a $\sigma$-subadditive function defined on a $\sigma$-ring. We do this now.
+Because premeasures are $\sigma$-subadditive, it would be natural to extend them to a $\sigma$-subadditive function defined on a $\sigma$-algebra. Actually, since the set $2^{X}$ of all subsets of $X$ is already a $\sigma$-algebra (Exercise \ref{trivial sigma algebras}), we might as well take $2^{X}$ to be our $\sigma$-algebra.
 \end{subsec}
 
 \begin{definition}
-Let $R$ be a $\sigma$-ring.
-An \dfn{outer measure} is a $\sigma$-subadditive function $\mu: R \to [0, \infty]$ such that $\mu(\emptyset) = 0$.
+An \dfn{outer measure} on $X$ is a $\sigma$-subadditive function $\omega: 2^{X} \to [0, \infty]$ such that $\omega(\emptyset) = 0$.
 \end{definition}
 
 \begin{subsec}
-It follows from the definition that an outer measure $\mu$ is monotone; that is, if $E \subseteq F$, $E,F \in P$, then $\mu(E) \leq \mu(F)$.
+It follows from the definition that an outer measure $\omega$ is monotone; that is, if $E \subseteq F$, $E,F \in P$, then $\omega(E) \leq \omega(F)$.
 \end{subsec}
 
 \begin{subsec}
-Let $\mu$ be a prmeasure.
-We will now construct a $\sigma$-ring $R$ such that $\mu$ extends to an outer measure on $R$.
+Let $P$ be a semiring in $X$ and $\mu$ be a premeasure on $P$. Now that we have made up our minds to extend $\mu$ to an outer measure $\mu^{*}$ on $X$, how should we do so?
+As usual we turn to the example of the Lebesgue premeasure, so that
+$$\mu([a, b)) = b - a$$
+is the length of the half-open intervals $[a, b)$.
+
+Imagine the half-open intervals to be like rulers.
+If $E \subseteq \RR$ is a ``well-behaved" set, we expect that we can approximate the length of $E$ by covering $E$ with countably many rulers $[a_{n}, b_{n})$ and summing up the lengths of the rulers.
+This will overestimate the length of $E$, both because the rulers may overlap and because $E \subseteq \bigcup_{n} [a_{n}, b_{n})$ but not conversely. See Figure \ref{rulers}.
+But that's okay: maybe taking the limit as the rulers overestimate the length of $E$ less and less will get us the correct value of the length of $E$, which we denote $\mu^{*}(E)$.
+We make this waffling more precise in the following definition.
 \end{subsec}
 
-\begin{definition}
-A set $\mathcal H$ whose elements are sets is said to be \dfn{hereditary} if for every $E \in \mathcal H$ and $F \subseteq E$, $F \in \mathcal H$.
-\end{definition}
-
-\begin{lemma}
-For every semiring $P$ there is a smallest hereditary $\sigma$-ring $\mathcal H(P)$ such that $P \subseteq \mathcal H(P)$.
-\end{lemma}
-\begin{proof}
-Let $X$ be the union of all elements in $P$. Then the power set $2^{X}$ is clearly a hereditary $\sigma$-ring such that $P \subseteq 2^{X}$.
-The intersection of $\sigma$-rings containing $P$ is a $\sigma$-ring containing $P$, so it suffices to show that the intersection of hereditary sets is hereditary.
-
-In fact, let $H$ be a set whose elements are hereditary sets, and let $\mathcal H$ be the intersection of $H$.
-Let $E \in \mathcal H$; then for every $F \subseteq E$, $F$ is contained in every element of $H$, so $F \in \mathcal H$.
-\end{proof}
+\begin{figure}
+\label{rulers}
+\caption{We want to estimate the total length of the blue set $E$ by adding up the lengths of the rulers. The left side of the $n$th ruler is $a_{n}$ and the right side is $b_{n}$, so the length of the $n$th ruler is $b_{n} - a_{n}$. The rulers overlap and cover some points not in $E$, so the estimate $\sum_{n} b_{n} - a_{n}$ is slightly larger than the length of $E$.}
+\centering \includegraphics[width=0.75\textwidth]{graphics/rulers}
+\end{figure}
 
 \begin{definition}
-Let $P$ be a semiring and $\mu$ be a premeasure on $P$. For every $A \in \mathcal H(P)$, define
-\[\mu^{*}(A) = \inf \sum_{n=1}^{\infty} \mu(E_{n})\]
-where the $\inf$ ranges over all sequenes of sets ${(E_{n})}_{n}$, $E_{n} \in P$, such that $A \subseteq \bigcup_{n} E_{n}$.
+Let $P$ be a semiring in $X$ and $\mu$ be a premeasure on $P$. For every $A \subseteq X$, define
+\begin{equation}
+\label{ruler formula}
+\mu^{*}(A) = \inf \sum_{n=1}^{\infty} \mu(E_{n})
+\end{equation}
+where the $\inf$ ranges over all sequences of sets ${(E_{n})}_{n}$, $E_{n} \in P$, such that $A \subseteq \bigcup_{n} E_{n}$.
 We call $\mu^{*}$ the \dfn{outer measure generated by $\mu$}.
 \end{definition}
 
-\begin{theorem}
-Let $P$ be a semiring and $\mu$ be a premeasure on $P$. Then the outer measure $\mu^{*}$ generated by $\mu$ is an outer measure on $\mathcal H(P)$ and for every $E \in P$, $\mu^{*}(E) = \mu(E)$.
+\begin{theorem}\label{extending premeasure to outer measure}
+Let $P$ be a semiring and $\mu$ be a premeasure on $P$. Then the outer measure $\mu^{*}$ generated by $\mu$ is an outer measure on $X$ and for every $E \in P$, $\mu^{*}(E) = \mu(E)$.
 \end{theorem}
 \begin{proof}
-First, we check $\mu^{*}(\emptyset) = 0$. In fact, taking $E_{n} = \emptyset$ for every $n$, we have $\mu^{*}(\emptyset) \leq \sum_{n} 0 = 0$.
+We first note carefully that the infimum in (\ref{ruler formula}) is not vacuous; that is, for every $A \subseteq X$ there exists a sequence of sets ${(E_{n})}_{n}$, $E_{n} \in P$, such that $A \subseteq \bigcup_{n} E_{n}$.
+Indeed, since $P$ is a semiring we can take the $E_{n}$ so that $\bigcup_{n} E_{n} = X$.
 
-We now check that $\mu^{*}$ is $\sigma$-subadditive:
-\begin{lemma}
-Suppose that $A \in \mathcal H(P)$, $A_{n} \in \mathcal H(P)$, and $A \subseteq \bigcup_{n} A_{n}$. Then
+Now we check $\mu^{*}(\emptyset) = 0$. In fact, taking $E_{n} = \emptyset$ for every $n$, we have $\mu^{*}(\emptyset) \leq \sum_{n} 0 = 0$.
+
+We now must show $\mu^{*}(A) = \mu(A)$ when $A \in P$. Clearly $\mu^{*}(A) \leq \mu(A)$.
+Since $\mu$ is $\sigma$-subadditive, for any $E_{i} \in P$ such that $A \subseteq \bigcup_{i} E_{i}$, $\mu(A) \leq \sum_{i} \mu(E_{i})$, thus $\mu(A) \leq \mu^{*}(A)$.
+
+Finally we show that $\mu^{*}$ is $\sigma$-subadditive. Suppose that
+$$A \subseteq \bigcup_{n} A_{n} \subseteq X.$$
+We must show
 \[\mu^{*}(A) \leq \sum_{n=1}^{\infty} \mu^{*}(A_{n}).\]
-\end{lemma}
-\begin{proof}[Proof of lemma]
 Obviously this is true if some $\mu^{*}(A_{n}) = \infty$, so suppose that for every $n$, $\mu^{*}(A_{n}) < \infty$ and let $\varepsilon > 0$.
 By definition of $\mu^{*}$, there are $E_{i}^{j} \in P$ such that $A_{i} \subseteq \bigcup_{j} E_{i}^{j}$
 and
 \[\mu^{*}(A_{i}) \geq \sum_{j=1}^{\infty} \mu(E_{i}^{j}) - \frac{\varepsilon}{2^{i}}.\]
 Thus $A \subseteq \bigcup_{i,j}E_{i}^{j}$ whence
-\begin{align*}\mu^{*}(A) &\leq \sum_{i,j} \mu(E_{i}^{j}) \leq \sum_{i,j=1}^{\infty} \mu(E_{i}^{j})\\ &\leq \sum_{i=1}^{\infty} \mu^{*}(A_{i}) + \frac{\varepsilon}{2_{i}}\\& \leq \varepsilon + \sum_{i=1}^{\infty} \mu^{*}(A_{i}).\end{align*}
+\begin{align*}\mu^{*}(A) &\leq \sum_{i,j} \mu(E_{i}^{j}) \leq \sum_{i,j=1}^{\infty} \mu(E_{i}^{j}) \leq \sum_{i=1}^{\infty} \mu^{*}(A_{i}) + \frac{\varepsilon}{2_{i}}\\& \leq \varepsilon + \sum_{i=1}^{\infty} \mu^{*}(A_{i}).\end{align*}
 This was to be shown.
 \end{proof}
 
-Finally we check that $\mu^{*}(A) = \mu(A)$ when $A \in P$. Clearly $\mu^{*}(A) \leq \mu(A)$.
-Since $\mu$ is $\sigma$-subadditive, for any $E_{i} \in P$ such that $A \subseteq \bigcup_{i} E_{i}$, $\mu(A) \leq \sum_{i} \mu(E_{i})$, thus $\mu(A) \leq \mu^{*}(A)$.
-\end{proof}
-
-\begin{subsec}
+\begin{subsec}\footnote{The rest of this section is an optional historical note.}
 There is a dual approach to the extension of premeasures, introduced by Lebesgue.
 He considered not just outer measures but \dfn{inner measures} defined by the relation
 \[\mu_{*}(E) = \sup \sum_{n=1}^{\infty} \mu(E_{n})\]
 where the $\sup$ ranges over all sequences of $E_{n} \in P$ such that $\bigcup_{n} E_{n} \subseteq P$ and the $E_{n}$ are disjoint.
-Then Lebesgue proposed to study the $\sigma$-ring of all sets whose inner and outer measures agree.
+Then Lebesgue proposed to study the $\sigma$-algebra of all sets whose inner and outer measures agree.
 Note the asymmetry: for inner measure we need to assume that the $E_{n}$ are disjoint, or else we could ``double-count'' elements of $E$.
 This asymmetry is the origin of several pathologies that make inner measures difficult to work with, and now this approach is considered nothing more than a historical footnote.
 \end{subsec}
@@ -613,110 +619,240 @@ Prove Lemma~\ref{semiring prop 1}.
 
 
 \section{The Carathéodory construction}
-Carathéodory introduced a modern approach that we now consider which avoids the issues with inner measures.
-The idea is that, while an outer measure may not be a measure, there is a canonically defined $\sigma$-ring on which the outer measure will restrict to a measure.
-The elements of that ring will be called measurable sets.
+Carathéodory\footnote{Constantin Carathéodory (1873--1950), a Greco-German mathematician who started work as an engineer working on the Asyut dam in Egypt. In addition to his results in measure theory, Carathéodory made contributions to isoperimetric problems, complex analysis, and thermodynamics.} introduced a modern approach that we now consider which avoids the issues with inner measures.
+The idea is that, while an outer measure may not be a measure, there is a canonically defined $\sigma$-algebra on which the outer measure will restrict to a measure.
+The elements of that $\sigma$-algebra will be called measurable sets.
+
+\begin{definition}
+Let $\omega$ be an outer measure on $X$.
+An \dfn{$\omega$-measurable set} is a set $A \subseteq X$ such that for every $E \subseteq X$,
+\begin{equation}\label{clean division}
+\omega(E) = \omega(E \cap A) + \omega(E \setminus A).
+\end{equation}
+We let $\mathcal M(\omega$ denote the set of all $\omega$-measurable sets.
+In the event that (\ref{clean division}) holds, we say that $A$ \dfn{cleanly divides} $E$, or that $(A, E)$ satisfies the \dfn{Carathéodory condition}.
+\end{definition}
 
 \begin{subsec}
-The Carathéodory construction gives us a method to define measures: first define a premeasure, then check a certain technical hypothesis that we now state; then one has a unique measure which extends the premeasure.
+Since an outer measure $\omega$ is subadditive, one already has
+\[\omega(E) \leq \omega(E \cap A) + \omega(E \setminus A)\]
+and so one just has to prove the opposite inequality
+\begin{equation}\label{Caratheodory inequality}
+\omega(E \cap A) + \omega(E \setminus A) \leq \omega(E)
+\end{equation}
+to verify the Carathéodory condition (\ref{clean division}).
+We observe that trivially, $X$ is $\omega$-measurable, since (\ref{clean division}) says $\omega(E) = \omega(E) + \omega(\emptyset) = \omega(E) + 0$.
+This also motivates why we assumed $\omega(\emptyset) = 0$ in the definition of an outer measure.
+\end{subsec}
+
+\begin{definition}
+Let $\omega$ be an outer measure on $X$.
+We say that a set $Z \subseteq X$ is \dfn{$\omega$-null} if $\omega(Z) = 0$.
+We let $\mathcal N(\omega)$ denote the set of all $\omega$-null sets.
+\end{definition}
+
+\begin{subsec}
+Let $\omega$ be an outer measure. Then $\emptyset$ is $\omega$-null by definition.
+If $Z$ is $\omega$-null and $A \subseteq Z$, then $0 \leq \omega(A) \leq \omega(Z) = 0$ so $A$ is $\omega$-null.
+Every measure $\mu$ is a premeasure and so extends to an outer measure; thus we may talk about the $\mu$-null sets, which are exactly those sets $E \subseteq X$ such that there is $F \supseteq X$ with $\mu(F) = 0$.
+\end{subsec}
+
+\begin{lemma}
+\label{null sets are measurable}
+For every outer measure $\omega$, $\mathcal N(\omega)$ is closed under countable union and $\mathcal N(\omega) \subseteq \mathcal M(\omega)$.
+Moreover, if $A$ is $\omega$-measurable and $Z$ is $\omega$-null, then $A \cup Z$ and $A \setminus Z$ are $\omega$-measurable.
+\end{lemma}
+\begin{proof}
+Let $Z$ be $\omega$-null. Then for every $E$, $E \cap Z$ is $\omega$-null, so
+\[\omega(E \cap Z) + \omega(E \setminus Z) = 0 + \omega(E \setminus Z) \leq \omega(E),\]
+which verifies Carathéodory's inequality (\ref{Caratheodory inequality}).
+Thus $Z$ is $\omega$-measurable, so $\mathcal N(\omega) \subseteq \mathcal M(\omega)$.
+If $A$ cleanly divides $E$ then clearly so do $A \cup Z$ and $A \setminus Z$, so null sets have no effect on measurability.
+Countable subadditivity implies that $\mathcal N(\omega)$ is a $\sigma$-algebra.
+\end{proof}
+
+\begin{subsec}
+The philosophy of measure theory is that null sets don't matter much.
+For example, once we define integration, we will show that if $Z$ is a $\mu$-null set and $f$ is any integrable function, we will always have
+$$\int_Z f(x) ~d\mu(x) = 0.$$
+Since they're harmless, we might as well the null sets throw them in to the class of all measurable sets; this motivates the following definition.
+By Lemma \ref{null sets are measurable}, this definition is not at all a strong assumption.
 \end{subsec}
 
 \begin{definition}
 Let $(X, \Sigma, \mu)$ be a measured space.
-We say that $\mu$ is a \dfn{$\sigma$-finite measure} if there are countably many $E_{n} \in \Sigma$ such that $\bigcup_{n} E_{n} = X$ and $\mu(E_{n}) < \infty$.
-We say that $\mu$ is a \dfn{complete measure} if for every $E \in \Sigma$ such that $\mu(E) = 0$ and $F \subseteq E$, $F \in \Sigma$.
+If for every measurable set $E \in \Sigma$ such that $\mu(E) = 0$, every subset of $E$ is $\Sigma$-measurable, we say that $(X, \Sigma, \mu)$ is a \dfn{complete measured space}, or that $\mu$ is a \dfn{complete measure}.
 \end{definition}
 
-\begin{theorem}[Carathéodory construction]
-Let $P$ a semiring of subsets of a set $X$ such that $X \in P$.
-Let $\mu$ be a premeasure on $P$.
-Then there is a $\sigma$-algebra $\Sigma$ which contains $P$ and an extension of $\mu$ to a complete measure on $\Sigma$.
-Moreover, if $\mu$ is $\sigma$-finite, then $(X, \Sigma, \mu)$ is the unique measured space with this property.
+\begin{theorem}[Carathéodory]
+For every outer measure $\omega$ on $\mathcal H$, $\mathcal M(\omega)$ is a $\sigma$-algebra and the restriction $\mu = \omega|\mathcal M(\omega)$ is a measure.
+Furthermore, $(X, \mathcal M(\omega), \mu)$ is a complete measured space.
 \end{theorem}
-
-\begin{subsec}
-The rest of this section is devoted to the proof of the Carathéodory construction theorem.
-We begin by constructing $\Sigma$.
-We will do this by giving a property --- namely, ``measurability'' --- that every set in the $\sigma$-algebra $\Sigma$ ought to satisfy.
-We will then show that the set of all measurable sets forms a $\sigma$-algebra; thus, we might as well define $\Sigma$ to be that $\sigma$-algebra.
-\end{subsec}
-
-\begin{subsec}
-Let us fix an outer measure $\mu^{*}$ be an outer measure on a hereditary $\sigma$-ring $\mathcal H$.
-In practice, $\mu^{*}$ will be the extension of a premeasure and $\mathcal H$ will be the $\sigma$-algebra of all subsets of some set.
-\end{subsec}
-
-\begin{definition}
-A \dfn{$\mu^{*}$-measurable set} is a set $A \in \mathcal H$ such that for every $E \in \mathcal H$,
-\begin{equation}\label{clean division}
-\mu^{*}(E) = \mu^{*}(E \cap A) + \mu^{*}(E \setminus A).
-\end{equation}
-We let $\mathcal M(\mu^{*})$ denote the set of all $\mu^{*}$-measurable sets.
-In the event that (\ref{clean division}) holds, we say that $A$ \dfn{cleanly divides} $E$, so a set $A$ is $\mu^{*}$-measurable if for every set $E \in \mathcal H$, $A$ cleanly divides $E$.
-\end{definition}
-
-\begin{subsec}
-Since an outer measure is subadditive, one already has
-\[\mu^{*}(E) \leq \mu^{*}(E \cap A) + \mu^{*}(E \setminus A)\]
-and so one just has to prove the opposite inequality
-\begin{equation}\label{Caratheodory inequality}
-\mu^{*}(E \cap A) + \mu^{*}(E \setminus A) \leq \mu^{*}(E)
-\end{equation}
-to check that a set is $\mu^{*}$-measurable.
-\end{subsec}
-
-\begin{definition}
-We say that a set $A \in \mathcal H$ is \dfn{$\mu^{*}$-null} if $\mu^{*}(A) = 0$.
-We let $\mathcal N(\mu^{*})$ denote the set of all $\mu^{*}$-null sets.
-\end{definition}
-
-\begin{subsec}
-Clearly $\emptyset$ is always $\mu^{*}$-null, and any subset of a $\mu^{*}$-null set is $\mu^{*}$-null, thus $\mathcal N(\mu^{*})$ is hereditary.
-In general $\emptyset$ may be the only $\mu^{*}$-null set (think of counting measure), but as we will see, Stieltjes measures have lots of null sets.
-We now show that every $\mu^{*}$-null set is measurable, and have no effect on measurability.
-In fact, $\mu^{*}$-null sets will never matter much.
-\end{subsec}
-
-\begin{lemma}
-The set $\mathcal N(\mu^{*})$ of $\mu^{*}$-null sets is a $\sigma$-ring, and $\mathcal N(\mu^{*}) \subseteq \mathcal M(\mu^{*})$.
-Moreover, if $A$ is $\mu^{*}$-measurable and $Z$ is $\mu^{*}$-null, then $A \cup Z$ and $A \setminus Z$ are $\mu^{*}$-measurable.
-\end{lemma}
 \begin{proof}
-Let $Z$ be $\mu^{*}$-null. Then for every $E$,
-\[\mu^{*}(E \cap Z) + \mu^{*}(E \setminus Z) = 0 + \mu^{*}(E \setminus Z) \leq \mu^{*}(E)\]
-since $\mathcal N(\mu^{*})$ is hereditary.
-Thus $Z$ is $\mu^{*}$-measurable, so $\mathcal N(\mu^{*}) \subseteq \mathcal M(\mu^{*})$.
-If $A$ cleanly divides $E$ then clearly so do $A \cup Z$ and $A \setminus Z$, so null sets have no effect on measurability.
-Countable subadditivity implies that $\mathcal N(\mu^{*})$ is a $\sigma$-ring.
-\end{proof}
+We start by checking some closure properties of $\mathcal M(\omega)$.
 
 \begin{lemma}\label{measurable complements lemma}
-If $A_{1}, A_{2}$ are $\mu^{*}$-measurable sets, then so is $A_{1} \setminus A_{2}$.
+If $A_{1}, A_{2}$ are $\omega$-measurable sets, then so is $A_{1} \setminus A_{2}$.
 \end{lemma}
 \begin{proof}
 Since $E$ is the disjoint union of the sets $E \cap (A_{1} \cap A_{2})$, $E \cap (A_{1} \setminus A_{2})$, $E \cap (A_{2} \setminus A_{1})$, and $E \cap (A_{1} \cup A_{2})$, this follows from the fact that $A_{1}$ and $A_{2}$ divide each of the above sets cleanly.
 We leave the details as Exercise~\ref{measurable complements}.
 \end{proof}
 
-\begin{lemma}
-For every outer measure $\mu^{*}$, the set of measurable sets $\mathcal M(\mu^{*})$ is a $\sigma$-ring and $\mu^{*}$ restricts to a measure on $\mathcal M(\mu^{*})$.
+\begin{lemma}\label{finite addition lemma}
+If $A_{1}, A_{2}$ are $\omega$-measurable sets, then so is $A_{1} \cup A_{2}$.
+Moreover, if $A_{1}, A_{2}$ are disjoint and $E$ is any set, then
+$$\omega(E \cap (A_{1} \cup A_{2})) = \omega(E \cap A_{1}) + \omega(E \cap A_{2}).$$
 \end{lemma}
 \begin{proof}
+Let $A = A_{1} \cup A_{2}$. Taking complements,
+$$A = X \setminus (X \setminus A) = (X \setminus A_{1}) \setminus A_{2}$$
+which is measurable by Lemma \ref{measurable complements lemma}.
+We leave the rest of the proof as Exercise \ref{finite addition exercise}.
+\end{proof}
+
+\begin{lemma}
+\label{countable additivity lemma}
+Let $E \subseteq X$ be any set and let $A = \bigcup_{n}$ be a countable disjoint union of $\omega$-measurable sets. Then
+$$\omega(A \cap E) = \sum_n \omega(A_{n} \cap E).$$
+\end{lemma}
+\begin{proof}
+By induction on $k$ and Lemma \ref{finite addition lemma}, $B_{k} = \bigcup_{n < k} A_{n}$ is $\omega$-measurable and
+$$\omega(B_{k} \cap E) = \sum_{n<k} \omega(A_{n} \cap E).$$
+Since $\omega$ is monotone and $B_{k} \subseteq A$,
+$$\omega(A \cap E) \geq \mu^{*}(B_{k} \cap E).$$
+Thus, by $\sigma$-subadditivity,
+$$\omega(A \cap E) \geq \lim_{k \to \infty} \omega(B_{k} \cap E) = \sum_n \omega(A_{n} \cap E) \geq \omega(A \cap E).$$
+Thus $\omega(A \cap E) \leq \sum_n \omega(A_{n} \cap E) \leq \omega(A \cap E)$, which is what we were meant to show.
+\end{proof}
+
+By Lemma \ref{countable additivity lemma} applied with $E = X$, $\mu = \omega|\mathcal M(\omega)$ is $\sigma$-additive.
+If $\mu(E) = 0$ then every $F \subseteq E$ lies in the hereditary set $\mathcal N(\omega)$, so $F$ is measurable by Lemma \ref{null sets are measurable}.
+Therefore, if $\mathcal M(\omega)$ is a $\sigma$-algebra, then $(X, \mathcal M(\omega), \mu)$ is a complete measured space.
+By Lemma \ref{measurable complements lemma}, we just need to check that $\mathcal M(\omega)$ is closed under countable union.
+
+Let $A = \bigcup_{n} A_{n}$ be a countable union of measurable sets.
+Replacing $A_{n}$ with $A_{n} \setminus (A_{1} \cup \cdots \cup A_{n-1})$ and using closure under complements (Lemma \ref{measurable complements lemma}) it is no loss to assume that the $A_{n}$ are disjoint.
+Then by Lemma \ref{finite addition lemma}, for every set $E \subseteq X$,
+\begin{equation}
+\label{showing momega is a sigma algebra}
+\sum_{n} \omega(E \cap A_{n}) + \omega(E \setminus A) \leq \omega(E).
+\end{equation}
+We leave the details as Exercise \ref{showing momega is a sigma algebra exercise}.
+But we also have $\omega(E) \leq \sum_{n} \omega(E \cap A_{n}) + \omega(E \setminus A)$ by $\sigma$-subadditivity.
+Since $E$ was arbitrary, $A \in \mathcal M(\omega)$.
+\end{proof}
+
+\begin{subsec}
+A priori, Carathéodory's theorem is not actually very useful.
+We have not established any control on when Carathéodory's inequality (\ref{Caratheodory inequality}) is true, so we do not know which sets are $\omega$-measurable.
+For all we know, it could always be the case that $\mathcal M(\omega)$ is the trivial $\sigma$-algebra $\mathcal M(\omega) = \{\emptyset, X\}$.
+
+Fortunately, this turns out to not be the case.
+If $\omega$ is an outer measure which is generated by a premeasure $\mu$ on a semiring $P$, then every subset of $P$ is measurable, as we now show.
+(For example, if $P$ is the semiring of half-open intervals, then every Borel set will be $\omega$-measurable.)
+Furthermore, if $\mu$ is ``not too big" in a sense that we will shortly make precise, then the measure obtained from Carathéodory's theorem is the unique extension of $\mu$ to a complete measured space.
+Thus, to specify a measure, which in general is a horribly complicated object, we just need to give a premeasure defined on some semiring.
+\end{subsec}
+
+\begin{theorem}\label{Caratheodory 2}
+Let $P$ a semiring in $X$ and let $\mu$ be a premeasure on $P$.
+Then there is a $\sigma$-algebra $\Sigma$ which contains $P$ and an extension of $\mu$ to a complete measure on $\Sigma$.
+\end{theorem}
+\begin{proof}
+Let $\omega$ be the outer measure generated by $\mu$ and let $\Sigma = \mathcal M(\omega)$,.
+Then $(X, \Sigma, \omega|\Sigma)$ is a complete measured space, and by Theorem \ref{extending premeasure to outer measure}, $\omega|P = \mu$.
+
+Suppose that $A \in P$ and $E \subseteq X$. We must verify Carathéodory's inequality (\ref{Caratheodory inequality}) in order to show $A \in \Sigma$.
+If $\omega(E) = \infty$ then clearly (\ref{Caratheodory inequality}) holds.
+Otherwise, suppose that $\omega(E) < \infty$ and $\varepsilon > 0$; we will show
+\begin{equation}
+\label{Caratheodory with epsilon}
+\omega(E \cap A) + \omega(E \setminus A) \leq \omega(A) + \varepsilon.
+\end{equation}
+
+Since the infimum in (\ref{ruler formula}) is not vacuous (since $P$ is a semiring), the definition of $\omega$ implies that there exist countably many sets $F_{n} \in P$ such that $E \subseteq \bigcup_{n} F_{n}$ and
+\begin{equation}
+\label{Caratheodory overestimate}
+\sum_{n} \mu_{0}(F_{n}) \leq \varepsilon + \omega(E).
+\end{equation}
+But $F_{n} = (A \cap F_{n}) \cup (F_{n} \setminus A)$, a disjoint union, so since $P$ is a semiring, there exist disjoint $G_{ij} \in P$ such that
+$$F_{i} = (A \cap F_{i}) \cup \bigcup_{j=1}^{k_{i}} G_{ij}.$$
+Then
+$$\sum_{i} \mu(F_{i}) = \sum_{i} \mu(A \cap F_{i}) + \sum_{i} \sum_{j=1}^{k_{i}} \mu(G_{ij}).$$
+Since $F_{i} \setminus A = \bigcup_{j \leq k_{i}} G_{ij}$ and $E \setminus A \subseteq \bigcup_{i} F_{i} \setminus A$,
+$$E \setminus A \subseteq \bigcup_{i} \bigcup_{j=1}^{k_{i}} G_{ij}.$$
+Combining this inequality with the inequality $A \cap E \subseteq \bigcup_{i} A \cap F_{i}$ and the inequality (\ref{Caratheodory overestimate}), we conclude
+$$\omega(E \cap A) + \omega(E \setminus A) \leq \sum_{i=1}^\infty \omega(F_{i} \cap A) + \sum_{j=1}^{k_{i}} \omega(G_{ij}) = \sum_{i=1}^\infty \omega(F_{i}) \leq \omega(A) + \varepsilon$$
+which implies (\ref{Caratheodory with epsilon}).
+\end{proof}
+
+\begin{subsec}
+Now let us show that the complete measured space in Theorem \ref{Caratheodory 2} is unique, subject to the following assumption.
+\end{subsec}
+
+\begin{definition}
+Let $\mu: \Sigma \to [0, \infty]$ be a measure, premeasure, or outer measure.
+We say that $\mu$ is \dfn{$\sigma$-finite} if there are countably many $E_{n} \in \Sigma$ such that $\bigcup_{n} E_{n} = X$ and $\mu(E_{n}) < \infty$.
+\end{definition}
+
+\begin{subsec}
+``Most" measures that one encounters in practice will be $\sigma$-finite, and pathological counterexamples can often be found by considering non-$\sigma$-finite measures.
+As we shall see, non-$\sigma$-finite premeasures may not extend uniquely; much later on we will show, among other thing, that for non-$\sigma$-finite measures, the familiar formula
+$$\int_X \int_Y f(x, y) ~d\mu(x) ~d\nu(y) = \int_Y \int_X f(x, y) ~d\nu(y) ~d\mu(x)$$
+that one learns in calculus is false.
+
+One can think of measure theory as a generalization of combinatorics, since the counting measure $\mu$ on a set $X$ satisfies $\mu(E) = \card E$ for every finite set $E \subseteq X$.
+Thus $\sigma$-finite measures can be viewed as a generalization of countable sets, and the fact that non-$\sigma$-finite measures are pathological is analogous to the fact that in combinatorics, uncountable sets are complicated and need an additional theory of ``infinitary combinatorics".
+\end{subsec}
+
+\begin{theorem}\label{unique extensions}
+Let $P$ a semiring in $X$ and let $\mu_{0}$ be a $\sigma$-finite premeasure on $P$.
+Then there is a unique complete measured space $(X, \Sigma, \mu)$ such that $P \subseteq \Sigma$ and $\mu|P = \mu_{0}$.
+Furthermore, $\mu$ is $\sigma$-finite and $\Sigma$ is the smallest $\sigma$-algebra containing $P$ and every $\mu$-null set.
+\end{theorem}
+\begin{proof}
+By Theorem~\ref{Caratheodory 2}, $(X, \Sigma, \mu)$ exists.
+Moreover, $\mu$ is still $\sigma$-finite, since if we have countably many sets $E_{n}$ for which $\mu_{0}(E_{n}) < \infty$ and $\bigcup_{n} E_{n} = X$, then the same holds with $\mu_{0}$ replaced with $\mu$.
+
+We now show must uniqueness, so let $(X, \Gamma, \nu)$ be another complete measured space such that $P \subseteq \Gamma$ and $\nu|P = \mu_{0}$.
 
 \end{proof}
 
+\begin{definition}
+Let $X$ be a topological space.
+A \dfn{Borel measure} on $X$ is a measure $\Sigma \to [0, \infty]$ such that every Borel subset of $X$ is an element of $\Sigma$.
+\end{definition}
 
+\begin{theorem}
+Every Stieltjes premeasure extends uniquely to a complete $\sigma$-finite Borel measure on $\RR$.
+\end{theorem}
+\begin{proof}
+Let $\mu_{0}$ be the Stieltjes premeasure of an increasing right-continuous function $f$; then $\mu_{0}([n, n + 1)) = f(n + 1) - f(n) < \infty$, and the $[n, n + 1)$, $n \in \ZZ$, are a countable set of sets which cover $\RR$.
+Therefore $\mu_{0}$ is $\sigma$-finite.
+So, by Theorem~\ref{unique extensions}, $\mu_{0}$ extends uniquely to a complete $\sigma$-finite measure on a $\sigma$-algebra $\Sigma$ which contains every half-open interval.
+But the half-open intervals generate the Borel $\sigma$-algebra of $\RR$ (Exercise \ref{generators of Borel}), so $\Sigma$ contains every Borel subset of $\RR$.
+\end{proof}
 
-TODO:\@ Show that $P$ has measurable sets
-
-TODO:\@ Completions of measures
-
-TODO:\@ Uniqueness of extensions
-
-Leave lots of the above as exercises.
+\begin{definition}
+A \dfn{Stieltjes measure} is the unique complete Borel measure that extends a Stieltjes premeasure.
+\end{definition}
 
 \begin{exercise}\label{measurable complements}
-Fill in the details in the proof of Lemma~\ref{measurable complements lemma}.
+Complete the proof of Lemma~\ref{measurable complements lemma}.
+\end{exercise}
+
+\begin{exercise}\label{finite addition exercise}
+Complete the proof of Lemma~\ref{finite addition lemma}.
+\end{exercise}
+
+\begin{exercise}\label{showing momega is a sigma algebra exercise}
+Complete the proof of (\ref{showing momega is a sigma algebra}).
+\end{exercise}
+
+\begin{exercise}
+Let $\mu$ be the Lebesgue premeasure, $\mu([a, b)) = b - a$, and let $Z \subseteq \RR$ be a countable set.
+Show that $Z$ is $\mu^{*}$-null.
 \end{exercise}
 
 \begin{exercise}
@@ -730,39 +866,14 @@ These equivalences are highly useful and will be used throughout the text withou
 \end{exercise}
 
 \begin{exercise}
-Let $(X, \Sigma, \mu)$ be a measured space, and let $\mathcal N$ be the $\sigma$-algebra of all null subsets of $\mu$. Let $\overline \Sigma$ be the $\sigma$-algebra generated by $\Sigma$ and $\mathcal N$.
+Let $(X, \Sigma, \mu)$ be a measured space, and let $\mathcal N$ be the set of all $\mu$-null sets.
+Let $\overline \Sigma$ be the $\sigma$-algebra generated by $\Sigma$ and $\mathcal N$.
 Show that there is a unique extension $\overline \mu$ of $\mu$ to $(X, \overline \Sigma)$, and that $(X, \overline \Sigma, \overline \mu)$ is a complete measured space.
 We call $(X, \overline \Sigma, \overline \mu)$ the \dfn{completion} of $(X, \Sigma, \mu)$.
 \end{exercise}
 
 \section{Lebesgue measure on $\RR$}
 In this section we define the most important measure of all: Lebesgue measure on $\RR$.
-
-\begin{subsec}
-We begin by recalling that given a nondecreasing left-continuous function $f$ on $\RR$, the Stieltjes premeasure $\mu_{f}$ was given by
-\[\mu_{f}([a, b)) = f(b) - f(a)\]
-whenever $a < b$.
-We can extend the semiring $P$ of half-open intervals to include $\RR$ by setting
-\[\mu_{f}(\RR) = \lim_{n \to \infty} f(n) - f(-n),\]
-which may be infinite, but always makes sense, since the only way that $\mu_{f}(\RR)$ could be $\infty - \infty$ is if
-\[\lim_{x \to -\infty} f(x) = +\infty\]
-which is impossible since $f$ is increasing.
-Since the Stieltjes premeasure is a premeasure, it follows from the Carathéodory construction that there is a $\sigma$-algebra $\Sigma$ containing $P$ (and therefore containing the Borel $\sigma$-algebra $\mathcal B(\RR)$) and a measure, which we also call $\mu_{f}$, on $\Sigma$ which extends $\mu_{f}$.
-\end{subsec}
-
-\begin{lemma}
-Every Stieltjes measure is $\sigma$-finite.
-\end{lemma}
-\begin{proof}
-$\RR$ is covered by sets of the form $[n, n + 1)$, $n \in \ZZ$, of which there are countably many.
-Now $\mu_{f}([n, n + 1)) = f(n+1) - f(n)$ is finite, so $\RR$ is $\sigma$-finite.
-\end{proof}
-
-\begin{subsec}
-By the Carathéodory construction theorem, if a premeasure extends to a $\sigma$-finite complete measure $\mu$, then $\mu$ is the unique such extension.
-It follows from the previous lemma that $\mu_{f}$ is well-defined.
-More precisely, $\mu_{f}$ is the unique complete Borel measure obtained by extending the Stieltjes premeasure associated to $f$.
-\end{subsec}
 
 \begin{definition}
 The \dfn{Stieltjes measure} arising from a nondecreasing left-continuous function $f$ is the complete Borel measure $\mu_{f}$ obtained from the Stieltjes premeasure of $f$.
@@ -850,7 +961,7 @@ However, it is convenient to pass through the notion of a Stieltjes measure alon
 
 \begin{subsec}
 One may wonder if \emph{every} subset of $\RR$ is Lebesgue measurable.
-Under certain reasonable set-theoretic hypotheses, this is false; we discuss a counterexample, Vitali's set, in Example~\ref{Vitali set}.
+Under certain reasonable set-theoretic hypotheses, this is false; we discuss a counterexample, Vitali's set, in Theorem~\ref{Vitali's set}.
 But the next-best thing is true, as any set that an analyst, algebraist, topologist, or applied mathematician will ever have to work with will turn out to be measurable. We discuss this in Example~\ref{all functions are measurable}.
 This is closely related to a theorem of Solovay~\cite{Solovay1970} which shows that in a certain sense, those set-theoretic hypotheses \emph{cannot} be avoided in the construction of a nonmeasurable set: a slightly different logical setup would imply that every subset of $\RR$ is measurable.
 \end{subsec}
@@ -987,6 +1098,10 @@ This is known as a \dfn{fat Cantor set}.
 Show that there does not exist a fat Cantor set of measure $1$ in $[0, 1]$.
 \end{exercise}
 
+\begin{exercise}
+Show that every locally finite Borel measure on $\RR$ is Stieltjes (and hence Radon).
+\end{exercise}
+
 \begin{exercise}\label{physical lebesgue measure 1}
 In this exercise and the following we give a different construction of Lebesgue measure, other than the axiomatic definition or the construction using Stieltjes measures.
 
@@ -998,7 +1113,7 @@ Show that $d_{0}$ is a semimetric, so the completion $(\Sigma, d)$ of $(\Sigma_{
 
 Show that the ``union'' of countably many elements of $\Sigma$ is well-defined, as is the ``intersection'' of countably many elements and ``complement'' of one element.
 That is, show that these operations drop to equivalence classes of elements of $\Sigma_{0}$ under the equivalence relation ``distance is $0$'', and then extend uniquely to $\Sigma$.
-So $\Sigma$ can be thought of as an ``abstract $\sigma$-ring'' in some sense, even though its elements are not sets, but something more abstract.
+So $\Sigma$ can be thought of as an ``abstract $\sigma$-algebra'' in some sense, even though its elements are not sets, but something more abstract.
 \end{exercise}
 
 \begin{exercise}\label{physical lebesgue measure 2}
@@ -1008,12 +1123,12 @@ Then, given $I \in \Sigma$, let
 \[\nu(I) = d(I, [\emptyset]).\]
 Show that $\nu$ is ``$\sigma$-additive'' in the sense that whenever ${(E_{n})}_{n}$ is a sequence in $\Sigma$ with $E_{n} \cap E_{m} = [\emptyset]$ whenever $n \neq m$, then
 \[\nu\left(\bigcup_{n} E_{n}\right) = \sum_{n} \nu(E_{n}).\]
-So we can think of $\nu$ as an ``abstract measure'' on the abstract $\sigma$-ring $\Sigma$.
+So we can think of $\nu$ as an ``abstract measure'' on the abstract $\sigma$-algebra $\Sigma$.
 We call $\nu$ the \dfn{physical Lebesgue measure}.
 \end{exercise}
 
 \begin{exercise}\label{physical lebesgue measure 3}
-Let $\mu$ be Lebesgue measure and $\nu$ physical Lebesgue measure as in Exercise~\ref{physical lebesgue measure 2}, defined on the abstract $\sigma$-ring $\Sigma$.
+Let $\mu$ be Lebesgue measure and $\nu$ physical Lebesgue measure as in Exercise~\ref{physical lebesgue measure 2}, defined on the abstract $\sigma$-algebra $\Sigma$.
 Let $\Gamma$ be the $\sigma$-algebra of Lebesgue measurable subsets of $\RR$. Show that there is a surjective map $\pi: \Gamma \to \Sigma$ such that:
 \begin{enumerate}
 \item For every rational interval $I$, $\pi(I)$ is the equivalence class of $I$ in $\Sigma$.
@@ -1021,4 +1136,96 @@ Let $\Gamma$ be the $\sigma$-algebra of Lebesgue measurable subsets of $\RR$. Sh
 \item For every $E \in \Gamma$, $\mu(E) = \nu(\pi(E))$.
 \end{enumerate}
 So we can think of $\pi(E)$ as the equivalence class of $E$ under the equivalence relation ``symmetric difference is null'', and $\nu$ correctly computes the Lebesgue measurable of a set.
+\end{exercise}
+
+\section{Vector-valued measures}
+Recall that by definition, a measure $\mu$ is a $\sigma$-additive function $\mu: \Sigma \to (-\infty, \infty]$, where $\Sigma$ is a $\sigma$-algebra.
+However, the definition of $\sigma$-additive function makes sense even if $(-\infty, \infty]$ is replaced by a more general codomain, and we will have use for this when we integrate functions in more general codomains than the real numbers.
+
+\begin{subsec}
+Let $B$ be a Banach space, as discussed in Appendix~\ref{Banach space appendix}.
+If the reader is unfamiliar with Banach spaces, they can take $B = \CC^{d}$ and not lose any insight.
+If $(x_{n})$ is a sequence in $B$, then (\ref{banach space series}) is the definition of the infinite sum $\sum_{n} x_{n}$.
+\end{subsec}
+
+\begin{definition}
+Let $\Sigma$ be a $\sigma$-ring and $B$ a Banach space.
+A \dfn{vector-valued measure} on $\Sigma$, or simply a \dfn{measure}, is a function $\mu: \Sigma \to B$ such that whenever $(E_{n})$ are countably many disjoint sets in $\Sigma$,
+\[\mu\left(\bigcup_{n} E_{n}\right) = \sum_{n} \mu(E_{n}).\]
+\end{definition}
+
+\begin{example}
+The most important examples of vector-valued measures will be of the following form.
+Let $\nu$ be a positive measure on a measurable space $X$, and let $f: X \to B$ be an ``integrable function''.
+We will get back to what this means later --- but, taking the definition of integration as a black box, set
+\[\mu(E) = \int_{E} f(x) ~d\nu(x).\]
+Then $\mu$ is a vector-valued measure, and its ``derivative'' is $f$.
+This will be the setting in which we generalize the fundamental theorem of calculus.
+\end{example}
+
+\begin{subsec}
+Frequently, positive measures are easier to work with than vector-valued measures, so we will mainly spend this section developing tools to convert problems about vector-valued measures into problems about positive measures.
+\end{subsec}
+
+\begin{definition}
+Let $\mu$ be a measure. The \dfn{total variation measure} $|\mu|$ of $\mu$ is defined by
+\[|\mu|(E) = \sup_{E_{1}, \dots, E_{n}} \sum_{i=1}^{n} ||\mu(E_{i})||_{B}\]
+where the supremum ranges over finite sequences $E_{1}, \dots, E_{n}$ of disjoint measurable sets such that $E = \bigcup_{i} E_{i}$.
+\end{definition}
+
+\begin{theorem}
+Every total variation measure is a positive measure.
+\end{theorem}
+\begin{proof}
+Let $\mu$ be a measure. Then $|\mu|$ is nonnegative. If $E \subseteq F$ are measurable sets, write $F = E \cup (F \setminus E)$ to see that $|\mu|(E) \leq |\mu|(F)$.
+
+To see that $|\mu|$ is $\sigma$-additive, suppose that $F,G$ are disjoint measurable sets, $E = F \cup G$.
+Write $F = \bigcup_{i \leq m} F_{i}$ and $G = \bigcup_{j \leq n} G_{j}$ where the $F_{i},G_{j}$ are all disjoint; then
+\[|\mu|(E) \geq \sum_{i=1}^{m} ||\mu(F_{i})||_{B} + \sum_{j=1}^{n} ||\mu(G_{j})||_{B}.\]
+Thus $|\mu|(E) \geq |\mu|(F) + |\mu|(G)$, so by induction if $E = \bigcup_{i \leq m} E_{i}$ where the $E_{i}$ are disjoint, then $|\mu|(E) \geq \sum_{i \leq m} |\mu|(E_{i})$.
+Using the monotonicity, it follows that if $(E_{i})$ is a disjoint countable sequence of sets and $E = \bigcup_{i} E_{i}$, then
+\[|\mu|(E) \geq \sum_{i=1}^{\infty} |\mu|(E_{i}).\]
+
+Conversely, suppose that $E = \bigcup_{j} E_{j} = \bigcup_{i\leq n} F_{i}$ where $(E_{j})$ is a disjoint countable sequence and $(F_{i})$ is a disjoint finite sequence. Then
+\begin{align*}
+\sum_{i=1}^{n} ||\mu(F_{i})||_{B} &= \sum_{i=1}^{n} \left|\left|\mu\left(\bigcup_{j=1}^{\infty} \left(F_{i} \cap E_{j}\right)\right)\right|\right|_{B} \leq \sum_{i=1}^{n} \sum_{j=1}^{\infty} ||\mu(F_{i} \cap E_{j})||_{B} \\
+&= \sum_{j=1}^{\infty} \sum_{i=1}^{n} ||\mu(F_{i} \cap E_{j})||_{B} \leq \sum_{j=1}^{\infty} |\mu|(E_{j}).
+\end{align*}
+Here we used the fact that $E_{j} = \bigcup_{i \leq n} F_{i} \cap E_{j}$. It follows that $|\mu|(E) \leq \sum_{i=1}^{\infty} |\mu|(E_{i})$.
+\end{proof}
+
+\begin{theorem}[triangle inequality and reverse triangle inequality]\label{reverse triangle inequality}
+Let $\mu,\nu$ be measures on $\Sigma$ with values in $B$. Then $|\mu + \nu| \leq |\mu| + |\nu|$ and
+\[||\mu|(E) - |\nu|(E)| \leq |\mu - \nu|(E).\]
+\end{theorem}
+\begin{proof}
+If $E = \bigcup_{i \leq n} E_{i}$, the $E_{i}$ disjoint, then
+\[\sum_{i=1}^{n} ||(\mu + \nu)(E_{i})||_{B} \leq \sum_{i=1}^{n} ||\mu(E_{i})||_{B} + ||\nu(E_{i})||_{B} \leq |\mu|(E) + |\nu|(E)\]
+which implies the two desired inequalities.
+\end{proof}
+
+\begin{subsec}
+Let $\mu$ be a vector-valued measure.
+The total variation measure $|\mu|$ can be viewed as the positive measure that ``best dominates'' $||\mu||_{B}$ in the sense that for every measurable set $E$, $|\mu(E)| \geq ||\mu(E)||_{B}$.
+On the other hand, if $\mu$ is already a positive measure, then the definition of the total variation measure $|\mu|$ still makes sense, and additivity of $\mu$ implies that $\mu = |\mu|$.
+Thus we can use total variation to extend definitions of measures to this more general setting.
+\end{subsec}
+
+\begin{definition}
+A vector-valued measure $\mu$ is \dfn{$\sigma$-finite} if $|\mu|$ is $\sigma$-finite.
+A set $E$ is \dfn{$\mu$-null} if $E$ is $|\mu|(E)$-null.
+The measure $\mu$ is a \dfn{complete measure} if every $\mu$-null set is complete.
+The \dfn{completion} of $\mu$ is the vector-valued measure obtained by extending the domain of $\mu$ to contain all $\mu$-null sets.
+\end{definition}
+
+TODO:Hanh-Jordan
+
+\begin{exercise}
+Show that the completion of a vector-valued measure is well-defined.
+That is, if $(X, \Gamma)$ is a measurable space and $\mu$ is a vector-valued measure on $\Gamma$, then show that there is a $\sigma$-algebra $\Sigma$ on $X$ which contains every measurable set and every $\mu$-null set, such that $(X, \Sigma, \mu)$ is a complete measured space.
+\end{exercise}
+
+\begin{exercise}
+Give an example of a vector-valued measured space $(X, \mu)$ such that $\mu(X) = 0$, but $|\mu|$ is not identically zero.
+Thus, explain why we cannot define a $\mu$-null set to simply be a set $E$ such that $\mu(E) = 0$.
 \end{exercise}
